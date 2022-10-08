@@ -1,17 +1,9 @@
 <template>
     <div>
         <div class="my-hero-container">
-            <div class="video">
-                <video autoplay muted loop class="my-video">
-                    <source src="/vid/banner-video.mp4" type="video/mp4">
-                    Your browser does not support HTML5 video.
-                </video>
-            </div>
+           
 
-            <div class="main-text-container">
-                <p class="main-title">DENTAL CLINIC</p>
-                <p class="main-subtitle">Exceptional Care for all ages.</p>
-            </div>
+          
         </div>
 
 

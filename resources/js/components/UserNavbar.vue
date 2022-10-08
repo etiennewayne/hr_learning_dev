@@ -2,7 +2,7 @@
     <b-navbar>
         <template #brand>
             <b-navbar-item>
-                <h1 class="title is-4">DENTAL CLINIC</h1>
+                <h1 class="title is-4">HR LEARNING & DEV</h1>
             </b-navbar-item>
         </template>
 
@@ -12,9 +12,7 @@
         </template>
 
         <template #end>
-             <b-navbar-item href="/">
-                HOME
-            </b-navbar-item>
+           
             <!-- <b-navbar-item href="/about">
                 ABOUT
             </b-navbar-item> -->
@@ -24,9 +22,9 @@
             <b-navbar-item tag="div">
                 <div v-if="!currentLogin" class="buttons">
                     <a class="button is-primary" href="/sign-up">
-                        <strong>Sign up</strong>
+                        <strong>Register</strong>
                     </a>
-                    <a class="button is-light" href="/login">
+                    <a class="button is-success is-outlined" href="/login">
                         Log in
                     </a>
                 </div>
