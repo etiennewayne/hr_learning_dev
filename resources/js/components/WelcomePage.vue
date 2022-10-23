@@ -1,9 +1,9 @@
 <template>
     <div>
         <div class="my-hero-container">
-           
-
-          
+            <div class="hero-text">
+                <h1 style="font-size:50px">LEARNING DEVELOPMENT SYSTEM</h1>
+            </div>
         </div>
 
 
@@ -37,38 +37,24 @@ export default {
 <style scoped>
 
     .my-hero-container{
-        display: flex;
-        flex-direction: column;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/banner.jpg");
+        /* background-image: url("/img/banner.jpg"); */
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
     }
-    .main-text-container{
+
+    .hero-text {
+        text-align: center;
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
-        margin: 0 25px 0 100px;
-        z-index: 0;
-        background: black;
-        padding: 30px;
-        opacity: .6;
-    }
-    .main-title{
+        left: 50%;
+        transform: translate(-50%, -50%);
         color: white;
-        font-size: 3em;
-        font-weight: bold;
-        opacity: 1;
     }
 
-    .main-subtitle{
-        color: white;
-        font-size: 2em;
-        font-weight: bold;
-
-    }
-
-    .my-video{
-        z-index: -1;
-        width: 100%;
-        /*display: none;*/
-    }
 
     @media only screen and (max-width: 1024px) {
 

@@ -22,16 +22,22 @@ class UserSeeder extends Seeder
                 'fname' => 'CHARLES',
                 'mname' => 'P',
                 'sex' => 'MALE',
-                'province' => 'MISAMIS OCCIDENTAL',
-                'city' => 'TANGUB CITY',
-                'barangay' => 'CANIANGAN',
-                'street' => 'P-6',
+
+                'res_province' => 'MISAMIS OCCIDENTAL',
+                'res_city' => 'TANGUB CITY',
+                'res_barangay' => 'CANIANGAN',
+                'res_street' => 'P-6',
+
+                'per_province' => 'MISAMIS OCCIDENTAL',
+                'per_city' => 'TANGUB CITY',
+                'per_barangay' => 'CANIANGAN',
+                'per_street' => 'P-6',
+
                 'email' => 'admin@dev.com',
                 'contact_no' => '09167789585',
                 'role' => 'ADMINISTRATOR',
                 'password' => Hash::make('a')
             ],
-
 
             //FACULTY
             [
@@ -40,10 +46,17 @@ class UserSeeder extends Seeder
                 'fname' => 'CHARLES',
                 'mname' => 'P',
                 'sex' => 'MALE',
-                'province' => 'MISAMIS OCCIDENTAL',
-                'city' => 'TANGUB CITY',
-                'barangay' => 'CANIANGAN',
-                'street' => 'P-6',
+
+                'res_province' => 'MISAMIS OCCIDENTAL',
+                'res_city' => 'TANGUB CITY',
+                'res_barangay' => 'CANIANGAN',
+                'res_street' => 'P-6',
+
+                'per_province' => 'MISAMIS OCCIDENTAL',
+                'per_city' => 'TANGUB CITY',
+                'per_barangay' => 'CANIANGAN',
+                'per_street' => 'P-6',
+
                 'email' => 'charles@dev.com',
                 'contact_no' => '09683014598',
                 'role' => 'FACULTY',

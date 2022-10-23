@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Faculty;
 
 use App\Http\Controllers\Controller;
+use App\Models\Citizenship;
+use App\Models\CivilStatus;
 use Illuminate\Http\Request;
 
 class FacultyPDSController extends Controller
@@ -14,7 +16,13 @@ class FacultyPDSController extends Controller
     }
 
     public function index(){
-        return view('faculty.faculty-pds');
+
+        $civils = CivilStatus::all();
+        $citizenships = Citizenship::orderBy('citizenship', 'asc')->get();
+
+        return view('faculty.faculty-pds')
+            ->with('civils', $civils)
+            ->with('citizenships', $citizenships);
     }
 
 

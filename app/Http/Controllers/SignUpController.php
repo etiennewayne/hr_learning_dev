@@ -18,6 +18,7 @@ class SignUpController extends Controller
 
     public function store(Request $req){
 
+
         $validate = $req->validate([
             'username' => ['required', 'string', 'unique:users'],
             'lname' => ['required', 'string', 'max:100'],
@@ -25,9 +26,9 @@ class SignUpController extends Controller
             'sex' => ['required', 'string', 'max:20'],
             'email' => ['required', 'unique:users'],
             'password' => ['required', 'string', 'confirmed'],
-            'province' => ['required', 'string'],
-            'city' => ['required', 'string'],
-            'barangay' => ['required', 'string'],
+            'res_province' => ['required', 'string'],
+            'res_city' => ['required', 'string'],
+            'res_barangay' => ['required', 'string'],
         ]);
 
 
@@ -45,10 +46,10 @@ class SignUpController extends Controller
             'sex' => $req->sex,
             'contact_no' => $req->contact_no,
             'role' => 'FACULTY',
-            'province' => $req->province,
-            'city' => $req->city,
-            'barangay' => $req->barangay,
-            'street' => strtoupper($req->street)
+            'res_province' => $req->res_province,
+            'res_city' => $req->res_city,
+            'res_barangay' => $req->res_barangay,
+            'res_street' => strtoupper($req->res_street)
         ]);
 
         // try{
