@@ -14,7 +14,14 @@ class CivilServiceEligibility extends Model
     protected $primaryKey = 'cse_id';
 
 
-    protected $fillable = ['user_id', 'career_exam', 'rating', 'date_exam', 'place_exam', 'license_no', 'license_validity'];
+    protected $fillable = ['user_id',
+        'career_exam',
+        'rating',
+        'date_exam',
+        'place_exam',
+        'license_no',
+        'license_validity'
+    ];
 
 
 }

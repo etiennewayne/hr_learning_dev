@@ -8804,6 +8804,1376 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['propCivils', 'propCitizenships', 'propData'],
+  data: function data() {
+    return {
+      user: {},
+      activeStep: 0,
+      showSocial: false,
+      isAnimated: true,
+      isRounded: true,
+      isStepsClickable: true,
+      hasNavigation: true,
+      customNavigation: false,
+      isProfileSuccess: false,
+      prevIcon: 'chevron-left',
+      nextIcon: 'chevron-right',
+      labelPosition: 'bottom',
+      mobileMode: 'minimalist',
+      fields: {
+        civil_status: '',
+        educational_backgrounds: [],
+        children: [],
+        eligibilities: [],
+        work_experiences: [],
+        voluntary_works: [],
+        learning_developments: [],
+        other_informations: []
+      },
+      errors: {},
+      civilStatuses: [],
+      citizenships: [],
+      resProvinces: [],
+      resCities: [],
+      resBarangays: [],
+      perProvinces: [],
+      perCities: [],
+      perBarangays: []
+    };
+  },
+  methods: {
+    //ADDRESS
+    loadProvince: function loadProvince() {
+      var _this = this;
+
+      axios.get('/load-provinces').then(function (res) {
+        _this.resProvinces = res.data;
+        _this.perProvinces = res.data;
+
+        _this.initData();
+      });
+    },
+    loadResCity: function loadResCity() {
+      var _this2 = this;
+
+      axios.get('/load-cities?prov=' + this.fields.res_province).then(function (res) {
+        _this2.resCities = res.data;
+      });
+    },
+    loadResBarangay: function loadResBarangay() {
+      var _this3 = this;
+
+      axios.get('/load-barangays?prov=' + this.fields.res_province + '&city_code=' + this.fields.res_city).then(function (res) {
+        _this3.resBarangays = res.data;
+      });
+    },
+    loadPerCity: function loadPerCity() {
+      var _this4 = this;
+
+      axios.get('/load-cities?prov=' + this.fields.per_province).then(function (res) {
+        _this4.perCities = res.data;
+      });
+    },
+    loadPerBarangay: function loadPerBarangay() {
+      var _this5 = this;
+
+      axios.get('/load-barangays?prov=' + this.fields.per_province + '&city_code=' + this.fields.per_city).then(function (res) {
+        _this5.perBarangays = res.data;
+      });
+    },
+    initData: function initData() {
+      var _this6 = this;
+
+      this.civilStatuses = JSON.parse(this.propCivils);
+      this.citizenships = JSON.parse(this.propCitizenships);
+      this.user = JSON.parse(this.propData); //console.log(this.user)
+
+      this.fields.surname = this.user.lname;
+      this.fields.fname = this.user.fname;
+      this.fields.mname = this.user.mname;
+      this.fields.suffix = this.user.suffix;
+      this.fields.sex = this.user.sex;
+      this.fields.date_birth = new Date(this.user.date_birth);
+      this.fields.place_birth = this.user.place_birth;
+      this.fields.civil_status = this.user.civil_status;
+      this.fields.height = this.user.height;
+      this.fields.weight = this.user.weight;
+      this.fields.blood_type = this.user.blood_type;
+      this.fields.gsis = this.user.gsis;
+      this.fields.pagibig = this.user.pagibig;
+      this.fields.philhealth = this.user.philhealth;
+      this.fields.sss = this.user.sss;
+      this.fields.tin = this.user.tin;
+      this.fields.agency_idno = this.user.agency_idno;
+      this.fields.citizenship = this.user.citizenship; //spouse
+
+      this.fields.spouse_surname = this.user.spouse_surname;
+      this.fields.spouse_fname = this.user.spouse_fname;
+      this.fields.spouse_mname = this.user.spouse_mname;
+      this.fields.spouse_suffix = this.user.spouse_suffix; //businees
+
+      this.fields.business_name = this.user.business_name;
+      this.fields.business_address = this.user.business_address;
+      this.fields.business_contact_no = this.user.business_contact_no; //father
+
+      this.fields.father_surname = this.user.father_surname;
+      this.fields.father_fname = this.user.father_fname;
+      this.fields.father_mname = this.user.father_mname;
+      this.fields.father_suffix = this.user.father_suffix; //mother
+
+      this.fields.mother_maiden_name = this.user.mother_maiden_name;
+      this.fields.mother_fname = this.user.mother_fname;
+      this.fields.mother_mname = this.user.mother_mname;
+      this.fields.mother_suffix = this.user.mother_suffix; //nested axios for getting the address 1 by 1 or request by request
+      //load city first
+      //residential address
+
+      axios.get('/load-cities?prov=' + this.user.res_province).then(function (res) {
+        //load barangay
+        _this6.fields.res_province = _this6.user.res_province;
+        _this6.resCities = res.data;
+        _this6.fields.res_city = _this6.user.res_city;
+        axios.get('/load-barangays?prov=' + _this6.user.res_province + '&city_code=' + _this6.user.res_city).then(function (res) {
+          _this6.resBarangays = res.data;
+          _this6.fields.res_barangay = _this6.user.res_barangay;
+          _this6.fields.res_street = _this6.user.res_street;
+          _this6.fields.res_houseno_blockno = _this6.user.res_houseno_blockno;
+          _this6.fields.res_zipcode = _this6.user.res_zipcode;
+        });
+      }); //permanent address
+
+      axios.get('/load-cities?prov=' + this.user.per_province).then(function (res) {
+        //load barangay
+        _this6.fields.per_province = _this6.user.per_province;
+        _this6.perCities = res.data;
+        _this6.fields.per_city = _this6.user.per_city;
+        axios.get('/load-barangays?prov=' + _this6.user.per_province + '&city_code=' + _this6.user.per_city).then(function (res) {
+          _this6.perBarangays = res.data;
+          _this6.fields.per_barangay = _this6.user.per_barangay;
+          _this6.fields.per_street = _this6.user.per_street;
+          _this6.fields.per_houseno_blockno = _this6.user.per_houseno_blockno;
+          _this6.fields.per_zipcode = _this6.user.per_zipcode;
+        });
+      });
+      this.fields.tel_no = this.user.tel_no;
+      this.fields.contact_no = this.user.contact_no;
+      this.fields.email = this.user.email;
+      this.user.children.forEach(function (child) {
+        _this6.fields.children.push({
+          child_id: child.child_id,
+          user_id: child.user_id,
+          fullname: child.fullname,
+          date_birth: new Date(child.child_bdate)
+        });
+      });
+      this.user.educational_backgrounds.forEach(function (ed) {
+        _this6.fields.educational_backgrounds.push({
+          ed_bg_id: ed.ed_bg_id,
+          level: ed.level,
+          name_of_school: ed.name_of_school,
+          degree: ed.degree,
+          period_att_from: ed.period_att_from,
+          period_att_to: ed.period_att_to,
+          highest_level_unit: ed.highest_level_unit,
+          year_graduated: ed.year_graduated,
+          scholarship: ed.scholarship
+        });
+      });
+      this.user.eligibilities.forEach(function (el) {
+        _this6.fields.eligibilities.push({
+          cse_id: el.cse_id,
+          user_id: el.user_id,
+          career_exam: el.career_exam,
+          rating: parseFloat(el.rating),
+          date_exam: new Date(el.date_exam),
+          place_exam: el.place_exam,
+          license_no: el.license_no,
+          license_validity: el.license_validity
+        });
+      });
+      this.user.work_experiences.forEach(function (work) {
+        _this6.fields.work_experiences.push({
+          work_ex_id: work.work_ex_id,
+          work_ex_from: new Date(work.work_ex_from),
+          work_ex_to: new Date(work.work_ex_to),
+          position_title: work.position_title,
+          department_agency: work.department_agency,
+          salary: work.salary,
+          pay_grade: work.pay_grade,
+          status_appointment: work.status_appointment,
+          is_govt: work.is_govt
+        });
+      });
+      this.user.voluntary_works.forEach(function (v) {
+        _this6.fields.voluntary_works.push({
+          voluntary_work_id: v.voluntary_work_id,
+          name_address_org: v.name_address_org,
+          work_from: v.work_from,
+          work_to: v.work_to,
+          no_hours: v.no_hours,
+          nature_work: v.nature_work
+        });
+      });
+      this.user.learning_developments.forEach(function (learning) {
+        _this6.fields.learning_developments.push({
+          learning_dev_id: learning.learning_dev_id,
+          title_learning_dev: learning.title_learning_dev,
+          date_from: new Date(learning.date_from),
+          date_to: new Date(learning.date_to),
+          no_hours: learning.no_hours,
+          type_ld: learning.type_ld,
+          sponsored_by: learning.sponsored_by
+        });
+      });
+      this.user.other_informations.forEach(function (info) {
+        _this6.fields.other_informations.push({
+          other_info_id: info.other_info_id,
+          skill_hobbies: info.skill_hobbies,
+          non_academic_distinction: info.non_academic_distinction,
+          member_association: info.member_association
+        });
+      });
+    },
+    submit: function submit() {
+      var _this7 = this;
+
+      axios.put('/faculty/my-pds/' + this.user.user_id, this.fields).then(function (res) {
+        if (res.data.status === 'saved') {
+          _this7.$buefy.dialog.alert({
+            title: "UPDATED!",
+            message: 'Profile updated successfully',
+            type: 'is-success',
+            onConfirm: function onConfirm() {
+              return window.location = '/faculty/my-pds';
+            }
+          });
+        }
+      })["catch"](function (err) {
+        if (err.response.status === 422) {
+          _this7.errors = err.response.data.errors;
+        } else {
+          alert('An error occured.');
+        }
+      });
+    },
+    addChild: function addChild() {
+      this.fields.children.push({
+        child_id: 0,
+        user_id: 0,
+        fullname: '',
+        date_birth: null
+      });
+    },
+    removeChild: function removeChild(index) {
+      var _this8 = this;
+
+      //alert(index);
+      this.$buefy.dialog.confirm({
+        title: 'DELETE?',
+        message: 'Are you sure you want to delete this information?',
+        onConfirm: function onConfirm() {
+          var childId = _this8.fields.children[index].child_id;
+
+          if (childId > 0) {
+            axios["delete"]('/faculty/children/' + childId).then(function (res) {
+              if (res.data.status === 'deleted') {
+                _this8.$buefy.toast.open({
+                  message: "Child deleted successfully.",
+                  type: 'is-primary'
+                });
+              }
+            });
+          }
+
+          _this8.fields.children.splice(index, 1);
+        }
+      });
+    },
+    addEducationalBackground: function addEducationalBackground() {
+      this.fields.educational_backgrounds.push({
+        ed_bg_id: 0,
+        level: '',
+        name_of_school: '',
+        degree: '',
+        period_att_from: '',
+        period_att_to: '',
+        highest_level_unit: '',
+        year_graduated: '',
+        scholarship: ''
+      });
+    },
+    removeEducationalBackground: function removeEducationalBackground(index) {
+      var _this9 = this;
+
+      //alert(index);
+      this.$buefy.dialog.confirm({
+        title: 'DELETE?',
+        message: 'Are you sure you want to delete this information?',
+        onConfirm: function onConfirm() {
+          var id = _this9.fields.educational_backgrounds[index].ed_bg_id;
+
+          if (id > 0) {
+            axios["delete"]('/faculty/educational-backgrounds/' + id).then(function (res) {
+              if (res.data.status === 'deleted') {
+                _this9.$buefy.toast.open({
+                  message: "Educational background deleted successfully.",
+                  type: 'is-primary'
+                });
+              }
+            });
+          }
+
+          _this9.fields.educational_backgrounds.splice(index, 1);
+        }
+      });
+    },
+    addEligibility: function addEligibility() {
+      this.fields.eligibilities.push({
+        cse_id: 0,
+        user_id: 0,
+        career_exam: '',
+        rating: 0,
+        date_exam: null,
+        place_exam: '',
+        license_no: '',
+        license_validity: ''
+      });
+    },
+    removeEligibility: function removeEligibility(index) {
+      var _this10 = this;
+
+      //alert(index);
+      this.$buefy.dialog.confirm({
+        title: 'DELETE?',
+        message: 'Are you sure you want to delete this information?',
+        onConfirm: function onConfirm() {
+          var cse_id = _this10.fields.eligibilities[index].cse_id;
+
+          if (cse_id > 0) {
+            axios["delete"]('/faculty/eligibilities/' + cse_id).then(function (res) {
+              if (res.data.status === 'deleted') {
+                _this10.$buefy.toast.open({
+                  message: "Eligibility deleted successfully.",
+                  type: 'is-primary'
+                });
+              }
+            });
+          }
+
+          _this10.fields.eligibilities.splice(index, 1);
+        }
+      });
+    },
+    addWorkExperience: function addWorkExperience() {
+      this.fields.work_experiences.push({
+        work_ex_id: 0,
+        work_ex_from: null,
+        work_ex_to: null,
+        position_title: '',
+        department_agency: '',
+        salary: '',
+        pay_grade: '',
+        status_appointment: '',
+        is_govt: 0
+      });
+    },
+    removeWorkExperience: function removeWorkExperience(index) {
+      var _this11 = this;
+
+      //alert(index);
+      this.$buefy.dialog.confirm({
+        title: 'DELETE?',
+        message: 'Are you sure you want to delete this information?',
+        onConfirm: function onConfirm() {
+          var work_ex_id = _this11.fields.work_experiences[index].cse_id;
+
+          if (work_ex_id > 0) {
+            axios["delete"]('/faculty/work-experiences/' + work_ex_id).then(function (res) {
+              if (res.data.status === 'deleted') {
+                _this11.$buefy.toast.open({
+                  message: "Work experience deleted successfully.",
+                  type: 'is-primary'
+                });
+              }
+            });
+          }
+
+          _this11.fields.work_experiences.splice(index, 1);
+        }
+      });
+    },
+    addVoluntaryWork: function addVoluntaryWork() {
+      this.fields.voluntary_works.push({
+        voluntary_work_id: 0,
+        name_address_org: '',
+        work_from: '',
+        work_to: '',
+        no_hours: '',
+        nature_work: ''
+      });
+    },
+    removeVoluntaryWork: function removeVoluntaryWork(index) {
+      var _this12 = this;
+
+      //alert(index);
+      this.$buefy.dialog.confirm({
+        title: 'DELETE?',
+        message: 'Are you sure you want to delete this information?',
+        onConfirm: function onConfirm() {
+          var id = _this12.fields.voluntary_works[index].voluntary_work_id;
+
+          if (id > 0) {
+            axios["delete"]('/faculty/voluntary-works/' + id).then(function (res) {
+              if (res.data.status === 'deleted') {
+                _this12.$buefy.toast.open({
+                  message: "Deleted successfully.",
+                  type: 'is-primary'
+                });
+              }
+            });
+          }
+
+          _this12.fields.voluntary_works.splice(index, 1);
+        }
+      });
+    },
+    addLearningDevelopment: function addLearningDevelopment() {
+      this.fields.learning_developments.push({
+        learning_dev_id: 0,
+        title_learning_dev: '',
+        date_from: new Date(),
+        date_to: new Date(),
+        no_hours: 0,
+        type_ld: '',
+        sponsored_by: ''
+      });
+    },
+    removeLearningDevelopment: function removeLearningDevelopment(index) {
+      var _this13 = this;
+
+      //alert(index);
+      this.$buefy.dialog.confirm({
+        title: 'DELETE?',
+        message: 'Are you sure you want to delete this information?',
+        onConfirm: function onConfirm() {
+          var id = _this13.fields.learning_developments[index].learning_dev_id;
+
+          if (id > 0) {
+            axios["delete"]('/faculty/learning-developments/' + id).then(function (res) {
+              if (res.data.status === 'deleted') {
+                _this13.$buefy.toast.open({
+                  message: "Deleted successfully.",
+                  type: 'is-primary'
+                });
+              }
+            });
+          }
+
+          _this13.fields.learning_developments.splice(index, 1);
+        }
+      });
+    },
+    addOtherInformation: function addOtherInformation() {
+      this.fields.other_informations.push({
+        other_info_id: 0,
+        skill_hobbies: '',
+        non_academic_distinction: '',
+        member_association: ''
+      });
+    },
+    removeOtherInformation: function removeOtherInformation(index) {
+      var _this14 = this;
+
+      //alert(index);
+      this.$buefy.dialog.confirm({
+        title: 'DELETE?',
+        message: 'Are you sure you want to delete this information?',
+        onConfirm: function onConfirm() {
+          var id = _this14.fields.other_informations[index].other_info_id;
+
+          if (id > 0) {
+            axios["delete"]('/faculty/other-informations/' + id).then(function (res) {
+              if (res.data.status === 'deleted') {
+                _this14.$buefy.toast.open({
+                  message: "Deleted successfully.",
+                  type: 'is-primary'
+                });
+              }
+            });
+          }
+
+          _this14.fields.other_informations.splice(index, 1);
+        }
+      });
+    }
+  },
+  mounted: function mounted() {
+    //this.initData();
+    this.loadProvince();
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=script&lang=js& ***!
@@ -8882,692 +10252,6 @@ __webpack_require__.r(__webpack_exports__);
     currentLogin: function currentLogin() {
       return !!this.user;
     }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyPds.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyPds.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['propCivils', 'propCitizenships'],
-  data: function data() {
-    return {
-      activeStep: 0,
-      showSocial: false,
-      isAnimated: true,
-      isRounded: true,
-      isStepsClickable: false,
-      hasNavigation: true,
-      customNavigation: false,
-      isProfileSuccess: false,
-      prevIcon: 'chevron-left',
-      nextIcon: 'chevron-right',
-      labelPosition: 'bottom',
-      mobileMode: 'minimalist',
-      fields: {
-        children: []
-      },
-      errors: {},
-      civilStatuses: [],
-      citizenships: [],
-      resProvinces: [],
-      resCities: [],
-      resBarangays: [],
-      perProvinces: [],
-      perCities: [],
-      perBarangays: []
-    };
-  },
-  methods: {
-    //ADDRESS
-    loadProvince: function loadProvince() {
-      var _this = this;
-
-      axios.get('/load-provinces').then(function (res) {
-        _this.resProvinces = res.data;
-        _this.perProvinces = res.data;
-      });
-    },
-    loadResCity: function loadResCity() {
-      var _this2 = this;
-
-      axios.get('/load-cities?prov=' + this.fields.res_province).then(function (res) {
-        _this2.resCities = res.data;
-      });
-    },
-    loadResBarangay: function loadResBarangay() {
-      var _this3 = this;
-
-      axios.get('/load-barangays?prov=' + this.fields.res_province + '&city_code=' + this.fields.res_city).then(function (res) {
-        _this3.resBarangays = res.data;
-      });
-    },
-    loadPerCity: function loadPerCity() {
-      var _this4 = this;
-
-      axios.get('/load-cities?prov=' + this.fields.per_province).then(function (res) {
-        _this4.perCities = res.data;
-      });
-    },
-    loadPerBarangay: function loadPerBarangay() {
-      var _this5 = this;
-
-      axios.get('/load-barangays?prov=' + this.fields.per_province + '&city_code=' + this.fields.per_city).then(function (res) {
-        _this5.perBarangays = res.data;
-      });
-    },
-    initData: function initData() {
-      this.civilStatuses = JSON.parse(this.propCivils);
-      this.citizenships = JSON.parse(this.propCitizenships);
-    },
-    submit: function submit() {
-      var _this6 = this;
-
-      axios.post('/sign-up', this.fields).then(function (res) {
-        if (res.data.status === 'saved') {
-          _this6.$buefy.dialog.alert({
-            title: "SAVED!",
-            message: 'Register successfully',
-            type: 'is-success',
-            onConfirm: function onConfirm() {
-              return window.location = '/';
-            }
-          });
-        }
-      })["catch"](function (err) {
-        if (err.response.status === 422) {
-          _this6.errors = err.response.data.errors;
-        } else {
-          alert('An error occured.');
-        }
-      });
-    },
-    addChild: function addChild() {
-      this.fields.children.push({
-        user_id: 0,
-        fullname: '',
-        date_birth: null
-      });
-    },
-    removeChild: function removeChild(index) {
-      var _this7 = this;
-
-      //alert(index);
-      this.$buefy.dialog.confirm({
-        title: 'DELETE?',
-        message: 'Are you sure you want to delete this information?',
-        onConfirm: function onConfirm() {
-          var childId = _this7.fields.children[index].user_id;
-
-          if (childId > 0) {
-            axios["delete"]('/faculty/delete-child/' + childId).then(function (res) {
-              if (res.data.status === 'deleted') {
-                _this7.$buefy.toast.open({
-                  message: "Resident deleted successfully.",
-                  type: 'is-primary'
-                });
-              }
-            });
-          } //console.log(siblingId);
-
-
-          _this7.fields.children.splice(index, 1);
-        }
-      });
-    }
-  },
-  mounted: function mounted() {
-    this.initData();
-    this.loadProvince();
   }
 });
 
@@ -29145,6 +29829,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\n.table > tbody > tr {\n    /* backgr
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=style&index=0&id=d740dcf6&scoped=true&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=style&index=0&id=d740dcf6&scoped=true&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.box-heading[data-v-d740dcf6]{\n        font-weight: bold;\n        font-size: 1.4em;\n        margin: 15px auto;\n        text-align: center;\n}\n.box[data-v-d740dcf6]{\n        border-top: 5px solid blue;\n}\n.separator[data-v-d740dcf6]{\n        background-color: blue;\n        padding: 5px 5px 5px 15px;\n        font-weight: bold;\n        color: white;\n        margin-bottom: 25px;\n}\n.w-separator[data-v-d740dcf6]{\n        margin: 15px 0;\n        border-bottom: 1px solid gray;\n        padding: 15px 0;\n}\n\n\n/*    dere lang kubia ang panel color*/\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=style&index=0&lang=css&":
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=style&index=0&lang=css& ***!
@@ -29163,30 +29871,6 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "\n.navbar-item{\n    font-weight: bold;\n}\n", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyPds.vue?vue&type=style&index=0&id=5ce1315e&scoped=true&lang=css&":
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyPds.vue?vue&type=style&index=0&id=5ce1315e&scoped=true&lang=css& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.box-heading[data-v-5ce1315e]{\n        font-weight: bold;\n        font-size: 1.4em;\n        margin: 15px auto;\n        text-align: center;\n}\n.box[data-v-5ce1315e]{\n        border-top: 5px solid blue;\n}\n.separator[data-v-5ce1315e]{\n        background-color: blue;\n        padding: 5px 5px 5px 15px;\n        font-weight: bold;\n        color: white;\n        margin-bottom: 25px;\n}\n\n\n/*    dere lang kubia ang panel color*/\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29758,6 +30442,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=style&index=0&id=d740dcf6&scoped=true&lang=css&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=style&index=0&id=d740dcf6&scoped=true&lang=css& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyMyPds_vue_vue_type_style_index_0_id_d740dcf6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FacultyMyPds.vue?vue&type=style&index=0&id=d740dcf6&scoped=true&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=style&index=0&id=d740dcf6&scoped=true&lang=css&");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyMyPds_vue_vue_type_style_index_0_id_d740dcf6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyMyPds_vue_vue_type_style_index_0_id_d740dcf6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=style&index=0&lang=css&":
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=style&index=0&lang=css& ***!
@@ -29785,36 +30499,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyNavbar_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyPds.vue?vue&type=style&index=0&id=5ce1315e&scoped=true&lang=css&":
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyPds.vue?vue&type=style&index=0&id=5ce1315e&scoped=true&lang=css& ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyPds_vue_vue_type_style_index_0_id_5ce1315e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FacultyPds.vue?vue&type=style&index=0&id=5ce1315e&scoped=true&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyPds.vue?vue&type=style&index=0&id=5ce1315e&scoped=true&lang=css&");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyPds_vue_vue_type_style_index_0_id_5ce1315e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyPds_vue_vue_type_style_index_0_id_5ce1315e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -30573,6 +31257,47 @@ component.options.__file = "resources/js/components/Faculty/FacultyHome.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/Faculty/FacultyMyPds.vue":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/Faculty/FacultyMyPds.vue ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _FacultyMyPds_vue_vue_type_template_id_d740dcf6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FacultyMyPds.vue?vue&type=template&id=d740dcf6&scoped=true& */ "./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=template&id=d740dcf6&scoped=true&");
+/* harmony import */ var _FacultyMyPds_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FacultyMyPds.vue?vue&type=script&lang=js& */ "./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=script&lang=js&");
+/* harmony import */ var _FacultyMyPds_vue_vue_type_style_index_0_id_d740dcf6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FacultyMyPds.vue?vue&type=style&index=0&id=d740dcf6&scoped=true&lang=css& */ "./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=style&index=0&id=d740dcf6&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+;
+
+
+/* normalize component */
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _FacultyMyPds_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FacultyMyPds_vue_vue_type_template_id_d740dcf6_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
+  _FacultyMyPds_vue_vue_type_template_id_d740dcf6_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  "d740dcf6",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Faculty/FacultyMyPds.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/Faculty/FacultyNavbar.vue":
 /*!***********************************************************!*\
   !*** ./resources/js/components/Faculty/FacultyNavbar.vue ***!
@@ -30610,47 +31335,6 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 /* hot reload */
 if (false) { var api; }
 component.options.__file = "resources/js/components/Faculty/FacultyNavbar.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/Faculty/FacultyPds.vue":
-/*!********************************************************!*\
-  !*** ./resources/js/components/Faculty/FacultyPds.vue ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _FacultyPds_vue_vue_type_template_id_5ce1315e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FacultyPds.vue?vue&type=template&id=5ce1315e&scoped=true& */ "./resources/js/components/Faculty/FacultyPds.vue?vue&type=template&id=5ce1315e&scoped=true&");
-/* harmony import */ var _FacultyPds_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FacultyPds.vue?vue&type=script&lang=js& */ "./resources/js/components/Faculty/FacultyPds.vue?vue&type=script&lang=js&");
-/* harmony import */ var _FacultyPds_vue_vue_type_style_index_0_id_5ce1315e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FacultyPds.vue?vue&type=style&index=0&id=5ce1315e&scoped=true&lang=css& */ "./resources/js/components/Faculty/FacultyPds.vue?vue&type=style&index=0&id=5ce1315e&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-;
-
-
-/* normalize component */
-
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _FacultyPds_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _FacultyPds_vue_vue_type_template_id_5ce1315e_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
-  _FacultyPds_vue_vue_type_template_id_5ce1315e_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
-  false,
-  null,
-  "5ce1315e",
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/Faculty/FacultyPds.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -31086,6 +31770,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyMyPds_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FacultyMyPds.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyMyPds_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=script&lang=js&":
 /*!************************************************************************************!*\
   !*** ./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=script&lang=js& ***!
@@ -31099,22 +31799,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyNavbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FacultyNavbar.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyNavbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/Faculty/FacultyPds.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************!*\
-  !*** ./resources/js/components/Faculty/FacultyPds.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyPds_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FacultyPds.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyPds.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyPds_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -31301,6 +31985,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=style&index=0&id=d740dcf6&scoped=true&lang=css&":
+/*!*******************************************************************************************************************!*\
+  !*** ./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=style&index=0&id=d740dcf6&scoped=true&lang=css& ***!
+  \*******************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyMyPds_vue_vue_type_style_index_0_id_d740dcf6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FacultyMyPds.vue?vue&type=style&index=0&id=d740dcf6&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=style&index=0&id=d740dcf6&scoped=true&lang=css&");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=style&index=0&lang=css&":
 /*!********************************************************************************************!*\
   !*** ./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=style&index=0&lang=css& ***!
@@ -31310,19 +32007,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyNavbar_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FacultyNavbar.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=style&index=0&lang=css&");
-
-
-/***/ }),
-
-/***/ "./resources/js/components/Faculty/FacultyPds.vue?vue&type=style&index=0&id=5ce1315e&scoped=true&lang=css&":
-/*!*****************************************************************************************************************!*\
-  !*** ./resources/js/components/Faculty/FacultyPds.vue?vue&type=style&index=0&id=5ce1315e&scoped=true&lang=css& ***!
-  \*****************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyPds_vue_vue_type_style_index_0_id_5ce1315e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FacultyPds.vue?vue&type=style&index=0&id=5ce1315e&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyPds.vue?vue&type=style&index=0&id=5ce1315e&scoped=true&lang=css&");
 
 
 /***/ }),
@@ -31533,6 +32217,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=template&id=d740dcf6&scoped=true&":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=template&id=d740dcf6&scoped=true& ***!
+  \*****************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyMyPds_vue_vue_type_template_id_d740dcf6_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyMyPds_vue_vue_type_template_id_d740dcf6_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyMyPds_vue_vue_type_template_id_d740dcf6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FacultyMyPds.vue?vue&type=template&id=d740dcf6&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=template&id=d740dcf6&scoped=true&");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=template&id=280fada4&":
 /*!******************************************************************************************!*\
   !*** ./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=template&id=280fada4& ***!
@@ -31546,23 +32247,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyNavbar_vue_vue_type_template_id_280fada4___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyNavbar_vue_vue_type_template_id_280fada4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FacultyNavbar.vue?vue&type=template&id=280fada4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=template&id=280fada4&");
-
-
-/***/ }),
-
-/***/ "./resources/js/components/Faculty/FacultyPds.vue?vue&type=template&id=5ce1315e&scoped=true&":
-/*!***************************************************************************************************!*\
-  !*** ./resources/js/components/Faculty/FacultyPds.vue?vue&type=template&id=5ce1315e&scoped=true& ***!
-  \***************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyPds_vue_vue_type_template_id_5ce1315e_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyPds_vue_vue_type_template_id_5ce1315e_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacultyPds_vue_vue_type_template_id_5ce1315e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FacultyPds.vue?vue&type=template&id=5ce1315e&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyPds.vue?vue&type=template&id=5ce1315e&scoped=true&");
 
 
 /***/ }),
@@ -33868,87 +34552,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=template&id=280fada4&":
-/*!*********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=template&id=280fada4& ***!
-  \*********************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function () {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("b-navbar", {
-    scopedSlots: _vm._u([
-      {
-        key: "brand",
-        fn: function () {
-          return [
-            _c("b-navbar-item", [
-              _c("h1", { staticClass: "title is-4" }, [
-                _vm._v("FACULTY PANEL"),
-              ]),
-            ]),
-          ]
-        },
-        proxy: true,
-      },
-      {
-        key: "start",
-        fn: function () {
-          return undefined
-        },
-        proxy: true,
-      },
-      {
-        key: "end",
-        fn: function () {
-          return [
-            _c("b-navbar-item", { attrs: { href: "/faculty/home" } }, [
-              _vm._v("\n            Home\n        "),
-            ]),
-            _vm._v(" "),
-            _c("b-navbar-item", { attrs: { href: "/faculty/my-pds" } }, [
-              _vm._v("\n            MY PDS\n        "),
-            ]),
-            _vm._v(" "),
-            _c("b-navbar-item", { attrs: { tag: "div" } }, [
-              _c(
-                "div",
-                { staticClass: "buttons" },
-                [
-                  _c("b-button", {
-                    attrs: { label: "LOGOUT", "icon-left": "logout" },
-                    on: { click: _vm.logout },
-                  }),
-                ],
-                1
-              ),
-            ]),
-          ]
-        },
-        proxy: true,
-      },
-    ]),
-  })
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyPds.vue?vue&type=template&id=5ce1315e&scoped=true&":
-/*!******************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyPds.vue?vue&type=template&id=5ce1315e&scoped=true& ***!
-  \******************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=template&id=d740dcf6&scoped=true&":
+/*!********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyMyPds.vue?vue&type=template&id=d740dcf6&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -33963,7 +34570,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("section", { staticClass: "section" }, [
     _c("div", { staticClass: "columns is-centered" }, [
-      _c("div", { staticClass: "column is-8" }, [
+      _c("div", { staticClass: "column is-8-desktop is-10-tablet" }, [
         _c(
           "form",
           {
@@ -33981,7 +34588,7 @@ var render = function () {
               [
                 _c("div", { staticClass: "box-heading" }, [
                   _vm._v(
-                    "\n                            PERSONAL DATA SHEET\n                        "
+                    "\n                        PERSONAL DATA SHEET\n                    "
                   ),
                 ]),
                 _vm._v(" "),
@@ -34028,7 +34635,7 @@ var render = function () {
                                     },
                                     [
                                       _vm._v(
-                                        "\n                                    Previous\n                                "
+                                        "\n                                Previous\n                            "
                                       ),
                                     ]
                                   ),
@@ -34055,7 +34662,7 @@ var render = function () {
                                     },
                                     [
                                       _vm._v(
-                                        "\n                                    Next\n                                "
+                                        "\n                                Next\n                            "
                                       ),
                                     ]
                                   ),
@@ -34088,7 +34695,7 @@ var render = function () {
                       [
                         _c("div", { staticClass: "separator" }, [
                           _vm._v(
-                            "\n                                    PERSONAL INFORMATION\n                                "
+                            "\n                                PERSONAL INFORMATION\n                            "
                           ),
                         ]),
                         _vm._v(" "),
@@ -34268,6 +34875,7 @@ var render = function () {
                                 [
                                   _c("b-datepicker", {
                                     attrs: {
+                                      editable: "",
                                       icon: "calendar",
                                       placeholder: "Birthdate",
                                     },
@@ -34435,7 +35043,7 @@ var render = function () {
                                           },
                                           [
                                             _vm._v(
-                                              "\n                                                    " +
+                                              "\n                                                " +
                                                 _vm._s(item.civil_status)
                                             ),
                                           ]
@@ -34777,11 +35385,11 @@ var render = function () {
                                       placeholder: "Agency No.",
                                     },
                                     model: {
-                                      value: _vm.fields.agency_no,
+                                      value: _vm.fields.agency_idno,
                                       callback: function ($$v) {
-                                        _vm.$set(_vm.fields, "agency_no", $$v)
+                                        _vm.$set(_vm.fields, "agency_idno", $$v)
                                       },
-                                      expression: "fields.agency_no",
+                                      expression: "fields.agency_idno",
                                     },
                                   }),
                                 ],
@@ -34846,7 +35454,7 @@ var render = function () {
                                           },
                                           [
                                             _vm._v(
-                                              "\n                                                    " +
+                                              "\n                                                " +
                                                 _vm._s(item.citizenship)
                                             ),
                                           ]
@@ -35315,7 +35923,7 @@ var render = function () {
                                       },
                                     },
                                     _vm._l(
-                                      _vm.barangays,
+                                      _vm.perBarangays,
                                       function (item, index) {
                                         return _c(
                                           "option",
@@ -35542,189 +36150,193 @@ var render = function () {
                         _vm._v(" "),
                         _c("div", { staticClass: "separator" }, [
                           _vm._v(
-                            "\n                                    FAMILY BACKGROUND\n                                "
+                            "\n                                FAMILY BACKGROUND\n                            "
                           ),
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "columns" }, [
-                          _c(
-                            "div",
-                            { staticClass: "column" },
-                            [
+                        _vm.fields.civil_status === "MARRIED"
+                          ? _c("div", { staticClass: "columns" }, [
                               _c(
-                                "b-field",
-                                {
-                                  attrs: {
-                                    label: "Spouse Surname",
-                                    "label-position": "on-border",
-                                    type: this.errors.spouse_surname
-                                      ? "is-danger"
-                                      : "",
-                                    message: this.errors.spouse_surname
-                                      ? this.errors.spouse_surname[0]
-                                      : "",
-                                  },
-                                },
+                                "div",
+                                { staticClass: "column" },
                                 [
-                                  _c("b-input", {
-                                    attrs: {
-                                      type: "text",
-                                      placeholder: "Spouse Surname",
-                                      icon: "account",
-                                    },
-                                    model: {
-                                      value: _vm.fields.spouse_surname,
-                                      callback: function ($$v) {
-                                        _vm.$set(
-                                          _vm.fields,
-                                          "spouse_surname",
-                                          $$v
-                                        )
+                                  _c(
+                                    "b-field",
+                                    {
+                                      attrs: {
+                                        label: "Spouse Surname",
+                                        "label-position": "on-border",
+                                        type: this.errors.spouse_surname
+                                          ? "is-danger"
+                                          : "",
+                                        message: this.errors.spouse_surname
+                                          ? this.errors.spouse_surname[0]
+                                          : "",
                                       },
-                                      expression: "fields.spouse_surname",
                                     },
-                                  }),
+                                    [
+                                      _c("b-input", {
+                                        attrs: {
+                                          type: "text",
+                                          placeholder: "Spouse Surname",
+                                          icon: "account",
+                                        },
+                                        model: {
+                                          value: _vm.fields.spouse_surname,
+                                          callback: function ($$v) {
+                                            _vm.$set(
+                                              _vm.fields,
+                                              "spouse_surname",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "fields.spouse_surname",
+                                        },
+                                      }),
+                                    ],
+                                    1
+                                  ),
                                 ],
                                 1
                               ),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "column" },
-                            [
+                              _vm._v(" "),
                               _c(
-                                "b-field",
-                                {
-                                  attrs: {
-                                    label: "Spouse First Name",
-                                    "label-position": "on-border",
-                                    type: this.errors.spouse_fname
-                                      ? "is-danger"
-                                      : "",
-                                    message: this.errors.spouse_fname
-                                      ? this.errors.spouse_fname[0]
-                                      : "",
-                                  },
-                                },
+                                "div",
+                                { staticClass: "column" },
                                 [
-                                  _c("b-input", {
-                                    attrs: {
-                                      type: "text",
-                                      placeholder: "Spouse First Name",
-                                      icon: "account",
-                                    },
-                                    model: {
-                                      value: _vm.fields.spouse_fname,
-                                      callback: function ($$v) {
-                                        _vm.$set(
-                                          _vm.fields,
-                                          "spouse_fname",
-                                          $$v
-                                        )
+                                  _c(
+                                    "b-field",
+                                    {
+                                      attrs: {
+                                        label: "Spouse First Name",
+                                        "label-position": "on-border",
+                                        type: this.errors.spouse_fname
+                                          ? "is-danger"
+                                          : "",
+                                        message: this.errors.spouse_fname
+                                          ? this.errors.spouse_fname[0]
+                                          : "",
                                       },
-                                      expression: "fields.spouse_fname",
                                     },
-                                  }),
+                                    [
+                                      _c("b-input", {
+                                        attrs: {
+                                          type: "text",
+                                          placeholder: "Spouse First Name",
+                                          icon: "account",
+                                        },
+                                        model: {
+                                          value: _vm.fields.spouse_fname,
+                                          callback: function ($$v) {
+                                            _vm.$set(
+                                              _vm.fields,
+                                              "spouse_fname",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "fields.spouse_fname",
+                                        },
+                                      }),
+                                    ],
+                                    1
+                                  ),
                                 ],
                                 1
                               ),
-                            ],
-                            1
-                          ),
-                        ]),
+                            ])
+                          : _vm._e(),
                         _vm._v(" "),
-                        _c("div", { staticClass: "columns" }, [
-                          _c(
-                            "div",
-                            { staticClass: "column is-8" },
-                            [
+                        _vm.fields.civil_status === "MARRIED"
+                          ? _c("div", { staticClass: "columns" }, [
                               _c(
-                                "b-field",
-                                {
-                                  attrs: {
-                                    label: "Spouse Middle Name",
-                                    "label-position": "on-border",
-                                    type: this.errors.spouse_mname
-                                      ? "is-danger"
-                                      : "",
-                                    message: this.errors.spouse_mname
-                                      ? this.errors.spouse_mname[0]
-                                      : "",
-                                  },
-                                },
+                                "div",
+                                { staticClass: "column is-8" },
                                 [
-                                  _c("b-input", {
-                                    attrs: {
-                                      type: "text",
-                                      placeholder: "Spouse Middle Name",
-                                      icon: "account",
-                                    },
-                                    model: {
-                                      value: _vm.fields.spouse_mname,
-                                      callback: function ($$v) {
-                                        _vm.$set(
-                                          _vm.fields,
-                                          "spouse_mname",
-                                          $$v
-                                        )
+                                  _c(
+                                    "b-field",
+                                    {
+                                      attrs: {
+                                        label: "Spouse Middle Name",
+                                        "label-position": "on-border",
+                                        type: this.errors.spouse_mname
+                                          ? "is-danger"
+                                          : "",
+                                        message: this.errors.spouse_mname
+                                          ? this.errors.spouse_mname[0]
+                                          : "",
                                       },
-                                      expression: "fields.spouse_mname",
                                     },
-                                  }),
+                                    [
+                                      _c("b-input", {
+                                        attrs: {
+                                          type: "text",
+                                          placeholder: "Spouse Middle Name",
+                                          icon: "account",
+                                        },
+                                        model: {
+                                          value: _vm.fields.spouse_mname,
+                                          callback: function ($$v) {
+                                            _vm.$set(
+                                              _vm.fields,
+                                              "spouse_mname",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "fields.spouse_mname",
+                                        },
+                                      }),
+                                    ],
+                                    1
+                                  ),
                                 ],
                                 1
                               ),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "column" },
-                            [
+                              _vm._v(" "),
                               _c(
-                                "b-field",
-                                {
-                                  attrs: {
-                                    label: "Spouse Suffix",
-                                    "label-position": "on-border",
-                                    type: this.errors.spouse_suffix
-                                      ? "is-danger"
-                                      : "",
-                                    message: this.errors.spouse_suffix
-                                      ? this.errors.spouse_suffix[0]
-                                      : "",
-                                  },
-                                },
+                                "div",
+                                { staticClass: "column" },
                                 [
-                                  _c("b-input", {
-                                    attrs: {
-                                      type: "text",
-                                      placeholder: "Spouse Suffix",
-                                      icon: "account",
-                                    },
-                                    model: {
-                                      value: _vm.fields.spouse_suffix,
-                                      callback: function ($$v) {
-                                        _vm.$set(
-                                          _vm.fields,
-                                          "spouse_suffix",
-                                          $$v
-                                        )
+                                  _c(
+                                    "b-field",
+                                    {
+                                      attrs: {
+                                        label: "Spouse Suffix",
+                                        "label-position": "on-border",
+                                        type: this.errors.spouse_suffix
+                                          ? "is-danger"
+                                          : "",
+                                        message: this.errors.spouse_suffix
+                                          ? this.errors.spouse_suffix[0]
+                                          : "",
                                       },
-                                      expression: "fields.spouse_suffix",
                                     },
-                                  }),
+                                    [
+                                      _c("b-input", {
+                                        attrs: {
+                                          type: "text",
+                                          placeholder: "Spouse Suffix",
+                                          icon: "account",
+                                        },
+                                        model: {
+                                          value: _vm.fields.spouse_suffix,
+                                          callback: function ($$v) {
+                                            _vm.$set(
+                                              _vm.fields,
+                                              "spouse_suffix",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "fields.spouse_suffix",
+                                        },
+                                      }),
+                                    ],
+                                    1
+                                  ),
                                 ],
                                 1
                               ),
-                            ],
-                            1
-                          ),
-                        ]),
+                            ])
+                          : _vm._e(),
                         _vm._v(" "),
                         _c("div", { staticClass: "columns" }, [
                           _c(
@@ -36223,7 +36835,7 @@ var render = function () {
                         _c("h2", [_c("span", [_vm._v("CHILDREN")])]),
                         _vm._v(" "),
                         _vm._l(this.fields.children, function (item, k) {
-                          return _c("div", { key: k }, [
+                          return _c("div", { key: "child" + k }, [
                             _c("div", { staticClass: "columns" }, [
                               _c(
                                 "div",
@@ -36329,17 +36941,477 @@ var render = function () {
                         }),
                         _vm._v(" "),
                         _c(
-                          "b-button",
-                          {
-                            staticClass: "is-small",
-                            attrs: {
-                              type: "is-success mb-4 mt-4",
-                              "icon-left": "plus",
-                            },
-                            on: { click: _vm.addChild },
-                          },
-                          [_vm._v("ADD")]
+                          "div",
+                          { staticClass: "buttons" },
+                          [
+                            _c(
+                              "b-button",
+                              {
+                                staticClass: "is-small",
+                                attrs: {
+                                  type: "is-success mb-4 mt-4",
+                                  "icon-left": "plus",
+                                },
+                                on: { click: _vm.addChild },
+                              },
+                              [_vm._v("ADD")]
+                            ),
+                          ],
+                          1
                         ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "separator" }, [
+                          _vm._v(
+                            "\n                                EDUCATIONAL BACKGROUND\n                            "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "columns" }, [
+                          _c(
+                            "div",
+                            { staticClass: "column" },
+                            [
+                              _vm._l(
+                                _vm.fields.educational_backgrounds,
+                                function (item, k) {
+                                  return _c(
+                                    "div",
+                                    {
+                                      key: "ed" + k,
+                                      staticClass: "w-separator",
+                                    },
+                                    [
+                                      _c("div", { staticClass: "columns" }, [
+                                        _c(
+                                          "div",
+                                          { staticClass: "column" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label: "Level",
+                                                  expanded: "",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c(
+                                                  "b-select",
+                                                  {
+                                                    attrs: {
+                                                      placeholder: "Level",
+                                                      required: "",
+                                                      expanded: "",
+                                                    },
+                                                    model: {
+                                                      value: item.level,
+                                                      callback: function ($$v) {
+                                                        _vm.$set(
+                                                          item,
+                                                          "level",
+                                                          $$v
+                                                        )
+                                                      },
+                                                      expression: "item.level",
+                                                    },
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "option",
+                                                      {
+                                                        attrs: {
+                                                          value: "ELEMENTARY",
+                                                        },
+                                                      },
+                                                      [_vm._v("ELEMENTARY")]
+                                                    ),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "option",
+                                                      {
+                                                        attrs: {
+                                                          value: "SECONDARY",
+                                                        },
+                                                      },
+                                                      [_vm._v("SECONDARY")]
+                                                    ),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "option",
+                                                      {
+                                                        attrs: {
+                                                          value:
+                                                            "VOCATIONAL/TRADE COURSE",
+                                                        },
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          "VOCATIONAL/TRADE COURSE"
+                                                        ),
+                                                      ]
+                                                    ),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "option",
+                                                      {
+                                                        attrs: {
+                                                          value: "COLLEGE",
+                                                        },
+                                                      },
+                                                      [_vm._v("COLLEGE")]
+                                                    ),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "option",
+                                                      {
+                                                        attrs: {
+                                                          value:
+                                                            "GRADUATE STUDIES",
+                                                        },
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          "GRADUATE STUDIES"
+                                                        ),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "column" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label: "Name of School",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c("b-input", {
+                                                  attrs: {
+                                                    type: "text",
+                                                    placeholder:
+                                                      "Name of School",
+                                                    required: "",
+                                                  },
+                                                  model: {
+                                                    value: item.name_of_school,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "name_of_school",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression:
+                                                      "item.name_of_school",
+                                                  },
+                                                }),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "columns" }, [
+                                        _c(
+                                          "div",
+                                          { staticClass: "column is-8" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label: "Degree",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c("b-input", {
+                                                  attrs: {
+                                                    type: "text",
+                                                    placeholder: "Degree",
+                                                    required: "",
+                                                  },
+                                                  model: {
+                                                    value: item.degree,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "degree",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression: "item.degree",
+                                                  },
+                                                }),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "column is-4" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label:
+                                                    "Period of Attendance From/To",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c("b-input", {
+                                                  attrs: {
+                                                    type: "text",
+                                                    placeholder: "From",
+                                                  },
+                                                  model: {
+                                                    value: item.period_att_from,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "period_att_from",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression:
+                                                      "item.period_att_from",
+                                                  },
+                                                }),
+                                                _vm._v(" "),
+                                                _c("b-input", {
+                                                  attrs: {
+                                                    type: "text",
+                                                    placeholder: "To",
+                                                  },
+                                                  model: {
+                                                    value: item.period_att_to,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "period_att_to",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression:
+                                                      "item.period_att_to",
+                                                  },
+                                                }),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "columns" }, [
+                                        _c(
+                                          "div",
+                                          { staticClass: "column" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label: "Heighest Unit Earned",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c("b-input", {
+                                                  attrs: {
+                                                    type: "text",
+                                                    placeholder: "Unit Earned",
+                                                  },
+                                                  model: {
+                                                    value:
+                                                      item.highest_level_unit,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "highest_level_unit",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression:
+                                                      "item.highest_level_unit",
+                                                  },
+                                                }),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "column" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label: "Year Graudated",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c("b-input", {
+                                                  attrs: {
+                                                    type: "text",
+                                                    placeholder:
+                                                      "Year Graduated",
+                                                  },
+                                                  model: {
+                                                    value: item.year_graduated,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "year_graduated",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression:
+                                                      "item.year_graduated",
+                                                  },
+                                                }),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "columns" }, [
+                                        _c(
+                                          "div",
+                                          { staticClass: "column" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label: "Scholarship",
+                                                  expanded: "",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c("b-input", {
+                                                  attrs: {
+                                                    type: "text",
+                                                    expanded: "",
+                                                    placeholder: "Scholarship",
+                                                  },
+                                                  model: {
+                                                    value: item.scholarship,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "scholarship",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression:
+                                                      "item.scholarship",
+                                                  },
+                                                }),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "p",
+                                                  { staticClass: "control" },
+                                                  [
+                                                    _c("b-button", {
+                                                      directives: [
+                                                        {
+                                                          name: "show",
+                                                          rawName: "v-show",
+                                                          value:
+                                                            k ||
+                                                            (!k &&
+                                                              _vm.fields
+                                                                .educational_backgrounds
+                                                                .length > 0),
+                                                          expression:
+                                                            "k || ( !k && fields.educational_backgrounds.length > 0)",
+                                                        },
+                                                      ],
+                                                      attrs: {
+                                                        type: "is-danger",
+                                                        "icon-left": "delete",
+                                                      },
+                                                      on: {
+                                                        click: function (
+                                                          $event
+                                                        ) {
+                                                          return _vm.removeEducationalBackground(
+                                                            k
+                                                          )
+                                                        },
+                                                      },
+                                                    }),
+                                                  ],
+                                                  1
+                                                ),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                      ]),
+                                    ]
+                                  )
+                                }
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "buttons" },
+                                [
+                                  _c(
+                                    "b-button",
+                                    {
+                                      staticClass: "is-small",
+                                      attrs: {
+                                        type: "is-success mb-4 mt-4",
+                                        "icon-left": "plus",
+                                      },
+                                      on: {
+                                        click: _vm.addEducationalBackground,
+                                      },
+                                    },
+                                    [_vm._v("ADD")]
+                                  ),
+                                ],
+                                1
+                              ),
+                            ],
+                            2
+                          ),
+                        ]),
                       ],
                       2
                     ),
@@ -36349,18 +37421,741 @@ var render = function () {
                       {
                         attrs: {
                           step: "2",
-                          label: "Profile",
+                          label: "CSE",
                           clickable: _vm.isStepsClickable,
                           type: { "is-success": _vm.isProfileSuccess },
                         },
                       },
                       [
-                        _c("h1", { staticClass: "title has-text-centered" }, [
-                          _vm._v("Profile"),
+                        _c("div", { staticClass: "separator" }, [
+                          _vm._v("Civil Sevice Eligibility"),
                         ]),
-                        _vm._v(
-                          "\n                                Lorem ipsum dolor sit amet.\n                            "
-                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "columns" }, [
+                          _c(
+                            "div",
+                            { staticClass: "column" },
+                            [
+                              _vm._l(
+                                this.fields.eligibilities,
+                                function (item, k) {
+                                  return _c(
+                                    "div",
+                                    {
+                                      key: "eligible" + k,
+                                      staticClass: "w-separator",
+                                    },
+                                    [
+                                      _c("div", { staticClass: "columns" }, [
+                                        _c(
+                                          "div",
+                                          { staticClass: "column" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label: "Fullname",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c("b-input", {
+                                                  attrs: {
+                                                    type: "text",
+                                                    placeholder: "Career Exam",
+                                                    required: "",
+                                                  },
+                                                  model: {
+                                                    value: item.career_exam,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "career_exam",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression:
+                                                      "item.career_exam",
+                                                  },
+                                                }),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "column is-4" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label: "Rating",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c("b-numberinput", {
+                                                  attrs: {
+                                                    "controls-alignment":
+                                                      "right",
+                                                    type: "text",
+                                                    step: "0.01",
+                                                  },
+                                                  model: {
+                                                    value: item.rating,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "rating",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression: "item.rating",
+                                                  },
+                                                }),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "columns" }, [
+                                        _c(
+                                          "div",
+                                          { staticClass: "column" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label:
+                                                    "Date of Exam (mm/dd/yyyy)",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c("b-datepicker", {
+                                                  attrs: {
+                                                    editable: "",
+                                                    placeholder: "Date of Exam",
+                                                    required: "",
+                                                  },
+                                                  model: {
+                                                    value: item.date_exam,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "date_exam",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression:
+                                                      "item.date_exam",
+                                                  },
+                                                }),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "columns" }, [
+                                        _c(
+                                          "div",
+                                          { staticClass: "column" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label: "Place of Examination",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c("b-input", {
+                                                  attrs: {
+                                                    type: "text",
+                                                    placeholder:
+                                                      "Place of Examination",
+                                                  },
+                                                  model: {
+                                                    value: item.place_exam,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "place_exam",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression:
+                                                      "item.place_exam",
+                                                  },
+                                                }),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "columns" }, [
+                                        _c(
+                                          "div",
+                                          { staticClass: "column" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label: "License No.",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c("b-input", {
+                                                  attrs: {
+                                                    type: "text",
+                                                    placeholder: "License No.",
+                                                  },
+                                                  model: {
+                                                    value: item.license_no,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "license_no",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression:
+                                                      "item.license_no",
+                                                  },
+                                                }),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "column" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label: "License Validity",
+                                                  expanded: "",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c("b-input", {
+                                                  attrs: {
+                                                    type: "text",
+                                                    expanded: "",
+                                                    placeholder:
+                                                      "License Validity",
+                                                  },
+                                                  model: {
+                                                    value:
+                                                      item.license_validity,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "license_validity",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression:
+                                                      "item.license_validity",
+                                                  },
+                                                }),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "p",
+                                                  { staticClass: "control" },
+                                                  [
+                                                    _c("b-button", {
+                                                      directives: [
+                                                        {
+                                                          name: "show",
+                                                          rawName: "v-show",
+                                                          value:
+                                                            k ||
+                                                            (!k &&
+                                                              _vm.fields
+                                                                .eligibilities
+                                                                .length > 0),
+                                                          expression:
+                                                            "k || ( !k && fields.eligibilities.length > 0)",
+                                                        },
+                                                      ],
+                                                      attrs: {
+                                                        type: "is-danger",
+                                                        "icon-left": "delete",
+                                                      },
+                                                      on: {
+                                                        click: function (
+                                                          $event
+                                                        ) {
+                                                          return _vm.removeEligibility(
+                                                            k
+                                                          )
+                                                        },
+                                                      },
+                                                    }),
+                                                  ],
+                                                  1
+                                                ),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                      ]),
+                                    ]
+                                  )
+                                }
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "buttons" },
+                                [
+                                  _c(
+                                    "b-button",
+                                    {
+                                      staticClass: "is-small",
+                                      attrs: {
+                                        type: "is-success mb-4 mt-4",
+                                        "icon-left": "plus",
+                                      },
+                                      on: { click: _vm.addEligibility },
+                                    },
+                                    [_vm._v("ADD")]
+                                  ),
+                                ],
+                                1
+                              ),
+                            ],
+                            2
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "separator" }, [
+                          _vm._v("Work Experience"),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "columns" }, [
+                          _c(
+                            "div",
+                            { staticClass: "column" },
+                            [
+                              _vm._l(
+                                _vm.fields.work_experiences,
+                                function (item, k) {
+                                  return _c(
+                                    "div",
+                                    {
+                                      key: "work" + k,
+                                      staticClass: "w-separator",
+                                    },
+                                    [
+                                      _c("div", { staticClass: "columns" }, [
+                                        _c(
+                                          "div",
+                                          { staticClass: "column" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label: "Experience From/To",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c("b-datepicker", {
+                                                  attrs: {
+                                                    editable: "",
+                                                    placeholder: "From",
+                                                    required: "",
+                                                  },
+                                                  model: {
+                                                    value: item.work_ex_from,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "work_ex_from",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression:
+                                                      "item.work_ex_from",
+                                                  },
+                                                }),
+                                                _vm._v(" "),
+                                                _c("b-datepicker", {
+                                                  attrs: {
+                                                    editable: "",
+                                                    placeholder: "To",
+                                                    required: "",
+                                                  },
+                                                  model: {
+                                                    value: item.work_ex_to,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "work_ex_to",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression:
+                                                      "item.work_ex_to",
+                                                  },
+                                                }),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "column" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label: "Position/Title",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c("b-input", {
+                                                  attrs: {
+                                                    type: "text",
+                                                    placeholder:
+                                                      "Position/Title",
+                                                  },
+                                                  model: {
+                                                    value: item.position_title,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "position_title",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression:
+                                                      "item.position_title",
+                                                  },
+                                                }),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "columns" }, [
+                                        _c(
+                                          "div",
+                                          { staticClass: "column" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label: "Department Agency",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c("b-input", {
+                                                  attrs: {
+                                                    type: "text",
+                                                    placeholder:
+                                                      "Department Agency",
+                                                  },
+                                                  model: {
+                                                    value:
+                                                      item.department_agency,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "department_agency",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression:
+                                                      "item.department_agency",
+                                                  },
+                                                }),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "column is-4" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label: "Salary",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c("b-input", {
+                                                  attrs: {
+                                                    type: "text",
+                                                    placeholder: "Salary",
+                                                  },
+                                                  model: {
+                                                    value: item.salary,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "salary",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression: "item.salary",
+                                                  },
+                                                }),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "columns" }, [
+                                        _c(
+                                          "div",
+                                          { staticClass: "column" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label: "Pay Grade",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c("b-input", {
+                                                  attrs: {
+                                                    type: "text",
+                                                    placeholder: "Pay Grade",
+                                                  },
+                                                  model: {
+                                                    value: item.pay_grade,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "pay_grade",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression:
+                                                      "item.pay_grade",
+                                                  },
+                                                }),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "column" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label: "Status Appointment",
+                                                  expanded: "",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c("b-input", {
+                                                  attrs: {
+                                                    type: "text",
+                                                    expanded: "",
+                                                    placeholder:
+                                                      "Status Appointment",
+                                                  },
+                                                  model: {
+                                                    value:
+                                                      item.status_appointment,
+                                                    callback: function ($$v) {
+                                                      _vm.$set(
+                                                        item,
+                                                        "status_appointment",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression:
+                                                      "item.status_appointment",
+                                                  },
+                                                }),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "column" },
+                                          [
+                                            _c(
+                                              "b-field",
+                                              {
+                                                attrs: {
+                                                  label: "Gov't Service",
+                                                  expanded: "",
+                                                  "label-position": "on-border",
+                                                },
+                                              },
+                                              [
+                                                _c(
+                                                  "b-select",
+                                                  {
+                                                    attrs: {
+                                                      expanded: "",
+                                                      placeholder:
+                                                        "Gov't Service",
+                                                    },
+                                                    model: {
+                                                      value: item.is_govt,
+                                                      callback: function ($$v) {
+                                                        _vm.$set(
+                                                          item,
+                                                          "is_govt",
+                                                          $$v
+                                                        )
+                                                      },
+                                                      expression:
+                                                        "item.is_govt",
+                                                    },
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "option",
+                                                      { attrs: { value: "1" } },
+                                                      [_vm._v("YES")]
+                                                    ),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "option",
+                                                      { attrs: { value: "0" } },
+                                                      [_vm._v("NO")]
+                                                    ),
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "p",
+                                                  { staticClass: "control" },
+                                                  [
+                                                    _c("b-button", {
+                                                      directives: [
+                                                        {
+                                                          name: "show",
+                                                          rawName: "v-show",
+                                                          value:
+                                                            k ||
+                                                            (!k &&
+                                                              _vm.fields
+                                                                .work_experiences
+                                                                .length > 0),
+                                                          expression:
+                                                            "k || ( !k && fields.work_experiences.length > 0)",
+                                                        },
+                                                      ],
+                                                      attrs: {
+                                                        type: "is-danger",
+                                                        "icon-left": "delete",
+                                                      },
+                                                      on: {
+                                                        click: function (
+                                                          $event
+                                                        ) {
+                                                          return _vm.removeWorkExperience(
+                                                            k
+                                                          )
+                                                        },
+                                                      },
+                                                    }),
+                                                  ],
+                                                  1
+                                                ),
+                                              ],
+                                              1
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                      ]),
+                                    ]
+                                  )
+                                }
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "buttons" },
+                                [
+                                  _c(
+                                    "b-button",
+                                    {
+                                      staticClass: "is-small",
+                                      attrs: {
+                                        type: "is-success mb-4 mt-4",
+                                        "icon-left": "plus",
+                                      },
+                                      on: { click: _vm.addWorkExperience },
+                                    },
+                                    [_vm._v("ADD")]
+                                  ),
+                                ],
+                                1
+                              ),
+                            ],
+                            2
+                          ),
+                        ]),
                       ]
                     ),
                     _vm._v(" "),
@@ -36369,19 +38164,717 @@ var render = function () {
                       {
                         attrs: {
                           step: "3",
-                          visible: _vm.showSocial,
-                          label: "Social",
+                          label: "Voluntary Work",
                           clickable: _vm.isStepsClickable,
                         },
                       },
                       [
-                        _c("h1", { staticClass: "title has-text-centered" }, [
-                          _vm._v("Social"),
+                        _c("div", { staticClass: "separator" }, [
+                          _vm._v(
+                            "\n                                Voluntary Work or Involvment in Civic / Non-Gov't / People / Voluntary Org\n                            "
+                          ),
                         ]),
-                        _vm._v(
-                          "\n                                Lorem ipsum dolor sit amet.\n                            "
+                        _vm._v(" "),
+                        _vm._l(_vm.fields.voluntary_works, function (item, k) {
+                          return _c(
+                            "div",
+                            {
+                              key: "voluntary" + k,
+                              staticClass: "w-separator",
+                            },
+                            [
+                              _c("div", { staticClass: "columns" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "column" },
+                                  [
+                                    _c(
+                                      "b-field",
+                                      {
+                                        attrs: {
+                                          label:
+                                            "Name & Address of Organization",
+                                          "label-position": "on-border",
+                                        },
+                                      },
+                                      [
+                                        _c("b-input", {
+                                          attrs: {
+                                            type: "text",
+                                            placeholder:
+                                              "Name & Address of Organization",
+                                          },
+                                          model: {
+                                            value: item.name_address_org,
+                                            callback: function ($$v) {
+                                              _vm.$set(
+                                                item,
+                                                "name_address_org",
+                                                $$v
+                                              )
+                                            },
+                                            expression: "item.name_address_org",
+                                          },
+                                        }),
+                                      ],
+                                      1
+                                    ),
+                                  ],
+                                  1
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "columns" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "column" },
+                                  [
+                                    _c(
+                                      "b-field",
+                                      {
+                                        attrs: {
+                                          label: "Inclusive Dates",
+                                          "label-position": "on-border",
+                                        },
+                                      },
+                                      [
+                                        _c("b-input", {
+                                          attrs: {
+                                            type: "text",
+                                            placeholder: "From",
+                                          },
+                                          model: {
+                                            value: item.work_from,
+                                            callback: function ($$v) {
+                                              _vm.$set(item, "work_from", $$v)
+                                            },
+                                            expression: "item.work_from",
+                                          },
+                                        }),
+                                        _vm._v(" "),
+                                        _c("b-input", {
+                                          attrs: {
+                                            type: "text",
+                                            placeholder: "To",
+                                          },
+                                          model: {
+                                            value: item.work_to,
+                                            callback: function ($$v) {
+                                              _vm.$set(item, "work_to", $$v)
+                                            },
+                                            expression: "item.work_to",
+                                          },
+                                        }),
+                                      ],
+                                      1
+                                    ),
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "column" },
+                                  [
+                                    _c(
+                                      "b-field",
+                                      {
+                                        attrs: {
+                                          label: "No. of hours",
+                                          "label-position": "on-border",
+                                        },
+                                      },
+                                      [
+                                        _c("b-input", {
+                                          attrs: {
+                                            type: "text",
+                                            placeholder: "No. of hours",
+                                          },
+                                          model: {
+                                            value: item.no_hours,
+                                            callback: function ($$v) {
+                                              _vm.$set(item, "no_hours", $$v)
+                                            },
+                                            expression: "item.no_hours",
+                                          },
+                                        }),
+                                      ],
+                                      1
+                                    ),
+                                  ],
+                                  1
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "columns" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "column" },
+                                  [
+                                    _c(
+                                      "b-field",
+                                      {
+                                        attrs: {
+                                          label: "Position/Nature of Work",
+                                          expanded: "",
+                                          "label-position": "on-border",
+                                        },
+                                      },
+                                      [
+                                        _c("b-input", {
+                                          attrs: {
+                                            type: "text",
+                                            expanded: "",
+                                            placeholder:
+                                              "Position/Nature of Works",
+                                          },
+                                          model: {
+                                            value: item.nature_work,
+                                            callback: function ($$v) {
+                                              _vm.$set(item, "nature_work", $$v)
+                                            },
+                                            expression: "item.nature_work",
+                                          },
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "p",
+                                          { staticClass: "control" },
+                                          [
+                                            _c("b-button", {
+                                              directives: [
+                                                {
+                                                  name: "show",
+                                                  rawName: "v-show",
+                                                  value:
+                                                    k ||
+                                                    (!k &&
+                                                      _vm.fields
+                                                        .work_experiences
+                                                        .length > 0),
+                                                  expression:
+                                                    "k || ( !k && fields.work_experiences.length > 0)",
+                                                },
+                                              ],
+                                              attrs: {
+                                                type: "is-danger",
+                                                "icon-left": "delete",
+                                              },
+                                              on: {
+                                                click: function ($event) {
+                                                  return _vm.removeVoluntaryWork(
+                                                    k
+                                                  )
+                                                },
+                                              },
+                                            }),
+                                          ],
+                                          1
+                                        ),
+                                      ],
+                                      1
+                                    ),
+                                  ],
+                                  1
+                                ),
+                              ]),
+                            ]
+                          )
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "buttons" },
+                          [
+                            _c(
+                              "b-button",
+                              {
+                                staticClass: "is-small",
+                                attrs: {
+                                  type: "is-success mb-4 mt-4",
+                                  "icon-left": "plus",
+                                },
+                                on: { click: _vm.addVoluntaryWork },
+                              },
+                              [_vm._v("ADD")]
+                            ),
+                          ],
+                          1
                         ),
-                      ]
+                        _vm._v(" "),
+                        _c("div", { staticClass: "separator" }, [
+                          _vm._v(
+                            "\n                                Learning and Development Inventions / Trainings / Programs Attended\n                            "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(
+                          _vm.fields.learning_developments,
+                          function (item, index) {
+                            return _c(
+                              "div",
+                              { key: "ld" + index, staticClass: "w-separator" },
+                              [
+                                _c("div", { staticClass: "columns" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "column" },
+                                    [
+                                      _c(
+                                        "b-field",
+                                        {
+                                          attrs: {
+                                            label:
+                                              "Title of Learning Development (Write Full)",
+                                            "label-position": "on-border",
+                                          },
+                                        },
+                                        [
+                                          _c("b-input", {
+                                            attrs: {
+                                              type: "text",
+                                              placeholder:
+                                                "Title of Learning Development (Write Full)",
+                                            },
+                                            model: {
+                                              value: item.title_learning_dev,
+                                              callback: function ($$v) {
+                                                _vm.$set(
+                                                  item,
+                                                  "title_learning_dev",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "item.title_learning_dev",
+                                            },
+                                          }),
+                                        ],
+                                        1
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "columns" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "column" },
+                                    [
+                                      _c(
+                                        "b-field",
+                                        {
+                                          attrs: {
+                                            label:
+                                              "Inclusive Dates (Attendance)",
+                                            "label-position": "on-border",
+                                          },
+                                        },
+                                        [
+                                          _c("b-datepicker", {
+                                            attrs: {
+                                              editable: "",
+                                              placeholder: "From",
+                                            },
+                                            model: {
+                                              value: item.date_from,
+                                              callback: function ($$v) {
+                                                _vm.$set(item, "date_from", $$v)
+                                              },
+                                              expression: "item.date_from",
+                                            },
+                                          }),
+                                          _vm._v(" "),
+                                          _c("b-datepicker", {
+                                            attrs: {
+                                              editable: "",
+                                              placeholder: "To",
+                                            },
+                                            model: {
+                                              value: item.date_to,
+                                              callback: function ($$v) {
+                                                _vm.$set(item, "date_to", $$v)
+                                              },
+                                              expression: "item.date_to",
+                                            },
+                                          }),
+                                        ],
+                                        1
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "column" },
+                                    [
+                                      _c(
+                                        "b-field",
+                                        {
+                                          attrs: {
+                                            label: "No. of hours",
+                                            "label-position": "on-border",
+                                          },
+                                        },
+                                        [
+                                          _c("b-input", {
+                                            attrs: {
+                                              type: "text",
+                                              placeholder: "No. of hours",
+                                            },
+                                            model: {
+                                              value: item.no_hours,
+                                              callback: function ($$v) {
+                                                _vm.$set(item, "no_hours", $$v)
+                                              },
+                                              expression: "item.no_hours",
+                                            },
+                                          }),
+                                        ],
+                                        1
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "columns" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "column" },
+                                    [
+                                      _c(
+                                        "b-field",
+                                        {
+                                          attrs: {
+                                            label: "Type of LD",
+                                            "label-position": "on-border",
+                                          },
+                                        },
+                                        [
+                                          _c("b-input", {
+                                            attrs: {
+                                              type: "text",
+                                              placeholder: "Type of LD",
+                                            },
+                                            model: {
+                                              value: item.type_ld,
+                                              callback: function ($$v) {
+                                                _vm.$set(item, "type_ld", $$v)
+                                              },
+                                              expression: "item.type_ld",
+                                            },
+                                          }),
+                                        ],
+                                        1
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "column" },
+                                    [
+                                      _c(
+                                        "b-field",
+                                        {
+                                          attrs: {
+                                            label: "Conducted / Sponsored By",
+                                            expanded: "",
+                                            "label-position": "on-border",
+                                          },
+                                        },
+                                        [
+                                          _c("b-input", {
+                                            attrs: {
+                                              type: "text",
+                                              expanded: "",
+                                              placeholder:
+                                                "Conducted / Sponsored By",
+                                            },
+                                            model: {
+                                              value: item.sponsored_by,
+                                              callback: function ($$v) {
+                                                _vm.$set(
+                                                  item,
+                                                  "sponsored_by",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "item.sponsored_by",
+                                            },
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "p",
+                                            { staticClass: "control" },
+                                            [
+                                              _c("b-button", {
+                                                directives: [
+                                                  {
+                                                    name: "show",
+                                                    rawName: "v-show",
+                                                    value:
+                                                      index ||
+                                                      (!index &&
+                                                        _vm.fields
+                                                          .learning_developments
+                                                          .length > 0),
+                                                    expression:
+                                                      "index || ( !index && fields.learning_developments.length > 0)",
+                                                  },
+                                                ],
+                                                attrs: {
+                                                  type: "is-danger",
+                                                  "icon-left": "delete",
+                                                },
+                                                on: {
+                                                  click: function ($event) {
+                                                    return _vm.removeLearningDevelopment(
+                                                      index
+                                                    )
+                                                  },
+                                                },
+                                              }),
+                                            ],
+                                            1
+                                          ),
+                                        ],
+                                        1
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                ]),
+                              ]
+                            )
+                          }
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "buttons" },
+                          [
+                            _c(
+                              "b-button",
+                              {
+                                staticClass: "is-small",
+                                attrs: {
+                                  type: "is-success mb-4 mt-4",
+                                  "icon-left": "plus",
+                                },
+                                on: { click: _vm.addLearningDevelopment },
+                              },
+                              [_vm._v("ADD")]
+                            ),
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "separator" }, [
+                          _vm._v(
+                            "\n                                Other Information\n                            "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(
+                          _vm.fields.other_informations,
+                          function (item, k) {
+                            return _c(
+                              "div",
+                              { key: "info" + k, staticClass: "w-separator" },
+                              [
+                                _c("div", { staticClass: "columns" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "column" },
+                                    [
+                                      _c(
+                                        "b-field",
+                                        {
+                                          attrs: {
+                                            label:
+                                              "Special Skill & Hobbies (Write Full)",
+                                            "label-position": "on-border",
+                                          },
+                                        },
+                                        [
+                                          _c("b-input", {
+                                            attrs: {
+                                              type: "text",
+                                              placeholder:
+                                                "Special Skill & Hobbies (Write Full)",
+                                            },
+                                            model: {
+                                              value: item.skill_hobbies,
+                                              callback: function ($$v) {
+                                                _vm.$set(
+                                                  item,
+                                                  "skill_hobbies",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "item.skill_hobbies",
+                                            },
+                                          }),
+                                        ],
+                                        1
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "columns" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "column" },
+                                    [
+                                      _c(
+                                        "b-field",
+                                        {
+                                          attrs: {
+                                            label:
+                                              "Non-Academic Distinctions / Recognition (Write Full)",
+                                            "label-position": "on-border",
+                                          },
+                                        },
+                                        [
+                                          _c("b-input", {
+                                            attrs: {
+                                              type: "text",
+                                              placeholder:
+                                                "Non-Academic Distinctions / Recognition (Write Full)",
+                                            },
+                                            model: {
+                                              value:
+                                                item.non_academic_distinction,
+                                              callback: function ($$v) {
+                                                _vm.$set(
+                                                  item,
+                                                  "non_academic_distinction",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "item.non_academic_distinction",
+                                            },
+                                          }),
+                                        ],
+                                        1
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "columns" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "column" },
+                                    [
+                                      _c(
+                                        "b-field",
+                                        {
+                                          attrs: {
+                                            expanded: "",
+                                            label:
+                                              "Membership in Association / Organization (Write Full)",
+                                            "label-position": "on-border",
+                                          },
+                                        },
+                                        [
+                                          _c("b-input", {
+                                            attrs: {
+                                              type: "text",
+                                              expanded: "",
+                                              placeholder:
+                                                "Membership in Association / Organization (Write Full)",
+                                            },
+                                            model: {
+                                              value: item.member_association,
+                                              callback: function ($$v) {
+                                                _vm.$set(
+                                                  item,
+                                                  "member_association",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "item.member_association",
+                                            },
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "p",
+                                            { staticClass: "control" },
+                                            [
+                                              _c("b-button", {
+                                                directives: [
+                                                  {
+                                                    name: "show",
+                                                    rawName: "v-show",
+                                                    value:
+                                                      k ||
+                                                      (!k &&
+                                                        _vm.fields
+                                                          .other_informations
+                                                          .length > 0),
+                                                    expression:
+                                                      "k || ( !k && fields.other_informations.length > 0)",
+                                                  },
+                                                ],
+                                                attrs: {
+                                                  type: "is-danger",
+                                                  "icon-left": "delete",
+                                                },
+                                                on: {
+                                                  click: function ($event) {
+                                                    return _vm.removeOtherInformation(
+                                                      k
+                                                    )
+                                                  },
+                                                },
+                                              }),
+                                            ],
+                                            1
+                                          ),
+                                        ],
+                                        1
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                ]),
+                              ]
+                            )
+                          }
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "buttons" },
+                          [
+                            _c(
+                              "b-button",
+                              {
+                                staticClass: "is-small",
+                                attrs: {
+                                  type: "is-success mb-4 mt-4",
+                                  "icon-left": "plus",
+                                },
+                                on: { click: _vm.addOtherInformation },
+                              },
+                              [_vm._v("ADD")]
+                            ),
+                          ],
+                          1
+                        ),
+                      ],
+                      2
                     ),
                     _vm._v(" "),
                     _c(
@@ -36399,7 +38892,7 @@ var render = function () {
                           _vm._v("Finish"),
                         ]),
                         _vm._v(
-                          "\n                                Lorem ipsum dolor sit amet.\n                            "
+                          "\n                            Lorem ipsum dolor sit amet.\n                        "
                         ),
                       ]
                     ),
@@ -36423,10 +38916,89 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "buttons is-right" }, [
-      _c("button", { staticClass: "button is-primary" }, [_vm._v("Register")]),
+      _c("button", { staticClass: "button is-primary" }, [
+        _vm._v("Update Information"),
+      ]),
     ])
   },
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=template&id=280fada4&":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Faculty/FacultyNavbar.vue?vue&type=template&id=280fada4& ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("b-navbar", {
+    scopedSlots: _vm._u([
+      {
+        key: "brand",
+        fn: function () {
+          return [
+            _c("b-navbar-item", [
+              _c("h1", { staticClass: "title is-4" }, [
+                _vm._v("FACULTY PANEL"),
+              ]),
+            ]),
+          ]
+        },
+        proxy: true,
+      },
+      {
+        key: "start",
+        fn: function () {
+          return undefined
+        },
+        proxy: true,
+      },
+      {
+        key: "end",
+        fn: function () {
+          return [
+            _c("b-navbar-item", { attrs: { href: "/faculty/home" } }, [
+              _vm._v("\n            Home\n        "),
+            ]),
+            _vm._v(" "),
+            _c("b-navbar-item", { attrs: { href: "/faculty/my-pds" } }, [
+              _vm._v("\n            MY PDS\n        "),
+            ]),
+            _vm._v(" "),
+            _c("b-navbar-item", { attrs: { tag: "div" } }, [
+              _c(
+                "div",
+                { staticClass: "buttons" },
+                [
+                  _c("b-button", {
+                    attrs: { label: "LOGOUT", "icon-left": "logout" },
+                    on: { click: _vm.logout },
+                  }),
+                ],
+                1
+              ),
+            ]),
+          ]
+        },
+        proxy: true,
+      },
+    ]),
+  })
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -62108,8 +64680,8 @@ var map = {
 	"./components/Administrator/User/UserPage.vue": "./resources/js/components/Administrator/User/UserPage.vue",
 	"./components/ExampleComponent.vue": "./resources/js/components/ExampleComponent.vue",
 	"./components/Faculty/FacultyHome.vue": "./resources/js/components/Faculty/FacultyHome.vue",
+	"./components/Faculty/FacultyMyPds.vue": "./resources/js/components/Faculty/FacultyMyPds.vue",
 	"./components/Faculty/FacultyNavbar.vue": "./resources/js/components/Faculty/FacultyNavbar.vue",
-	"./components/Faculty/FacultyPds.vue": "./resources/js/components/Faculty/FacultyPds.vue",
 	"./components/Login.vue": "./resources/js/components/Login.vue",
 	"./components/Modals/ModalBrowseDentist.vue": "./resources/js/components/Modals/ModalBrowseDentist.vue",
 	"./components/Modals/ModalItem.vue": "./resources/js/components/Modals/ModalItem.vue",

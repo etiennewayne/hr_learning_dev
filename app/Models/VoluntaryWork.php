@@ -14,6 +14,13 @@ class VoluntaryWork extends Model
     protected $primaryKey = 'voluntary_work_id';
 
 
-    protected $fillable = ['user_id', 'name_address_org', 'work_from', 'work_to', 'no_hours', 'nature_work'];
+    protected $fillable = [
+        'user_id', 
+        'name_address_org', 
+        'work_from', 
+        'work_to', 
+        'no_hours', 
+        'nature_work'
+    ];
 
 }

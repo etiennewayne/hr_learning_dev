@@ -51,4 +51,35 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
+    public function children(){
+        return $this->HasMany(Children::class, 'user_id', 'user_id');
+    }
+
+    public function eligibilities(){
+        return $this->HasMany(CivilServiceEligibility::class, 'user_id', 'user_id');
+    }
+
+    public function work_experiences(){
+        return $this->HasMany(WorkExperience::class, 'user_id', 'user_id');
+    }
+
+    public function educational_backgrounds(){
+        return $this->HasMany(EducationalBackground::class, 'user_id', 'user_id');
+    }
+
+    public function voluntary_works(){
+        return $this->HasMany(VoluntaryWork::class, 'user_id', 'user_id');
+    }
+
+    public function learning_developments(){
+        return $this->HasMany(LearningDevelopment::class, 'user_id', 'user_id');
+    }
+
+    public function other_informations(){
+        return $this->HasMany(OtherInformation::class, 'user_id', 'user_id');
+    }
+
 }

@@ -13,7 +13,15 @@ class LearningDevelopment extends Model
     protected $primaryKey = 'learning_dev_id';
 
 
-    protected $fillable = ['user_id', 'title_learning_dev', 'date_from', 'date_to', 'no_hours', 'type_ld', 'sponsored_by'];
+    protected $fillable = [
+        'user_id', 
+        'title_learning_dev', 
+        'date_from', 
+        'date_to', 
+        'no_hours', 
+        'type_ld', 
+        'sponsored_by'
+    ];
 
 
 

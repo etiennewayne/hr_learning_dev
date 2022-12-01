@@ -97,23 +97,17 @@ Route::post('/user-reset-password/{id}', [App\Http\Controllers\Administrator\Use
 /*     ADMINSITRATOR          */
 
 
-//USER
-//dentist
-//Route::resource('/dentist', App\Http\Controllers\Administrator\DentistController::class);
-//Route::get('/get-dentist', [App\Http\Controllers\Administrator\DentistController::class, 'getDentists']);
-
-
-Route::get('/get-browse-dentist', [App\Http\Controllers\Administrator\DentistController::class, 'getBrowseDentist']);
-
-
-
-
-
 // FACULTY ROUTES
 Route::resource('/faculty/home', App\Http\Controllers\Faculty\FacultyHomeController::class);
 
 
-Route::resource('/faculty/my-pds', App\Http\Controllers\Faculty\FacultyPDSController::class);
+Route::resource('/faculty/my-pds', App\Http\Controllers\Faculty\FacultyMyPDSController::class);
+Route::resource('/faculty/educational-backgrounds', App\Http\Controllers\Faculty\FacultyEducationalBackgroundController::class);
+Route::resource('/faculty/children', App\Http\Controllers\Faculty\FacultyChildController::class);
+Route::resource('/faculty/eligibilities', App\Http\Controllers\Faculty\FacultyCSEController::class);
+Route::resource('/faculty/work-experiences', App\Http\Controllers\Faculty\FacultyWorkExperienceController::class);
+Route::resource('/faculty/learning-developments', App\Http\Controllers\Faculty\FacultyLearningDevelopmentController::class);
+Route::resource('/faculty/other-informations', App\Http\Controllers\Faculty\FacultyOtherInformationController::class);
 
 
 Route::get('/session', function(){
