@@ -30,9 +30,9 @@ class FacultyMyPDSController extends Controller
 
         $civils = CivilStatus::all();
         $citizenships = Citizenship::orderBy('citizenship', 'asc')->get();
-        $user = User::with(['children', 
-            'eligibilities', 
-            'work_experiences', 
+        $user = User::with(['children',
+            'eligibilities',
+            'work_experiences',
             'educational_backgrounds',
             'voluntary_works',
             'learning_developments',
@@ -49,6 +49,35 @@ class FacultyMyPDSController extends Controller
 
 
     public function update(Request $req, $id){
+
+        return $req->learning_developments;
+        //return json_decode($req);
+
+        if($req->hasFile('attach_file')) {
+           
+            foreach ($req->file('attach_file') as $image) {
+                return $image;
+                $pathFile = $image->store('public/attachfile'); //get path of the file
+                $n = explode('/', $pathFile); //split into array using /
+
+
+                //insert into database after upload 1 image
+                $ld = LearningDevelopment::updateOrCreate(
+                    ['learning_dev_id' => $ld['learning_dev_id'], 'user_id' => $id],
+                    [
+                        'title_learning_dev' => strtoupper($ld['title_learning_dev']),
+                        'date_from' => $this->formatDate($ld['date_from']),
+                        'date_to' => $this->formatDate($ld['date_to']),
+                        'no_hours' => $ld['no_hours'],
+                        'type_ld' => strtoupper($ld['type_ld']),
+                        'sponsored_by' => strtoupper($ld['sponsored_by']),
+                        'attach_path' => $n[2],
+                    ]
+                );
+            }
+        }
+
+        return $req;
 
 
         $req->validate([
@@ -197,8 +226,15 @@ class FacultyMyPDSController extends Controller
             );
         }
 
+
         foreach($req->learning_developments as $ld){
-            $child = LearningDevelopment::updateOrCreate(
+            $imgPath = $req->file('attach_file');
+            if($imgPath){
+                $pathFile = $imgPath->store('public/products'); //get path of the file
+                $imgPath = explode('/', $pathFile); //split into array using /
+            }
+
+            $ld = LearningDevelopment::updateOrCreate(
                 ['learning_dev_id' => $ld['learning_dev_id'], 'user_id' => $id],
                 [
                     'title_learning_dev' => strtoupper($ld['title_learning_dev']),

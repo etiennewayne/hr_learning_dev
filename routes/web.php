@@ -102,6 +102,8 @@ Route::resource('/faculty/home', App\Http\Controllers\Faculty\FacultyHomeControl
 
 
 Route::resource('/faculty/my-pds', App\Http\Controllers\Faculty\FacultyMyPDSController::class);
+Route::post('/faculty/my-pds-update/{id}', [App\Http\Controllers\Faculty\FacultyMyPDSController::class, 'update']);
+
 Route::resource('/faculty/educational-backgrounds', App\Http\Controllers\Faculty\FacultyEducationalBackgroundController::class);
 Route::resource('/faculty/children', App\Http\Controllers\Faculty\FacultyChildController::class);
 Route::resource('/faculty/eligibilities', App\Http\Controllers\Faculty\FacultyCSEController::class);

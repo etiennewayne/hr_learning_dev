@@ -26,7 +26,7 @@ class CreateLearningDevelopmentsTable extends Migration
             $table->string('no_hours')->nullable();
             $table->string('type_ld')->nullable();
             $table->string('sponsored_by')->nullable();
-
+            $table->string('attach_path')->nullable();
             $table->timestamps();
         });
     }

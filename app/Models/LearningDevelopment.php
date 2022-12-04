@@ -14,13 +14,14 @@ class LearningDevelopment extends Model
 
 
     protected $fillable = [
-        'user_id', 
-        'title_learning_dev', 
-        'date_from', 
-        'date_to', 
-        'no_hours', 
-        'type_ld', 
-        'sponsored_by'
+        'user_id',
+        'title_learning_dev',
+        'date_from',
+        'date_to',
+        'no_hours',
+        'type_ld',
+        'sponsored_by',
+        'attach_path'
     ];
 
 

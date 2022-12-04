@@ -9662,12 +9662,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['propCivils', 'propCitizenships', 'propData'],
   data: function data() {
     return {
       user: {},
-      activeStep: 0,
+      activeStep: 2,
       showSocial: false,
       isAnimated: true,
       isRounded: true,
@@ -9689,6 +9708,7 @@ __webpack_require__.r(__webpack_exports__);
         learning_developments: [],
         other_informations: []
       },
+      attach_file: null,
       errors: {},
       civilStatuses: [],
       citizenships: [],
@@ -9881,7 +9901,8 @@ __webpack_require__.r(__webpack_exports__);
           date_to: new Date(learning.date_to),
           no_hours: learning.no_hours,
           type_ld: learning.type_ld,
-          sponsored_by: learning.sponsored_by
+          sponsored_by: learning.sponsored_by //attach_file: learning.attach_file
+
         });
       });
       this.user.other_informations.forEach(function (info) {
@@ -9896,7 +9917,68 @@ __webpack_require__.r(__webpack_exports__);
     submit: function submit() {
       var _this7 = this;
 
-      axios.put('/faculty/my-pds/' + this.user.user_id, this.fields).then(function (res) {
+      // console.log(this.fields.learning_developments[0])
+      var formData = new FormData();
+      formData.append('surname', this.fields.surname);
+      formData.append('fname', this.fields.fname);
+      formData.append('mname', this.fields.mname);
+      formData.append('suffix', this.fields.suffix);
+      formData.append('sex', this.fields.sex);
+      formData.append('date_birth', new Date(this.user.date_birth));
+      formData.append('place_birth', this.fields.place_birth);
+      formData.append('civil_status', this.fields.civil_status);
+      formData.append('height', this.fields.height);
+      formData.append('weight', this.fields.weight);
+      formData.append('blood_type', this.fields.blood_type);
+      formData.append('gsis', this.fields.gsis);
+      formData.append('pagibig', this.fields.pagibig);
+      formData.append('philhealth', this.fields.philhealth);
+      formData.append('sss', this.fields.sss);
+      formData.append('tin', this.fields.tin);
+      formData.append('agency_idno', this.fields.agency_idno);
+      formData.append('citizenship', this.fields.citizenship); //spouse
+
+      formData.append('spouse_surname', this.fields.spouse_surname);
+      formData.append('spouse_fname', this.fields.spouse_fname);
+      formData.append('spouse_mname', this.fields.spouse_mname);
+      formData.append('spouse_suffix', this.fields.spouse_suffix); //businees
+
+      formData.append('business_name', this.fields.business_name);
+      formData.append('business_address', this.fields.business_address);
+      formData.append('business_contact_no', this.fields.business_contact_no); //father
+
+      formData.append('father_surname', this.fields.father_surname);
+      formData.append('father_fname', this.fields.father_fname);
+      formData.append('father_mname', this.fields.father_mname);
+      formData.append('father_suffix', this.fields.father_suffix); //mother
+
+      formData.append('mother_maiden_name', this.fields.mother_maiden_name);
+      formData.append('mother_fname', this.fields.mother_fname);
+      formData.append('mother_mname', this.fields.mother_mname);
+      formData.append('mother_suffix', this.fields.mother_suffix);
+
+      for (var item = 0; item < this.fields.learning_developments.length; item++) {
+        formData.append("learning_developments[".concat(item, "]"), {
+          learning_dev_id: item.learning_dev_id
+        });
+        formData.append("learning_developments[".concat(item, "]"), {
+          learning_dev: item.title_learning_dev
+        });
+        formData.append("learning_developments[".concat(item, "]"), {
+          date_from: new Date(item.date_from)
+        });
+        formData.append("learning_developments[".concat(item, "]"), {
+          date_to: new Date(item.date_to)
+        }); // formData.append('no_hours', item.no_hours);
+        // formData.append('type_ld', item.type_ld);
+        // formData.append('sponsored_by', item.sponsored_by);
+        // formData.append('attach_file[]', item.attach_file);
+      }
+
+      ;
+      console.log(this.fields); //formData.append('fields', this.fields);
+
+      axios.post('/faculty/my-pds-update/' + this.user.user_id, this.fields).then(function (res) {
         if (res.data.status === 'saved') {
           _this7.$buefy.dialog.alert({
             title: "UPDATED!",
@@ -10104,7 +10186,8 @@ __webpack_require__.r(__webpack_exports__);
         date_to: new Date(),
         no_hours: 0,
         type_ld: '',
-        sponsored_by: ''
+        sponsored_by: '',
+        attach_file: null
       });
     },
     removeLearningDevelopment: function removeLearningDevelopment(index) {
@@ -38607,40 +38690,89 @@ var render = function () {
                                               expression: "item.sponsored_by",
                                             },
                                           }),
-                                          _vm._v(" "),
+                                        ],
+                                        1
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "columns" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "column" },
+                                    [
+                                      _c(
+                                        "b-field",
+                                        {
+                                          attrs: {
+                                            label: "Attach Image",
+                                            type: _vm.errors.attach_file
+                                              ? "is-danger"
+                                              : "",
+                                            message: _vm.errors.attach_file
+                                              ? _vm.errors.attach_file[0]
+                                              : "",
+                                          },
+                                        },
+                                        [
                                           _c(
-                                            "p",
-                                            { staticClass: "control" },
+                                            "b-upload",
+                                            {
+                                              staticClass: "file-label",
+                                              model: {
+                                                value: item.attach_file,
+                                                callback: function ($$v) {
+                                                  _vm.$set(
+                                                    item,
+                                                    "attach_file",
+                                                    $$v
+                                                  )
+                                                },
+                                                expression: "item.attach_file",
+                                              },
+                                            },
                                             [
-                                              _c("b-button", {
-                                                directives: [
-                                                  {
-                                                    name: "show",
-                                                    rawName: "v-show",
-                                                    value:
-                                                      index ||
-                                                      (!index &&
-                                                        _vm.fields
-                                                          .learning_developments
-                                                          .length > 0),
-                                                    expression:
-                                                      "index || ( !index && fields.learning_developments.length > 0)",
-                                                  },
+                                              _c(
+                                                "span",
+                                                { staticClass: "file-cta" },
+                                                [
+                                                  _c("b-icon", {
+                                                    staticClass: "file-icon",
+                                                    attrs: { icon: "upload" },
+                                                  }),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "span",
+                                                    {
+                                                      staticClass: "file-label",
+                                                    },
+                                                    [_vm._v("Click to upload")]
+                                                  ),
                                                 ],
-                                                attrs: {
-                                                  type: "is-danger",
-                                                  "icon-left": "delete",
-                                                },
-                                                on: {
-                                                  click: function ($event) {
-                                                    return _vm.removeLearningDevelopment(
-                                                      index
-                                                    )
-                                                  },
-                                                },
-                                              }),
-                                            ],
-                                            1
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              item.attach_file
+                                                ? _c(
+                                                    "span",
+                                                    {
+                                                      staticClass: "file-name",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                                                    " +
+                                                          _vm._s(
+                                                            item.attach_file
+                                                              .name
+                                                          ) +
+                                                          "\n                                                "
+                                                      ),
+                                                    ]
+                                                  )
+                                                : _vm._e(),
+                                            ]
                                           ),
                                         ],
                                         1
@@ -38649,6 +38781,40 @@ var render = function () {
                                     1
                                   ),
                                 ]),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "buttons is-right" },
+                                  [
+                                    _c("b-button", {
+                                      directives: [
+                                        {
+                                          name: "show",
+                                          rawName: "v-show",
+                                          value:
+                                            index ||
+                                            (!index &&
+                                              _vm.fields.learning_developments
+                                                .length > 0),
+                                          expression:
+                                            "index || ( !index && fields.learning_developments.length > 0)",
+                                        },
+                                      ],
+                                      attrs: {
+                                        type: "is-danger",
+                                        "icon-left": "delete",
+                                      },
+                                      on: {
+                                        click: function ($event) {
+                                          return _vm.removeLearningDevelopment(
+                                            index
+                                          )
+                                        },
+                                      },
+                                    }),
+                                  ],
+                                  1
+                                ),
                               ]
                             )
                           }
