@@ -2,863 +2,843 @@
     <section class="section">
         <div class="columns is-centered">
             <div class="column is-8-desktop is-10-tablet">
-                <form @submit.prevent="submit">
 
-                    <div class="box">
-                        <div class="box-heading">
-                            PERSONAL DATA SHEET
-                        </div>
 
-                        <b-steps
-                            v-model="activeStep"
-                            :animated="isAnimated"
-                            :rounded="isRounded"
-                            :has-navigation="hasNavigation"
-                            :icon-prev="prevIcon"
-                            :icon-next="nextIcon"
-                            :label-position="labelPosition"
-                            :mobile-mode="mobileMode">
-                            <b-step-item step="1" label="Account" :clickable="isStepsClickable">
+                <div class="box">
+                    <div class="box-heading">
+                        PERSONAL DATA SHEET
+                    </div>
 
-                                <div class="separator">
-                                    PERSONAL INFORMATION
+                    <b-steps
+                        v-model="activeStep"
+                        :animated="isAnimated"
+                        :rounded="isRounded"
+                        :has-navigation="hasNavigation"
+                        :icon-prev="prevIcon"
+                        :icon-next="nextIcon"
+                        :label-position="labelPosition"
+                        :mobile-mode="mobileMode">
+                        <b-step-item step="1" label="Account" :clickable="isStepsClickable">
+
+                            <div class="separator">
+                                PERSONAL INFORMATION
+                            </div>
+
+
+                            <div class="columns">
+                                <div class="column">
+                                    <b-field label="Surname" label-position="on-border"
+                                                :type="this.errors.surname ? 'is-danger':''"
+                                                :message="this.errors.surname ? this.errors.surname[0] : ''">
+                                        <b-input type="text" v-model="fields.surname" icon="account"></b-input>
+                                    </b-field>
                                 </div>
 
+                                <div class="column">
+                                    <b-field label="First Name" label-position="on-border"
+                                            :type="this.errors.fname ? 'is-danger':''"
+                                            :message="this.errors.fname ? this.errors.fname[0] : ''">
+                                        <b-input type="text" v-model="fields.fname" placeholder="First Name" icon="account"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
 
+                            <div class="columns">
+                                <div class="column is-8">
+                                    <b-field label="Middle Name" label-position="on-border"
+                                            :type="this.errors.mname ? 'is-danger':''"
+                                            :message="this.errors.mname ? this.errors.mname[0] : ''">
+                                        <b-input type="text" v-model="fields.mname" placeholder="Middle Name" icon="account"></b-input>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="Suffix" label-position="on-border"
+                                            :type="this.errors.suffix ? 'is-danger':''"
+                                            :message="this.errors.suffix ? this.errors.suffix[0] : ''">
+                                        <b-input type="text" v-model="fields.suffix" placeholder="Suffix" icon="account"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+
+                                <div class="column">
+                                    <b-field label-position="on-border" label="Birthdate"
+                                             :type="this.errors.date_birth ? 'is-danger':''"
+                                             :message="this.errors.date_birth ? this.errors.date_birth[0] : ''">
+                                        <b-datepicker editable icon="calendar" v-model="fields.date_birth" placeholder="Birthdate"></b-datepicker>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label-position="on-border" label="Place of Birth"
+                                             :type="this.errors.place_birth ? 'is-danger':''"
+                                             :message="this.errors.place_birth ? this.errors.place_birth[0] : ''">
+                                        <b-input icon="map-marker-radius" v-model="fields.place_birth" placeholder="Place of Birth"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    <b-field label="Sex" expanded label-position="on-border"
+                                             :type="this.errors.sex ? 'is-danger':''"
+                                             :message="this.errors.sex ? this.errors.sex[0] : ''">
+                                        <b-select placeholder="Sex" v-model="fields.sex" icon="account" expanded>
+                                            <option value="MALE">MALE</option>
+                                            <option value="FEMALE">FEMALE</option>
+                                        </b-select>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="Civil Status" expanded label-position="on-border"
+                                             :type="this.errors.civil_status ? 'is-danger':''"
+                                             :message="this.errors.civil_status ? this.errors.civil_status[0] : ''">
+                                        <b-select placeholder="Civil Status" v-model="fields.civil_status" icon="human-non-binary" expanded>
+                                            <option v-for="(item, index) in civilStatuses" :key="index" :value="item.civil_status">
+                                                {{ item.civil_status }}</option>
+                                        </b-select>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    <b-field label-position="on-border" label="Height(m)"
+                                             :type="this.errors.height ? 'is-danger':''"
+                                             :message="this.errors.height ? this.errors.height[0] : ''">
+                                        <b-input icon="human-male-height-variant" v-model="fields.height" placeholder="Height(m)"></b-input>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label-position="on-border" label="Weight(m)"
+                                             :type="this.errors.weight ? 'is-danger':''"
+                                             :message="this.errors.weight ? this.errors.weight[0] : ''">
+                                        <b-input icon="weight" v-model="fields.weight" placeholder="Weight(m)"></b-input>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="Blood Type" expanded label-position="on-border"
+                                             :type="this.errors.blood_type ? 'is-danger':''"
+                                             :message="this.errors.blood_type ? this.errors.blood_type[0] : ''">
+                                        <b-select placeholder="Blood Type" v-model="fields.blood_type" icon="water" expanded>
+                                            <option value="O">O</option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="AB">AB</option>
+                                        </b-select>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    <b-field label="GSIS" label-position="on-border">
+                                        <b-input type="text" placeholder="GSIS" v-model="fields.gsis"></b-input>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="PAGIBIG" label-position="on-border">
+                                        <b-input type="text" placeholder="PAGIBIG" v-model="fields.pagibig"></b-input>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="PhilHealth" label-position="on-border">
+                                        <b-input type="text" placeholder="PhilHealth" v-model="fields.philhealth"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    <b-field label="SSS No." label-position="on-border">
+                                        <b-input type="text" placeholder="SSS No." v-model="fields.sss"></b-input>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="TIN" label-position="on-border">
+                                        <b-input type="text" placeholder="TIN" v-model="fields.tin"></b-input>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="Agency No." label-position="on-border">
+                                        <b-input type="text" placeholder="Agency No." v-model="fields.agency_idno"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    <b-field label="Citizenship" expanded label-position="on-border"
+                                             :type="this.errors.citizenship ? 'is-danger':''"
+                                             :message="this.errors.citizenship ? this.errors.citizenship[0] : ''">
+                                        <b-select placeholder="Citizenship" v-model="fields.citizenship" icon="account-switch" expanded>
+                                            <option v-for="(item, index) in citizenships" :key="index" :value="item.citizenship">
+                                                {{ item.citizenship }}</option>
+                                        </b-select>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <!-- RESIDENTIAL ADDRESS-->
+                            <h2><span>RESIDENTIAL ADDRESS</span></h2>
+                            <div class="columns">
+                                <div class="column">
+                                    <b-field label="Province" expanded label-position="on-border"
+                                             :type="this.errors.res_province ? 'is-danger':''"
+                                             :message="this.errors.res_province ? this.errors.res_province[0] : ''">
+                                        <b-select v-model="fields.res_province" expanded placeholder="Province" @input="loadResCity">
+                                            <option v-for="(item, index) in resProvinces" :key="index" :value="item.provCode">{{ item.provDesc }}</option>
+                                        </b-select>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="City/Municipality" expanded label-position="on-border"
+                                             :type="this.errors.res_city ? 'is-danger':''"
+                                             :message="this.errors.res_city ? this.errors.res_city[0] : ''">
+                                        <b-select expanded v-model="fields.res_city" placeholder="City" @input="loadResBarangay">
+                                            <option v-for="(item, index) in resCities" :key="index" :value="item.citymunCode">{{ item.citymunDesc }}</option>
+                                        </b-select>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    <b-field label="Barangay" expanded label-position="on-border"
+                                             :type="this.errors.res_barangay ? 'is-danger':''"
+                                             :message="this.errors.res_barangay ? this.errors.res_barangay[0] : ''">
+                                        <b-select v-model="fields.res_barangay" expanded placeholder="Barangay">
+                                            <option v-for="(item, index) in resBarangays" :key="index" :value="item.brgyCode">{{ item.brgyDesc }}</option>
+                                        </b-select>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="Street" label-position="on-border">
+                                        <b-input type="text" v-model="fields.res_street"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    <b-field label="House/Block No" label-position="on-border">
+                                        <b-input type="text" v-model="fields.res_houseno_blockno"></b-input>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="Zip Code" label-position="on-border">
+                                        <b-input type="text" v-model="fields.res_zipcode"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+
+                            <!-- PERMANENT ADDRESS-->
+                            <h2><span>PERMANENT ADDRESS</span></h2>
+                            <div class="columns">
+                                <div class="column">
+                                    <b-field label="Province" expanded label-position="on-border"
+                                             :type="this.errors.per_province ? 'is-danger':''"
+                                             :message="this.errors.per_province ? this.errors.per_province[0] : ''">
+                                        <b-select v-model="fields.per_province" expanded placeholder="Province" @input="loadPerCity">
+                                            <option v-for="(item, index) in perProvinces" :key="index" :value="item.provCode">{{ item.provDesc }}</option>
+                                        </b-select>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="City/Municipality" expanded label-position="on-border"
+                                             :type="this.errors.per_city ? 'is-danger':''"
+                                             :message="this.errors.per_city ? this.errors.per_city[0] : ''">
+                                        <b-select expanded v-model="fields.per_city" placeholder="City" @input="loadPerBarangay">
+                                            <option v-for="(item, index) in perCities" :key="index" :value="item.citymunCode">{{ item.citymunDesc }}</option>
+                                        </b-select>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    <b-field label="Barangay" expanded label-position="on-border"
+                                             :type="this.errors.per_barangay ? 'is-danger':''"
+                                             :message="this.errors.per_barangay ? this.errors.per_barangay[0] : ''">
+                                        <b-select v-model="fields.per_barangay" expanded placeholder="Barangay">
+                                            <option v-for="(item, index) in perBarangays" :key="index" :value="item.brgyCode">{{ item.brgyDesc }}</option>
+                                        </b-select>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="Street" label-position="on-border">
+                                        <b-input type="text" v-model="fields.per_street"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    <b-field label="House/Block No" label-position="on-border">
+                                        <b-input type="text" v-model="fields.per_houseno_blockno"></b-input>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="Zip Code" label-position="on-border">
+                                        <b-input type="text" v-model="fields.per_zipcode"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    <b-field label="Tel No."
+                                             :type="this.errors.tel_no ? 'is-danger':''"
+                                             :message="this.errors.tel_no ? this.errors.tel_no[0] : ''">
+                                        <b-input type="text" v-model="fields.tel_no" icon="email" placeholder="Tel No."></b-input>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="Contact No."
+                                             :type="this.errors.contact_no ? 'is-danger':''"
+                                             :message="this.errors.contact_no ? this.errors.contact_no[0] : ''">
+                                        <b-input type="text" v-model="fields.contact_no" icon=""></b-input>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="Email"
+                                             :type="this.errors.email ? 'is-danger':''"
+                                             :message="this.errors.email ? this.errors.email[0] : ''">
+                                        <b-input type="email" v-model="fields.email" icon="email"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="separator">
+                                FAMILY BACKGROUND
+                            </div>
+
+                            <div class="columns" v-if="fields.civil_status === 'MARRIED'">
+                                <div class="column">
+                                    <b-field label="Spouse Surname" label-position="on-border"
+                                         :type="this.errors.spouse_surname ? 'is-danger':''"
+                                         :message="this.errors.spouse_surname ? this.errors.spouse_surname[0] : ''">
+                                        <b-input type="text" v-model="fields.spouse_surname" placeholder="Spouse Surname" icon="account"></b-input>
+                                    </b-field>
+                                </div>
+
+                                <div class="column">
+                                    <b-field label="Spouse First Name" label-position="on-border"
+                                         :type="this.errors.spouse_fname ? 'is-danger':''"
+                                         :message="this.errors.spouse_fname ? this.errors.spouse_fname[0] : ''">
+                                        <b-input type="text" v-model="fields.spouse_fname" placeholder="Spouse First Name" icon="account"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns" v-if="fields.civil_status === 'MARRIED'">
+                                <div class="column is-8">
+                                    <b-field label="Spouse Middle Name" label-position="on-border"
+                                             :type="this.errors.spouse_mname ? 'is-danger':''"
+                                             :message="this.errors.spouse_mname ? this.errors.spouse_mname[0] : ''">
+                                        <b-input type="text" v-model="fields.spouse_mname" placeholder="Spouse Middle Name" icon="account"></b-input>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="Spouse Suffix" label-position="on-border"
+                                             :type="this.errors.spouse_suffix ? 'is-danger':''"
+                                             :message="this.errors.spouse_suffix ? this.errors.spouse_suffix[0] : ''">
+                                        <b-input type="text" v-model="fields.spouse_suffix" placeholder="Spouse Suffix" icon="account"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    <b-field label="Employer/Business Name" label-position="on-border"
+                                             :type="this.errors.business_name ? 'is-danger':''"
+                                             :message="this.errors.business_name ? this.errors.business_name[0] : ''">
+                                        <b-input type="text" v-model="fields.business_name" placeholder="Employer/Business Name" icon="account"></b-input>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="Business Address" label-position="on-border"
+                                             :type="this.errors.business_address ? 'is-danger':''"
+                                             :message="this.errors.business_address ? this.errors.business_address[0] : ''">
+                                        <b-input type="text" v-model="fields.business_address" placeholder="Business Address" icon="account"></b-input>
+                                    </b-field>
+                                </div>
+
+                                <div class="column">
+                                    <b-field label="Contact No." label-position="on-border"
+                                             :type="this.errors.business_contact_no ? 'is-danger':''"
+                                             :message="this.errors.business_contact_no ? this.errors.business_contact_no[0] : ''">
+                                        <b-input type="text" v-model="fields.business_contact_no" placeholder="Contact No." icon="account"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+
+                            <!--FATHER INFORMATION-->
+                            <div class="columns">
+                                <div class="column">
+                                    <b-field label="Father Surname" label-position="on-border"
+                                             :type="this.errors.father_surname ? 'is-danger':''"
+                                             :message="this.errors.father_surname ? this.errors.father_surname[0] : ''">
+                                        <b-input type="text" v-model="fields.father_surname" placeholder="Father Surname" icon="account"></b-input>
+                                    </b-field>
+                                </div>
+
+                                <div class="column">
+                                    <b-field label="Father First Name" label-position="on-border"
+                                             :type="this.errors.father_fname ? 'is-danger':''"
+                                             :message="this.errors.father_fname ? this.errors.father_fname[0] : ''">
+                                        <b-input type="text" v-model="fields.father_fname" placeholder="Father First Name" icon="account"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column is-8">
+                                    <b-field label="Father Middle Name" label-position="on-border"
+                                             :type="this.errors.father_mname ? 'is-danger':''"
+                                             :message="this.errors.father_mname ? this.errors.father_mname[0] : ''">
+                                        <b-input type="text" v-model="fields.father_mname" placeholder="Father Middle Name" icon="account"></b-input>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="Father Suffix" label-position="on-border"
+                                             :type="this.errors.father_suffix ? 'is-danger':''"
+                                             :message="this.errors.father_suffix ? this.errors.father_suffix[0] : ''">
+                                        <b-input type="text" v-model="fields.father_suffix" placeholder="Father Suffix" icon="account"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+
+                            <!--MOTHER INFORMATION-->
+                            <div class="columns">
+                                <div class="column">
+                                    <b-field label="Mother Maiden Name" label-position="on-border"
+                                             :type="this.errors.mother_maiden_name ? 'is-danger':''"
+                                             :message="this.errors.mother_maiden_name ? this.errors.mother_maiden_name[0] : ''">
+                                        <b-input type="text" v-model="fields.mother_maiden_name" placeholder="Mothers Maiden Name" icon="account"></b-input>
+                                    </b-field>
+                                </div>
+
+                                <div class="column">
+                                    <b-field label="Mother First Name" label-position="on-border"
+                                             :type="this.errors.mother_fname ? 'is-danger':''"
+                                             :message="this.errors.mother_fname ? this.errors.mother_fname[0] : ''">
+                                        <b-input type="text" v-model="fields.mother_fname" placeholder="Mother First Name" icon="account"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column is-8">
+                                    <b-field label="Mother Middle Name" label-position="on-border"
+                                             :type="this.errors.mother_mname ? 'is-danger':''"
+                                             :message="this.errors.mother_mname ? this.errors.mother_mname[0] : ''">
+                                        <b-input type="text" v-model="fields.mother_mname" placeholder="Mother Middle Name" icon="account"></b-input>
+                                    </b-field>
+                                </div>
+                                <div class="column">
+                                    <b-field label="Mother Suffix" label-position="on-border"
+                                             :type="this.errors.mother_suffix ? 'is-danger':''"
+                                             :message="this.errors.mother_suffix ? this.errors.mother_suffix[0] : ''">
+                                        <b-input type="text" v-model="fields.mother_suffix" placeholder="Father Suffix" icon="account"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <h2><span>CHILDREN</span></h2>
+                            <div v-for="(item, k) in this.fields.children" :key="`child${k}`">
                                 <div class="columns">
                                     <div class="column">
-                                        <b-field label="Surname" label-position="on-border"
-                                                    :type="this.errors.surname ? 'is-danger':''"
-                                                    :message="this.errors.surname ? this.errors.surname[0] : ''">
-                                            <b-input type="text" v-model="fields.surname" icon="account"></b-input>
-                                        </b-field>
-                                    </div>
-
-                                    <div class="column">
-                                        <b-field label="First Name" label-position="on-border"
-                                                :type="this.errors.fname ? 'is-danger':''"
-                                                :message="this.errors.fname ? this.errors.fname[0] : ''">
-                                            <b-input type="text" v-model="fields.fname" placeholder="First Name" icon="account"></b-input>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-                                <div class="columns">
-                                    <div class="column is-8">
-                                        <b-field label="Middle Name" label-position="on-border"
-                                                :type="this.errors.mname ? 'is-danger':''"
-                                                :message="this.errors.mname ? this.errors.mname[0] : ''">
-                                            <b-input type="text" v-model="fields.mname" placeholder="Middle Name" icon="account"></b-input>
+                                        <b-field label="Fullname" label-position="on-border">
+                                            <b-input type="text" v-model="item.fullname" placeholder="Fullname" required></b-input>
                                         </b-field>
                                     </div>
                                     <div class="column">
-                                        <b-field label="Suffix" label-position="on-border"
-                                                :type="this.errors.suffix ? 'is-danger':''"
-                                                :message="this.errors.suffix ? this.errors.suffix[0] : ''">
-                                            <b-input type="text" v-model="fields.suffix" placeholder="Suffix" icon="account"></b-input>
+                                        <b-field label="Date of Birth (mm/dd/yyyy)" label-position="on-border">
+                                            <b-datepicker editable v-model="item.date_birth"
+                                                          placeholder="Date Birth" required> </b-datepicker>
+                                            <p class="control">
+                                                <b-button @click="removeChild(k)" v-show="k || ( !k && fields.children.length > 0)" type="is-danger" icon-left="delete"></b-button>
+                                            </p>
                                         </b-field>
                                     </div>
-                                </div>
-
-                                <div class="columns">
-
-                                    <div class="column">
-                                        <b-field label-position="on-border" label="Birthdate"
-                                                 :type="this.errors.date_birth ? 'is-danger':''"
-                                                 :message="this.errors.date_birth ? this.errors.date_birth[0] : ''">
-                                            <b-datepicker editable icon="calendar" v-model="fields.date_birth" placeholder="Birthdate"></b-datepicker>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label-position="on-border" label="Place of Birth"
-                                                 :type="this.errors.place_birth ? 'is-danger':''"
-                                                 :message="this.errors.place_birth ? this.errors.place_birth[0] : ''">
-                                            <b-input icon="map-marker-radius" v-model="fields.place_birth" placeholder="Place of Birth"></b-input>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-                                <div class="columns">
-                                    <div class="column">
-                                        <b-field label="Sex" expanded label-position="on-border"
-                                                 :type="this.errors.sex ? 'is-danger':''"
-                                                 :message="this.errors.sex ? this.errors.sex[0] : ''">
-                                            <b-select placeholder="Sex" v-model="fields.sex" icon="account" expanded>
-                                                <option value="MALE">MALE</option>
-                                                <option value="FEMALE">FEMALE</option>
-                                            </b-select>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label="Civil Status" expanded label-position="on-border"
-                                                 :type="this.errors.civil_status ? 'is-danger':''"
-                                                 :message="this.errors.civil_status ? this.errors.civil_status[0] : ''">
-                                            <b-select placeholder="Civil Status" v-model="fields.civil_status" icon="human-non-binary" expanded>
-                                                <option v-for="(item, index) in civilStatuses" :key="index" :value="item.civil_status">
-                                                    {{ item.civil_status }}</option>
-                                            </b-select>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-                                <div class="columns">
-                                    <div class="column">
-                                        <b-field label-position="on-border" label="Height(m)"
-                                                 :type="this.errors.height ? 'is-danger':''"
-                                                 :message="this.errors.height ? this.errors.height[0] : ''">
-                                            <b-input icon="human-male-height-variant" v-model="fields.height" placeholder="Height(m)"></b-input>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label-position="on-border" label="Weight(m)"
-                                                 :type="this.errors.weight ? 'is-danger':''"
-                                                 :message="this.errors.weight ? this.errors.weight[0] : ''">
-                                            <b-input icon="weight" v-model="fields.weight" placeholder="Weight(m)"></b-input>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label="Blood Type" expanded label-position="on-border"
-                                                 :type="this.errors.blood_type ? 'is-danger':''"
-                                                 :message="this.errors.blood_type ? this.errors.blood_type[0] : ''">
-                                            <b-select placeholder="Blood Type" v-model="fields.blood_type" icon="water" expanded>
-                                                <option value="O">O</option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                                <option value="AB">AB</option>
-                                            </b-select>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-                                <div class="columns">
-                                    <div class="column">
-                                        <b-field label="GSIS" label-position="on-border">
-                                            <b-input type="text" placeholder="GSIS" v-model="fields.gsis"></b-input>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label="PAGIBIG" label-position="on-border">
-                                            <b-input type="text" placeholder="PAGIBIG" v-model="fields.pagibig"></b-input>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label="PhilHealth" label-position="on-border">
-                                            <b-input type="text" placeholder="PhilHealth" v-model="fields.philhealth"></b-input>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-                                <div class="columns">
-                                    <div class="column">
-                                        <b-field label="SSS No." label-position="on-border">
-                                            <b-input type="text" placeholder="SSS No." v-model="fields.sss"></b-input>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label="TIN" label-position="on-border">
-                                            <b-input type="text" placeholder="TIN" v-model="fields.tin"></b-input>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label="Agency No." label-position="on-border">
-                                            <b-input type="text" placeholder="Agency No." v-model="fields.agency_idno"></b-input>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-                                <div class="columns">
-                                    <div class="column">
-                                        <b-field label="Citizenship" expanded label-position="on-border"
-                                                 :type="this.errors.citizenship ? 'is-danger':''"
-                                                 :message="this.errors.citizenship ? this.errors.citizenship[0] : ''">
-                                            <b-select placeholder="Citizenship" v-model="fields.citizenship" icon="account-switch" expanded>
-                                                <option v-for="(item, index) in citizenships" :key="index" :value="item.citizenship">
-                                                    {{ item.citizenship }}</option>
-                                            </b-select>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-                                <!-- RESIDENTIAL ADDRESS-->
-                                <h2><span>RESIDENTIAL ADDRESS</span></h2>
-                                <div class="columns">
-                                    <div class="column">
-                                        <b-field label="Province" expanded label-position="on-border"
-                                                 :type="this.errors.res_province ? 'is-danger':''"
-                                                 :message="this.errors.res_province ? this.errors.res_province[0] : ''">
-                                            <b-select v-model="fields.res_province" expanded placeholder="Province" @input="loadResCity">
-                                                <option v-for="(item, index) in resProvinces" :key="index" :value="item.provCode">{{ item.provDesc }}</option>
-                                            </b-select>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label="City/Municipality" expanded label-position="on-border"
-                                                 :type="this.errors.res_city ? 'is-danger':''"
-                                                 :message="this.errors.res_city ? this.errors.res_city[0] : ''">
-                                            <b-select expanded v-model="fields.res_city" placeholder="City" @input="loadResBarangay">
-                                                <option v-for="(item, index) in resCities" :key="index" :value="item.citymunCode">{{ item.citymunDesc }}</option>
-                                            </b-select>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-                                <div class="columns">
-                                    <div class="column">
-                                        <b-field label="Barangay" expanded label-position="on-border"
-                                                 :type="this.errors.res_barangay ? 'is-danger':''"
-                                                 :message="this.errors.res_barangay ? this.errors.res_barangay[0] : ''">
-                                            <b-select v-model="fields.res_barangay" expanded placeholder="Barangay">
-                                                <option v-for="(item, index) in resBarangays" :key="index" :value="item.brgyCode">{{ item.brgyDesc }}</option>
-                                            </b-select>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label="Street" label-position="on-border">
-                                            <b-input type="text" v-model="fields.res_street"></b-input>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-                                <div class="columns">
-                                    <div class="column">
-                                        <b-field label="House/Block No" label-position="on-border">
-                                            <b-input type="text" v-model="fields.res_houseno_blockno"></b-input>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label="Zip Code" label-position="on-border">
-                                            <b-input type="text" v-model="fields.res_zipcode"></b-input>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-
-                                <!-- PERMANENT ADDRESS-->
-                                <h2><span>PERMANENT ADDRESS</span></h2>
-                                <div class="columns">
-                                    <div class="column">
-                                        <b-field label="Province" expanded label-position="on-border"
-                                                 :type="this.errors.per_province ? 'is-danger':''"
-                                                 :message="this.errors.per_province ? this.errors.per_province[0] : ''">
-                                            <b-select v-model="fields.per_province" expanded placeholder="Province" @input="loadPerCity">
-                                                <option v-for="(item, index) in perProvinces" :key="index" :value="item.provCode">{{ item.provDesc }}</option>
-                                            </b-select>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label="City/Municipality" expanded label-position="on-border"
-                                                 :type="this.errors.per_city ? 'is-danger':''"
-                                                 :message="this.errors.per_city ? this.errors.per_city[0] : ''">
-                                            <b-select expanded v-model="fields.per_city" placeholder="City" @input="loadPerBarangay">
-                                                <option v-for="(item, index) in perCities" :key="index" :value="item.citymunCode">{{ item.citymunDesc }}</option>
-                                            </b-select>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-                                <div class="columns">
-                                    <div class="column">
-                                        <b-field label="Barangay" expanded label-position="on-border"
-                                                 :type="this.errors.per_barangay ? 'is-danger':''"
-                                                 :message="this.errors.per_barangay ? this.errors.per_barangay[0] : ''">
-                                            <b-select v-model="fields.per_barangay" expanded placeholder="Barangay">
-                                                <option v-for="(item, index) in perBarangays" :key="index" :value="item.brgyCode">{{ item.brgyDesc }}</option>
-                                            </b-select>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label="Street" label-position="on-border">
-                                            <b-input type="text" v-model="fields.per_street"></b-input>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-                                <div class="columns">
-                                    <div class="column">
-                                        <b-field label="House/Block No" label-position="on-border">
-                                            <b-input type="text" v-model="fields.per_houseno_blockno"></b-input>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label="Zip Code" label-position="on-border">
-                                            <b-input type="text" v-model="fields.per_zipcode"></b-input>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-                                <div class="columns">
-                                    <div class="column">
-                                        <b-field label="Tel No."
-                                                 :type="this.errors.tel_no ? 'is-danger':''"
-                                                 :message="this.errors.tel_no ? this.errors.tel_no[0] : ''">
-                                            <b-input type="text" v-model="fields.tel_no" icon="email" placeholder="Tel No."></b-input>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label="Contact No."
-                                                 :type="this.errors.contact_no ? 'is-danger':''"
-                                                 :message="this.errors.contact_no ? this.errors.contact_no[0] : ''">
-                                            <b-input type="text" v-model="fields.contact_no" icon=""></b-input>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label="Email"
-                                                 :type="this.errors.email ? 'is-danger':''"
-                                                 :message="this.errors.email ? this.errors.email[0] : ''">
-                                            <b-input type="email" v-model="fields.email" icon="email"></b-input>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-                                <div class="separator">
-                                    FAMILY BACKGROUND
-                                </div>
-
-                                <div class="columns" v-if="fields.civil_status === 'MARRIED'">
-                                    <div class="column">
-                                        <b-field label="Spouse Surname" label-position="on-border"
-                                             :type="this.errors.spouse_surname ? 'is-danger':''"
-                                             :message="this.errors.spouse_surname ? this.errors.spouse_surname[0] : ''">
-                                            <b-input type="text" v-model="fields.spouse_surname" placeholder="Spouse Surname" icon="account"></b-input>
-                                        </b-field>
-                                    </div>
-
-                                    <div class="column">
-                                        <b-field label="Spouse First Name" label-position="on-border"
-                                             :type="this.errors.spouse_fname ? 'is-danger':''"
-                                             :message="this.errors.spouse_fname ? this.errors.spouse_fname[0] : ''">
-                                            <b-input type="text" v-model="fields.spouse_fname" placeholder="Spouse First Name" icon="account"></b-input>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-                                <div class="columns" v-if="fields.civil_status === 'MARRIED'">
-                                    <div class="column is-8">
-                                        <b-field label="Spouse Middle Name" label-position="on-border"
-                                                 :type="this.errors.spouse_mname ? 'is-danger':''"
-                                                 :message="this.errors.spouse_mname ? this.errors.spouse_mname[0] : ''">
-                                            <b-input type="text" v-model="fields.spouse_mname" placeholder="Spouse Middle Name" icon="account"></b-input>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label="Spouse Suffix" label-position="on-border"
-                                                 :type="this.errors.spouse_suffix ? 'is-danger':''"
-                                                 :message="this.errors.spouse_suffix ? this.errors.spouse_suffix[0] : ''">
-                                            <b-input type="text" v-model="fields.spouse_suffix" placeholder="Spouse Suffix" icon="account"></b-input>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-                                <div class="columns">
-                                    <div class="column">
-                                        <b-field label="Employer/Business Name" label-position="on-border"
-                                                 :type="this.errors.business_name ? 'is-danger':''"
-                                                 :message="this.errors.business_name ? this.errors.business_name[0] : ''">
-                                            <b-input type="text" v-model="fields.business_name" placeholder="Employer/Business Name" icon="account"></b-input>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label="Business Address" label-position="on-border"
-                                                 :type="this.errors.business_address ? 'is-danger':''"
-                                                 :message="this.errors.business_address ? this.errors.business_address[0] : ''">
-                                            <b-input type="text" v-model="fields.business_address" placeholder="Business Address" icon="account"></b-input>
-                                        </b-field>
-                                    </div>
-
-                                    <div class="column">
-                                        <b-field label="Contact No." label-position="on-border"
-                                                 :type="this.errors.business_contact_no ? 'is-danger':''"
-                                                 :message="this.errors.business_contact_no ? this.errors.business_contact_no[0] : ''">
-                                            <b-input type="text" v-model="fields.business_contact_no" placeholder="Contact No." icon="account"></b-input>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-
-                                <!--FATHER INFORMATION-->
-                                <div class="columns">
-                                    <div class="column">
-                                        <b-field label="Father Surname" label-position="on-border"
-                                                 :type="this.errors.father_surname ? 'is-danger':''"
-                                                 :message="this.errors.father_surname ? this.errors.father_surname[0] : ''">
-                                            <b-input type="text" v-model="fields.father_surname" placeholder="Father Surname" icon="account"></b-input>
-                                        </b-field>
-                                    </div>
-
-                                    <div class="column">
-                                        <b-field label="Father First Name" label-position="on-border"
-                                                 :type="this.errors.father_fname ? 'is-danger':''"
-                                                 :message="this.errors.father_fname ? this.errors.father_fname[0] : ''">
-                                            <b-input type="text" v-model="fields.father_fname" placeholder="Father First Name" icon="account"></b-input>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-                                <div class="columns">
-                                    <div class="column is-8">
-                                        <b-field label="Father Middle Name" label-position="on-border"
-                                                 :type="this.errors.father_mname ? 'is-danger':''"
-                                                 :message="this.errors.father_mname ? this.errors.father_mname[0] : ''">
-                                            <b-input type="text" v-model="fields.father_mname" placeholder="Father Middle Name" icon="account"></b-input>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label="Father Suffix" label-position="on-border"
-                                                 :type="this.errors.father_suffix ? 'is-danger':''"
-                                                 :message="this.errors.father_suffix ? this.errors.father_suffix[0] : ''">
-                                            <b-input type="text" v-model="fields.father_suffix" placeholder="Father Suffix" icon="account"></b-input>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-
-                                <!--MOTHER INFORMATION-->
-                                <div class="columns">
-                                    <div class="column">
-                                        <b-field label="Mother Maiden Name" label-position="on-border"
-                                                 :type="this.errors.mother_maiden_name ? 'is-danger':''"
-                                                 :message="this.errors.mother_maiden_name ? this.errors.mother_maiden_name[0] : ''">
-                                            <b-input type="text" v-model="fields.mother_maiden_name" placeholder="Mothers Maiden Name" icon="account"></b-input>
-                                        </b-field>
-                                    </div>
-
-                                    <div class="column">
-                                        <b-field label="Mother First Name" label-position="on-border"
-                                                 :type="this.errors.mother_fname ? 'is-danger':''"
-                                                 :message="this.errors.mother_fname ? this.errors.mother_fname[0] : ''">
-                                            <b-input type="text" v-model="fields.mother_fname" placeholder="Mother First Name" icon="account"></b-input>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-                                <div class="columns">
-                                    <div class="column is-8">
-                                        <b-field label="Mother Middle Name" label-position="on-border"
-                                                 :type="this.errors.mother_mname ? 'is-danger':''"
-                                                 :message="this.errors.mother_mname ? this.errors.mother_mname[0] : ''">
-                                            <b-input type="text" v-model="fields.mother_mname" placeholder="Mother Middle Name" icon="account"></b-input>
-                                        </b-field>
-                                    </div>
-                                    <div class="column">
-                                        <b-field label="Mother Suffix" label-position="on-border"
-                                                 :type="this.errors.mother_suffix ? 'is-danger':''"
-                                                 :message="this.errors.mother_suffix ? this.errors.mother_suffix[0] : ''">
-                                            <b-input type="text" v-model="fields.mother_suffix" placeholder="Father Suffix" icon="account"></b-input>
-                                        </b-field>
-                                    </div>
-                                </div>
-
-                                <h2><span>CHILDREN</span></h2>
-                                <div v-for="(item, k) in this.fields.children" :key="`child${k}`">
-                                    <div class="columns">
-                                        <div class="column">
-                                            <b-field label="Fullname" label-position="on-border">
-                                                <b-input type="text" v-model="item.fullname" placeholder="Fullname" required></b-input>
-                                            </b-field>
-                                        </div>
-                                        <div class="column">
-                                            <b-field label="Date of Birth (mm/dd/yyyy)" label-position="on-border">
-                                                <b-datepicker editable v-model="item.date_birth"
-                                                              placeholder="Date Birth" required> </b-datepicker>
-                                                <p class="control">
-                                                    <b-button @click="removeChild(k)" v-show="k || ( !k && fields.children.length > 0)" type="is-danger" icon-left="delete"></b-button>
-                                                </p>
-                                            </b-field>
-                                        </div>
-                                    </div><!--cols-->
-                                </div>
-                                <div class="buttons">
-                                    <b-button @click="addChild" type="is-success mb-4 mt-4" class="is-small" icon-left="plus">ADD</b-button>
-                                </div>
+                                </div><!--cols-->
+                            </div>
+                            <div class="buttons">
+                                <b-button @click="addChild" type="is-success mb-4 mt-4" class="is-small" icon-left="plus">ADD</b-button>
+                            </div>
 
 
 
-                                <div class="separator">
-                                    EDUCATIONAL BACKGROUND
-                                </div>
-                                <div class="columns">
-                                    <div class="column">
-                                        <div class="w-separator" v-for="(item, k) in fields.educational_backgrounds" :key="`ed${k}`">
-                                            <div class="columns">
-                                                <div class="column">
-                                                    <b-field label="Level" expanded label-position="on-border">
-                                                        <b-select v-model="item.level" placeholder="Level" required expanded>
-                                                            <option value="ELEMENTARY">ELEMENTARY</option>
-                                                            <option value="SECONDARY">SECONDARY</option>
-                                                            <option value="VOCATIONAL/TRADE COURSE">VOCATIONAL/TRADE COURSE</option>
-                                                            <option value="COLLEGE">COLLEGE</option>
-                                                            <option value="GRADUATE STUDIES">GRADUATE STUDIES</option>
-                                                        </b-select>
-                                                    </b-field>
-                                                </div>
-                                               <div class="column">
-                                                    <b-field label="Name of School" label-position="on-border">
-                                                        <b-input type="text" v-model="item.name_of_school" placeholder="Name of School" required></b-input>
-                                                    </b-field>
-                                               </div>
-                                            </div><!--cols-->
-                                            <div class="columns">
-                                                <div class="column is-8">
-                                                    <b-field label="Degree" label-position="on-border">
-                                                        <b-input type="text" v-model="item.degree" placeholder="Degree" required></b-input>
-                                                    </b-field>
-                                                </div>
-                                                <div class="column is-4">
-                                                    <b-field label="Period of Attendance From/To" label-position="on-border">
-                                                        <b-input type="text" v-model="item.period_att_from" placeholder="From"></b-input>
-                                                        <b-input type="text" v-model="item.period_att_to" placeholder="To"></b-input>
-                                                    </b-field>
-                                                </div>
+                            <div class="separator">
+                                EDUCATIONAL BACKGROUND
+                            </div>
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="w-separator" v-for="(item, k) in fields.educational_backgrounds" :key="`ed${k}`">
+                                        <div class="columns">
+                                            <div class="column">
+                                                <b-field label="Level" expanded label-position="on-border">
+                                                    <b-select v-model="item.level" placeholder="Level" required expanded>
+                                                        <option value="ELEMENTARY">ELEMENTARY</option>
+                                                        <option value="SECONDARY">SECONDARY</option>
+                                                        <option value="VOCATIONAL/TRADE COURSE">VOCATIONAL/TRADE COURSE</option>
+                                                        <option value="COLLEGE">COLLEGE</option>
+                                                        <option value="GRADUATE STUDIES">GRADUATE STUDIES</option>
+                                                    </b-select>
+                                                </b-field>
                                             </div>
-                                            <div class="columns">
-                                                <div class="column">
-                                                    <b-field label="Heighest Unit Earned" label-position="on-border">
-                                                        <b-input type="text" v-model="item.highest_level_unit" placeholder="Unit Earned"></b-input>
-                                                    </b-field>
-                                                </div>
-                                                <div class="column">
-                                                    <b-field label="Year Graudated" label-position="on-border">
-                                                        <b-input type="text" v-model="item.year_graduated" placeholder="Year Graduated"></b-input>
-                                                    </b-field>
-                                                </div>
+                                           <div class="column">
+                                                <b-field label="Name of School" label-position="on-border">
+                                                    <b-input type="text" v-model="item.name_of_school" placeholder="Name of School" required></b-input>
+                                                </b-field>
+                                           </div>
+                                        </div><!--cols-->
+                                        <div class="columns">
+                                            <div class="column is-8">
+                                                <b-field label="Degree" label-position="on-border">
+                                                    <b-input type="text" v-model="item.degree" placeholder="Degree" required></b-input>
+                                                </b-field>
                                             </div>
-                                            <div class="columns">
-                                                <div class="column">
-                                                    <b-field label="Scholarship" expanded label-position="on-border">
-                                                        <b-input type="text" expanded v-model="item.scholarship" placeholder="Scholarship"></b-input>
-                                                        <p class="control">
-                                                            <b-button @click="removeEducationalBackground(k)" v-show="k || ( !k && fields.educational_backgrounds.length > 0)" type="is-danger" icon-left="delete"></b-button>
-                                                        </p>
-                                                    </b-field>
-                                                </div>
+                                            <div class="column is-4">
+                                                <b-field label="Period of Attendance From/To" label-position="on-border">
+                                                    <b-input type="text" v-model="item.period_att_from" placeholder="From"></b-input>
+                                                    <b-input type="text" v-model="item.period_att_to" placeholder="To"></b-input>
+                                                </b-field>
                                             </div>
                                         </div>
-                                        <div class="buttons">
-                                            <b-button @click="addEducationalBackground" type="is-success mb-4 mt-4" class="is-small" icon-left="plus">ADD</b-button>
+                                        <div class="columns">
+                                            <div class="column">
+                                                <b-field label="Heighest Unit Earned" label-position="on-border">
+                                                    <b-input type="text" v-model="item.highest_level_unit" placeholder="Unit Earned"></b-input>
+                                                </b-field>
+                                            </div>
+                                            <div class="column">
+                                                <b-field label="Year Graudated" label-position="on-border">
+                                                    <b-input type="text" v-model="item.year_graduated" placeholder="Year Graduated"></b-input>
+                                                </b-field>
+                                            </div>
                                         </div>
-                                    </div><!--column parent-->
-                                </div> <!--columns -->
+                                        <div class="columns">
+                                            <div class="column">
+                                                <b-field label="Scholarship" expanded label-position="on-border">
+                                                    <b-input type="text" expanded v-model="item.scholarship" placeholder="Scholarship"></b-input>
+                                                    <p class="control">
+                                                        <b-button @click="removeEducationalBackground(k)" v-show="k || ( !k && fields.educational_backgrounds.length > 0)" type="is-danger" icon-left="delete"></b-button>
+                                                    </p>
+                                                </b-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttons">
+                                        <b-button @click="addEducationalBackground" type="is-success mb-4 mt-4" class="is-small" icon-left="plus">ADD</b-button>
+                                    </div>
+                                </div><!--column parent-->
+                            </div> <!--columns -->
 
 
-                            </b-step-item>
+                        </b-step-item>
 
-                            <b-step-item step="2" label="CSE" :clickable="isStepsClickable" :type="{'is-success': isProfileSuccess}">
-                                <div class="separator">Civil Sevice Eligibility</div>
+                        <b-step-item step="2" label="CSE" :clickable="isStepsClickable" :type="{'is-success': isProfileSuccess}">
+                            <div class="separator">Civil Sevice Eligibility</div>
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="w-separator" v-for="(item, k) in this.fields.eligibilities" :key="`eligible${k}`">
+                                        <div class="columns">
+                                            <div class="column">
+                                                <b-field label="Fullname" label-position="on-border">
+                                                    <b-input type="text" v-model="item.career_exam" placeholder="Career Exam" required></b-input>
+                                                </b-field>
+                                            </div>
+                                            <div class="column is-4">
+                                                <b-field label="Rating" label-position="on-border">
+                                                    <b-numberinput controls-alignment="right"
+                                                        type="text"
+                                                        step="0.01"
+                                                        v-model="item.rating"></b-numberinput>
+                                                </b-field>
+                                            </div>
+                                        </div><!--cols-->
+                                        <div class="columns">
+                                            <div class="column">
+                                                <b-field label="Date of Exam (mm/dd/yyyy)" label-position="on-border">
+                                                    <b-datepicker editable v-model="item.date_exam"
+                                                                  placeholder="Date of Exam" required> </b-datepicker>
+                                                </b-field>
+                                            </div>
+                                        </div>
+                                        <div class="columns">
+                                            <div class="column">
+                                                <b-field label="Place of Examination" label-position="on-border">
+                                                    <b-input type="text" v-model="item.place_exam" placeholder="Place of Examination"></b-input>
+                                                </b-field>
+                                            </div>
+                                        </div>
+                                        <div class="columns">
+                                            <div class="column">
+                                                <b-field label="License No." label-position="on-border">
+                                                    <b-input type="text" v-model="item.license_no" placeholder="License No."></b-input>
+                                                </b-field>
+                                            </div>
+                                            <div class="column">
+                                                <b-field label="License Validity" expanded label-position="on-border">
+                                                    <b-input type="text" expanded v-model="item.license_validity" placeholder="License Validity"></b-input>
+                                                    <p class="control">
+                                                        <b-button @click="removeEligibility(k)" v-show="k || ( !k && fields.eligibilities.length > 0)" type="is-danger" icon-left="delete"></b-button>
+                                                    </p>
+                                                </b-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttons">
+                                        <b-button @click="addEligibility" type="is-success mb-4 mt-4" class="is-small" icon-left="plus">ADD</b-button>
+                                    </div>
+                                </div><!--column parent-->
+                            </div> <!--columns -->
+
+
+                            <div class="separator">Work Experience</div>
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="w-separator" v-for="(item, k) in fields.work_experiences" :key="`work${k}`">
+                                        <div class="columns">
+                                            <div class="column">
+                                                <b-field label="Experience From/To" label-position="on-border">
+                                                    <b-datepicker editable v-model="item.work_ex_from"
+                                                                  placeholder="From" required> </b-datepicker>
+                                                    <b-datepicker editable v-model="item.work_ex_to"
+                                                                  placeholder="To" required> </b-datepicker>
+                                                </b-field>
+                                            </div>
+                                            <div class="column">
+                                                <b-field label="Position/Title" label-position="on-border">
+                                                    <b-input type="text" v-model="item.position_title" placeholder="Position/Title"></b-input>
+                                                </b-field>
+                                            </div>
+                                        </div><!--cols-->
+                                        <div class="columns">
+                                            <div class="column">
+                                                <b-field label="Department Agency" label-position="on-border">
+                                                    <b-input type="text" v-model="item.department_agency" placeholder="Department Agency"></b-input>
+                                                </b-field>
+                                            </div>
+                                            <div class="column is-4">
+                                                <b-field label="Salary" label-position="on-border">
+                                                    <b-input type="text" v-model="item.salary" placeholder="Salary"></b-input>
+                                                </b-field>
+                                            </div>
+                                        </div>
+                                        <div class="columns">
+                                            <div class="column">
+                                                <b-field label="Pay Grade" label-position="on-border">
+                                                    <b-input type="text" v-model="item.pay_grade" placeholder="Pay Grade"></b-input>
+                                                </b-field>
+                                            </div>
+                                            <div class="column">
+                                                <b-field label="Status Appointment" expanded label-position="on-border">
+                                                    <b-input type="text" expanded v-model="item.status_appointment" placeholder="Status Appointment"></b-input>
+                                                </b-field>
+                                            </div>
+                                            <div class="column">
+                                                <b-field label="Gov't Service" expanded label-position="on-border">
+                                                    <b-select  expanded v-model="item.is_govt" placeholder="Gov't Service">
+                                                        <option value="1">YES</option>
+                                                        <option value="0">NO</option>
+                                                    </b-select>
+                                                    <p class="control">
+                                                        <b-button @click="removeWorkExperience(k)" v-show="k || ( !k && fields.work_experiences.length > 0)"
+                                                            type="is-danger"
+                                                            icon-left="delete"></b-button>
+                                                    </p>
+                                                </b-field>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="buttons">
+                                        <b-button @click="addWorkExperience" type="is-success mb-4 mt-4" class="is-small" icon-left="plus">ADD</b-button>
+                                    </div>
+                                </div><!--column parent-->
+                            </div> <!--columns -->
+
+                        </b-step-item>
+
+                        <b-step-item step="3" label="Voluntary Work" :clickable="isStepsClickable">
+                            <div class="separator">
+                                Voluntary Work or Involvment in Civic / Non-Gov't / People / Voluntary Org
+                            </div>
+                            <div class="w-separator" v-for="(item, k) in fields.voluntary_works" :key="`voluntary${k}`">
                                 <div class="columns">
                                     <div class="column">
-                                        <div class="w-separator" v-for="(item, k) in this.fields.eligibilities" :key="`eligible${k}`">
-                                            <div class="columns">
-                                                <div class="column">
-                                                    <b-field label="Fullname" label-position="on-border">
-                                                        <b-input type="text" v-model="item.career_exam" placeholder="Career Exam" required></b-input>
-                                                    </b-field>
-                                                </div>
-                                                <div class="column is-4">
-                                                    <b-field label="Rating" label-position="on-border">
-                                                        <b-numberinput controls-alignment="right"
-                                                            type="text"
-                                                            step="0.01"
-                                                            v-model="item.rating"></b-numberinput>
-                                                    </b-field>
-                                                </div>
-                                            </div><!--cols-->
-                                            <div class="columns">
-                                                <div class="column">
-                                                    <b-field label="Date of Exam (mm/dd/yyyy)" label-position="on-border">
-                                                        <b-datepicker editable v-model="item.date_exam"
-                                                                      placeholder="Date of Exam" required> </b-datepicker>
-                                                    </b-field>
-                                                </div>
-                                            </div>
-                                            <div class="columns">
-                                                <div class="column">
-                                                    <b-field label="Place of Examination" label-position="on-border">
-                                                        <b-input type="text" v-model="item.place_exam" placeholder="Place of Examination"></b-input>
-                                                    </b-field>
-                                                </div>
-                                            </div>
-                                            <div class="columns">
-                                                <div class="column">
-                                                    <b-field label="License No." label-position="on-border">
-                                                        <b-input type="text" v-model="item.license_no" placeholder="License No."></b-input>
-                                                    </b-field>
-                                                </div>
-                                                <div class="column">
-                                                    <b-field label="License Validity" expanded label-position="on-border">
-                                                        <b-input type="text" expanded v-model="item.license_validity" placeholder="License Validity"></b-input>
-                                                        <p class="control">
-                                                            <b-button @click="removeEligibility(k)" v-show="k || ( !k && fields.eligibilities.length > 0)" type="is-danger" icon-left="delete"></b-button>
-                                                        </p>
-                                                    </b-field>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="buttons">
-                                            <b-button @click="addEligibility" type="is-success mb-4 mt-4" class="is-small" icon-left="plus">ADD</b-button>
-                                        </div>
-                                    </div><!--column parent-->
-                                </div> <!--columns -->
+                                        <b-field label="Name & Address of Organization" label-position="on-border">
+                                            <b-input type="text" v-model="item.name_address_org" placeholder="Name & Address of Organization"></b-input>
+                                        </b-field>
+                                    </div>
+                                </div>
 
-
-                                <div class="separator">Work Experience</div>
                                 <div class="columns">
                                     <div class="column">
-                                        <div class="w-separator" v-for="(item, k) in fields.work_experiences" :key="`work${k}`">
-                                            <div class="columns">
-                                                <div class="column">
-                                                    <b-field label="Experience From/To" label-position="on-border">
-                                                        <b-datepicker editable v-model="item.work_ex_from"
-                                                                      placeholder="From" required> </b-datepicker>
-                                                        <b-datepicker editable v-model="item.work_ex_to"
-                                                                      placeholder="To" required> </b-datepicker>
-                                                    </b-field>
-                                                </div>
-                                                <div class="column">
-                                                    <b-field label="Position/Title" label-position="on-border">
-                                                        <b-input type="text" v-model="item.position_title" placeholder="Position/Title"></b-input>
-                                                    </b-field>
-                                                </div>
-                                            </div><!--cols-->
-                                            <div class="columns">
-                                                <div class="column">
-                                                    <b-field label="Department Agency" label-position="on-border">
-                                                        <b-input type="text" v-model="item.department_agency" placeholder="Department Agency"></b-input>
-                                                    </b-field>
-                                                </div>
-                                                <div class="column is-4">
-                                                    <b-field label="Salary" label-position="on-border">
-                                                        <b-input type="text" v-model="item.salary" placeholder="Salary"></b-input>
-                                                    </b-field>
-                                                </div>
-                                            </div>
-                                            <div class="columns">
-                                                <div class="column">
-                                                    <b-field label="Pay Grade" label-position="on-border">
-                                                        <b-input type="text" v-model="item.pay_grade" placeholder="Pay Grade"></b-input>
-                                                    </b-field>
-                                                </div>
-                                                <div class="column">
-                                                    <b-field label="Status Appointment" expanded label-position="on-border">
-                                                        <b-input type="text" expanded v-model="item.status_appointment" placeholder="Status Appointment"></b-input>
-                                                    </b-field>
-                                                </div>
-                                                <div class="column">
-                                                    <b-field label="Gov't Service" expanded label-position="on-border">
-                                                        <b-select  expanded v-model="item.is_govt" placeholder="Gov't Service">
-                                                            <option value="1">YES</option>
-                                                            <option value="0">NO</option>
-                                                        </b-select>
-                                                        <p class="control">
-                                                            <b-button @click="removeWorkExperience(k)" v-show="k || ( !k && fields.work_experiences.length > 0)"
-                                                                type="is-danger"
-                                                                icon-left="delete"></b-button>
-                                                        </p>
-                                                    </b-field>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="buttons">
-                                            <b-button @click="addWorkExperience" type="is-success mb-4 mt-4" class="is-small" icon-left="plus">ADD</b-button>
-                                        </div>
-                                    </div><!--column parent-->
-                                </div> <!--columns -->
-
-                            </b-step-item>
-
-                            <b-step-item step="3" label="Voluntary Work" :clickable="isStepsClickable">
-                                <div class="separator">
-                                    Voluntary Work or Involvment in Civic / Non-Gov't / People / Voluntary Org
+                                        <b-field label="Inclusive Dates" label-position="on-border">
+                                            <b-input type="text" v-model="item.work_from" placeholder="From"></b-input>
+                                            <b-input type="text" v-model="item.work_to" placeholder="To"></b-input>
+                                        </b-field>
+                                    </div>
+                                    <div class="column">
+                                        <b-field label="No. of hours" label-position="on-border">
+                                            <b-input type="text" v-model="item.no_hours" placeholder="No. of hours"></b-input>
+                                        </b-field>
+                                    </div>
                                 </div>
-                                <div class="w-separator" v-for="(item, k) in fields.voluntary_works" :key="`voluntary${k}`">
-                                    <div class="columns">
-                                        <div class="column">
-                                            <b-field label="Name & Address of Organization" label-position="on-border">
-                                                <b-input type="text" v-model="item.name_address_org" placeholder="Name & Address of Organization"></b-input>
-                                            </b-field>
-                                        </div>
+                                <div class="columns">
+                                    <div class="column">
+                                        <b-field label="Position/Nature of Work" expanded label-position="on-border">
+                                            <b-input type="text" v-model="item.nature_work" expanded placeholder="Position/Nature of Works"></b-input>
+                                            <p class="control">
+                                                <b-button @click="removeVoluntaryWork(k)" v-show="k || ( !k && fields.work_experiences.length > 0)"
+                                                    type="is-danger"
+                                                    icon-left="delete"></b-button>
+                                            </p>
+                                        </b-field>
                                     </div>
+                                </div>
+                            </div>
 
-                                    <div class="columns">
-                                        <div class="column">
-                                            <b-field label="Inclusive Dates" label-position="on-border">
-                                                <b-input type="text" v-model="item.work_from" placeholder="From"></b-input>
-                                                <b-input type="text" v-model="item.work_to" placeholder="To"></b-input>
-                                            </b-field>
-                                        </div>
-                                        <div class="column">
-                                            <b-field label="No. of hours" label-position="on-border">
-                                                <b-input type="text" v-model="item.no_hours" placeholder="No. of hours"></b-input>
-                                            </b-field>
-                                        </div>
-                                    </div>
-                                    <div class="columns">
-                                        <div class="column">
-                                            <b-field label="Position/Nature of Work" expanded label-position="on-border">
-                                                <b-input type="text" v-model="item.nature_work" expanded placeholder="Position/Nature of Works"></b-input>
-                                                <p class="control">
-                                                    <b-button @click="removeVoluntaryWork(k)" v-show="k || ( !k && fields.work_experiences.length > 0)"
-                                                        type="is-danger"
-                                                        icon-left="delete"></b-button>
-                                                </p>
-                                            </b-field>
-                                        </div>
+                            <div class="buttons">
+                                <b-button @click="addVoluntaryWork" type="is-success mb-4 mt-4" class="is-small" icon-left="plus">ADD</b-button>
+                            </div>
+
+
+
+                            <!-- Learning Dev -->
+                            <div class="separator">
+                                Learning and Development Inventions / Trainings / Programs Attended
+                            </div>
+
+                            <div class="w-separator" v-for="(item, index) in fields.learning_developments" :key="`ld${index}`">
+                                <div class="columns">
+                                    <div class="column">
+                                        <b-field label="Title of Learning Development (Write Full)" label-position="on-border">
+                                            <b-input type="text" v-model="item.title_learning_dev" placeholder="Title of Learning Development (Write Full)"></b-input>
+                                        </b-field>
                                     </div>
                                 </div>
 
-                                <div class="buttons">
-                                    <b-button @click="addVoluntaryWork" type="is-success mb-4 mt-4" class="is-small" icon-left="plus">ADD</b-button>
+                                <div class="columns">
+                                    <div class="column">
+                                        <b-field label="Inclusive Dates (Attendance)" label-position="on-border">
+                                            <b-datepicker v-model="item.date_from" editable placeholder="From"></b-datepicker>
+                                            <b-datepicker v-model="item.date_to" editable placeholder="To"></b-datepicker>
+                                        </b-field>
+                                    </div>
+                                    <div class="column">
+                                        <b-field label="No. of hours" label-position="on-border">
+                                            <b-input type="text" v-model="item.no_hours" placeholder="No. of hours"></b-input>
+                                        </b-field>
+                                    </div>
                                 </div>
+                                <div class="columns">
+                                    <div class="column">
+                                        <b-field label="Type of LD" label-position="on-border">
+                                            <b-input type="text" v-model="item.type_ld" placeholder="Type of LD"></b-input>
+                                        </b-field>
+                                    </div>
+                                    <div class="column">
+                                        <b-field label="Conducted / Sponsored By" expanded label-position="on-border">
+                                            <b-input type="text" v-model="item.sponsored_by" expanded placeholder="Conducted / Sponsored By"></b-input>
 
-
-
-                                <!-- Learning Dev -->
-                                <div class="separator">
-                                    Learning and Development Inventions / Trainings / Programs Attended
+                                        </b-field>
+                                    </div>
                                 </div>
+                                
+                                <div class="buttons is-right">
+                                    <b-button @click="removeLearningDevelopment(index)" v-show="index || ( !index && fields.learning_developments.length > 0)"
+                                              type="is-danger"
+                                              icon-left="delete">
+                                    </b-button>
+                                </div>
+                            </div>
 
-                                <div class="w-separator" v-for="(item, index) in fields.learning_developments" :key="`ld${index}`">
-                                    <div class="columns">
-                                        <div class="column">
-                                            <b-field label="Title of Learning Development (Write Full)" label-position="on-border">
-                                                <b-input type="text" v-model="item.title_learning_dev" placeholder="Title of Learning Development (Write Full)"></b-input>
-                                            </b-field>
-                                        </div>
-                                    </div>
+                            <div class="buttons">
+                                <b-button @click="addLearningDevelopment" type="is-success mb-4 mt-4" class="is-small" icon-left="plus">ADD</b-button>
+                            </div>
 
-                                    <div class="columns">
-                                        <div class="column">
-                                            <b-field label="Inclusive Dates (Attendance)" label-position="on-border">
-                                                <b-datepicker v-model="item.date_from" editable placeholder="From"></b-datepicker>
-                                                <b-datepicker v-model="item.date_to" editable placeholder="To"></b-datepicker>
-                                            </b-field>
-                                        </div>
-                                        <div class="column">
-                                            <b-field label="No. of hours" label-position="on-border">
-                                                <b-input type="text" v-model="item.no_hours" placeholder="No. of hours"></b-input>
-                                            </b-field>
-                                        </div>
-                                    </div>
-                                    <div class="columns">
-                                        <div class="column">
-                                            <b-field label="Type of LD" label-position="on-border">
-                                                <b-input type="text" v-model="item.type_ld" placeholder="Type of LD"></b-input>
-                                            </b-field>
-                                        </div>
-                                        <div class="column">
-                                            <b-field label="Conducted / Sponsored By" expanded label-position="on-border">
-                                                <b-input type="text" v-model="item.sponsored_by" expanded placeholder="Conducted / Sponsored By"></b-input>
 
-                                            </b-field>
-                                        </div>
-                                    </div>
-                                    <div class="columns">
-                                        <div class="column">
-                                            <b-field label="Attach Image"
-                                                     :type="errors.attach_file ? 'is-danger':''"
-                                                     :message="errors.attach_file ? errors.attach_file[0] : ''">
-                                                <b-upload v-model="item.attach_file" class="file-label">
-                                                    <span class="file-cta">
-                                                        <b-icon class="file-icon" icon="upload"></b-icon>
-                                                        <span class="file-label">Click to upload</span>
-                                                    </span>
-                                                            <span class="file-name" v-if="item.attach_file">
-                                                        {{ item.attach_file.name }}
-                                                    </span>
-                                                </b-upload>
-                                            </b-field>
-                                        </div>
-                                    </div>
-                                    <div class="buttons is-right">
-                                        <b-button @click="removeLearningDevelopment(index)" v-show="index || ( !index && fields.learning_developments.length > 0)"
-                                                  type="is-danger"
-                                                  icon-left="delete">
-                                        </b-button>
+                            <!-- OTHER -->
+                            <div class="separator">
+                                Other Information
+                            </div>
+
+                            <div class="w-separator" v-for="(item, k) in fields.other_informations" :key="`info${k}`">
+                                <div class="columns">
+                                    <div class="column">
+                                        <b-field label="Special Skill & Hobbies (Write Full)" label-position="on-border">
+                                            <b-input type="text" v-model="item.skill_hobbies" placeholder="Special Skill & Hobbies (Write Full)"></b-input>
+                                        </b-field>
                                     </div>
                                 </div>
 
-                                <div class="buttons">
-                                    <b-button @click="addLearningDevelopment" type="is-success mb-4 mt-4" class="is-small" icon-left="plus">ADD</b-button>
-                                </div>
-
-
-                                <!-- OTHER -->
-                                <div class="separator">
-                                    Other Information
-                                </div>
-
-                                <div class="w-separator" v-for="(item, k) in fields.other_informations" :key="`info${k}`">
-                                    <div class="columns">
-                                        <div class="column">
-                                            <b-field label="Special Skill & Hobbies (Write Full)" label-position="on-border">
-                                                <b-input type="text" v-model="item.skill_hobbies" placeholder="Special Skill & Hobbies (Write Full)"></b-input>
-                                            </b-field>
-                                        </div>
-                                    </div>
-
-                                    <div class="columns">
-                                        <div class="column">
-                                            <b-field label="Non-Academic Distinctions / Recognition (Write Full)" label-position="on-border">
-                                                <b-input type="text" v-model="item.non_academic_distinction" placeholder="Non-Academic Distinctions / Recognition (Write Full)"></b-input>
-                                            </b-field>
-                                        </div>
-                                    </div>
-                                    <div class="columns">
-                                        <div class="column">
-                                            <b-field expanded label="Membership in Association / Organization (Write Full)" label-position="on-border">
-                                                <b-input type="text" expanded v-model="item.member_association" placeholder="Membership in Association / Organization (Write Full)"></b-input>
-                                                <p class="control">
-                                                    <b-button @click="removeOtherInformation(k)" v-show="k || ( !k && fields.other_informations.length > 0)"
-                                                        type="is-danger"
-                                                        icon-left="delete"></b-button>
-                                                </p>
-                                            </b-field>
-                                        </div>
+                                <div class="columns">
+                                    <div class="column">
+                                        <b-field label="Non-Academic Distinctions / Recognition (Write Full)" label-position="on-border">
+                                            <b-input type="text" v-model="item.non_academic_distinction" placeholder="Non-Academic Distinctions / Recognition (Write Full)"></b-input>
+                                        </b-field>
                                     </div>
                                 </div>
-                                <div class="buttons">
-                                    <b-button @click="addOtherInformation" type="is-success mb-4 mt-4" class="is-small" icon-left="plus">ADD</b-button>
+                                <div class="columns">
+                                    <div class="column">
+                                        <b-field expanded label="Membership in Association / Organization (Write Full)" label-position="on-border">
+                                            <b-input type="text" expanded v-model="item.member_association" placeholder="Membership in Association / Organization (Write Full)"></b-input>
+                                            <p class="control">
+                                                <b-button @click="removeOtherInformation(k)" v-show="k || ( !k && fields.other_informations.length > 0)"
+                                                    type="is-danger"
+                                                    icon-left="delete"></b-button>
+                                            </p>
+                                        </b-field>
+                                    </div>
                                 </div>
-                            </b-step-item>
+                            </div>
+                            <div class="buttons">
+                                <b-button @click="addOtherInformation" type="is-success mb-4 mt-4" class="is-small" icon-left="plus">ADD</b-button>
+                            </div>
+                        </b-step-item>
 
-                            <b-step-item :step="showSocial ? '4' : '3'" label="Finish" :clickable="isStepsClickable" disabled>
-                                <h1 class="title has-text-centered">Finish</h1>
-                                Lorem ipsum dolor sit amet.
-                            </b-step-item>
-
-                            <template
-                                v-if="customNavigation"
-                                #navigation="{previous, next}">
-                                <b-button
-                                    outlined
-                                    type="is-danger"
-                                    icon-pack="fas"
-                                    icon-left="backward"
-                                    :disabled="previous.disabled"
-                                    @click.prevent="previous.action">
-                                    Previous
-                                </b-button>
-                                <b-button
-                                    outlined
-                                    type="is-success"
-                                    icon-pack="fas"
-                                    icon-right="forward"
-                                    :disabled="next.disabled"
-                                    @click.prevent="next.action">
-                                    Next
-                                </b-button>
-                            </template>
-                        </b-steps>
+                        
+                        <template
+                            v-if="customNavigation"
+                            #navigation="{previous, next}">
+                            <b-button
+                                outlined
+                                type="is-danger"
+                                icon-pack="fas"
+                                icon-left="backward"
+                                :disabled="previous.disabled"
+                                @click.prevent="previous.action">
+                                Previous
+                            </b-button>
+                            <b-button
+                                outlined
+                                type="is-success"
+                                icon-pack="fas"
+                                icon-right="forward"
+                                :disabled="next.disabled"
+                                @click.prevent="next.action">
+                                Next
+                            </b-button>
+                        </template>
+                    </b-steps>
 
 
-                        <div class="buttons is-right">
-                            <button class="button is-primary">Update Information</button>
-                        </div>
+                    <div class="buttons is-right">
+                        <b-button @click="submit" class="button is-primary">Update Information</b-button>
+                    </div>
 
-                    </div> <!--panel-->
+                </div> <!--panel-->
 
-                </form>
+
             </div><!--column-->
         </div><!--cols-->
     </section>
@@ -873,7 +853,7 @@ export default {
         return{
             user: {},
 
-            activeStep: 2,
+            activeStep: 0,
 
             showSocial: false,
             isAnimated: true,
@@ -900,7 +880,7 @@ export default {
                 other_informations: [],
             },
 
-            attach_file: null,
+           
             errors: {},
 
             civilStatuses: [],
@@ -1104,7 +1084,6 @@ export default {
                     no_hours: learning.no_hours,
                     type_ld: learning.type_ld,
                     sponsored_by: learning.sponsored_by,
-                    //attach_file: learning.attach_file
                 });
             })
 
@@ -1143,13 +1122,13 @@ export default {
             formData.append('tin', this.fields.tin);
             formData.append('agency_idno', this.fields.agency_idno);
             formData.append('citizenship', this.fields.citizenship);
-            
+
             //spouse
             formData.append('spouse_surname', this.fields.spouse_surname);
             formData.append('spouse_fname', this.fields.spouse_fname);
             formData.append('spouse_mname', this.fields.spouse_mname);
             formData.append('spouse_suffix', this.fields.spouse_suffix);
-  
+
 
             //businees
             formData.append('business_name', this.fields.business_name);
@@ -1161,7 +1140,7 @@ export default {
             formData.append('father_fname', this.fields.father_fname);
             formData.append('father_mname', this.fields.father_mname);
             formData.append('father_suffix', this.fields.father_suffix);
- 
+
             //mother
             formData.append('mother_maiden_name', this.fields.mother_maiden_name);
             formData.append('mother_fname', this.fields.mother_fname);
@@ -1169,20 +1148,17 @@ export default {
             formData.append('mother_suffix', this.fields.mother_suffix);
 
 
-
-            for( let item = 0; item < this.fields.learning_developments.length; item++){
-            
-                formData.append(`learning_developments[${item}]`, { learning_dev_id: item.learning_dev_id });
-                formData.append(`learning_developments[${item}]`, { learning_dev: item.title_learning_dev });
-                formData.append(`learning_developments[${item}]`, { date_from: new Date(item.date_from) });
-                formData.append(`learning_developments[${item}]`, { date_to: new Date(item.date_to) });
-                // formData.append('no_hours', item.no_hours);
-                // formData.append('type_ld', item.type_ld);
-                // formData.append('sponsored_by', item.sponsored_by);
-                // formData.append('attach_file[]', item.attach_file);
-            };
-          
-           console.log(this.fields)
+            this.fields.learning_developments.forEach(item => {
+                formData.append('learning_dev_id', item.learning_dev_id);
+                formData.append('learning_dev', item.learning_dev);
+                formData.append('date_from', new Date(item.date_from));
+                formData.append('date_to', new Date(item.date_to));
+                formData.append('no_hours', item.no_hours);
+                formData.append('type_ld', item.type_ld);
+                formData.append('sponsored_by', item.sponsored_by);
+            });
+           
+           
             //formData.append('fields', this.fields);
             axios.post('/faculty/my-pds-update/' + this.user.user_id, this.fields).then(res=>{
                 if(res.data.status === 'saved'){

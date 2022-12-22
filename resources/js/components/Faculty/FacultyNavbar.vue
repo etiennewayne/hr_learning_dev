@@ -20,6 +20,10 @@
                 MY PDS
             </b-navbar-item>
 
+            <b-navbar-item href="/faculty/my-trainings">
+                MY Tranings
+            </b-navbar-item>
+
             <b-navbar-item tag="div">
 
                 <div class="buttons">
