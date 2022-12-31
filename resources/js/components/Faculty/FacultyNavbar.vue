@@ -16,12 +16,12 @@
                 Home
             </b-navbar-item>
 
-            <b-navbar-item href="/faculty/my-pds">
-                MY PDS
+            <b-navbar-item href="/faculty/personal-data-sheet">
+                Personal Data Sheet
             </b-navbar-item>
 
-            <b-navbar-item href="/faculty/my-trainings">
-                MY Tranings
+            <b-navbar-item href="/faculty/trainings-interventions">
+                Tranings / Interventions
             </b-navbar-item>
 
             <b-navbar-item tag="div">

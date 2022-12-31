@@ -101,8 +101,8 @@ Route::post('/user-reset-password/{id}', [App\Http\Controllers\Administrator\Use
 Route::resource('/faculty/home', App\Http\Controllers\Faculty\FacultyHomeController::class);
 
 
-Route::resource('/faculty/my-pds', App\Http\Controllers\Faculty\FacultyMyPDSController::class);
-Route::post('/faculty/my-pds-update/{id}', [App\Http\Controllers\Faculty\FacultyMyPDSController::class, 'update']);
+Route::resource('/faculty/personal-data-sheet', App\Http\Controllers\Faculty\FacultyPDSController::class);
+Route::post('/faculty/personal-data-sheet-update/{id}', [App\Http\Controllers\Faculty\FacultyPDSController::class, 'update']);
 
 Route::resource('/faculty/educational-backgrounds', App\Http\Controllers\Faculty\FacultyEducationalBackgroundController::class);
 Route::resource('/faculty/children', App\Http\Controllers\Faculty\FacultyChildController::class);
@@ -110,6 +110,26 @@ Route::resource('/faculty/eligibilities', App\Http\Controllers\Faculty\FacultyCS
 Route::resource('/faculty/work-experiences', App\Http\Controllers\Faculty\FacultyWorkExperienceController::class);
 Route::resource('/faculty/learning-developments', App\Http\Controllers\Faculty\FacultyLearningDevelopmentController::class);
 Route::resource('/faculty/other-informations', App\Http\Controllers\Faculty\FacultyOtherInformationController::class);
+
+Route::resource('/faculty/trainings-interventions', App\Http\Controllers\Faculty\TrainingInterventionController::class);
+Route::get('/faculty/get-learning-trainings', [App\Http\Controllers\Faculty\TrainingInterventionController::class, 'getLearningTrainings']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Route::get('/session', function(){
