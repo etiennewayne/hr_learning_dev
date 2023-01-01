@@ -26633,8 +26633,6 @@
 @charset "UTF-8";
 html, body {
   background: #f0f0f0;
-  width: 100%;
-  height: 100%;
 }
 
 @media screen and (max-width: 1023px) {
@@ -26672,11 +26670,14 @@ html, body {
 }
 
 .box {
-  border: 1px solid #e4e4e4;
+  border-top: 5px solid blue;
 }
 
-.tooth-chart {
-  width: 450px;
+.box-heading {
+  font-weight: bold;
+  font-size: 1.4em;
+  margin: 15px auto;
+  text-align: center;
 }
 
 #Spots polygon,

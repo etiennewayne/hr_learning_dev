@@ -5,7 +5,8 @@
             <form @submit.prevent="submit">
                 <div class="card">
                     <div class="title is-4">
-                        SECURITY CHECK
+                        Sign In
+                        <b-icon icon="login" class="is-large"></b-icon>
                     </div>
                     <hr>
 

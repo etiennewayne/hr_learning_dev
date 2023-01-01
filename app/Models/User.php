@@ -30,7 +30,7 @@ class User extends Authenticatable
         'business_name', 'business_address', 'business_contact_no',
         'father_surname', 'father_fname', 'father_mname', 'father_suffix',
         'mother_surname', 'mother_fname', 'mother_mname', 'mother_suffix',
-        'role', 'password',
+        'role', 'password', 'is_verified',
     ];
 
     /**

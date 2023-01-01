@@ -26,4 +26,8 @@ class LearningDevelopment extends Model
 
 
 
+    public function certificates(){
+        return $this->hasMany(Certificate::class, 'learning_dev_id', 'learning_dev_id');
+    }
+
 }

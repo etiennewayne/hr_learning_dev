@@ -7,73 +7,72 @@
 
                     <div class="box">
                         <div class="box-heading">
-                            <div>
-                                Trainings / Inteventions / Certificates
+                            <div class="mb-5">
+                                Trainings / Interventions / Certificates
                             </div>
                         </div>
 
                         <div class="box-body">
-                           <div class="columns">
-                                <div class="column">
-                                    <b-field label="Title of Learning Development (Write Full)" label-position="on-border">
-                                        <b-input type="text" v-model="fields.title_learning_dev" placeholder="Title of Learning Development (Write Full)"></b-input>
-                                    </b-field>
-                                </div>
+                           
+                            <div class="buttons is-right">
+                                <a class="button is-primary" href="/faculty/trainings-interventions/create">Add training</a>
                             </div>
+                            <b-table
+                                :data="data"
+                                :loading="loading"
+                                paginated
+                                backend-pagination
+                                :total="total"
+                                :pagination-rounded="true"
+                                :per-page="perPage"
+                                @page-change="onPageChange"
+                                aria-next-label="Next page"
+                                aria-previous-label="Previous page"
+                                aria-page-label="Page"
+                                aria-current-label="Current page"
+                                backend-sorting
+                                :default-sort-direction="defaultSortDirection"
+                                @sort="onSort">
 
-                            <div class="columns">
-                                <div class="column">
-                                    <b-field label="Inclusive Dates (Attendance)" label-position="on-border">
-                                        <b-datepicker v-model="fields.date_from" editable placeholder="From"></b-datepicker>
-                                        <b-datepicker v-model="fields.date_to" editable placeholder="To"></b-datepicker>
-                                    </b-field>
-                                </div>
-                                <div class="column">
-                                    <b-field label="No. of hours" label-position="on-border">
-                                        <b-input type="text" v-model="fields.no_hours" placeholder="No. of hours"></b-input>
-                                    </b-field>
-                                </div>
-                            </div>
-                            <div class="columns">
-                                <div class="column">
-                                    <b-field label="Type of LD" label-position="on-border">
-                                        <b-input type="text" v-model="fields.type_ld" placeholder="Type of LD"></b-input>
-                                    </b-field>
-                                </div>
-                                <div class="column">
-                                    <b-field label="Conducted / Sponsored By" expanded label-position="on-border">
-                                        <b-input type="text" v-model="fields.sponsored_by" expanded placeholder="Conducted / Sponsored By"></b-input>
+                                <b-table-column field="learning_dev_id" label="ID" sortable v-slot="props">
+                                    {{ props.row.learning_dev_id }}
+                                </b-table-column>
 
-                                    </b-field>
-                                </div>
-                            </div>
+                                <b-table-column field="title_learning_dev" label="Training Title" sortable v-slot="props">
+                                    {{ props.row.title_learning_dev }}
+                                </b-table-column>
 
-                            <div class="columns">
-                                <div class="column">
-                                    <b-field class="file is-primary" :class="{'has-name': !!fields.file}">
-                                        <b-upload v-model="fields.file" class="file-label">
-                                            <span class="file-cta">
-                                                <b-icon class="file-icon" icon="upload"></b-icon>
-                                                <span class="file-label">Click to upload certificate</span>
-                                            </span>
-                                            <span class="file-name" v-if="fields.file">
-                                                {{ fields.file.name }}
-                                            </span>
-                                        </b-upload>
-                                    </b-field>
-                                </div>
-                            </div>
+                                
+                                <b-table-column field="training_date" label="Training Date" sortable v-slot="props">
+                                    {{ props.row.date_from }} to {{ props.row.date_to }}
+                                </b-table-column>
 
-                            <div class="buttons">
-                                <b-button icon-left="content-save" @click="submitTraining" class="button is-primary">
-                                    Save Training
-                                </b-button>
-                            </div>
+                                <b-table-column field="no_hours" label="No. of Hours" sortable v-slot="props">
+                                    {{ props.row.no_hours }}
+                                </b-table-column>
 
-                            <hr>
+                                <b-table-column field="type_ld" label="Type of LD" sortable v-slot="props">
+                                    {{ props.row.type_ld }}
+                                </b-table-column>
 
+                                <b-table-column field="sponsored_by" label="Sponsored By" sortable v-slot="props">
+                                    {{ props.row.sponsored_by }}
+                                </b-table-column>
 
+                                <b-table-column label="Action" v-slot="props">
+                                    <div class="is-flex">
+                                        <b-tooltip label="Update Information" type="is-warning">
+                                            <b-button class="button is-small mr-1 is-warning" icon-right="pencil" tag="a" :href="`/faculty/trainings-interventions/${props.row.learning_dev_id}/edit`"></b-button>
+                                        </b-tooltip>
 
+                                        <b-tooltip label="Delete" type="is-danger">
+                                            <b-button class="button is-small mr-1" icon-right="delete" @click="confirmDelete(props.row.learning_dev_id)"></b-button>
+                                        </b-tooltip>
+                                        
+                                    </div>
+                                </b-table-column>
+                            </b-table>
+                            
                         </div><!--box body -->
                     </div>
                 </div>
@@ -86,12 +85,10 @@
 
 export default{
     props: ['propUser'],
+
     data(){
         return {
-            fields: {},
-            errors: {},
-
-            trainings: [],
+            data: [],
             total: 0,
             loading: false,
             sortField: 'user_id',
@@ -104,66 +101,97 @@ export default{
 
     methods: {
 
-        getTrainings(){
-
+        loadAsyncData() {
             const params = [
                 `sort_by=${this.sortField}.${this.sortOrder}`,
                 `perpage=${this.perPage}`,
                 `page=${this.page}`
-
             ].join('&')
 
-            axios.get(`/faculty/get-learning-trainings?${params}`).then(res=>{
-                this.trainings = res.data
-            }).catch(err=>{
-            
-            })
+            this.loading = true
+            axios.get(`/faculty/get-learning-trainings?${params}`)
+                .then(({ data }) => {
+                    this.data = [];
+                    let currentTotal = data.total
+                    if (data.total / this.perPage > 1000) {
+                        currentTotal = this.perPage * 1000
+                    }
+
+                    this.total = currentTotal
+                    data.data.forEach((item) => {
+                        //item.release_date = item.release_date ? item.release_date.replace(/-/g, '/') : null
+                        this.data.push(item)
+                    })
+                    this.loading = false
+                })
+                .catch((error) => {
+                    this.data = []
+                    this.total = 0
+                    this.loading = false
+                    throw error
+                })
         },
 
-        submitTraining(){
-            let ndateFrom = new Date(this.fields.date_from);
-            let ndateTo = new Date(this.fields.date_to);
 
-            let dateFrom = ndateFrom.getFullYear() + '-' + (ndateFrom.getMonth() + 1) + '-' + ndateFrom.getDate();
-            let dateTo = ndateTo.getFullYear() + '-' + (ndateTo.getMonth() + 1) + '-' + ndateTo.getDate();
+        // getTrainings(){
 
-            let formData = new FormData();
+        //     const params = [
+        //         `sort_by=${this.sortField}.${this.sortOrder}`,
+        //         `perpage=${this.perPage}`,
+        //         `page=${this.page}`
 
-            formData.append('title_learning_dev', this.fields.title_learning_dev);
-            formData.append('date_from', dateFrom);
-            formData.append('date_to', dateTo);
-            formData.append('no_hours', this.fields.no_hours);
-            formData.append('type_ld', this.fields.type_ld);
-            formData.append('sponsored_by', this.fields.sponsored_by);
-            formData.append('file', this.fields.file);
+        //     ].join('&')
+
+        //     axios.get(`/faculty/get-learning-trainings?${params}`).then(res=>{
+        //         this.trainings = res.data
+        //     }).catch(err=>{
+            
+        //     })
+        // },
+
+        onPageChange(page) {
+            this.page = page
+            this.loadAsyncData()
+        },
+
+        onSort(field, order) {
+            this.sortField = field
+            this.sortOrder = order
+            this.loadAsyncData()
+        },
+
+        setPerPage(){
+            this.loadAsyncData()
+        },
 
 
-            axios.post('/faculty/trainings-interventions', formData).then(res=>{
-                if(res.data.status === 'saved'){
-                    this.$buefy.dialog.alert({
-                        title: 'UPDATED!',
-                        message: 'Successfully updated.',
-                        type: 'is-success',
-                        onConfirm: ()=>{
-                            this.loadAsyncData();
-                            this.fields = {};
-                            this.errors = {}
+        confirmDelete(learningId){
+            this.$buefy.dialog.confirm({
+                title: 'DELETE?',
+                message: 'Are you sure you want to delete this information?',
+
+                onConfirm: ()=>{
+                    axios.delete('/faculty/learning-developments/' + learningId).then(res=>{
+                        if(res.data.status === 'deleted'){
+                            this.$buefy.toast.open({
+                                message: `Deleted successfully.`,
+                                type: 'is-primary'
+                            })
+                            this.loadAsyncData()
                         }
                     });
                 }
-
-            }).catch(err=>{
-            
-            })
+            });
         },
 
+        
         initData(){
             this.user = JSON.parse(this.propUser)
         }
     },
 
     mounted(){
-        this.getTrainings();
+        this.loadAsyncData();
     },
     created() {
          this.initData();

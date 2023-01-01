@@ -29,6 +29,8 @@
         <div>
             <?php echo $__env->yieldContent('content'); ?>
         </div>
+
+        <footer-page></footer-page>
     </div>
 </body>
 
