@@ -215,9 +215,7 @@ export default {
     text-align: center;
 }
 
-.box{
-    border-top: 5px solid blue;
-}
+
 
 
 /*    dere lang kubia ang panel color*/

@@ -116,8 +116,9 @@ Route::post('/faculty/trainings-interventions-update/{id}', [App\Http\Controller
 
 Route::get('/faculty/get-learning-trainings', [App\Http\Controllers\Faculty\TrainingInterventionController::class, 'getLearningTrainings']);
 
-
-
+//certificates
+Route::post('/faculty/upload-certificates/{id}', [App\Http\Controllers\Faculty\CertificateController::class, 'upload']);
+Route::delete('/faculty/remove-certificate/{id}', [App\Http\Controllers\Faculty\CertificateController::class, 'delete']);
 
 
 

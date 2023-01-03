@@ -1454,9 +1454,6 @@ export default {
         text-align: center;
     }
 
-    .box{
-        border-top: 5px solid blue;
-    }
 
     .separator{
         background-color: blue;

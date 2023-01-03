@@ -223,6 +223,8 @@ export default{
             this.dropFiles.splice(index, 1)
         },
 
+       
+
         initData(){
             this.user = JSON.parse(this.propUser)
 

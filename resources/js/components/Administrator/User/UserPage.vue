@@ -656,16 +656,7 @@ export default{
 </script>
 
 
-<style>
+<style scoped>
 
-    .table > tbody > tr {
-        /* background-color: blue; */
-        transition: background-color 0.5s ease;
-    }
-
-    .table > tbody > tr:hover {
-        background-color: rgb(233, 233, 233);
-
-    }
 
 </style>
