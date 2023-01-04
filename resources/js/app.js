@@ -14,9 +14,9 @@ import Buefy from 'buefy'
 // import 'buefy/dist/buefy.css'
 
 //QR Scanner
-import VueQrcodeReader from "vue-qrcode-reader";
+//import VueQrcodeReader from "vue-qrcode-reader";
 //for QR CODE Generation
-import VueQrcode from '@chenfengyuan/vue-qrcode';
+//import VueQrcode from '@chenfengyuan/vue-qrcode';
 
 
 
@@ -34,7 +34,7 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-//Vue.component('navbar-component', require('./components/Administrator/NavbarComponent.vue').default);
+//Vue.component('navbar-component', require('./components/Administrator/AdminNavbarComponent.vue').default);
 //Vue.component('home-page', require('./components/HomePage.vue').default);
 //Vue.component('register-components', require('./components/SignupComponent.vue').default);
 

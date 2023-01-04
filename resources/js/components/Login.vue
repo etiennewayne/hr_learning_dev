@@ -56,7 +56,9 @@ export default {
                 if(res.data.role === 'FACULTY'){
                     window.location = '/faculty/home';
                 }
-
+                if(res.data.role === 'HRLD'){
+                    window.location = '/hrld/home';
+                }
                 if(res.data.role === 'CID'){
                     window.location = '/cid/dashboard';
                 }

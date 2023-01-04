@@ -75,9 +75,6 @@ Route::get('/get-user/{id}', [App\Http\Controllers\OpenUserController::class, 'g
 
 
 
-
-
-
 //ADDRESS
 Route::get('/load-provinces', [App\Http\Controllers\AddressController::class, 'loadProvinces']);
 Route::get('/load-cities', [App\Http\Controllers\AddressController::class, 'loadCities']);
@@ -122,6 +119,14 @@ Route::delete('/faculty/remove-certificate/{id}', [App\Http\Controllers\Faculty\
 
 
 
+//HRLD
+Route::resource('/hrld/home', App\Http\Controllers\Hrld\HrldHomeController::class);
+
+//Route::get('/hrld/seminar-posts',[App\Http\Controllers\Hrld\HrldSeminarPostController::class. 'index']); YAWA KA PERIODA KA!!!!
+Route::get('/hrld/seminar-posts', [App\Http\Controllers\Hrld\HrldSeminarPostController::class, 'index']);
+Route::get('/hrld/get-seminars', [App\Http\Controllers\Hrld\HrldSeminarPostController::class, 'getSeminars']);
+
+Route::post('/hrld/seminar-posts-store', [App\Http\Controllers\Hrld\HrldSeminarPostController::class, 'store']);
 
 
 
