@@ -43917,11 +43917,11 @@ CREATE TABLE `learning_developments` (
 /*Data for the table `learning_developments` */
 
 insert  into `learning_developments`(`learning_dev_id`,`user_id`,`title_learning_dev`,`date_from`,`date_to`,`no_hours`,`type_ld`,`sponsored_by`,`attach_path`,`ratings`,`created_at`,`updated_at`) values 
-(1,2,'C# Programming','2022-01-01','2022-01-01','50','Programmer','DICT',NULL,0,'2022-11-30 17:49:32','2023-01-03 20:22:29'),
-(11,2,'Training workshop on curriculum development','2023-01-03','2023-01-10','40','managerial','DICT',NULL,0,'2023-01-03 19:53:11','2023-01-03 19:53:11'),
-(12,2,'Python Essential Programming','2023-01-16','2023-01-26','40','programming','DICT',NULL,0,'2023-01-03 19:53:51','2023-01-03 19:53:51'),
-(13,2,'Adobe Photoshop','2023-01-04','2023-01-17','60','Programming','DICT',NULL,0,'2023-01-03 20:21:03','2023-01-03 20:22:57'),
-(14,2,'Asdadwawd','2023-01-09','2023-01-13','50','asdawdaw','asdawdawd',NULL,0,'2023-01-03 20:35:25','2023-01-03 20:35:25');
+(1,2,'C# PROGRAMMING','2022-01-01','2022-01-01','50','PROGRAMMER','DICT',NULL,10,'2022-11-30 17:49:32','2023-01-05 15:55:36'),
+(11,2,'TRAINING WORKSHOP ON CURRICULUM DEVELOPMENT','2023-01-03','2023-01-10','40','MANAGERIAL','DICT',NULL,12,'2023-01-03 19:53:11','2023-01-05 15:55:36'),
+(12,2,'PYTHON ESSENTIAL PROGRAMMING','2023-01-16','2023-01-26','40','PROGRAMMING','DICT',NULL,1,'2023-01-03 19:53:51','2023-01-05 15:55:37'),
+(13,2,'ADOBE PHOTOSHOP','2023-01-04','2023-01-17','60','PROGRAMMING','DICT',NULL,0,'2023-01-03 20:21:03','2023-01-05 15:55:37'),
+(14,2,'ASDADWAWD','2023-01-09','2023-01-13','50','ASDAWDAW','ASDAWDAWD',NULL,0,'2023-01-03 20:35:25','2023-01-05 15:55:37');
 
 /*Table structure for table `migrations` */
 
@@ -43966,12 +43966,13 @@ CREATE TABLE `other_informations` (
   PRIMARY KEY (`other_info_id`),
   KEY `other_informations_user_id_foreign` (`user_id`),
   CONSTRAINT `other_informations_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `other_informations` */
 
 insert  into `other_informations`(`other_info_id`,`user_id`,`skill_hobbies`,`non_academic_distinction`,`member_association`,`created_at`,`updated_at`) values 
-(1,2,'TRUMPET USER','BEST MUSICIAN OF THE YEAR','GADTC BAND','2022-11-30 19:02:17','2022-11-30 19:06:00');
+(1,2,'MATH','BEST MUSICIAN OF THE YEAR','GADTC BAND','2022-11-30 19:02:17','2023-01-05 15:55:37'),
+(3,2,'KAON','','','2023-01-05 15:55:37','2023-01-05 15:55:37');
 
 /*Table structure for table `password_resets` */
 
@@ -44113,6 +44114,63 @@ insert  into `provinces`(`id`,`psgcCode`,`provDesc`,`regCode`,`provCode`,`active
 (87,'166800000','SURIGAO DEL SUR','16','1668',0),
 (88,'168500000','DINAGAT ISLANDS','16','1685',0);
 
+/*Table structure for table `seminar_posts` */
+
+DROP TABLE IF EXISTS `seminar_posts`;
+
+CREATE TABLE `seminar_posts` (
+  `seminar_post_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `img_path` varchar(255) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `date_posted` date DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`seminar_post_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `seminar_posts` */
+
+insert  into `seminar_posts`(`seminar_post_id`,`img_path`,`description`,`date_posted`,`created_at`,`updated_at`) values 
+(3,'tEEY5QclbIRMQDFAOZ4IsPlj00eya0FwMmFHFszv.jpg','asdawdawd','2023-01-04','2023-01-04 18:21:31','2023-01-04 18:21:31'),
+(4,'p58bQWEd2xSfMs0fwWmsxUUkdQt6nkMqSUgVA44K.jpg','We are excited to announce that, due to our remarkable growth over the last [enter number] of years, we are expanding! In fact, we are opening a new store in [enter location and specifics]. We invite you to celebrate with us during the big opening day on [enter date].','2023-01-05','2023-01-05 09:25:19','2023-01-05 09:25:19');
+
+/*Table structure for table `specializations` */
+
+DROP TABLE IF EXISTS `specializations`;
+
+CREATE TABLE `specializations` (
+  `specialization_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `specialization` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`specialization_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `specializations` */
+
+insert  into `specializations`(`specialization_id`,`specialization`,`created_at`,`updated_at`) values 
+(1,'FILIPINO',NULL,NULL),
+(2,'ARALIN PANLIPUNAN',NULL,NULL),
+(3,'TLE',NULL,NULL),
+(4,'ENGLISH',NULL,NULL),
+(5,'MATH',NULL,NULL),
+(6,'BIOLOGY',NULL,NULL);
+
+/*Table structure for table `user_specializations` */
+
+DROP TABLE IF EXISTS `user_specializations`;
+
+CREATE TABLE `user_specializations` (
+  `user_specialization_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) unsigned NOT NULL,
+  `specialization` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`user_specialization_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `user_specializations` */
+
 /*Table structure for table `users` */
 
 DROP TABLE IF EXISTS `users`;
@@ -44180,14 +44238,16 @@ CREATE TABLE `users` (
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `users_username_unique` (`username`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `users` */
 
 insert  into `users`(`user_id`,`username`,`lname`,`fname`,`mname`,`suffix`,`date_birth`,`place_birth`,`sex`,`civil_status`,`civil_status_others`,`height`,`weight`,`blood_type`,`gsis`,`pagibig`,`philhealth`,`sss`,`tin`,`agency_idno`,`citizenship`,`res_province`,`res_city`,`res_barangay`,`res_street`,`res_houseno_blockno`,`res_zipcode`,`per_province`,`per_city`,`per_barangay`,`per_street`,`per_houseno_blockno`,`per_zipcode`,`tel_no`,`contact_no`,`email`,`email_verified_at`,`spouse_surname`,`spouse_fname`,`spouse_mname`,`spouse_suffix`,`spouse_occupation`,`business_name`,`business_address`,`business_contact_no`,`father_surname`,`father_fname`,`father_mname`,`father_suffix`,`mother_maiden_name`,`mother_fname`,`mother_mname`,`mother_suffix`,`role`,`password`,`remember_token`,`is_verified`,`created_at`,`updated_at`) values 
 (1,'admin','VARGAS','CHARLES','P',NULL,NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'MISAMIS OCCIDENTAL','TANGUB CITY','CANIANGAN','P-6',NULL,NULL,'MISAMIS OCCIDENTAL','TANGUB CITY','CANIANGAN','P-6',NULL,NULL,NULL,'09167789585','admin@dev.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'ADMINISTRATOR','$2y$10$7xTo9lOrooGB6jmzyDWP6uNSbBBM55M8/0dARdy0TG.sZgmjBvp2m',NULL,0,NULL,NULL),
-(2,'charles','VARGAS','CHARLES','P','','1988-08-08','MALORO, TANGUB CITY','MALE','SINGLE',NULL,NULL,NULL,'AB',NULL,NULL,NULL,NULL,NULL,NULL,'FILIPINO','1411','141104','141104003','SDAWD','AAA','aaaa','0516','051606','051606018','BBBB','BBBB','bbb',NULL,'09683014598','et@dev.com',NULL,'','','','',NULL,'','',NULL,'','','','','','','','','FACULTY','$2y$10$lIJ/OkYxXxzKt7nt8OqjteUG0H50GnELTXI6nRvKGRPtX.3U2XwMy',NULL,0,NULL,'2022-11-30 11:08:36'),
-(3,'vargas','HARUM DOLORUM INCIDI','QUO CUM MOLESTIAE CU','VOLUPTATE LABORUM EN','OFFICIIS REM DELECTU',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0520','052005','052005003','SED RATIONE QUI SINT',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Ea praesentium quae','carawuda@mailinator.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$x.g0/svKVcIkv2c2amqS6udg47Eo6t63Ft2.k/eX8XECwA699Y6nK',NULL,0,'2022-10-23 09:12:11','2022-10-23 09:12:11');
+(2,'charles','VARGAS','CHARLES','P','','1988-08-08','MALORO, TANGUB CITY','MALE','SINGLE',NULL,NULL,NULL,'AB',NULL,NULL,NULL,NULL,NULL,NULL,'FILIPINO','1411','141104','141104003','SDAWD','AAA','aaaa','0516','051606','051606018','BBBB','BBBB','bbb',NULL,'09683014598','et@dev.com',NULL,'','','','',NULL,'','',NULL,'','','','','','','','','FACULTY','$2y$10$7xTo9lOrooGB6jmzyDWP6uNSbBBM55M8/0dARdy0TG.sZgmjBvp2m',NULL,1,NULL,'2023-01-05 12:42:48'),
+(3,'lui','LUI','ALEXANDER','','','2023-01-04','MALORO, TANGUB CITY','MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0520','052005','052005003','SED RATIONE QUI SINT',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Ea praesentium quae','carawuda@mailinator.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'HRLD','$2y$10$/BZQRtpbs.0baAcJ7tQJnu129vTjgAPKXJoc.ruiJv1sIKIwDJP46',NULL,0,'2022-10-23 09:12:11','2023-01-05 14:23:27'),
+(4,'kopiko','KOPIKO','THREE','','',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1042','104215','104215025','SAMPLE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1234567879','kopiko@mail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$WZAF6wU8fLEEeg7MMNSusuSmtPNFoCqeTYSKoLxo2ybD7tmW11M0C',NULL,0,'2023-01-05 14:29:14','2023-01-05 14:29:14'),
+(5,'cid','PRADIA','LEDA','','',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1603','160301','160301028','ASDAS',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'321564546','cid@dev.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CID','$2y$10$u3GNl91VZaHR9Vs5XkOhhuNi2raQBegPv23A1UDjYbjEs1yUnPRMa',NULL,0,'2023-01-05 14:30:46','2023-01-05 14:30:46');
 
 /*Table structure for table `voluntary_works` */
 
