@@ -82,4 +82,20 @@ class User extends Authenticatable
         return $this->HasMany(OtherInformation::class, 'user_id', 'user_id');
     }
 
+
+    public function residential_province(){
+        return $this->hasOne(Province::class, 'provCode', 'res_province');
+    }
+    public function residential_city(){
+        return $this->hasOne(City::class, 'citymunCode', 'res_city');
+    }
+    public function residential_barangay(){
+        return $this->hasOne(Barangay::class, 'brgyCode', 'res_barangay');
+    }
+
+
+    
+    
+    
+
 }

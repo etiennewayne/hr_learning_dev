@@ -60,7 +60,7 @@ export default {
                     window.location = '/hrld/home';
                 }
                 if(res.data.role === 'CID'){
-                    window.location = '/cid/dashboard';
+                    window.location = '/cid/home';
                 }
                //window.location = '/dashboard';
             }).catch(err=>{
@@ -89,7 +89,6 @@ export default {
     .box{
         border: 1px solid rgb(223, 223, 223);
     }
-
 
     .card {
         background: rgb(255, 255, 255);

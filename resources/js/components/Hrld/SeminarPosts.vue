@@ -27,10 +27,29 @@
                         <div class="buttons is-right">
                             <b-button type="is-primary is-outlined" label="Post Training" @click="submit"></b-button>
                         </div>
+                        
                     </div>
                 </div>
 
                 <div class="box box-post" v-for="(seminar, index) in serminars" :key="index">
+                    <div class="box-post-heading">
+                        <div class="posted-text">Posted: {{ seminar.date_posted }}</div>
+                        <div class="post-action">
+                            <b-dropdown aria-role="list">
+                                <template #trigger="{ active }">
+                                    <b-button
+                                        label="..."
+                                        class="is-small"
+                                        type="is-light"
+                                        :icon-right="active ? 'menu-up' : 'menu-down'" />
+                                </template>
+
+
+                                <b-dropdown-item aria-role="listitem" @click="deletePost(seminar.seminar_post_id)">Delete</b-dropdown-item>
+                                
+                            </b-dropdown>
+                        </div>
+                    </div>
                     <div class="post-desc">
                         {{ seminar.description }}
                     </div>
@@ -39,7 +58,7 @@
                     </div>
                 </div>
 
-                
+
             </div> <!-- col -->
         </div>
     </div>
@@ -61,7 +80,7 @@ export default{
     methods: {
 
         initData(){
-           
+
         },
 
         clear(){
@@ -73,12 +92,12 @@ export default{
             axios.get('/hrld/get-seminars').then(res=>{
                 this.serminars = res.data
             }).catch(err=>{
-            
+
             })
         },
 
         submit(){
-            
+
             let formData = new FormData();
             formData.append('desc', this.desc);
             formData.append('file', this.file);
@@ -95,7 +114,19 @@ export default{
                     });
                 }
             }).catch(err=>{
-                
+
+            })
+        },
+
+        deletePost(seminarPostId){
+            axios.delete('/hrld/seminar-posts/' + seminarPostId).then(res=>{
+                if(res.data.status === 'deleted'){
+                    this.$buefy.toast.open({
+                        message: 'Post deleted successfully.',
+                        type: 'is-success'
+                    })
+                    this.loadSeminars()
+                }
             })
         }
     },
@@ -116,9 +147,29 @@ export default{
     .post-img-container{
         height: 300px;
         overflow: hidden;
+        display: flex;
+        justify-content: center;
     }
-
+    .posted-text{
+        font-weight: bold;
+        font-style: .8em;
+        color: gray;
+    }
     .post-img{
         height: 400px;
+    }
+
+    .box-post-heading{
+        display: flex;
+        padding: 10px;
+    }
+    .post-action{
+        margin-left: auto;
+    }
+    
+    .post-desc{
+        border-top: 1px solid gray;
+        margin: 10px;
+        padding: 10px 0
     }
 </style>

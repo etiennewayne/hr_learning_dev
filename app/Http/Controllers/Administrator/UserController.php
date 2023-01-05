@@ -125,12 +125,6 @@ class UserController extends Controller
             'password' => ['required', 'confirmed']
         ]);
 
-//        if($req->password != $req->password_confirmation){
-//            return response()->json([
-//                'status' => 'not_matched'
-//            ], 422);
-//        }
-
         $user = User::find($id);
         $user->password = Hash::make($req->password);
         $user->save();

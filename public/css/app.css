@@ -37261,6 +37261,24 @@ h2 span {
   padding: 0 10px;
 }
 
+@media print {
+  header, footer, aside, nav, form, iframe, .menu, .hero, .adslot {
+    display: none;
+  }
+
+  .buttons {
+    display: none;
+  }
+
+  /* // if print display none elements */
+  html body {
+    background-color: white;
+  }
+
+  .footer-container {
+    display: none;
+  }
+}
 .is-noscroll {
   position: fixed;
   overflow-y: hidden;

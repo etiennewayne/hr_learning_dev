@@ -95,8 +95,15 @@ Route::post('/user-reset-password/{id}', [App\Http\Controllers\Administrator\Use
 
 
 // FACULTY ROUTES
-Route::resource('/faculty/home', App\Http\Controllers\Faculty\FacultyHomeController::class);
+Route::get('/pending-page', function(){
+    return view('faculty.pending-page');
+});
 
+
+Route::post('/reset-password',[App\Http\Controllers\Auth\ChangePasswordController::class, 'changePassword']);;
+
+
+Route::resource('/faculty/home', App\Http\Controllers\Faculty\FacultyHomeController::class);
 
 Route::resource('/faculty/personal-data-sheet', App\Http\Controllers\Faculty\FacultyPDSController::class);
 Route::post('/faculty/personal-data-sheet-update/{id}', [App\Http\Controllers\Faculty\FacultyPDSController::class, 'update']);
@@ -125,15 +132,29 @@ Route::resource('/hrld/home', App\Http\Controllers\Hrld\HrldHomeController::clas
 //Route::get('/hrld/seminar-posts',[App\Http\Controllers\Hrld\HrldSeminarPostController::class. 'index']); YAWA KA PERIODA KA!!!!
 Route::get('/hrld/seminar-posts', [App\Http\Controllers\Hrld\HrldSeminarPostController::class, 'index']);
 Route::get('/hrld/get-seminars', [App\Http\Controllers\Hrld\HrldSeminarPostController::class, 'getSeminars']);
+Route::delete('/hrld/seminar-posts/{id}', [App\Http\Controllers\Hrld\HrldSeminarPostController::class, 'destroy']);
 
 Route::post('/hrld/seminar-posts-store', [App\Http\Controllers\Hrld\HrldSeminarPostController::class, 'store']);
 
 
+Route::resource('/hrld/teacher-accounts', App\Http\Controllers\Hrld\HrldTeacherAccountController::class);
+Route::get('/hrld/get-teacher-accounts', [App\Http\Controllers\Hrld\HrldTeacherAccountController::class, 'getTeacherAccounts']);
+Route::post('/hrld/teacher-approve-account/{id}', [App\Http\Controllers\Hrld\HrldTeacherAccountController::class, 'approveAccount']);
 
 
 
 
 
+
+//CID
+Route::resource('/cid/home', App\Http\Controllers\Cid\CidHomeController::class);
+
+Route::resource('/cid/seminar-list', App\Http\Controllers\Cid\CidSeminarController::class);
+Route::get('/cid/get-seminar-list', [App\Http\Controllers\Cid\CidSeminarController::class, 'getTeacherSeminars']);
+Route::post('/cid/submit-rating/{id}', [App\Http\Controllers\Cid\CidSeminarController::class, 'updateRate']);
+
+Route::get('/cid/recommended-candidates', [App\Http\Controllers\Cid\RecommendedCandidateController::class, 'index']);
+Route::get('/generate-list', [App\Http\Controllers\Cid\RecommendedCandidateController::class, 'generateList']);
 
 
 

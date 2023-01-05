@@ -53,4 +53,14 @@ class HrldSeminarPostController extends Controller
             'status' => 'saved'
         ], 200);
     }
+
+
+    public function destroy($id){
+        
+        SeminarPost::destroy($id);
+
+        return response()->json([
+            'status' => 'deleted'
+        ], 200);
+    }
 }
