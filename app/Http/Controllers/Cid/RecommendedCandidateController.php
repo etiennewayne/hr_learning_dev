@@ -35,7 +35,7 @@ class RecommendedCandidateController extends Controller
 
         $data = DB::table($queryBuilder)
                 
-                ->where('specialization', 'like', $req->specialization . '%')
+                ->where('specialization', 'like', '%' .$req->specialization . '%')
                 ->orderBy('no_seminars', 'asc')
                 ->get();
 
