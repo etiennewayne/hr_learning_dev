@@ -257,9 +257,9 @@
                             <div class="columns">
                                 <div class="column">
                                     <b-field label="Province" label-position="on-border" expanded
-                                             :type="this.errors.province ? 'is-danger':''"
-                                             :message="this.errors.province ? this.errors.province[0] : ''">
-                                        <b-select v-model="fields.province" @input="loadCity" expanded>
+                                             :type="this.errors.res_province ? 'is-danger':''"
+                                             :message="this.errors.res_province ? this.errors.res_province[0] : ''">
+                                        <b-select v-model="fields.res_province" @input="loadCity" expanded>
                                             <option v-for="(item, index) in provinces" :key="index" :value="item.provCode">{{ item.provDesc }}</option>
                                         </b-select>
                                     </b-field>
@@ -267,9 +267,9 @@
 
                                 <div class="column">
                                     <b-field label="City" label-position="on-border" expanded
-                                             :type="this.errors.city ? 'is-danger':''"
-                                             :message="this.errors.city ? this.errors.city[0] : ''">
-                                        <b-select v-model="fields.city" @input="loadBarangay" expanded>
+                                             :type="this.errors.res_city ? 'is-danger':''"
+                                             :message="this.errors.res_city ? this.errors.res_city[0] : ''">
+                                        <b-select v-model="fields.res_city" @input="loadBarangay" expanded>
                                             <option v-for="(item, index) in cities" :key="index" :value="item.citymunCode">{{ item.citymunDesc }}</option>
                                         </b-select>
                                     </b-field>
@@ -279,16 +279,16 @@
                             <div class="columns">
                                 <div class="column">
                                     <b-field label="Barangay" label-position="on-border" expanded
-                                             :type="this.errors.barangay ? 'is-danger':''"
-                                             :message="this.errors.barangay ? this.errors.barangay[0] : ''">
-                                        <b-select v-model="fields.barangay" expanded>
+                                             :type="this.errors.res_barangay ? 'is-danger':''"
+                                             :message="this.errors.res_barangay ? this.errors.res_barangay[0] : ''">
+                                        <b-select v-model="fields.res_barangay" expanded>
                                             <option v-for="(item, index) in barangays" :key="index" :value="item.brgyCode">{{ item.brgyDesc }}</option>
                                         </b-select>
                                     </b-field>
                                 </div>
                                 <div class="column">
                                     <b-field label="Street" label-position="on-border">
-                                        <b-input v-model="fields.street"
+                                        <b-input v-model="fields.res_street"
                                                  placeholder="Street">
                                         </b-input>
                                     </b-field>
@@ -592,15 +592,16 @@ export default{
             //nested axios for getting the address 1 by 1 or request by request
             axios.get('/users/'+data_id).then(res=>{
                 this.fields = res.data;
-                this.fields.office = res.data.office_id;
+                
                 let tempData = res.data;
                 //load city first
-                axios.get('/load-cities?prov=' + this.fields.province).then(res=>{
+                axios.get('/load-cities?prov=' + this.fields.res_province).then(res=>{
                     //load barangay
                     this.cities = res.data;
-                    axios.get('/load-barangays?prov=' + this.fields.province + '&city_code='+this.fields.city).then(res=>{
+                    axios.get('/load-barangays?prov=' + this.fields.res_province + '&city_code='+this.fields.res_city).then(res=>{
                         this.barangays = res.data;
-                        this.fields = tempData;
+                        this.fields = tempData
+                       
                     });
                 });
             });

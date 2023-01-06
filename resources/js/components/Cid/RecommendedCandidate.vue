@@ -3,9 +3,12 @@
         <div class="filter-container">
             <div>
                 <b-field expanded>
-                    <b-input type="text" 
+                    <b-input type="text" expanded
                         placeholder="Search Lastname"
                         v-model="search.lname"></b-input>
+                    <b-input type="text" expanded
+                        placeholder="Specialization"
+                        v-model="search.specialization"></b-input>
                     <p class="control">
                         <b-button class="expanded" type="is-primary" label="..." @click="generateList"></b-button>
                     </p>
@@ -22,13 +25,16 @@
                         <td>Name</td>
                         <td>Sex</td>
                         <td>Civil Status</td>
+                        <td>Specialization/Skill</td>
                         <td>No of. Seminars</td>
                     </tr>
                     <tr v-for="(item, index) in data" :key="index">
                         <td>{{  item.lname }}, {{  item.fname }} {{ item.mname }} {{  item.suffix }}</td>
                         <td>{{ item.sex }}</td>
                         <td>{{ item.civil_status }}</td>
+                        <td>{{ item.specialization }}</td>
                         <td>{{ item.no_seminars }}</td>
+                        
                     </tr>
                 </table>
             </div>
@@ -45,13 +51,19 @@ export default{
 
             search: {
                 lname: '',
+                specialization: '',
             }
         }
     },
 
     methods: {
         generateList(){
-            axios.get('/generate-list').then(res=>{
+            const params = [
+                `lname=${this.search.lname}`,
+                `specialization=${this.search.specialization}`,
+            ].join('&')
+
+            axios.get(`/generate-list?${params}`).then(res=>{
                 this.data = res.data
             }).catch(err=>{
             
@@ -127,6 +139,7 @@ export default{
         max-width: 816px;
         margin: 30px auto;
         background-color: white;
+        padding: 25px;
     }
 
     .print-area{

@@ -22,7 +22,7 @@ class HrldTeacherAccountController extends Controller
         //for Item Management
         $sort = explode('.', $req->sort_by);
 
-        return User::with(['residential_province', 'residential_city', 'residential_barangay'])
+        return User::with(['residential_province', 'residential_city', 'residential_barangay', 'learning_developments'])
             ->where('role', '=', 'FACULTY')
             ->orderBy($sort[0], $sort[1])
             ->paginate($req->perpage);

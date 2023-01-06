@@ -41,6 +41,7 @@
                             :data="data"
                             :loading="loading"
                             paginated
+                            detailed
                             backend-pagination
                             :total="total"
                             :pagination-rounded="true"
@@ -74,8 +75,6 @@
                                 {{ props.row.email }}
                             </b-table-column>
 
-                          
-
                             <b-table-column field="province" label="Residential" v-slot="props">
                                 {{ props.row.residential_province.provDesc }}, {{ props.row.residential_city.citymunDesc }}
                             </b-table-column>
@@ -95,6 +94,36 @@
                                     </b-tooltip> -->
                                 </div>
                             </b-table-column>
+
+
+                            <template slot="detail" slot-scope="props">
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Attach File</th>
+                                    <th>No Hours</th>
+                                    <th>Inclusion Date</th>
+                                    <th>Sponsored By</th>
+                                </tr>
+                                <tr v-for="(item, index) in props.row.learning_developments" :key="index">
+                                    <td>{{ item.title_learning_dev }}</td>
+                                    <td class="has-text-centered">
+                                        <div class="m-1" v-for="(img, ix) in item.certificates" 
+                                            :key="ix">
+                                            <b-button
+                                                :label="`Image[${ix + 1}]`"
+                                                 class="is-small is-primary button"
+                                                @click="openCertificate(img.certificate)"
+                                            >
+                                            </b-button>
+                                        </div>
+                                    </td>
+                                    <td class="has-text-centered">{{ item.no_hours }}</td>
+                                    <td class="has-text-centered">{{ item.date_from }} - {{ item.date_to }}</td>
+                                    <td class="has-text-centered">{{ item.sponsored_by }}</td>
+                                </tr>
+                            </template>
+
+                            
                         </b-table>
 
 
@@ -105,7 +134,41 @@
         </div><!--section div-->
 
 
+        <!--modal create-->
+        <b-modal v-model="modalAttachment" has-modal-card
+            trap-focus
+            :width="640"
+            aria-role="dialog"
+            aria-label="Modal"
+            aria-modal>
 
+        
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Rating</p>
+                    <button
+                        type="button"
+                        class="delete"
+                        @click="modalAttachment = false"/>
+                </header>
+                <section class="modal-card-body">
+                    <div class="">
+                        
+                        <div class="column">
+
+                            <img :src="`/storage/certificates/${filePath}`" />
+                        </div>
+
+                    </div> <!-- div class-->
+                </section>
+                <footer class="modal-card-foot">
+                    <button
+                        @click="modalAttachment = false"
+                        class="button is-primary">Close</button>
+                </footer>
+            </div>
+        </b-modal>
+        <!--close modal-->
 
     </div>
 </template>
@@ -127,6 +190,10 @@ export default{
             search: {
                 lname: '',
             },
+
+            modalAttachment: false,
+            
+            filePath: '',
 
             errors: {},
             btnClass: {
@@ -215,6 +282,11 @@ export default{
                 }
             });
         },
+
+        openCertificate(cert){
+            this.filePath = cert;
+            this.modalAttachment = true;
+        }
 
        
 

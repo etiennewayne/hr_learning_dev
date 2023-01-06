@@ -82,22 +82,22 @@
                                 {{ props.row.sponsored_by }}
                             </b-table-column>
 
-                            <b-table-column field="ratings" label="Rating" centered v-slot="props">
+                            <!-- <b-table-column field="ratings" label="Rating" centered v-slot="props">
                                 {{ props.row.ratings }}
-                            </b-table-column>
+                            </b-table-column> -->
 
-                            <b-table-column label="Action" v-slot="props">
+                            <!-- <b-table-column label="Action" v-slot="props">
                                 <div class="is-flex">
                                     <b-tooltip label="Rate" type="is-primary">
                                         <b-button class="button is-small mr-1" tag="a" 
                                             icon-right="message-draw" 
                                             @click="rateModal(props.row.learning_dev_id)"></b-button>
                                     </b-tooltip>
-                                    <!-- <b-tooltip label="Reset Password" type="is-info">
+                                     <b-tooltip label="Reset Password" type="is-info">
                                         <b-button class="button is-small mr-1" icon-right="lock" @click="openModalResetPassword(props.row.user_id)"></b-button>
-                                    </b-tooltip> -->
+                                    </b-tooltip>
                                 </div>
-                            </b-table-column>
+                            </b-table-column> -->
                         </b-table>
 
                     </div>
@@ -109,47 +109,46 @@
 
         <!--modal create-->
         <b-modal v-model="modalRate" has-modal-card
-                 trap-focus
-                 :width="640"
-                 aria-role="dialog"
-                 aria-label="Modal"
-                 aria-modal>
+            trap-focus
+            :width="640"
+            aria-role="dialog"
+            aria-label="Modal"
+            aria-modal>
 
-           
-                <div class="modal-card">
-                    <header class="modal-card-head">
-                        <p class="modal-card-title">Rating</p>
+        
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Rating</p>
+                    <button
+                        type="button"
+                        class="delete"
+                        @click="modalRate = false"/>
+                </header>
+                <form @submit.prevent="submitRating">
+                    <section class="modal-card-body">
+                    
+                        
+                    
+                        <div class="">
+                            <div class="column">
+
+                                <b-field label="Rating">
+                                    <b-numberinput
+                                        v-model="fields.rating"
+                                        :controls="false"
+                                        min="1">
+                                    </b-numberinput>
+                                </b-field>
+                            </div>
+
+                        </div> <!-- div class-->
+                    </section>
+                    <footer class="modal-card-foot">
                         <button
-                            type="button"
-                            class="delete"
-                            @click="modalRate = false"/>
-                    </header>
-                    <form @submit.prevent="submitRating">
-                        <section class="modal-card-body">
-                        
-                            
-                        
-                            <div class="">
-                                <div class="column">
-
-                                    <b-field label="Rating">
-                                        <b-numberinput
-                                            v-model="fields.rating"
-                                            :controls="false"
-                                            min="1">
-                                        </b-numberinput>
-                                    </b-field>
-                                </div>
-
-                            </div> <!-- div class-->
-                        </section>
-                        <footer class="modal-card-foot">
-                            <button
-                                class="button is-success">Submit Rating</button>
-                        </footer>
-                    </form>
-                </div>
-           
+                            class="button is-success">Submit Rating</button>
+                    </footer>
+                </form>
+            </div>
         </b-modal>
         <!--close modal-->
 

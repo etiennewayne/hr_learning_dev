@@ -66,10 +66,10 @@ class UserController extends Controller
             'email' => $req->email,
             'contact_no' => $req->contact_no,
             'role' => $req->role,
-            'province' => $req->province,
-            'city' => $req->city,
-            'barangay' => $req->barangay,
-            'street' => strtoupper($req->street)
+            'res_province' => $req->province,
+            'res_city' => $req->city,
+            'res_barangay' => $req->barangay,
+            'res_street' => strtoupper($req->street)
         ]);
 
         return response()->json([
@@ -78,6 +78,8 @@ class UserController extends Controller
     }
 
     public function update(Request $req, $id){
+     
+
         $validate = $req->validate([
             'username' => ['required', 'max:50', 'unique:users,username,'.$id.',user_id'],
             'lname' => ['required', 'string', 'max:100'],
@@ -85,9 +87,9 @@ class UserController extends Controller
             'sex' => ['required', 'string', 'max:20'],
             'email' => ['required', 'unique:users,email,'.$id.',user_id'],
             'role' => ['required', 'string'],
-            'province' => ['required', 'string'],
-            'city' => ['required', 'string'],
-            'barangay' => ['required', 'string'],
+            'res_province' => ['required', 'string'],
+            'res_city' => ['required', 'string'],
+            'res_barangay' => ['required', 'string'],
         ]);
 
         $data = User::find($id);
@@ -98,10 +100,10 @@ class UserController extends Controller
         $data->sex = $req->sex;
         $data->email = $req->email;
         $data->role = $req->role;
-        $data->province = $req->province;
-        $data->city = $req->city;
-        $data->barangay = $req->barangay;
-        $data->street = strtoupper($req->street);
+        $data->res_province = $req->res_province;
+        $data->res_city = $req->res_city;
+        $data->res_barangay = $req->res_barangay;
+        $data->res_street = strtoupper($req->res_street);
         $data->save();
 
         return response()->json([
