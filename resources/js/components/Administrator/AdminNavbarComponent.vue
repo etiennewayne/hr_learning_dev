@@ -13,20 +13,21 @@
                 <b-navbar-item href="/admin-home">
                     Home
                 </b-navbar-item>
-                <b-navbar-item href="#">
-                    Documentation
-                </b-navbar-item>
-                <b-navbar-dropdown label="Info">
+               
+                <!-- <b-navbar-dropdown label="Info">
                     <b-navbar-item href="#">
                         About
                     </b-navbar-item>
                     <b-navbar-item href="#">
                         Contact
                     </b-navbar-item>
-                </b-navbar-dropdown>
+                </b-navbar-dropdown> -->
             </template>
 
             <template #end>
+                <b-navbar-item href="/users">
+                    User
+                </b-navbar-item>
                 <b-navbar-item tag="div">
                     <div class="buttons">
 

@@ -43,13 +43,13 @@
 
                
 
-                <b-navbar-item class="navbar-notif">
+                <!-- <b-navbar-item class="navbar-notif">
                     <b-icon icon="earth">
                     </b-icon>
                     <div class="notif-counter">
                         4
                     </div>
-                </b-navbar-item>
+                </b-navbar-item> -->
 
                 <b-navbar-item tag="div">
                     <div class="buttons">

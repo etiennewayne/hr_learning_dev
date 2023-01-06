@@ -2084,39 +2084,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2160,6 +2127,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
 //
 //
 //
@@ -2590,7 +2558,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
 //
 //
 //
@@ -6262,8 +6229,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
 //
 //
 //
@@ -30153,69 +30118,20 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "section" }, [
-      _c("div", { staticClass: "columns is-centered" }, [
-        _c("div", { staticClass: "column is-4" }, [
-          _c("div", { staticClass: "box" }, [
-            _c("div", { staticClass: "w-head-title" }, [
-              _vm._v(
-                "\n                        NO OF USERS\n                    "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "w-content" }, [
-              _vm._v(
-                "\n                        " +
-                  _vm._s(_vm.info.user) +
-                  "\n                    "
-              ),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "column is-4" }, [
-          _c("div", { staticClass: "box" }, [
-            _c("div", { staticClass: "w-head-title" }, [
-              _vm._v(
-                "\n                        NO OF APPOINTMENTS\n                    "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "w-content" }, [
-              _vm._v(
-                "\n                        " +
-                  _vm._s(_vm.info.appointment) +
-                  "\n                    "
-              ),
-            ]),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "columns is-centered" }, [
-        _c("div", { staticClass: "column is-4" }, [
-          _c("div", { staticClass: "box" }, [
-            _c("div", { staticClass: "w-head-title" }, [
-              _vm._v(
-                "\n                        NO OF PATIENT\n                    "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "w-content" }, [
-              _vm._v(
-                "\n                        " +
-                  _vm._s(_vm.info.admit) +
-                  "\n                    "
-              ),
-            ]),
-          ]),
-        ]),
-      ]),
-    ]),
-  ])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", { staticClass: "section" }, [
+        _c("div", { staticClass: "columns is-centered" }),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -30266,25 +30182,6 @@ var render = function () {
                 _c("b-navbar-item", { attrs: { href: "/admin-home" } }, [
                   _vm._v("\n                Home\n            "),
                 ]),
-                _vm._v(" "),
-                _c("b-navbar-item", { attrs: { href: "#" } }, [
-                  _vm._v("\n                Documentation\n            "),
-                ]),
-                _vm._v(" "),
-                _c(
-                  "b-navbar-dropdown",
-                  { attrs: { label: "Info" } },
-                  [
-                    _c("b-navbar-item", { attrs: { href: "#" } }, [
-                      _vm._v("\n                    About\n                "),
-                    ]),
-                    _vm._v(" "),
-                    _c("b-navbar-item", { attrs: { href: "#" } }, [
-                      _vm._v("\n                    Contact\n                "),
-                    ]),
-                  ],
-                  1
-                ),
               ]
             },
             proxy: true,
@@ -30293,6 +30190,10 @@ var render = function () {
             key: "end",
             fn: function () {
               return [
+                _c("b-navbar-item", { attrs: { href: "/users" } }, [
+                  _vm._v("\n                User\n            "),
+                ]),
+                _vm._v(" "),
                 _c("b-navbar-item", { attrs: { tag: "div" } }, [
                   _c("div", { staticClass: "buttons" }, [
                     _c(
@@ -31660,23 +31561,25 @@ var render = function () {
                                   },
                                 },
                                 [
-                                  _c("option", { attrs: { value: "ADMIN" } }, [
-                                    _vm._v("ADMINISTRATOR"),
+                                  _c(
+                                    "option",
+                                    { attrs: { value: "ADMINISTRATOR" } },
+                                    [_vm._v("ADMINISTRATOR")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("option", { attrs: { value: "HRLD" } }, [
+                                    _vm._v("HRLD"),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("option", { attrs: { value: "CID" } }, [
+                                    _vm._v("CID"),
                                   ]),
                                   _vm._v(" "),
                                   _c(
                                     "option",
-                                    { attrs: { value: "DENTIST" } },
-                                    [_vm._v("DENTIST")]
+                                    { attrs: { value: "DEPED OFFICIAL" } },
+                                    [_vm._v("DEPED OFFICIAL")]
                                   ),
-                                  _vm._v(" "),
-                                  _c("option", { attrs: { value: "STAFF" } }, [
-                                    _vm._v("STAFF"),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("option", { attrs: { value: "USER" } }, [
-                                    _vm._v("USER"),
-                                  ]),
                                 ]
                               ),
                             ],
@@ -38256,19 +38159,6 @@ var render = function () {
                   1
                 ),
                 _vm._v(" "),
-                _c(
-                  "b-navbar-item",
-                  { staticClass: "navbar-notif" },
-                  [
-                    _c("b-icon", { attrs: { icon: "earth" } }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "notif-counter" }, [
-                      _vm._v("\n                    4\n                "),
-                    ]),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
                 _c("b-navbar-item", { attrs: { tag: "div" } }, [
                   _c("div", { staticClass: "buttons" }, [
                     _c(
@@ -38946,24 +38836,6 @@ var render = function () {
                             _vm._v(
                               "\n                            " +
                                 _vm._s(props.row.sex) +
-                                "\n                        "
-                            ),
-                          ]
-                        },
-                      },
-                    ]),
-                  }),
-                  _vm._v(" "),
-                  _c("b-table-column", {
-                    attrs: { field: "email", label: "Email" },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "default",
-                        fn: function (props) {
-                          return [
-                            _vm._v(
-                              "\n                            " +
-                                _vm._s(props.row.email) +
                                 "\n                        "
                             ),
                           ]

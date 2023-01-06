@@ -74,9 +74,7 @@
                                 {{ props.row.email }}
                             </b-table-column>
 
-                            <b-table-column field="email" label="Email" v-slot="props">
-                                {{ props.row.email }}
-                            </b-table-column>
+                          
 
                             <b-table-column field="province" label="Residential" v-slot="props">
                                 {{ props.row.residential_province.provDesc }}, {{ props.row.residential_city.citymunDesc }}
