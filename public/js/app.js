@@ -2918,20 +2918,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -3039,14 +3025,14 @@ __webpack_require__.r(__webpack_exports__);
     loadCity: function loadCity() {
       var _this3 = this;
 
-      axios.get('/load-cities?prov=' + this.fields.province).then(function (res) {
+      axios.get('/load-cities?prov=' + this.fields.res_province).then(function (res) {
         _this3.cities = res.data;
       });
     },
     loadBarangay: function loadBarangay() {
       var _this4 = this;
 
-      axios.get('/load-barangays?prov=' + this.fields.province + '&city_code=' + this.fields.city).then(function (res) {
+      axios.get('/load-barangays?prov=' + this.fields.res_province + '&city_code=' + this.fields.res_city).then(function (res) {
         _this4.barangays = res.data;
       });
     },
@@ -3160,6 +3146,7 @@ __webpack_require__.r(__webpack_exports__);
         _this8.fields = res.data;
         var tempData = res.data; //load city first
 
+        console.log(_this8.fields.res_province);
         axios.get('/load-cities?prov=' + _this8.fields.res_province).then(function (res) {
           //load barangay
           _this8.cities = res.data;
@@ -31741,59 +31728,6 @@ var render = function () {
                         ],
                         1
                       ),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "columns" }, [
-                      _vm.fields.role === "OFFICE"
-                        ? _c(
-                            "div",
-                            { staticClass: "column" },
-                            [
-                              _c(
-                                "b-field",
-                                {
-                                  attrs: {
-                                    label: "Office",
-                                    "label-position": "on-border",
-                                    expanded: "",
-                                    type: this.errors.office ? "is-danger" : "",
-                                    message: this.errors.office
-                                      ? this.errors.office[0]
-                                      : "",
-                                  },
-                                },
-                                [
-                                  _c(
-                                    "b-select",
-                                    {
-                                      attrs: { expanded: "" },
-                                      model: {
-                                        value: _vm.fields.office,
-                                        callback: function ($$v) {
-                                          _vm.$set(_vm.fields, "office", $$v)
-                                        },
-                                        expression: "fields.office",
-                                      },
-                                    },
-                                    _vm._l(_vm.offices, function (item, index) {
-                                      return _c(
-                                        "option",
-                                        {
-                                          key: index,
-                                          domProps: { value: item.office_id },
-                                        },
-                                        [_vm._v(_vm._s(item.office_name))]
-                                      )
-                                    }),
-                                    0
-                                  ),
-                                ],
-                                1
-                              ),
-                            ],
-                            1
-                          )
-                        : _vm._e(),
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "columns" }, [

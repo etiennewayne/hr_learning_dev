@@ -50,9 +50,9 @@ class UserController extends Controller
             'email' => ['required', 'unique:users'],
             'password' => ['required', 'string', 'confirmed'],
             'role' => ['required', 'string'],
-            'province' => ['required', 'string'],
-            'city' => ['required', 'string'],
-            'barangay' => ['required', 'string'],
+            'res_province' => ['required', 'string'],
+            'res_city' => ['required', 'string'],
+            'res_barangay' => ['required', 'string'],
         ]);
 
         User::create([
@@ -66,10 +66,10 @@ class UserController extends Controller
             'email' => $req->email,
             'contact_no' => $req->contact_no,
             'role' => $req->role,
-            'res_province' => $req->province,
-            'res_city' => $req->city,
-            'res_barangay' => $req->barangay,
-            'res_street' => strtoupper($req->street)
+            'res_province' => $req->res_province,
+            'res_city' => $req->res_city,
+            'res_barangay' => $req->res_barangay,
+            'res_street' => strtoupper($req->res_street)
         ]);
 
         return response()->json([

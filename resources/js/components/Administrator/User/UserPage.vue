@@ -96,8 +96,6 @@
                             </b-table-column>
                         </b-table>
 
-
-
                     </div>
                 </div><!--col -->
             </div><!-- cols -->
@@ -241,19 +239,7 @@
 
                             </div>
 
-                            <div class="columns">
-                                <div class="column" v-if="fields.role === 'OFFICE'">
-                                    <b-field label="Office" label-position="on-border" expanded
-                                             :type="this.errors.office ? 'is-danger':''"
-                                             :message="this.errors.office ? this.errors.office[0] : ''">
-                                        <b-select v-model="fields.office" expanded>
-                                            <option v-for="(item, index) in offices" :key="index" :value="item.office_id">{{ item.office_name }}</option>
-                                        </b-select>
-                                    </b-field>
-                                </div>
-
-                            </div>
-
+                          
                             <div class="columns">
                                 <div class="column">
                                     <b-field label="Province" label-position="on-border" expanded
@@ -487,13 +473,13 @@ export default{
         },
 
         loadCity: function(){
-            axios.get('/load-cities?prov=' + this.fields.province).then(res=>{
+            axios.get('/load-cities?prov=' + this.fields.res_province).then(res=>{
                 this.cities = res.data;
             })
         },
 
         loadBarangay: function(){
-            axios.get('/load-barangays?prov=' + this.fields.province + '&city_code='+this.fields.city).then(res=>{
+            axios.get('/load-barangays?prov=' + this.fields.res_province + '&city_code='+this.fields.res_city).then(res=>{
                 this.barangays = res.data;
             })
         },
@@ -588,13 +574,12 @@ export default{
             this.global_id = data_id;
             this.isModalCreate = true;
 
-
             //nested axios for getting the address 1 by 1 or request by request
             axios.get('/users/'+data_id).then(res=>{
                 this.fields = res.data;
-                
                 let tempData = res.data;
                 //load city first
+                console.log(this.fields.res_province)
                 axios.get('/load-cities?prov=' + this.fields.res_province).then(res=>{
                     //load barangay
                     this.cities = res.data;
