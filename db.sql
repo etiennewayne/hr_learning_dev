@@ -12,9 +12,9 @@ MySQL - 10.4.24-MariaDB : Database - learning_dev
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`learning_dev` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`hr_learning_dev` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 
-USE `learning_dev`;
+USE `hr_learning_dev`;
 
 /*Table structure for table `barangays` */
 
