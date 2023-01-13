@@ -2,10 +2,11 @@
     <div>
         <div class="w-container">
             <div class="pending-text">
-                ACCOUNT IS PENDING.
+                This account is pending approval.
             </div>
             <div class="subtitle">
-                Please verify the account first.
+                Your account is currently under review. You shouldmhear back from us quickly, but in some cases, it could
+                take up to 2-3 business days.
             </div>
         </div>
     </div>

@@ -13,6 +13,11 @@ class SeminarPost extends Model
     protected $primaryKey = 'seminar_post_id';
 
 
-    protected $fillable = ['img_path', 'description', 'date_posted'];
+    protected $fillable = [
+        'title', 'seminar_date',
+        'ld_type', 'skills', 'conducted_by',
+        'cpd_units', 'no_hours',
+        'specialization',
+        'img_path', 'description', 'date_posted'];
 
 }

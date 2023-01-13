@@ -62,6 +62,9 @@ export default {
                 if(res.data.role === 'CID'){
                     window.location = '/cid/home';
                 }
+                if(res.data.role === 'DEPED OFFICIAL'){
+                    window.location = '/deped/home';
+                }
                //window.location = '/dashboard';
             }).catch(err=>{
                 if(err.response.status === 422){

@@ -17,7 +17,15 @@
                                     <b-input type="text" v-model="fields.username" icon="account" placeholder="Username"></b-input>
                                 </b-field>
                             </div>
+                            <div class="column">
+                                <b-field label="Agency No. (Id No.)" label-position="on-border"
+                                         :type="this.errors.agency_idno ? 'is-danger':''"
+                                         :message="this.errors.agency_idno ? this.errors.agency_idno[0] : ''">
+                                    <b-input type="text" v-model="fields.agency_idno" icon="account" placeholder="Agency No."></b-input>
+                                </b-field>
+                            </div>
                         </div>
+
 
                         <div class="columns">
                             <div class="column">
@@ -94,6 +102,21 @@
                             </div>
                         </div>
 
+<!--                        <div class="columns">-->
+<!--                            <div class="column">-->
+<!--                                <b-field label="Special Skill & Hobbies" label-position="on-border">-->
+<!--                                    <b-select v-model="fields.skill_hobbies"-->
+<!--                                              placeholder="TSpecial Skill & Hobbies"-->
+<!--                                              expanded>-->
+<!--                                        <option v-for="(i, ix) in specializations" :key="ix"-->
+<!--                                                :value="i.specialization">-->
+<!--                                            {{ i.specialization }}-->
+<!--                                        </option>-->
+<!--                                    </b-select>-->
+<!--                                </b-field>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
                         <h2><span>RESIDENTIAL ADDRESS</span></h2>
                         <div class="columns">
                             <div class="column">
@@ -158,6 +181,7 @@ export default {
             provinces: [],
             cities: [],
             barangays: [],
+            specializations: [],
         }
     },
     methods: {
@@ -199,9 +223,17 @@ export default {
             });
         },
 
+        loadSpecializations(){
+            axios.get('/get-open-specializations').then(res=>{
+                this.specializations = res.data
+            })
+        },
+
     },
     mounted() {
         this.loadProvince();
+        //this.loadSpecializations()
+
     }
 }
 </script>

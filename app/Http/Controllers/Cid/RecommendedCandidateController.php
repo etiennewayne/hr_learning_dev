@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Cid;
 
 use App\Http\Controllers\Controller;
+use App\Models\SeminarPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -11,7 +12,7 @@ class RecommendedCandidateController extends Controller
     //
     public function __construct(){
         $this->middleware('auth');
-        $this->middleware('cid');  
+        $this->middleware('cid');
     }
 
     public function index(){
@@ -31,15 +32,30 @@ class RecommendedCandidateController extends Controller
             ->where('a.lname', 'like', $req->lname . '%');
         //return $queryBuilder->toSql();
 
-        //$data = DB::raw('select * from ('.$queryBuilder.') as tbl1')->get(); 
+        //$data = DB::raw('select * from ('.$queryBuilder.') as tbl1')->get();
 
         $data = DB::table($queryBuilder)
-                
                 ->where('specialization', 'like', '%' .$req->specialization . '%')
+//                ->where('lname', 'like', '%' .$req->lname . '%')
+//                ->where('fname', 'like', '%' .$req->fname . '%')
                 ->orderBy('no_seminars', 'asc')
                 ->get();
+        return $data;
+    }
+
+
+    public function getSeminarSpecializationList(Request $req){
+        $data = SeminarPost::where('title', 'like', $req->title . '%')
+            ->whereDate('seminar_date', '>=', date('Y-m-d'))
+            ->get();
 
         return $data;
+    }
+
+
+    public function store(Request $req){
+
+
     }
 
 

@@ -57,10 +57,12 @@ class FacultyPDSController extends Controller
             'fname' => ['required'],
             'sex' => ['required'],
             'email' => ['required', 'unique:users,email,'. $id . ',user_id'],
+            'agency_idno' => ['required']
+        ],[
+            'agency_idno.required' => 'Agency no. or Id no. is required.'
         ]);
 
         $dob = date("Y-m-d", strtotime($req->date_birth)); //convert to date format UNIX
-
 
         $data = User::find($id);
         $data->lname = strtoupper($req->surname);

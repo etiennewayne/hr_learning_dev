@@ -35,6 +35,7 @@
                             </div>
                         </div>
 
+
                         <div class="buttons mt-3">
                             <b-button @click="openModal" icon-left="plus" class="is-success">NEW</b-button>
                         </div>
@@ -91,6 +92,9 @@
                                     </b-tooltip>
                                     <b-tooltip label="Reset Password" type="is-info">
                                         <b-button class="button is-small mr-1" icon-right="lock" @click="openModalResetPassword(props.row.user_id)"></b-button>
+                                    </b-tooltip>
+                                    <b-tooltip label="Add Other Information" type="is-info">
+                                        <b-button class="button is-small mr-1" icon-right="plus" @click="openOtherInfo(props.row.user_id)"></b-button>
                                     </b-tooltip>
                                 </div>
                             </b-table-column>
@@ -232,6 +236,7 @@
                                             <option value="ADMINISTRATOR">ADMINISTRATOR</option>
                                             <option value="HRLD">HRLD</option>
                                             <option value="CID">CID</option>
+                                            <option value="FACULTY">FACULTY</option>
                                             <option value="DEPED OFFICIAL">DEPED OFFICIAL</option>
                                         </b-select>
                                     </b-field>
@@ -239,7 +244,7 @@
 
                             </div>
 
-                          
+
                             <div class="columns">
                                 <div class="column">
                                     <b-field label="Province" label-position="on-border" expanded
@@ -355,6 +360,87 @@
         <!--close modal-->
 
 
+
+
+
+
+
+        <!--modal reset password-->
+        <b-modal v-model="modalOtherInformation" has-modal-card
+                 trap-focus
+                 :width="640"
+                 aria-role="dialog"
+                 aria-label="Modal"
+                 aria-modal>
+
+            <form @submit.prevent="submitOtherInfo">
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Other Info</p>
+                        <button
+                            type="button"
+                            class="delete"
+                            @click="modalOtherInformation = false"/>
+                    </header>
+
+                    <section class="modal-card-body">
+                        <div class="">
+                            <div class="columns">
+                                <div class="column">
+
+                                    <div class="columns">
+                                        <div class="column">
+                                            <b-field label="Special Skill & Hobbies" label-position="on-border"
+                                                     :type="this.errorOthers.skill_hobbies ? 'is-danger':''"
+                                                     :message="this.errorOthers.skill_hobbies ? this.errorOthers.skill_hobbies[0] : ''">
+                                                <b-select v-model="fieldsOther.skill_hobbies"
+                                                          placeholder="Special Skill & Hobbies"
+                                                          expanded>
+                                                    <option v-for="(i, ix) in specializations" :key="ix"
+                                                            :value="i.specialization">
+                                                        {{ i.specialization }}
+                                                    </option>
+                                                </b-select>
+                                            </b-field>
+                                        </div>
+                                    </div>
+
+                                    <div class="columns">
+                                        <div class="column">
+                                            <b-field label="Non-academic Distinction" label-position="on-border">
+                                                <b-input type="text" v-model="fieldsOther.non_academic_distinction"
+                                                          placeholder="Non-academic Distinction">
+                                                </b-input>
+                                            </b-field>
+                                        </div>
+                                        <div class="column">
+                                            <b-field label="Member of Association" label-position="on-border">
+                                                <b-input type="text" v-model="fieldsOther.member_association"
+                                                         placeholder="Member of Association">
+                                                </b-input>
+                                            </b-field>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <b-button
+                            label="Close"
+                            @click="modalOtherInformation=false"/>
+                        <button
+                            :class="btnClass"
+                            label="Save"
+                            type="is-success">Save Other Info</button>
+                    </footer>
+                </div>
+            </form><!--close form-->
+        </b-modal>
+        <!--close modal-->
+
+
     </div>
 </template>
 
@@ -381,6 +467,7 @@ export default{
 
             isModalCreate: false,
             modalResetPassword: false,
+            modalOtherInformation: false,
 
             fields: {
                 username: '',
@@ -389,7 +476,10 @@ export default{
                 sex : '', role: '',  email : '', contact_no : '',
                 province: '', city: '', barangay: '', street: ''
             },
+            fieldsOther: {},
             errors: {},
+            errorOthers: {},
+
             offices: [],
 
             btnClass: {
@@ -401,6 +491,8 @@ export default{
             provinces: [],
             cities: [],
             barangays: [],
+
+            specializations: [],
 
 
         }
@@ -529,8 +621,6 @@ export default{
                         this.errors = err.response.data.errors;
                     }
                 });
-
-
             }
         },
 
@@ -542,7 +632,7 @@ export default{
                 type: 'is-danger',
                 message: 'Are you sure you want to delete this data?',
                 cancelText: 'Cancel',
-                confirmText: 'Delete user account?',
+                confirmText: 'Delete',
                 onConfirm: () => this.deleteSubmit(delete_id)
             });
         },
@@ -586,7 +676,7 @@ export default{
                     axios.get('/load-barangays?prov=' + this.fields.res_province + '&city_code='+this.fields.res_city).then(res=>{
                         this.barangays = res.data;
                         this.fields = tempData
-                       
+
                     });
                 });
             });
@@ -629,6 +719,39 @@ export default{
             })
         },
 
+        openOtherInfo(userId){
+            this.global_id = userId
+            this.modalOtherInformation = true
+        },
+
+        submitOtherInfo(){
+            axios.post('/other-info-store/' + this.global_id, this.fieldsOther).then(res=>{
+                if(res.data.status === 'saved') {
+                    this.$buefy.dialog.alert({
+                        title: 'Other Info Saved',
+                        type: 'is-success',
+                        message: 'Other Information successfully saved.',
+                        confirmText: 'OK',
+                        onConfirm: () => {
+                            this.modalOtherInformation = false;
+                            this.fieldsOther = {};
+                            this.errors = {};
+                            this.global_id = 0
+                            this.loadAsyncData()
+                        }
+                    });
+                }
+            }).catch(err=>{
+                if(err.response.status === 422){
+                    this.errorOthers = err.response.data.errors;
+                }
+            })
+        },
+        loadSpecializations(){
+            axios.get('/get-open-specializations').then(res=>{
+                this.specializations = res.data
+            })
+        },
 
     },
 
@@ -636,7 +759,9 @@ export default{
         //this.loadOffices();
         this.loadAsyncData();
         this.loadProvince();
+        this.loadSpecializations()
     }
+
 }
 </script>
 

@@ -4,13 +4,87 @@
         <div class="columns is-centered mt-5">
             <div class="column is-6">
                 <div class="box">
-                    <div class="box-text">New Seminar / Trainings</div>
+                    <div class="box-text mb-5">New Seminar / Trainings</div>
 
                     <div>
-                        <b-field>
-                            <b-input type="textarea" v-model="desc">
-                            </b-input>
-                        </b-field>
+                        <div class="columns">
+                            <div class="column">
+                                <b-field label="Title" label-position="on-border">
+                                    <b-input type="input" placeholder="Title" v-model="fields.title">
+                                    </b-input>
+                                </b-field>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                <b-field label="Skills" label-position="on-border">
+                                    <b-input type="input" placeholder="Skills" v-model="fields.skills">
+                                    </b-input>
+                                </b-field>
+                            </div>
+                            <div class="column">
+                                <b-field label="Seminar Date" label-position="on-border">
+                                    <b-datepicker placeholder="Seminar Date" v-model="fields.seminar_date">
+                                    </b-datepicker>
+                                </b-field>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                <b-field label="Learning Development" label-position="on-border"
+                                    expanded>
+                                    <b-select v-model="fields.ld_type" expanded>
+                                        <option v-for="(item, index) in ld_types" :key="index"
+                                            :value="item.ld_type">{{ item.ld_type }}</option>
+                                    </b-select>
+                                </b-field>
+                            </div>
+                            <div class="column">
+                                <b-field label="Conducted/Sponsored By" label-position="on-border">
+                                    <b-input type="input" placeholder="Conducted/Sponsored By"
+                                        v-model="fields.conducted_by">
+                                    </b-input>
+                                </b-field>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                <b-field label="CPD Units" label-position="on-border">
+                                    <b-input type="input" placeholder="CPD Units"
+                                        v-model="fields.cpd_units">
+                                    </b-input>
+                                </b-field>
+                            </div>
+                            <div class="column">
+                                <b-field label="No. of hours" label-position="on-border">
+                                    <b-numberinput type="number" placeholder="No. of hours"
+                                        :controls="false"
+                                        v-model="fields.no_hours">
+                                    </b-numberinput>
+                                </b-field>
+                            </div>
+                        </div>
+
+                        <div class="columns">
+                            <div class="column">
+                                <b-field label="Specialization" label-position="on-border">
+                                    <b-select v-model="fields.specialization" placeholder="Specialization">
+                                        <option v-for="(item, index) in specializations" :key="index"
+                                            :value="item.specialization">{{ item.specialization }}</option>
+                                    </b-select>
+                                </b-field>
+                            </div>
+                        </div>
+
+                        <div class="columns">
+                            <div class="column">
+                                <b-field label="Description" label-position="on-border">
+                                    <b-input type="textarea" v-model="fields.description" placeholder="Description">
+                                    </b-input>
+                                </b-field>
+                            </div>
+                        </div>
+
 
                         <b-field class="file is-primary" :class="{'has-name': !!file}">
                             <b-upload v-model="file" class="file-label">
@@ -27,11 +101,11 @@
                         <div class="buttons is-right">
                             <b-button type="is-primary is-outlined" label="Post Training" @click="submit"></b-button>
                         </div>
-                        
+
                     </div>
                 </div>
 
-                <div class="box box-post" v-for="(seminar, index) in serminars" :key="index">
+                <div class="box box-post" v-for="(seminar, index) in seminars" :key="index">
                     <div class="box-post-heading">
                         <div class="posted-text">Posted: {{ seminar.date_posted }}</div>
                         <div class="post-action">
@@ -44,16 +118,52 @@
                                         :icon-right="active ? 'menu-up' : 'menu-down'" />
                                 </template>
 
-
+                                <b-dropdown-item aria-role="listitem" @click="updatePost(seminar.seminar_post_id)">Update</b-dropdown-item>
                                 <b-dropdown-item aria-role="listitem" @click="deletePost(seminar.seminar_post_id)">Delete</b-dropdown-item>
-                                
+
                             </b-dropdown>
                         </div>
                     </div>
                     <div class="post-desc">
-                        {{ seminar.description }}
+                        <div class="columns">
+                            <div class="column">
+                                <div class="has-text-weight-bold">Title: {{ seminar.title }}</div>
+                            </div>
+                            <div class="column">
+                                <div class="has-text-weight-bold">Skill: {{ seminar.skill }}</div>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                <div class="has-text-weight-bold">Seminar Date: {{ seminar.seminar_date  }}</div>
+                            </div>
+                            <div class="column">
+                                <div class="has-text-weight-bold">Learning Development: {{ seminar.ld_type }}</div>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                <div class="has-text-weight-bold">Conducted: {{ seminar.conducted_by  }}</div>
+                            </div>
+                            <div class="column">
+                                <div class="has-text-weight-bold">CPD Units: {{ seminar.cpd_units }}</div>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                <div class="has-text-weight-bold">Specialization: {{ seminar.specialization  }}</div>
+                            </div>
+                            <div class="column">
+                                <div class="has-text-weight-bold">No of Hours: {{ seminar.no_hours }}</div>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                {{ seminar.description }}
+                            </div>
+                        </div>
                     </div>
-                    <div class="post-img-container">
+                    <div class="post-img-container" v-if="seminar.img_path">
                         <img :src="`/storage/seminars/${seminar.img_path}`" class="post-img" />
                     </div>
                 </div>
@@ -72,8 +182,13 @@ export default{
             file: null,
             desc: '',
 
+            fields: {},
 
-            serminars: [],
+            seminar_id: 0,
+
+            seminars: [],
+            specializations: [],
+            ld_types: [],
         }
     },
 
@@ -90,32 +205,82 @@ export default{
 
         loadSeminars(){
             axios.get('/hrld/get-seminars').then(res=>{
-                this.serminars = res.data
-            }).catch(err=>{
-
+                this.seminars = res.data
+            })
+        },
+        loadLearningDevelopmentTypes(){
+            axios.get('/get-open-learning-dev-types').then(res=>{
+                this.ld_types = res.data
+                console.log(this.ld_types);
+            })
+        },
+        loadSpecializations(){
+            axios.get('/get-open-specializations').then(res=>{
+                this.specializations = res.data
             })
         },
 
+
         submit(){
+            let ndate = new Date(this.fields.seminar_date);
+
+            let newDate = ndate.getFullYear() + '-' + (ndate.getMonth() + 1) + '-' + ndate.getDate();
 
             let formData = new FormData();
-            formData.append('desc', this.desc);
+
+
+            formData.append('title', this.fields.title);
+            formData.append('seminar_date', newDate);
+            formData.append('ld_type', this.fields.ld_type);
+            formData.append('skills', this.fields.skills);
+            formData.append('conducted_by', this.fields.conducted_by);
+            formData.append('cpd_units', this.fields.cpd_units);
+            formData.append('no_hours', this.fields.no_hours);
+            formData.append('specialization', this.fields.specialization);
             formData.append('file', this.file);
+            formData.append('description', this.fields.description); //optional
 
-            axios.post('/hrld/seminar-posts-store', formData).then(res=>{
-                if(res.data.status === 'saved'){
-                    this.$buefy.dialog.alert({
-                        title: "Posted!",
-                        message: 'Seminar successfully posted.',
-                        type: 'is-success',
-                        onConfirm: ()=>  {
-                            this.loadSeminars()
-                        }
-                    });
-                }
-            }).catch(err=>{
+            if(this.seminar_id > 0){
+                axios.post('/hrld/seminar-posts-update/' + this.seminar_id, formData).then(res=>{
+                    if(res.data.status === 'updated'){
+                        this.$buefy.dialog.alert({
+                            title: "Updated!",
+                            message: 'Seminar post successfully update.',
+                            type: 'is-success',
+                            onConfirm: ()=>  {
+                                this.loadSeminars()
+                                this.clearFields()
 
-            })
+                            }
+                        });
+                    }
+                }).catch(err=>{
+
+                })
+            }else{
+                axios.post('/hrld/seminar-posts-store', formData).then(res=>{
+                    if(res.data.status === 'saved'){
+                        this.$buefy.dialog.alert({
+                            title: "Posted!",
+                            message: 'Seminar successfully posted.',
+                            type: 'is-success',
+                            onConfirm: ()=>  {
+                                this.loadSeminars()
+                                this.clearFields()
+                            }
+                        });
+                    }
+                }).catch(err=>{
+
+                })
+            }
+
+        },
+
+        clearFields(){
+            this.seminar_id = 0
+            this.fields = {}
+            this.file = null
         },
 
         deletePost(seminarPostId){
@@ -128,11 +293,32 @@ export default{
                     this.loadSeminars()
                 }
             })
+        },
+
+        updatePost(seminarPostId){
+            this.seminar_id = seminarPostId
+            this.fields = {};
+
+            axios.get('/hrld/get-seminar-posts/' + seminarPostId).then(res=>{
+                this.fields = {
+                    title: res.data.title,
+                    skills: res.data.skills,
+                    seminar_date: new Date(res.data.seminar_date),
+                    ld_type: res.data.ld_type,
+                    conducted_by: res.data.conducted_by,
+                    cpd_units: res.data.cpd_units,
+                    no_hours: parseInt(res.data.no_hours),
+                    specialization: res.data.specialization,
+                    description: res.data.description
+                }
+            })
         }
     },
 
     mounted(){
         this.loadSeminars()
+        this.loadLearningDevelopmentTypes()
+        this.loadSpecializations()
     }
 }
 </script>
@@ -166,7 +352,7 @@ export default{
     .post-action{
         margin-left: auto;
     }
-    
+
     .post-desc{
         border-top: 1px solid gray;
         margin: 10px;

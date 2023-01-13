@@ -28,23 +28,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('/get-dental-services', [App\Http\Controllers\Administrator\ServicesController::class, 'getDentalServices']);
 
+//open for combo box
+Route::get('/get-open-learning-dev-types', [App\Http\Controllers\OpenController::class, 'loadLearningDevTypes']);
+Route::get('/get-open-specializations', [App\Http\Controllers\OpenController::class, 'loadSpecializations']);
 
-Route::get('/get-open-dentists', function () {
-    $dentists = User::where('role', 'DENTIST')
-        ->orderBy('lname', 'asc')->get();
-    return $dentists;
-});
-
-Route::get('/get-dentist-schedules/{id}', function ($id) {
-    $schedules = DentistSchedule::with(['user'])
-        ->whereHas('user', function($q) use ($id){
-            $q->where('user_id', $id);
-        })
-        ->get();
-    return $schedules;
-});
 
 
 Auth::routes([
@@ -88,7 +76,15 @@ Route::resource('/users', App\Http\Controllers\Administrator\UserController::cla
 Route::get('/get-users', [App\Http\Controllers\Administrator\UserController::class, 'getUsers']);
 Route::get('/get-user-offices', [App\Http\Controllers\Administrator\UserController::class, 'getOffices']);
 Route::post('/user-reset-password/{id}', [App\Http\Controllers\Administrator\UserController::class, 'resetPassword']);
+Route::post('/other-info-store/{userid}', [App\Http\Controllers\Administrator\UserController::class, 'storeOtherInfo']);
 
+
+
+Route::resource('/learning-dev', App\Http\Controllers\LearningDevelopmentTypeController::class);
+Route::get('/get-learning-dev', [App\Http\Controllers\LearningDevelopmentTypeController::class, 'getLearningDevelopmentTypes']);
+
+Route::resource('/specialization', App\Http\Controllers\Administrator\SpecializationController::class);
+Route::get('/get-specialization', [App\Http\Controllers\Administrator\SpecializationController::class, 'getSpecialization']);
 
 
 /*     ADMINSITRATOR          */
@@ -135,6 +131,8 @@ Route::get('/hrld/get-seminars', [App\Http\Controllers\Hrld\HrldSeminarPostContr
 Route::delete('/hrld/seminar-posts/{id}', [App\Http\Controllers\Hrld\HrldSeminarPostController::class, 'destroy']);
 
 Route::post('/hrld/seminar-posts-store', [App\Http\Controllers\Hrld\HrldSeminarPostController::class, 'store']);
+Route::get('/hrld/get-seminar-posts/{id}', [App\Http\Controllers\Hrld\HrldSeminarPostController::class, 'show']);
+Route::post('/hrld/seminar-posts-update/{id}', [App\Http\Controllers\Hrld\HrldSeminarPostController::class, 'update']);
 
 
 Route::resource('/hrld/teacher-accounts', App\Http\Controllers\Hrld\HrldTeacherAccountController::class);
@@ -143,20 +141,23 @@ Route::post('/hrld/teacher-approve-account/{id}', [App\Http\Controllers\Hrld\Hrl
 
 
 
-
-
-
 //CID
 Route::resource('/cid/home', App\Http\Controllers\Cid\CidHomeController::class);
 
 Route::resource('/cid/seminar-list', App\Http\Controllers\Cid\CidSeminarController::class);
-Route::get('/cid/get-seminar-list', [App\Http\Controllers\Cid\CidSeminarController::class, 'getTeacherSeminars']);
+Route::get('/cid/get-seminar-posted-list', [App\Http\Controllers\Cid\CidSeminarController::class, 'getTeacherSeminars']);
 Route::post('/cid/submit-rating/{id}', [App\Http\Controllers\Cid\CidSeminarController::class, 'updateRate']);
+
 
 Route::get('/cid/recommended-candidates', [App\Http\Controllers\Cid\RecommendedCandidateController::class, 'index']);
 Route::get('/generate-list', [App\Http\Controllers\Cid\RecommendedCandidateController::class, 'generateList']);
+Route::post('/cid/submit-teachers-list', [App\Http\Controllers\Cid\RecommendedCandidateController::class, 'store']);
+Route::get('/cid/get-seminar-specialization-list', [App\Http\Controllers\Cid\RecommendedCandidateController::class, 'getSeminarSpecializationList']);
 
 
+
+//DEPED
+Route::resource('/deped/home', App\Http\Controllers\Deped\DepedHomeController::class);
 
 
 

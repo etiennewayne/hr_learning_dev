@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Administrator;
 
 use App\Models\Office;
+use App\Models\OtherInformation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -36,6 +37,27 @@ class UserController extends Controller
 
     public function show($id){
         return User::find($id);
+    }
+
+    public function storeOtherInfo(Request $req, $id){
+
+        $validate = $req->validate([
+            'skill_hobbies' => ['required']
+        ]);
+
+        OtherInformation::updateOrCreate([
+            'user_id' => $id,
+            'skill_hobbies' => $req->skill_hobbies,
+        ],[
+            'user_id' => $id,
+            'skill_hobbies' => $req->skill_hobbies,
+            'non_academic_distinction' => $req->non_academic_distinction,
+            'member_association' => $req->member_association
+        ]);
+
+        return response()->json([
+            'status' => 'saved'
+        ]);
     }
 
     public function store(Request $req){
@@ -78,7 +100,7 @@ class UserController extends Controller
     }
 
     public function update(Request $req, $id){
-     
+
 
         $validate = $req->validate([
             'username' => ['required', 'max:50', 'unique:users,username,'.$id.',user_id'],

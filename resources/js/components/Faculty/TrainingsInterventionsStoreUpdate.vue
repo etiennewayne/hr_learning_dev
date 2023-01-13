@@ -36,8 +36,15 @@
                             </div>
                             <div class="columns">
                                 <div class="column">
-                                    <b-field label="Type of LD" label-position="on-border">
-                                        <b-input type="text" v-model="fields.type_ld" placeholder="Type of LD"></b-input>
+                                    <b-field label="Type Learning Development" label-position="on-border" expanded>
+                                        <b-select v-model="fields.type_ld"
+                                                  placeholder="Type Learning Development"
+                                                  expanded>
+                                            <option v-for="(item, index) in learning_developments" :key="index"
+                                                :value="item.ld_type">
+                                                {{ item.ld_type }}
+                                            </option>
+                                        </b-select>
                                     </b-field>
                                 </div>
                                 <div class="column">
@@ -133,24 +140,29 @@ export default{
 
             id: 0,
 
+            learning_developments: [],
+
         }
     },
 
     methods: {
-
+        loadLearningDevelopments(){
+            axios.get('/get-open-learning-dev-types').then(res=>{
+                this.learning_developments = res.data
+            })
+        },
         getTrainings(){
 
             const params = [
                 `sort_by=${this.sortField}.${this.sortOrder}`,
                 `perpage=${this.perPage}`,
                 `page=${this.page}`
-
             ].join('&')
 
             axios.get(`/faculty/get-learning-trainings?${params}`).then(res=>{
                 this.trainings = res.data
             }).catch(err=>{
-            
+
             })
         },
 
@@ -196,7 +208,7 @@ export default{
                 this.dropFiles.forEach(item => {
                     formData.append('files[]', item);
                 })
-                
+
                 axios.post('/faculty/trainings-interventions', formData).then(res=>{
                     if(res.data.status === 'saved'){
                         this.$buefy.dialog.alert({
@@ -223,13 +235,13 @@ export default{
             this.dropFiles.splice(index, 1)
         },
 
-       
+
 
         initData(){
             this.user = JSON.parse(this.propUser)
 
             this.id = parseInt(this.propId)
-            
+
             if(this.id > 0){
                 let nData = JSON.parse(this.propData)
                 this.fields.title_learning_dev = nData.title_learning_dev;
@@ -245,6 +257,7 @@ export default{
 
     mounted(){
         this.getTrainings();
+        this.loadLearningDevelopments()
     },
     created() {
          this.initData();

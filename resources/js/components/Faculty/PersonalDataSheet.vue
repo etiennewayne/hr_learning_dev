@@ -160,7 +160,9 @@
                                     </b-field>
                                 </div>
                                 <div class="column">
-                                    <b-field label="Agency No." label-position="on-border">
+                                    <b-field label="Agency No. (Id No.)" label-position="on-border"
+                                         :type="this.errors.agency_idno ? 'is-danger':''"
+                                         :message="this.errors.agency_idno ? this.errors.agency_idno[0] : ''">
                                         <b-input type="text" placeholder="Agency No." v-model="fields.agency_idno"></b-input>
                                     </b-field>
                                 </div>
@@ -741,10 +743,19 @@
                                     </div>
                                 </div>
                                 <div class="columns">
+
                                     <div class="column">
-                                        <b-field label="Type of LD" label-position="on-border">
-                                            <b-input type="text" v-model="item.type_ld" placeholder="Type of LD"></b-input>
+                                        <b-field label="Type Learning Development" label-position="on-border">
+                                            <b-select v-model="item.type_ld"
+                                                      placeholder="Type Learning Development"
+                                                      expanded>
+                                                <option v-for="(i, ix) in learning_developments" :key="ix"
+                                                        :value="i.ld_type">
+                                                    {{ i.ld_type }}
+                                                </option>
+                                            </b-select>
                                         </b-field>
+
                                     </div>
                                     <div class="column">
                                         <b-field label="Conducted / Sponsored By" expanded label-position="on-border">
@@ -753,7 +764,7 @@
                                         </b-field>
                                     </div>
                                 </div>
-                                
+
                                 <div class="buttons is-right">
                                     <b-button @click="removeLearningDevelopment(index)" v-show="index || ( !index && fields.learning_developments.length > 0)"
                                               type="is-danger"
@@ -775,9 +786,20 @@
                             <div class="w-separator" v-for="(item, k) in fields.other_informations" :key="`info${k}`">
                                 <div class="columns">
                                     <div class="column">
-                                        <b-field label="Special Skill & Hobbies (Write Full)" label-position="on-border">
-                                            <b-input type="text" v-model="item.skill_hobbies" placeholder="Special Skill & Hobbies (Write Full)"></b-input>
+                                        <b-field label="Special Skill & Hobbies" label-position="on-border">
+                                            <b-select v-model="item.skill_hobbies"
+                                                      placeholder="Special Skill & Hobbies"
+                                                      expanded>
+                                                <option v-for="(i, ix) in specializations" :key="ix"
+                                                        :value="i.specialization">
+                                                    {{ i.specialization }}
+                                                </option>
+                                            </b-select>
                                         </b-field>
+
+<!--                                        <b-field label="" label-position="on-border">-->
+<!--                                            <b-input type="text" v-model="item.skill_hobbies" placeholder="Special Skill & Hobbies (Write Full)"></b-input>-->
+<!--                                        </b-field>-->
                                     </div>
                                 </div>
 
@@ -806,7 +828,7 @@
                             </div>
                         </b-step-item>
 
-                        
+
                         <template
                             v-if="customNavigation"
                             #navigation="{previous, next}">
@@ -880,7 +902,7 @@ export default {
                 other_informations: [],
             },
 
-           
+
             errors: {},
 
             civilStatuses: [],
@@ -893,6 +915,9 @@ export default {
             perProvinces: [],
             perCities: [],
             perBarangays: [],
+
+            learning_developments: [],
+            specializations: [],
         }
     },
     methods: {
@@ -1157,8 +1182,8 @@ export default {
                 formData.append('type_ld', item.type_ld);
                 formData.append('sponsored_by', item.sponsored_by);
             });
-           
-           
+
+
             //formData.append('fields', this.fields);
             axios.post('/faculty/personal-data-sheet-update/' + this.user.user_id, this.fields).then(res=>{
                 if(res.data.status === 'saved'){
@@ -1437,10 +1462,24 @@ export default {
         },
 
 
+        //Load
+        loadLearningDevelopments(){
+            axios.get('/get-open-learning-dev-types').then(res=>{
+                this.learning_developments = res.data
+            })
+        },
+        loadSpecializations(){
+            axios.get('/get-open-specializations').then(res=>{
+                this.specializations = res.data
+            })
+        },
+
     },
     mounted() {
         //this.initData();
         this.loadProvince();
+        this.loadLearningDevelopments()
+        this.loadSpecializations()
     }
 }
 </script>

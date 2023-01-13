@@ -29,6 +29,10 @@ class SignUpController extends Controller
             'res_province' => ['required', 'string'],
             'res_city' => ['required', 'string'],
             'res_barangay' => ['required', 'string'],
+            'agency_idno' => ['required'],
+            //'skill_hobbies' => ['required']
+        ],[
+            'agency_idno.required' => 'Agency No or Id No. is required.'
         ]);
 
 
@@ -49,7 +53,9 @@ class SignUpController extends Controller
             'res_province' => $req->res_province,
             'res_city' => $req->res_city,
             'res_barangay' => $req->res_barangay,
-            'res_street' => strtoupper($req->res_street)
+            'res_street' => strtoupper($req->res_street),
+            'agency_idno' => $req->agency_idno,
+            //'skill_hobbies' => $req->skill_hobbies,
         ]);
 
         // try{

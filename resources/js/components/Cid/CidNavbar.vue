@@ -21,7 +21,7 @@
             </b-navbar-item>
 
             <b-navbar-item href="/cid/recommended-candidates">
-                Recommended Candidate
+                List of Teachers
             </b-navbar-item>
 
             <b-navbar-item tag="div">

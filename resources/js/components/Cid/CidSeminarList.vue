@@ -5,7 +5,7 @@
                 <div class="column is-10-desktop is-12-tablet">
                     <div class="box">
 
-                        <div class="is-flex mb-2" style="font-size: 20px; font-weight: bold;">LIST OF SEMINARS</div>
+                        <div class="is-flex mb-2" style="font-size: 20px; font-weight: bold;">LIST OF POSTED SEMINARS</div>
 
                         <div class="level">
                             <div class="level-left">
@@ -23,7 +23,7 @@
                                 <div class="level-item">
                                     <b-field label="Search">
                                         <b-input type="text"
-                                                 v-model="search.lname" placeholder="Search Lastname"
+                                                 v-model="search.title" placeholder="Search Title"
                                                  @keyup.native.enter="loadAsyncData"/>
                                         <p class="control">
                                              <b-tooltip label="Search" type="is-success">
@@ -34,8 +34,6 @@
                                 </div>
                             </div>
                         </div>
-
-
 
                         <b-table
                             :data="data"
@@ -54,50 +52,51 @@
                             :default-sort-direction="defaultSortDirection"
                             @sort="onSort">
 
-                            <b-table-column field="learning_dev_id" label="ID" sortable v-slot="props">
-                                {{ props.row.learning_dev_id }}
+                            <b-table-column field="seminar_post_id" label="ID" sortable v-slot="props">
+                                {{ props.row.seminar_post_id }}
                             </b-table-column>
 
-                            <b-table-column field="name" label="Name" sortable v-slot="props">
-                                {{ props.row.lname }}, {{  props.row.fname }} {{ props.row.mname }}
+
+                            <b-table-column field="title" label="Title" sortable v-slot="props">
+                                {{ props.row.title }}
                             </b-table-column>
 
-                            <b-table-column field="title_learning_dev" label="Title" sortable v-slot="props">
-                                {{ props.row.title_learning_dev }},
+                            <b-table-column field="ld_type" label="Learning Development Type" sortable v-slot="props">
+                                {{ props.row.ld_type }}
                             </b-table-column>
 
-                            <b-table-column field="date_inclusion" label="Date Inclusion" sortable v-slot="props">
-                                {{ props.row.date_from }}, {{  props.row.date_to }}
+                            <b-table-column field="conducted_by" label="Conducted By" v-slot="props">
+                                {{ props.row.conducted_by }}
                             </b-table-column>
 
                             <b-table-column field="no_hours" label="No. Hours" v-slot="props">
                                 {{ props.row.no_hours }}
                             </b-table-column>
 
-                            <b-table-column field="type_ld" label="Type of LD" v-slot="props">
-                                {{ props.row.type_ld }}
+                            <b-table-column field="specialization" label="Specialization" v-slot="props">
+                                {{ props.row.specialization }}
                             </b-table-column>
 
-                            <b-table-column field="sponsored_by" label="Sponsor" v-slot="props">
-                                {{ props.row.sponsored_by }}
+                            <b-table-column field="seminar_date" label="Seminar Date" v-slot="props">
+                                {{ props.row.seminar_date }}
                             </b-table-column>
 
                             <!-- <b-table-column field="ratings" label="Rating" centered v-slot="props">
                                 {{ props.row.ratings }}
                             </b-table-column> -->
 
-                            <!-- <b-table-column label="Action" v-slot="props">
+                            <b-table-column label="Action" v-slot="props">
                                 <div class="is-flex">
-                                    <b-tooltip label="Rate" type="is-primary">
-                                        <b-button class="button is-small mr-1" tag="a" 
-                                            icon-right="message-draw" 
-                                            @click="rateModal(props.row.learning_dev_id)"></b-button>
-                                    </b-tooltip>
-                                     <b-tooltip label="Reset Password" type="is-info">
-                                        <b-button class="button is-small mr-1" icon-right="lock" @click="openModalResetPassword(props.row.user_id)"></b-button>
-                                    </b-tooltip>
+<!--                                    <b-tooltip label="Teacher List" type="is-primary">-->
+<!--                                        <b-button class="button is-small mr-1" tag="a"-->
+<!--                                            icon-right="format-list-bulleted"-->
+<!--                                            @click="teacherList(props.row.seminar_post_id)"></b-button>-->
+<!--                                    </b-tooltip>-->
+                                    <modal-browse-teacher-list
+                                        :prop-specialization="props.row.specialization"
+                                        :prop-seminar="props.row"></modal-browse-teacher-list>
                                 </div>
-                            </b-table-column> -->
+                            </b-table-column>
                         </b-table>
 
                     </div>
@@ -115,7 +114,7 @@
             aria-label="Modal"
             aria-modal>
 
-        
+
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Rating</p>
@@ -126,9 +125,9 @@
                 </header>
                 <form @submit.prevent="submitRating">
                     <section class="modal-card-body">
-                    
-                        
-                    
+
+
+
                         <div class="">
                             <div class="column">
 
@@ -158,20 +157,22 @@
 
 <script>
 
+import ModalBrowseTeacherList from "../Modals/ModalBrowseTeacherList";
 export default{
+    components: {ModalBrowseTeacherList},
     data() {
         return{
             data: [],
             total: 0,
             loading: false,
-            sortField: 'user_id',
+            sortField: 'seminar_post_id',
             sortOrder: 'desc',
             page: 1,
             perPage: 10,
             defaultSortDirection: 'asc',
-          
+
             search: {
-                lname: '',
+                title: '',
             },
 
             modalRate: false,
@@ -192,13 +193,13 @@ export default{
         loadAsyncData() {
             const params = [
                 `sort_by=${this.sortField}.${this.sortOrder}`,
-                `lname=${this.search.lname}`,
+                `title=${this.search.title}`,
                 `perpage=${this.perPage}`,
                 `page=${this.page}`
             ].join('&')
 
             this.loading = true
-            axios.get(`/cid/get-seminar-list?${params}`)
+            axios.get(`/cid/get-seminar-posted-list?${params}`)
                 .then(({ data }) => {
                     this.data = [];
                     let currentTotal = data.total
@@ -239,31 +240,11 @@ export default{
         },
 
 
-        //alert box ask for deletion
-        confirmApprove(userid) {
-            this.$buefy.dialog.confirm({
-                title: 'Approve Account?',
-                type: 'is-primary',
-                message: 'Are you sure you want to approve this teacher?',
-                cancelText: 'Cancel',
-                confirmText: 'Approve?',
-                onConfirm: () => this.approvedSubmit(userid)
-            });
-        },
-        //execute delete after confirming
-        approvedSubmit(userid) {
-            axios.post('/hrld/teacher-approve-account/' + userid).then(res => {
-                this.loadAsyncData();
-            }).catch(err => {
-                if (err.response.status === 422) {
-                    this.errors = err.response.data.errors;
-                }
-            });
-        },
 
-        rateModal(lId){
+
+        teacherList(item){
             this.modalRate = true
-            this.id = lId;
+            this.id = item;
         },
 
         submitRating(){
@@ -280,7 +261,7 @@ export default{
                     this.fields.rating = 0;
                 }
             }).catch(err=>{
-            
+
             })
         }
 

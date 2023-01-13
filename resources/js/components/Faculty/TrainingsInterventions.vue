@@ -13,7 +13,7 @@
                         </div>
 
                         <div class="box-body">
-                           
+
                             <div class="buttons is-right">
                                 <a class="button is-primary" href="/faculty/trainings-interventions/create">Add training</a>
                                 <b-button type="is-danger" @click="selected = {}">Clear Selected</b-button>
@@ -44,7 +44,6 @@
                                     {{ props.row.title_learning_dev }}
                                 </b-table-column>
 
-                                
                                 <b-table-column field="training_date" label="Training Date" sortable v-slot="props">
                                     {{ props.row.date_from }} to {{ props.row.date_to }}
                                 </b-table-column>
@@ -53,7 +52,7 @@
                                     {{ props.row.no_hours }}
                                 </b-table-column>
 
-                                <b-table-column field="type_ld" label="Type of LD" sortable v-slot="props">
+                                <b-table-column field="type_ld" label="Learning Development" sortable v-slot="props">
                                     {{ props.row.type_ld }}
                                 </b-table-column>
 
@@ -61,13 +60,13 @@
                                     {{ props.row.sponsored_by }}
                                 </b-table-column>
 
-                                <b-table-column field="ratings" label="Rating" sortable v-slot="props">
-                                    {{ props.row.ratings }}
-                                </b-table-column>
+<!--                                <b-table-column field="ratings" label="Rating" sortable v-slot="props">-->
+<!--                                    {{ props.row.ratings }}-->
+<!--                                </b-table-column>-->
 
                                 <b-table-column label="Action" v-slot="props">
                                     <div class="is-flex">
-                                        
+
                                         <b-tooltip label="Options" type="is-info">
                                         </b-tooltip>
 
@@ -85,10 +84,10 @@
 
                                                 <b-dropdown-item aria-role="listitem" @click="openModalUploadCertificate">Upload Certificate</b-dropdown-item>
 
-                                                <b-dropdown-item @click="confirmDelete(props.row.learning_dev_id)" 
+                                                <b-dropdown-item @click="confirmDelete(props.row.learning_dev_id)"
                                                     aria-role="listitem">Delete</b-dropdown-item>
 
-                                                
+
 
                                             </b-dropdown>
 
@@ -103,20 +102,20 @@
                                 <div class="cert-text">
                                     Certificates
                                 </div>
-    
+
                                 <div class="cert-contianer">
                                     <div class="card-cert" v-for="(item, index) in selected.certificates" :key="index">
                                         <div class="buttons is-right">
                                             <b-button class="is-danger is-small" icon-left="trash-can-outline" @click="removeCert(index)"></b-button>
                                         </div>
                                         <div class="img-cert">
-                                            <img :src="`/storage/certificates/${item.certificate}`" />  
+                                            <img :src="`/storage/certificates/${item.certificate}`" />
                                         </div>
                                         <hr>
                                     </div>
                                 </div>
                             </div >
-                                                    
+
                         </div><!--box body -->
                     </div>
                 </div>
@@ -201,7 +200,7 @@ export default{
 
     data(){
         return {
-           
+
             data: [],
             total: 0,
             loading: false,
@@ -252,7 +251,7 @@ export default{
                         this.data.push(item)
                     })
 
-                   
+
                     this.loading = false
                 })
                 .catch((error) => {
@@ -276,7 +275,7 @@ export default{
         //     axios.get(`/faculty/get-learning-trainings?${params}`).then(res=>{
         //         this.trainings = res.data
         //     }).catch(err=>{
-            
+
         //     })
         // },
 
@@ -336,7 +335,7 @@ export default{
                     this.modalCertificate = false;
                     this.dropFiles = []
                     this.loadAsyncData()
-                    
+
                 }
             }).catch(err=>{
 
@@ -367,7 +366,7 @@ export default{
             });
         },
 
-        
+
         initData(){
             this.user = JSON.parse(this.propUser)
         }

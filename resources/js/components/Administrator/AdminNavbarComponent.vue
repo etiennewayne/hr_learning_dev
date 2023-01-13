@@ -13,15 +13,15 @@
                 <b-navbar-item href="/admin-home">
                     Home
                 </b-navbar-item>
-               
-                <!-- <b-navbar-dropdown label="Info">
-                    <b-navbar-item href="#">
-                        About
+
+                <b-navbar-dropdown label="Setting">
+                    <b-navbar-item href="/learning-dev">
+                        Learning Development
                     </b-navbar-item>
-                    <b-navbar-item href="#">
-                        Contact
+                    <b-navbar-item href="/specialization">
+                        Specialization
                     </b-navbar-item>
-                </b-navbar-dropdown> -->
+                </b-navbar-dropdown>
             </template>
 
             <template #end>
