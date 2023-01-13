@@ -121,7 +121,6 @@ export default{
             search: {
                 lname: '',
                 specialization: '',
-
             },
 
             modalTeacher: false,

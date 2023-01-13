@@ -42080,14 +42080,18 @@ CREATE TABLE `certificates` (
   PRIMARY KEY (`certificate_id`),
   KEY `learning_dev_id` (`learning_dev_id`),
   CONSTRAINT `certificates_ibfk_1` FOREIGN KEY (`learning_dev_id`) REFERENCES `learning_developments` (`learning_dev_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `certificates` */
 
 insert  into `certificates`(`certificate_id`,`learning_dev_id`,`certificate`,`created_at`,`updated_at`) values 
 (20,1,'bjcBru1gSoqFr2iJcaDeOH7NZcPkGSkrOGu8oFaE.jpg','2023-01-03 20:33:42','2023-01-03 20:33:42'),
 (23,11,'kotPupRrKfbh3HzhXYhZ6Bda5v5WmkqqOX4jyfBq.png','2023-01-03 20:34:21','2023-01-03 20:34:21'),
-(24,14,'pYIH9GePX2Vz56s5gcn9XfHB4BXiQILKyd1JI2ps.jpg','2023-01-03 20:35:25','2023-01-03 20:35:25');
+(24,14,'pYIH9GePX2Vz56s5gcn9XfHB4BXiQILKyd1JI2ps.jpg','2023-01-03 20:35:25','2023-01-03 20:35:25'),
+(25,1,'IfqHQILrpW0fIzLICB465N2XwnNGUQSqZB8dlkV1.jpg','2023-01-06 10:17:05','2023-01-06 10:17:05'),
+(26,1,'z3G7TS8Ijmn8Q1aHkR2v5jddchG6QsZ7caeRDqj7.jpg','2023-01-06 10:17:12','2023-01-06 10:17:12'),
+(27,15,'UDp7QToxIUbG5rbPeUgtG7cTZGmmLyDHce4KUSCM.png','2023-01-13 04:00:47','2023-01-13 04:00:47'),
+(28,16,'Cwhy1VM2jCcZk3gSu2V3E5z8PWjSCtkPqg3tvzwv.jpg','2023-01-13 04:02:11','2023-01-13 04:02:11');
 
 /*Table structure for table `children` */
 
@@ -42103,12 +42107,14 @@ CREATE TABLE `children` (
   PRIMARY KEY (`child_id`),
   KEY `children_user_id_foreign` (`user_id`),
   CONSTRAINT `children_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `children` */
 
 insert  into `children`(`child_id`,`user_id`,`fullname`,`child_bdate`,`created_at`,`updated_at`) values 
-(3,2,'ETIENNE WAYNE','2022-11-17','2022-11-30 11:18:14','2022-11-30 11:18:43');
+(3,2,'ETIENNE WAYNE','2022-11-17','2022-11-30 11:18:14','2022-11-30 11:18:43'),
+(5,22,'DANICA MAE P. AGUSTINE','2000-01-06','2023-01-13 03:43:42','2023-01-13 03:43:42'),
+(6,22,'EVELYN JANE P. AGUSTINE','2006-06-02','2023-01-13 03:43:42','2023-01-13 03:43:42');
 
 /*Table structure for table `cities` */
 
@@ -43818,12 +43824,13 @@ CREATE TABLE `civil_service_eligibilities` (
   PRIMARY KEY (`cse_id`),
   KEY `civil_service_eligibities_user_id_foreign` (`user_id`),
   CONSTRAINT `civil_service_eligibities_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `civil_service_eligibilities` */
 
 insert  into `civil_service_eligibilities`(`cse_id`,`user_id`,`career_exam`,`rating`,`date_exam`,`place_exam`,`license_no`,`license_validity`,`created_at`,`updated_at`) values 
-(1,2,'EDPSE','80','2021-11-01','CAGAYAN DE ORO','1234','12/2024','2022-11-30 13:47:53','2022-11-30 13:50:43');
+(1,2,'EDPSE','80','2021-11-01','CAGAYAN DE ORO','1234','12/2024','2022-11-30 13:47:53','2022-11-30 13:50:43'),
+(3,22,'CAREER SERVICE EXAMINATION, PEN AND PAPER TEST (CSE-PPT) FOR PROFESSIONAL AND SUBPROFESSIONAL LEVELS','0.31','2023-03-26','MANILA CITY','7779-7777-8888','driver\'s license','2023-01-13 03:51:31','2023-01-13 03:51:31');
 
 /*Table structure for table `civil_statuses` */
 
@@ -43866,13 +43873,14 @@ CREATE TABLE `educational_backgrounds` (
   PRIMARY KEY (`ed_bg_id`),
   KEY `educational_backgrounds_user_id_foreign` (`user_id`),
   CONSTRAINT `educational_backgrounds_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `educational_backgrounds` */
 
 insert  into `educational_backgrounds`(`ed_bg_id`,`user_id`,`level`,`name_of_school`,`degree`,`period_att_from`,`period_att_to`,`highest_level_unit`,`year_graduated`,`scholarship`,`created_at`,`updated_at`) values 
 (2,2,'ELEMENTARY','BAROY CENTRAL ELEM SCHOOL','PRIMARY','1996','2002','','2002','','2022-11-30 16:22:18','2022-11-30 16:22:18'),
-(3,2,'SECONDARY','LANAO DEL NORTE NATL HIGHSCHOOL','SECONDARY','2002','2006','','2006','','2022-11-30 16:22:18','2022-11-30 16:22:18');
+(3,2,'SECONDARY','LANAO DEL NORTE NATL HIGHSCHOOL','SECONDARY','2002','2006','','2006','','2022-11-30 16:22:18','2022-11-30 16:22:18'),
+(4,22,'COLLEGE','UNIVERSITY OF THE PHILIPPINES DILIMAN','GRADUATE DEGREES','2020','2023','25','2023','DOST-SEI UNDERGRADUATE SCHOLARSHIP PROGRAM','2023-01-13 03:43:42','2023-01-13 03:43:42');
 
 /*Table structure for table `failed_jobs` */
 
@@ -43891,6 +43899,28 @@ CREATE TABLE `failed_jobs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `failed_jobs` */
+
+/*Table structure for table `learning_development_types` */
+
+DROP TABLE IF EXISTS `learning_development_types`;
+
+CREATE TABLE `learning_development_types` (
+  `ld_type_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `ld_type` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`ld_type_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `learning_development_types` */
+
+insert  into `learning_development_types`(`ld_type_id`,`ld_type`,`created_at`,`updated_at`) values 
+(1,'TECHNICAL',NULL,NULL),
+(2,'MANEGERIAL',NULL,NULL),
+(3,'TRAININGS',NULL,NULL),
+(4,'SUPERVISORY',NULL,NULL),
+(5,'FOUNDATION',NULL,NULL),
+(6,'CURRICULUM',NULL,NULL);
 
 /*Table structure for table `learning_developments` */
 
@@ -43912,16 +43942,18 @@ CREATE TABLE `learning_developments` (
   PRIMARY KEY (`learning_dev_id`),
   KEY `learning_developments_user_id_foreign` (`user_id`),
   CONSTRAINT `learning_developments_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `learning_developments` */
 
 insert  into `learning_developments`(`learning_dev_id`,`user_id`,`title_learning_dev`,`date_from`,`date_to`,`no_hours`,`type_ld`,`sponsored_by`,`attach_path`,`ratings`,`created_at`,`updated_at`) values 
-(1,2,'C# PROGRAMMING','2022-01-01','2022-01-01','50','PROGRAMMER','DICT',NULL,10,'2022-11-30 17:49:32','2023-01-05 15:55:36'),
-(11,2,'TRAINING WORKSHOP ON CURRICULUM DEVELOPMENT','2023-01-03','2023-01-10','40','MANAGERIAL','DICT',NULL,12,'2023-01-03 19:53:11','2023-01-05 15:55:36'),
-(12,2,'PYTHON ESSENTIAL PROGRAMMING','2023-01-16','2023-01-26','40','PROGRAMMING','DICT',NULL,1,'2023-01-03 19:53:51','2023-01-05 15:55:37'),
-(13,2,'ADOBE PHOTOSHOP','2023-01-04','2023-01-17','60','PROGRAMMING','DICT',NULL,0,'2023-01-03 20:21:03','2023-01-05 15:55:37'),
-(14,2,'ASDADWAWD','2023-01-09','2023-01-13','50','ASDAWDAW','ASDAWDAWD',NULL,0,'2023-01-03 20:35:25','2023-01-05 15:55:37');
+(1,2,'C# PROGRAMMING','2022-01-01','2022-01-01','50','FOUNDATION','DICT',NULL,10,'2022-11-30 17:49:32','2023-01-12 22:56:22'),
+(11,2,'TRAINING WORKSHOP ON CURRICULUM DEVELOPMENT','2023-01-03','2023-01-10','40','SUPERVISORY','DICT',NULL,12,'2023-01-03 19:53:11','2023-01-12 22:56:22'),
+(12,2,'PYTHON ESSENTIAL PROGRAMMING','2023-01-16','2023-01-26','40','CURRICULUM','DICT',NULL,1,'2023-01-03 19:53:51','2023-01-12 22:56:22'),
+(13,2,'ADOBE PHOTOSHOP','2023-01-04','2023-01-17','60','MANEGERIAL','DICT',NULL,0,'2023-01-03 20:21:03','2023-01-12 22:56:22'),
+(14,2,'ASDADWAWD','2023-01-09','2023-01-13','50','SUPERVISORY','ASDAWDAWD',NULL,0,'2023-01-03 20:35:25','2023-01-12 22:56:22'),
+(15,22,'INFORMATION AND COMMUNICATIONS TECHNOLOGY SERVICE','2023-01-13','2023-01-13','4 hours','MANEGERIAL','ANONYMOUS PERSON',NULL,0,'2023-01-13 03:58:44','2023-01-13 03:58:44'),
+(16,22,'ICS PROGRAM','2023-01-18','2023-02-13','4 hours','TRAININGS','none',NULL,0,'2023-01-13 04:02:11','2023-01-13 04:02:11');
 
 /*Table structure for table `migrations` */
 
@@ -43966,13 +43998,41 @@ CREATE TABLE `other_informations` (
   PRIMARY KEY (`other_info_id`),
   KEY `other_informations_user_id_foreign` (`user_id`),
   CONSTRAINT `other_informations_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `other_informations` */
 
 insert  into `other_informations`(`other_info_id`,`user_id`,`skill_hobbies`,`non_academic_distinction`,`member_association`,`created_at`,`updated_at`) values 
-(1,2,'MATH','BEST MUSICIAN OF THE YEAR','GADTC BAND','2022-11-30 19:02:17','2023-01-05 15:55:37'),
-(3,2,'KAON','','','2023-01-05 15:55:37','2023-01-05 15:55:37');
+(1,2,'MATH',NULL,NULL,'2022-11-30 19:02:17','2023-01-13 03:17:31'),
+(3,2,'MATH','','','2023-01-05 15:55:37','2023-01-12 23:43:28'),
+(4,2,'FILIPINO','','','2023-01-06 10:58:02','2023-01-06 10:58:02'),
+(5,20,'ENGLISH',NULL,NULL,'2023-01-13 03:00:25','2023-01-13 03:05:38'),
+(6,20,'FILIPINO','insert ni xa',NULL,'2023-01-13 03:04:09','2023-01-13 03:04:09'),
+(7,20,'GUIDANCE','sample lang',NULL,'2023-01-13 03:06:12','2023-01-13 03:06:35'),
+(8,22,'ENGLISH','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','BBBBBBBBBBBBBBBBBBBBBBBBB','2023-01-13 03:12:26','2023-01-13 03:58:44'),
+(9,21,'ENGLISH',NULL,NULL,'2023-01-13 03:12:35','2023-01-13 03:12:35'),
+(10,19,'FILIPINO',NULL,NULL,'2023-01-13 03:13:27','2023-01-13 03:13:27'),
+(11,18,'FILIPINO',NULL,NULL,'2023-01-13 03:13:37','2023-01-13 03:13:37'),
+(12,17,'MATH',NULL,NULL,'2023-01-13 03:13:50','2023-01-13 03:13:50'),
+(13,16,'MATH',NULL,NULL,'2023-01-13 03:13:59','2023-01-13 03:13:59'),
+(14,15,'BIOLOGY',NULL,NULL,'2023-01-13 03:14:11','2023-01-13 03:14:11'),
+(15,22,'FILIPINO','DDDDDDDDDDDDDDDDDDDDDDDDD','CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC','2023-01-13 03:14:20','2023-01-13 03:58:44'),
+(16,21,'FILIPINO',NULL,NULL,'2023-01-13 03:14:29','2023-01-13 03:14:29'),
+(17,20,'MATH',NULL,NULL,'2023-01-13 03:14:37','2023-01-13 03:14:37'),
+(18,14,'TLE',NULL,NULL,'2023-01-13 03:14:51','2023-01-13 03:14:51'),
+(19,13,'FILIPINO',NULL,NULL,'2023-01-13 03:15:11','2023-01-13 03:15:11'),
+(20,13,'ENGLISH',NULL,NULL,'2023-01-13 03:15:20','2023-01-13 03:15:20'),
+(21,12,'ENGLISH',NULL,NULL,'2023-01-13 03:15:30','2023-01-13 03:15:30'),
+(22,12,'MATH',NULL,NULL,'2023-01-13 03:15:39','2023-01-13 03:15:39'),
+(23,11,'ARALIN PANLIPUNAN',NULL,NULL,'2023-01-13 03:15:47','2023-01-13 03:15:47'),
+(24,10,'ENGLISH',NULL,NULL,'2023-01-13 03:15:56','2023-01-13 03:15:56'),
+(27,7,'BIOLOGY',NULL,NULL,'2023-01-13 03:16:23','2023-01-13 03:16:23'),
+(28,4,'ENGLISH',NULL,NULL,'2023-01-13 03:16:52','2023-01-13 03:16:52'),
+(29,4,'FILIPINO',NULL,NULL,'2023-01-13 03:17:00','2023-01-13 03:17:00'),
+(30,2,NULL,NULL,NULL,'2023-01-13 03:17:08','2023-01-13 03:17:08'),
+(31,2,'ENGLISH',NULL,NULL,'2023-01-13 03:17:20','2023-01-13 03:17:20'),
+(32,16,NULL,NULL,NULL,'2023-01-13 03:17:40','2023-01-13 03:17:40'),
+(33,17,'DANCING',NULL,NULL,'2023-01-13 03:18:03','2023-01-13 03:18:03');
 
 /*Table structure for table `password_resets` */
 
@@ -44114,6 +44174,45 @@ insert  into `provinces`(`id`,`psgcCode`,`provDesc`,`regCode`,`provCode`,`active
 (87,'166800000','SURIGAO DEL SUR','16','1668',0),
 (88,'168500000','DINAGAT ISLANDS','16','1685',0);
 
+/*Table structure for table `recommended_info` */
+
+DROP TABLE IF EXISTS `recommended_info`;
+
+CREATE TABLE `recommended_info` (
+  `recommended_info_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `seminar_post_id` bigint(20) unsigned NOT NULL,
+  `seminar_title` varchar(255) DEFAULT NULL,
+  `list_info` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`recommended_info_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `recommended_info` */
+
+/*Table structure for table `recommended_teachers` */
+
+DROP TABLE IF EXISTS `recommended_teachers`;
+
+CREATE TABLE `recommended_teachers` (
+  `recommended_teacher_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `recommended_info` bigint(20) unsigned NOT NULL,
+  `teacher_id` bigint(20) unsigned NOT NULL,
+  `lname` varchar(255) DEFAULT NULL,
+  `fname` varchar(255) DEFAULT NULL,
+  `mname` varchar(255) DEFAULT NULL,
+  `sex` varchar(255) DEFAULT NULL,
+  `specialization` varchar(255) DEFAULT NULL,
+  `no_seminars` int(11) DEFAULT 0,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`recommended_teacher_id`),
+  KEY `recommended_info` (`recommended_info`),
+  CONSTRAINT `recommended_teachers_ibfk_1` FOREIGN KEY (`recommended_info`) REFERENCES `recommended_info` (`recommended_info_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `recommended_teachers` */
+
 /*Table structure for table `seminar_posts` */
 
 DROP TABLE IF EXISTS `seminar_posts`;
@@ -44121,18 +44220,29 @@ DROP TABLE IF EXISTS `seminar_posts`;
 CREATE TABLE `seminar_posts` (
   `seminar_post_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `img_path` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
   `description` text DEFAULT NULL,
+  `skills` varchar(255) DEFAULT NULL,
+  `ld_type` varchar(255) DEFAULT NULL,
+  `conducted_by` varchar(255) DEFAULT NULL,
+  `cpd_units` varchar(255) DEFAULT NULL,
+  `no_hours` varchar(255) DEFAULT NULL,
+  `specialization` varchar(255) DEFAULT NULL,
+  `seminar_date` date DEFAULT NULL,
   `date_posted` date DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`seminar_post_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `seminar_posts` */
 
-insert  into `seminar_posts`(`seminar_post_id`,`img_path`,`description`,`date_posted`,`created_at`,`updated_at`) values 
-(3,'tEEY5QclbIRMQDFAOZ4IsPlj00eya0FwMmFHFszv.jpg','asdawdawd','2023-01-04','2023-01-04 18:21:31','2023-01-04 18:21:31'),
-(4,'p58bQWEd2xSfMs0fwWmsxUUkdQt6nkMqSUgVA44K.jpg','We are excited to announce that, due to our remarkable growth over the last [enter number] of years, we are expanding! In fact, we are opening a new store in [enter location and specifics]. We invite you to celebrate with us during the big opening day on [enter date].','2023-01-05','2023-01-05 09:25:19','2023-01-05 09:25:19');
+insert  into `seminar_posts`(`seminar_post_id`,`img_path`,`title`,`description`,`skills`,`ld_type`,`conducted_by`,`cpd_units`,`no_hours`,`specialization`,`seminar_date`,`date_posted`,`created_at`,`updated_at`) values 
+(8,'','asdw',NULL,NULL,'FOUNDATION','asdasda','123','123','FILIPINO','2023-01-12','2023-01-12','2023-01-12 20:57:25','2023-01-12 20:57:25'),
+(9,'','sdawda',NULL,'asdadwa','CURRICULUM','asdawd','aasd','2131','ENGLISH','2023-01-18','2023-01-12','2023-01-12 20:58:40','2023-01-12 20:58:40'),
+(10,'ROYruGCmkqzDLsegjreULjW4rZ29vjEoTdB8onOF.png','Introduction to SEL','Building and Fostering Social and Emotional Skills of Children in School and at Home is a 3-hour webinar that aims to enhance your understanding of social and emotional skills and learn strategies for school administrators, teachers, guidance counselors, and parents on (a) Creating an environment that allows for purposeful social and emotional growth as in-person learning returns; (b) Using conversation in developing the foundational skills of Social Emotional Learning, and (c) Integrating Social Emotional Learning (SEL) practices in school and at home to create a Brave Space for our children.','undefined','TRAININGS','undefined','2','40','ARALIN PANLIPUNAN','2023-01-15','2023-01-13','2023-01-13 02:04:21','2023-01-13 10:47:44'),
+(11,'Wk9Klc1iYp5Fjs2Yaterxt1K5gVkM1qVcMa8nDe8.webp','Developing Authentic Assessments of Higher-Order Thinking Skills - Science','This is an in-depth online training program that aims to empower educators to develop and prepare authentic learning and assessment programs aligned with the higher-order thinking skills that will motivate, engage, and capture the interest of the students through the use of digital tools and other modalities. This training program will enhance teachers’ competencies in science through the use of authentic assessment, digital tools, and other modalities that will help learners in developing higher order thinking skills through lectures, workshops, group discussions, and hands-on activities.','undefined','TRAININGS','CEM','2','40','ENGLISH','2023-01-24','2023-01-13','2023-01-13 02:32:01','2023-01-13 02:32:01'),
+(12,'EGBozaw3yv9g7jcUXOBvjbaAQOhgBDKxLHBoJZHp.jpg','Improving Career Guidance Program through CEM Test Data Utilization','Improving Career Guidance Program through CEM Test Data Utilization is an online training program designed to build competencies of guidance counselors in interpreting and analyzing career guidance test (CGT) results and using these as well as other sources of information to help students make decisions about their higher education options, future jobs, and careers. Participants will be guided on how to interpret and analyze standardized career guidance test results, discuss these with students, parents, and school administrators, and make recommendations to improve the school’s career guidance program. The learning modality is a combination of synchronous and asynchronous sessions that includes lectures, workshops, group, and individual tasks.','undefined','TRAININGS','CEM','undefined','20','ENGLISH','2023-02-14','2023-01-13','2023-01-13 02:34:20','2023-01-13 02:34:20');
 
 /*Table structure for table `specializations` */
 
@@ -44144,7 +44254,7 @@ CREATE TABLE `specializations` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`specialization_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `specializations` */
 
@@ -44154,7 +44264,10 @@ insert  into `specializations`(`specialization_id`,`specialization`,`created_at`
 (3,'TLE',NULL,NULL),
 (4,'ENGLISH',NULL,NULL),
 (5,'MATH',NULL,NULL),
-(6,'BIOLOGY',NULL,NULL);
+(6,'BIOLOGY',NULL,NULL),
+(11,'DANCING','2023-01-13 03:04:44','2023-01-13 03:04:44'),
+(12,'GUIDANCE','2023-01-13 03:04:53','2023-01-13 03:04:53'),
+(13,'TLE','2023-01-13 03:05:14','2023-01-13 03:05:14');
 
 /*Table structure for table `user_specializations` */
 
@@ -44238,16 +44351,30 @@ CREATE TABLE `users` (
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `users_username_unique` (`username`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `users` */
 
 insert  into `users`(`user_id`,`username`,`lname`,`fname`,`mname`,`suffix`,`date_birth`,`place_birth`,`sex`,`civil_status`,`civil_status_others`,`height`,`weight`,`blood_type`,`gsis`,`pagibig`,`philhealth`,`sss`,`tin`,`agency_idno`,`citizenship`,`res_province`,`res_city`,`res_barangay`,`res_street`,`res_houseno_blockno`,`res_zipcode`,`per_province`,`per_city`,`per_barangay`,`per_street`,`per_houseno_blockno`,`per_zipcode`,`tel_no`,`contact_no`,`email`,`email_verified_at`,`spouse_surname`,`spouse_fname`,`spouse_mname`,`spouse_suffix`,`spouse_occupation`,`business_name`,`business_address`,`business_contact_no`,`father_surname`,`father_fname`,`father_mname`,`father_suffix`,`mother_maiden_name`,`mother_fname`,`mother_mname`,`mother_suffix`,`role`,`password`,`remember_token`,`is_verified`,`created_at`,`updated_at`) values 
 (1,'admin','VARGAS','CHARLES','P',NULL,NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'MISAMIS OCCIDENTAL','TANGUB CITY','CANIANGAN','P-6',NULL,NULL,'MISAMIS OCCIDENTAL','TANGUB CITY','CANIANGAN','P-6',NULL,NULL,NULL,'09167789585','admin@dev.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'ADMINISTRATOR','$2y$10$7xTo9lOrooGB6jmzyDWP6uNSbBBM55M8/0dARdy0TG.sZgmjBvp2m',NULL,0,NULL,NULL),
-(2,'charles','VARGAS','CHARLES','P','','1988-08-08','MALORO, TANGUB CITY','MALE','SINGLE',NULL,NULL,NULL,'AB',NULL,NULL,NULL,NULL,NULL,NULL,'FILIPINO','1411','141104','141104003','SDAWD','AAA','aaaa','0516','051606','051606018','BBBB','BBBB','bbb',NULL,'09683014598','et@dev.com',NULL,'','','','',NULL,'','',NULL,'','','','','','','','','FACULTY','$2y$10$7xTo9lOrooGB6jmzyDWP6uNSbBBM55M8/0dARdy0TG.sZgmjBvp2m',NULL,1,NULL,'2023-01-05 12:42:48'),
-(3,'lui','LUI','ALEXANDER','','','2023-01-04','MALORO, TANGUB CITY','MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0520','052005','052005003','SED RATIONE QUI SINT',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Ea praesentium quae','carawuda@mailinator.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'HRLD','$2y$10$/BZQRtpbs.0baAcJ7tQJnu129vTjgAPKXJoc.ruiJv1sIKIwDJP46',NULL,0,'2022-10-23 09:12:11','2023-01-05 14:23:27'),
+(2,'charles','VARGAS','CHARLES','P','','1988-08-08','MALORO, TANGUB CITY','MALE','SINGLE',NULL,NULL,NULL,'AB',NULL,NULL,NULL,NULL,NULL,'1324-aa547','FILIPINO','1411','141104','141104003','SDAWD','AAA','aaaa','0516','051606','051606018','BBBB','BBBB','bbb',NULL,'09683014598','et@dev.com',NULL,'','','','',NULL,'','',NULL,'','','','','','','','','FACULTY','$2y$10$cgwTCYl3oseXV5K0mnxm5uZRUNgCXS7EAeG1JxoXLb/UPi4zXbBbe',NULL,1,NULL,'2023-01-12 23:18:03'),
+(3,'lui','LUI','ALEXANDER','','','2023-01-04','MALORO, TANGUB CITY','MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0520','052005','052005003','SED RATIONE QUI SINT',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Ea praesentium quae','carawuda@mailinator.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'HRLD','$2y$10$7xTo9lOrooGB6jmzyDWP6uNSbBBM55M8/0dARdy0TG.sZgmjBvp2m',NULL,0,'2022-10-23 09:12:11','2023-01-05 14:23:27'),
 (4,'kopiko','KOPIKO','THREE','','',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1042','104215','104215025','SAMPLE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1234567879','kopiko@mail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$WZAF6wU8fLEEeg7MMNSusuSmtPNFoCqeTYSKoLxo2ybD7tmW11M0C',NULL,0,'2023-01-05 14:29:14','2023-01-05 14:29:14'),
-(5,'cid','PRADIA','LEDA','','',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1603','160301','160301028','ASDAS',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'321564546','cid@dev.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CID','$2y$10$u3GNl91VZaHR9Vs5XkOhhuNi2raQBegPv23A1UDjYbjEs1yUnPRMa',NULL,0,'2023-01-05 14:30:46','2023-01-05 14:30:46');
+(5,'cid','PRADIA','LEDA','','',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1603','160301','160301028','ASDAS',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'321564546','cid@dev.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CID','$2y$10$bpBsTeizSVbHmhT.kMWprODtmJuZemcV7IBNjYUHFvF5kfoIW/tu.',NULL,0,'2023-01-05 14:30:46','2023-01-06 09:01:59'),
+(7,'HRLD01','AA','AA','',NULL,NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0517','051715','051715016','AAA',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'132','aa@mail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'HRLD','$2y$10$Ew6j75wiaUHhG0XNobLDseP0esV8nmRiblj9fF4oV8sxr7GQ7nH7C',NULL,0,'2023-01-06 08:17:37','2023-01-13 04:06:43'),
+(10,'Cherry','SAQUIN','CHERRY MAE','EGOS','N/A',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123456',NULL,'1042','104210','104210017','ALQUIZAR ST.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09683021376','cherry@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$suKVi3KIszpSJwlvIIHMBO5MmX3wz8Uc8T6gl2Lvc03BmFvpsYirC',NULL,0,'2023-01-13 01:20:50','2023-01-13 01:20:50'),
+(11,'Janmark','SEGONGAN','JANMARK','IGNO','N/A',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123455',NULL,'1042','104210','104210037','VANDA',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09685643246','janmark@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$Ep7KqTdcddXayWjtiKvHeevQosUXyaWYsGXnoYAnUzY5oLb/SZrbC',NULL,0,'2023-01-13 01:22:47','2023-01-13 01:22:47'),
+(12,'Michael','CAGADAS','JOHN MICHAEL','QUIMBO','N/A',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123454',NULL,'1042','104210','104210012','ROSAS',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09683021354','michael@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$MMR3Eq3213fzfBA1toAEHO3D5a6gxEqt.fgvDsGoztslLpylkeXmm',NULL,0,'2023-01-13 01:25:06','2023-01-13 01:25:06'),
+(13,'Irish','JUMAWID','IRISH','DANO','N/A',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123454',NULL,'1042','104211','104211013','DOVE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09683021387','irish@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$A/gyP7BIh4b7fn4NHklNJOu3sf6NxXw4DDp.6ngyin0JIQis3cOPO',NULL,0,'2023-01-13 01:27:35','2023-01-13 01:27:35'),
+(14,'John','MAGHANOY','JOHN','SANDOVAL','N/A',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123453',NULL,'1042','104210','104210011','KANYON',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09683021321','john@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$axb6VKYKp/ybJsVVClZfsetR1G/yTIW/JH6WWB9.6EWdymhyUMqve',NULL,0,'2023-01-13 01:29:28','2023-01-13 01:29:28'),
+(15,'Daniel','LAPINIG','DANIEL','MANDAWE','N/A',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123452',NULL,'1042','104213','104213012','SANTOL',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'095683021321','daniel@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$LhHDrSoNCmxWGf0C2ejlP.gbfADGwPGBWZDN8v/q59edVbRQnNWR2',NULL,0,'2023-01-13 01:31:03','2023-01-13 01:31:03'),
+(16,'Christian','ORNOPIA','CHRISTIAN','SINGCAY','N/A',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123473',NULL,'1042','104215','104215017','CACAO',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0968302133','christian@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$LPNM.9VZHLCAK/A.6qFU6uU/ikMnlrVP3eqLu/KhWwRe1eelTqw0q',NULL,0,'2023-01-13 01:32:57','2023-01-13 01:32:57'),
+(17,'Mayvel','SAQUIN','MAYVEL','EGOS','N/A',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123451',NULL,'1042','104216','104216021','MALOLOY-ON',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0968390213','mayvel@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$EDD2cHx1WgxSFXnoNyWv9ekiUdy3/SHKxas29.OI/Sc/v4alC2sHS',NULL,0,'2023-01-13 01:35:34','2023-01-13 01:35:34'),
+(18,'Cristy','SAMBOLOT','CRISTY','BUNSOCAN','N/A',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123458',NULL,'1042','104208','104208015','MAKUGIHON',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09683021354','cristy@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$3yPLvr7LmowVf.EgtalhH.biKWGhFWPbY0S/2qd8ijE9oGXxXUN0K',NULL,0,'2023-01-13 01:37:17','2023-01-13 01:37:17'),
+(19,'Hannah','PANA','HANNAH','PAN','N/A',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123475',NULL,'1042','104208','104208016','DANCING LADY',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09683021354','hannah@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$1FEK8ilvF2IkeqqaKF0SBu2cO8T2fzyoc0Xxbu6muhm2eB4MuYmna',NULL,0,'2023-01-13 01:46:39','2023-01-13 01:46:39'),
+(20,'angel','PULGO','ANGEL','','',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'TEACHER1122331',NULL,'0314','031414','031414004','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0916546752446','angel@dev.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$lVHUn1bSXrUAWLjAFIALA.N4dLkHdLUTCpXijgO.YS6dSbpPQsdgG',NULL,0,'2023-01-13 01:51:46','2023-01-13 01:51:46'),
+(21,'Cristian','HAMMAD','CRISTIAN','MARIO','JR.',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123451',NULL,'1042','104214','104214018','CACAO',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09876543211','cristian@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$4T391avB9pD9Ink/L4bC2.BACVP7t22G6v7bgxmbKtf/hKGMy1I2O',NULL,0,'2023-01-13 02:31:01','2023-01-13 02:31:01'),
+(22,'DepEd','DEP','ED01','DEPART','N/A','1970-01-01','CEBU CITY','MALE','SINGLE',NULL,'5\'5','63','A','Government Service Insurance System','Pag Ibig Plus Loyalty Card','PHILHEALTH INSURANCE CARD IS A VALID GOVERNMENT ID www.philhealth.gov.ph PHILHEALTH INSURANCE CARD','04-1413324-8','None','123452','FILIPINO','1042','104210','104210042','STREET ANTON','PUROK ROSES','4532','0215','021511','021511034','PUROK ROSES','335567','7834','021-345-6798','09876543212','DepEd@gmail.com',NULL,'','','','',NULL,'JOLLIBEE','CACAO','0986-123-5687','AGUSTINE','MARIANO','LUKAS','JR.','AGUSTINE','MARIANETTA','PUROLA','NONE','DEPED OFFICIAL','$2y$10$mATIDmv2FR7KkWbY624k3eNh6NPj2Djd9cnSl7q3jsknJlvRguef.',NULL,1,'2023-01-13 02:35:34','2023-01-13 04:48:21');
 
 /*Table structure for table `voluntary_works` */
 
@@ -44266,13 +44393,14 @@ CREATE TABLE `voluntary_works` (
   PRIMARY KEY (`voluntary_work_id`),
   KEY `voluntary_works_user_id_foreign` (`user_id`),
   CONSTRAINT `voluntary_works_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `voluntary_works` */
 
 insert  into `voluntary_works`(`voluntary_work_id`,`user_id`,`name_address_org`,`work_from`,`work_to`,`no_hours`,`nature_work`,`created_at`,`updated_at`) values 
 (1,2,'VINZ ITECH','2010','2022','8/day','TECHINICIAN','2022-11-30 17:04:28','2022-11-30 17:04:28'),
-(2,2,'OJT CEBU','2014','2015','100','SEO OFFICER 1','2022-11-30 19:05:16','2022-11-30 19:05:16');
+(2,2,'OJT CEBU','2014','2015','100','SEO OFFICER 1','2022-11-30 19:05:16','2022-11-30 19:05:16'),
+(3,22,'DE LA SALLE UNIVERSITY','05/12/2022','5/15/2023','8 hourse','PROCEDURAL WORK','2023-01-13 03:58:44','2023-01-13 03:58:44');
 
 /*Table structure for table `work_experiences` */
 
@@ -44294,12 +44422,13 @@ CREATE TABLE `work_experiences` (
   PRIMARY KEY (`work_ex_id`),
   KEY `work_experiences_user_id_foreign` (`user_id`),
   CONSTRAINT `work_experiences_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `work_experiences` */
 
 insert  into `work_experiences`(`work_ex_id`,`user_id`,`work_ex_from`,`work_ex_to`,`position_title`,`department_agency`,`salary`,`pay_grade`,`status_appointment`,`is_govt`,`created_at`,`updated_at`) values 
-(1,2,'2020-11-30','2022-11-30','PROGRAMMER','ACFI','13000','SAMPLE','REGULAR',1,'2022-11-30 14:40:04','2022-11-30 14:44:56');
+(1,2,'2020-11-30','2022-11-30','PROGRAMMER','ACFI','13000','SAMPLE','REGULAR',1,'2022-11-30 14:40:04','2022-11-30 14:44:56'),
+(2,22,'2023-01-03','2027-01-13','VICE PRESIDENT','DE LA SALLE UNIVERSITY','40000','25000','SUBSTITUTE, OR PROVISIONAL',1,'2023-01-13 03:51:31','2023-01-13 03:51:31');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
