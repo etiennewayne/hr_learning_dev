@@ -4521,13 +4521,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       data: [],
-      specialization: '',
+      specialization: null,
       fields: {
-        list_information: '',
+        seminar_post_id: 0,
+        seminar_title: '',
         teachers: []
       },
       search: {
@@ -4535,14 +4547,14 @@ __webpack_require__.r(__webpack_exports__);
         specialization: ''
       },
       modalTeacher: false,
-      comboSeminars: []
+      seminars: []
     };
   },
   methods: {
     generateList: function generateList() {
       var _this = this;
 
-      var params = ["lname=".concat(this.search.lname), "specialization=".concat(this.search.specialization)].join('&');
+      var params = ["lname=".concat(this.search.lname), "specialization=".concat(this.specialization.specialization)].join('&');
       axios.get("/generate-list?".concat(params)).then(function (res) {
         _this.data = res.data;
       })["catch"](function (err) {});
@@ -4551,7 +4563,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       axios.get('/cid/get-seminar-specialization-list').then(function (res) {
-        _this2.comboSeminars = res.data;
+        _this2.seminars = res.data;
+        console.log(_this2.seminars);
       });
     },
     openModalSubmitList: function openModalSubmitList() {
@@ -4560,6 +4573,8 @@ __webpack_require__.r(__webpack_exports__);
     submit: function submit() {
       var _this3 = this;
 
+      this.fields.seminar_post_id = this.specialization.seminar_post_id;
+      this.fields.seminar_title = this.specialization.title;
       this.data.forEach(function (el) {
         if (el.select) {
           //if check, push to fields
@@ -4584,6 +4599,9 @@ __webpack_require__.r(__webpack_exports__);
           });
         }
       });
+    },
+    changeValue: function changeValue(i) {
+      console.log(this.specialization);
     }
   },
   mounted: function mounted() {
@@ -7555,8 +7573,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
 //
 //
 //
@@ -36150,29 +36166,23 @@ var render = function () {
                 _c(
                   "b-select",
                   {
-                    attrs: { expanded: "", placeholder: "Seminars" },
+                    attrs: { placeholder: "Select Seminar" },
                     model: {
-                      value: _vm.search.specialization,
+                      value: _vm.specialization,
                       callback: function ($$v) {
-                        _vm.$set(_vm.search, "specialization", $$v)
+                        _vm.specialization = $$v
                       },
-                      expression: "search.specialization",
+                      expression: "specialization",
                     },
                   },
-                  [
-                    _c("option", { attrs: { value: "" } }, [
-                      _vm._v("--NONE--"),
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.comboSeminars, function (i, ix) {
-                      return _c(
-                        "option",
-                        { key: ix, domProps: { value: i.specialization } },
-                        [_vm._v(_vm._s(i.title))]
-                      )
-                    }),
-                  ],
-                  2
+                  _vm._l(_vm.seminars, function (item, ix) {
+                    return _c(
+                      "option",
+                      { key: ix, domProps: { value: item } },
+                      [_vm._v(_vm._s(item.title))]
+                    )
+                  }),
+                  0
                 ),
                 _vm._v(" "),
                 _c(

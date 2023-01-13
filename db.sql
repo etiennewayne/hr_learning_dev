@@ -44196,7 +44196,7 @@ DROP TABLE IF EXISTS `recommended_teachers`;
 
 CREATE TABLE `recommended_teachers` (
   `recommended_teacher_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `recommended_info` bigint(20) unsigned NOT NULL,
+  `recommended_info_id` bigint(20) unsigned NOT NULL,
   `teacher_id` bigint(20) unsigned NOT NULL,
   `lname` varchar(255) DEFAULT NULL,
   `fname` varchar(255) DEFAULT NULL,
@@ -44207,8 +44207,8 @@ CREATE TABLE `recommended_teachers` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`recommended_teacher_id`),
-  KEY `recommended_info` (`recommended_info`),
-  CONSTRAINT `recommended_teachers_ibfk_1` FOREIGN KEY (`recommended_info`) REFERENCES `recommended_info` (`recommended_info_id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `recommended_info` (`recommended_info_id`),
+  CONSTRAINT `recommended_teachers_ibfk_1` FOREIGN KEY (`recommended_info_id`) REFERENCES `recommended_info` (`recommended_info_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `recommended_teachers` */
@@ -44238,8 +44238,6 @@ CREATE TABLE `seminar_posts` (
 /*Data for the table `seminar_posts` */
 
 insert  into `seminar_posts`(`seminar_post_id`,`img_path`,`title`,`description`,`skills`,`ld_type`,`conducted_by`,`cpd_units`,`no_hours`,`specialization`,`seminar_date`,`date_posted`,`created_at`,`updated_at`) values 
-(8,'','asdw',NULL,NULL,'FOUNDATION','asdasda','123','123','FILIPINO','2023-01-12','2023-01-12','2023-01-12 20:57:25','2023-01-12 20:57:25'),
-(9,'','sdawda',NULL,'asdadwa','CURRICULUM','asdawd','aasd','2131','ENGLISH','2023-01-18','2023-01-12','2023-01-12 20:58:40','2023-01-12 20:58:40'),
 (10,'ROYruGCmkqzDLsegjreULjW4rZ29vjEoTdB8onOF.png','Introduction to SEL','Building and Fostering Social and Emotional Skills of Children in School and at Home is a 3-hour webinar that aims to enhance your understanding of social and emotional skills and learn strategies for school administrators, teachers, guidance counselors, and parents on (a) Creating an environment that allows for purposeful social and emotional growth as in-person learning returns; (b) Using conversation in developing the foundational skills of Social Emotional Learning, and (c) Integrating Social Emotional Learning (SEL) practices in school and at home to create a Brave Space for our children.','undefined','TRAININGS','undefined','2','40','ARALIN PANLIPUNAN','2023-01-15','2023-01-13','2023-01-13 02:04:21','2023-01-13 10:47:44'),
 (11,'Wk9Klc1iYp5Fjs2Yaterxt1K5gVkM1qVcMa8nDe8.webp','Developing Authentic Assessments of Higher-Order Thinking Skills - Science','This is an in-depth online training program that aims to empower educators to develop and prepare authentic learning and assessment programs aligned with the higher-order thinking skills that will motivate, engage, and capture the interest of the students through the use of digital tools and other modalities. This training program will enhance teachers’ competencies in science through the use of authentic assessment, digital tools, and other modalities that will help learners in developing higher order thinking skills through lectures, workshops, group discussions, and hands-on activities.','undefined','TRAININGS','CEM','2','40','ENGLISH','2023-01-24','2023-01-13','2023-01-13 02:32:01','2023-01-13 02:32:01'),
 (12,'EGBozaw3yv9g7jcUXOBvjbaAQOhgBDKxLHBoJZHp.jpg','Improving Career Guidance Program through CEM Test Data Utilization','Improving Career Guidance Program through CEM Test Data Utilization is an online training program designed to build competencies of guidance counselors in interpreting and analyzing career guidance test (CGT) results and using these as well as other sources of information to help students make decisions about their higher education options, future jobs, and careers. Participants will be guided on how to interpret and analyze standardized career guidance test results, discuss these with students, parents, and school administrators, and make recommendations to improve the school’s career guidance program. The learning modality is a combination of synchronous and asynchronous sessions that includes lectures, workshops, group, and individual tasks.','undefined','TRAININGS','CEM','undefined','20','ENGLISH','2023-02-14','2023-01-13','2023-01-13 02:34:20','2023-01-13 02:34:20');

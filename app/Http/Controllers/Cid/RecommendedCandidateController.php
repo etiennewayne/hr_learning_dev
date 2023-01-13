@@ -55,6 +55,28 @@ class RecommendedCandidateController extends Controller
 
     public function store(Request $req){
 
+        return $req;
+
+        $data = RecommendedInfo::create([
+            'seminar_post_id' => $req->seminar_post_id,
+            'seminar_title' => $req->seminar_title,
+            'list_information' => $req->list_information,
+        ]);
+
+        foreach($req->teachers as $item){
+            RecommendedTeacher::create([
+                'recommended_info_id' => $data->recommended_info,
+                'teacher_id' => $data->teacher_id,
+                'lname' => $data->lname,
+                'fname' => $data->fname,
+                'mname' => $data->mname,
+            ]);
+        }
+       
+
+        return response()->json([
+            'status' => 'saved'
+        ], 200);
 
     }
 

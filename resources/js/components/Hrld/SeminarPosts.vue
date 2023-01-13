@@ -117,10 +117,8 @@
                                         type="is-light"
                                         :icon-right="active ? 'menu-up' : 'menu-down'" />
                                 </template>
-
                                 <b-dropdown-item aria-role="listitem" @click="updatePost(seminar.seminar_post_id)">Update</b-dropdown-item>
                                 <b-dropdown-item aria-role="listitem" @click="deletePost(seminar.seminar_post_id)">Delete</b-dropdown-item>
-
                             </b-dropdown>
                         </div>
                     </div>

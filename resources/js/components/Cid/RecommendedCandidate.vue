@@ -6,13 +6,24 @@
                     <b-input type="text" expanded
                         placeholder="Search Lastname"
                         v-model="search.lname"></b-input>
-                    <b-select expanded
-                              placeholder="Seminars"
-                              v-model="search.specialization">
+
+                        <b-select 
+                            v-model="specialization" 
+                                placeholder="Select Seminar">
+                                <option v-for="(item, ix) in seminars" :key="ix"
+                                    :value="item">{{ item.title }}</option>
+                        </b-select>
+
+
+                    <!-- <b-select 
+                        expanded
+                            placeholder="Seminars"
+                            v-model="specialization"
+                            @input="generateList">
                         <option value="">--NONE--</option>
                         <option v-for="(i, ix) in comboSeminars" :key="ix"
-                                :value="i.specialization">{{ i.title }}</option>
-                    </b-select>
+                            :value="i">{{ i.title }}</option>
+                    </b-select> -->
                     <p class="control">
                         <b-button class="expanded" type="is-primary" label="..." @click="generateList"></b-button>
                     </p>
@@ -112,9 +123,11 @@ export default{
         return {
             data: [],
 
-            specialization: '',
+            specialization: null,
+
             fields: {
-                list_information: '',
+                seminar_post_id: 0,
+                seminar_title: '',
                 teachers: []
             },
 
@@ -124,7 +137,7 @@ export default{
             },
 
             modalTeacher: false,
-            comboSeminars: [],
+            seminars: [],
         }
     },
 
@@ -133,7 +146,7 @@ export default{
         generateList(){
             const params = [
                 `lname=${this.search.lname}`,
-                `specialization=${this.search.specialization}`,
+                `specialization=${this.specialization.specialization}`,
             ].join('&')
 
             axios.get(`/generate-list?${params}`).then(res=>{
@@ -145,7 +158,8 @@ export default{
 
         loadSeminars(){
             axios.get('/cid/get-seminar-specialization-list').then(res=>{
-                this.comboSeminars = res.data
+                this.seminars = res.data
+                console.log(this.seminars);
             })
         },
 
@@ -154,6 +168,9 @@ export default{
         },
 
         submit(){
+    
+            this.fields.seminar_post_id = this.specialization.seminar_post_id;
+            this.fields.seminar_title = this.specialization.title;
 
             this.data.forEach(el=>{
                 if(el.select){
@@ -171,6 +188,7 @@ export default{
             })
 
             console.log(this.fields)
+           
 
             axios.post('/cid/submit-teachers-list', this.fields).then(res=>{
                 if(res.data.status === 'saved'){
@@ -181,6 +199,10 @@ export default{
                     });
                 }
             })
+        },
+
+        changeValue(i){
+            console.log(this.specialization)
         }
     },
 
