@@ -828,6 +828,52 @@
                             </div>
                         </b-step-item>
 
+                        <b-step-item step="4" label="Other" :clickable="isStepsClickable">
+
+                            <div class="columns">
+                                <div class="column">
+                                    <div>
+                                        Are you related by consanguinity or affinity to the appointing or recommending authority, or to the chief of bureau or office or to the person who has immediate supervision over you in the Office, Bureau or Department where you will be apppointed,
+
+                                        a. within the third degree?
+
+                                        b. within the fourth degree (for Local Government Unit - Career Employees
+                                    </div>
+                                </div>
+                                <div class="column is-4">
+                                   
+                                </div>
+
+                            </div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    a. Have you ever been found guilty of any administrative offense?
+                                </div>
+
+                                <div class="column is-4">
+                                    <b-field>
+                                        <b-checkbox>Yes</b-checkbox>
+                                        <b-checkbox>No</b-checkbox>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    b. within the fourth degree (for Local Government Unit - Career Employees
+                                </div>
+
+                                <div class="column is-4">
+                                    <b-field>
+                                        <b-checkbox>Yes</b-checkbox>
+                                        <b-checkbox>No</b-checkbox>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                        </b-step-item>
+
 
                         <template
                             v-if="customNavigation"

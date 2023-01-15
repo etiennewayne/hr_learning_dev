@@ -7,15 +7,15 @@
                         placeholder="Search Lastname"
                         v-model="search.lname"></b-input>
 
-                        <b-select 
-                            v-model="specialization" 
+                        <b-select
+                            v-model="specialization"
                                 placeholder="Select Seminar">
                                 <option v-for="(item, ix) in seminars" :key="ix"
                                     :value="item">{{ item.title }}</option>
                         </b-select>
 
 
-                    <!-- <b-select 
+                    <!-- <b-select
                         expanded
                             placeholder="Seminars"
                             v-model="specialization"
@@ -46,7 +46,7 @@
 
             <div class="modal-card">
                 <header class="modal-card-head">
-                    <p class="modal-card-title">Teacher List Information</p>
+                    <p class="modal-card-title">Remarks</p>
                     <button
                         type="button"
                         class="delete"
@@ -58,9 +58,9 @@
                         <div class="">
                             <div class="column">
 
-                                <b-field label="Teacher List Information">
+                                <b-field label="Remarks">
                                     <b-input type="text"
-                                        v-model="fields.list_information">
+                                        v-model="fields.remarks">
                                     </b-input>
                                 </b-field>
                             </div>
@@ -69,7 +69,7 @@
                     </section>
                     <footer class="modal-card-foot">
                         <button
-                            class="button is-success">Submit Rating</button>
+                            class="button is-success">Submit</button>
                     </footer>
                 </form>
             </div>
@@ -168,7 +168,8 @@ export default{
         },
 
         submit(){
-    
+
+            this.fields.teachers = [];
             this.fields.seminar_post_id = this.specialization.seminar_post_id;
             this.fields.seminar_title = this.specialization.title;
 
@@ -187,9 +188,6 @@ export default{
                 }
             })
 
-            console.log(this.fields)
-           
-
             axios.post('/cid/submit-teachers-list', this.fields).then(res=>{
                 if(res.data.status === 'saved'){
                     this.$buefy.dialog.alert({
@@ -198,6 +196,13 @@ export default{
                         message: 'Successfully saved.'
                     });
                 }
+                this.modalTeacher = false
+                this.fields.seminar_post_id = 0;
+                this.fields.seminar_title = '';
+                this.fields.teachers = [];
+
+                this.generateList()
+
             })
         },
 
@@ -268,7 +273,6 @@ export default{
         max-width: 816px;
         margin: 30px auto 0;
         background: white;
-        margin: auto;
     }
     .filter-container{
         max-width: 816px;

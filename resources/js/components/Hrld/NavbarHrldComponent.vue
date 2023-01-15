@@ -17,9 +17,16 @@
                     Seminars
                 </b-navbar-item>
 
+
+                <b-navbar-item href="/hrld/recommended-teachers">
+                    Teacher List
+                </b-navbar-item>
+
+
                 <b-navbar-item href="/hrld/teacher-accounts">
                     Account
                 </b-navbar-item>
+
 
                 <!-- <b-navbar-dropdown label="">
                     <b-navbar-item href="#">
@@ -41,7 +48,7 @@
                     </b-navbar-item> -->
                 </b-navbar-dropdown>
 
-               
+
 
                 <!-- <b-navbar-item class="navbar-notif">
                     <b-icon icon="earth">
@@ -113,7 +120,7 @@
                         </div>
                     </section>
                     <footer class="modal-card-foot">
-                       
+
                         <b-button
                             type="is-primary" icon-left="lock-open-variant-outline" @click="resetPassword">Reset Password</b-button>
                     </footer>
@@ -184,7 +191,7 @@ export default {
                 if(err.response.status === 422){
                     this.errors = err.response.data.errors;
                 }
-                
+
             })
         },
 

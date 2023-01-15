@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Cid;
 
 use App\Http\Controllers\Controller;
+use App\Models\RecommendedTeacher;
+
+use App\Models\RecommendedTeacherList;
 use App\Models\SeminarPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -55,24 +58,25 @@ class RecommendedCandidateController extends Controller
 
     public function store(Request $req){
 
-        return $req;
-
-        $data = RecommendedInfo::create([
+        $data = RecommendedTeacher::create([
             'seminar_post_id' => $req->seminar_post_id,
             'seminar_title' => $req->seminar_title,
-            'list_information' => $req->list_information,
+            'remarks' => $req->remarks,
         ]);
 
         foreach($req->teachers as $item){
-            RecommendedTeacher::create([
-                'recommended_info_id' => $data->recommended_info,
-                'teacher_id' => $data->teacher_id,
-                'lname' => $data->lname,
-                'fname' => $data->fname,
-                'mname' => $data->mname,
+            RecommendedTeacherList::create([
+                'recommended_teacher_id' => $data->recommended_teacher_id,
+                'teacher_id' => $item['user_id'],
+                'lname' => $item['lname'],
+                'fname' => $item['fname'],
+                'mname' => $item['mname'],
+                'sex' => $item['sex'],
+                'specialization' => $item['specialization'],
+                'no_seminars' => $item['no_seminars'],
             ]);
         }
-       
+
 
         return response()->json([
             'status' => 'saved'

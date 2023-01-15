@@ -25,7 +25,7 @@ class HrldSeminarPostController extends Controller
     }
 
     public function getSeminars(){
-        $data = SeminarPost::whereDate('date_posted', '>=', date('Y-m-d'))
+        $data = SeminarPost::whereDate('seminar_date', '>=', date('Y-m-d'))
             ->orderBy('seminar_post_id', 'desc')->get();
         return $data;
     }

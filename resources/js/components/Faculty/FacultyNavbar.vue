@@ -27,6 +27,7 @@
                     Tranings / Interventions
                 </b-navbar-item>
 
+
                 <b-navbar-dropdown :label="showName">
                     <b-navbar-item @click="openModalResetPassword">
                         Change Password
