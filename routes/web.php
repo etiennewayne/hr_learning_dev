@@ -157,7 +157,7 @@ Route::post('/cid/submit-rating/{id}', [App\Http\Controllers\Cid\CidSeminarContr
 
 Route::get('/cid/recommended-candidates', [App\Http\Controllers\Cid\RecommendedCandidateController::class, 'index']);
 Route::get('/generate-list', [App\Http\Controllers\Cid\RecommendedCandidateController::class, 'generateList']);
-Route::get('/get-request-teacher', [App\Http\Controllers\Cid\RecommendedCandidateController::class, 'getRequestTeacher']);
+Route::get('/get-request-teacher/{id}', [App\Http\Controllers\Cid\RecommendedCandidateController::class, 'getRequestTeacher']);
 
 
 Route::post('/cid/submit-teachers-list', [App\Http\Controllers\Cid\RecommendedCandidateController::class, 'store']);

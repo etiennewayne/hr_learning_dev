@@ -198,8 +198,7 @@ export default{
         getTeacherList(){
             this.data = [];
             this.request_teacher = [];
-            axios.get(`/get-request-teacher`).then(res=>{
-                console.log(res.data);
+            axios.get(`/get-request-teacher/` + this.specialization.seminar_post_id).then(res=>{
                 this.request_teacher = res.data
                 this.generateList()
 

@@ -48,8 +48,9 @@ class RecommendedCandidateController extends Controller
         return $data;
     }
 
-    public function getRequestTeacher(){
-        $data = FacultyParticipant::orderBy('faculty_participant_id', 'asc')
+    public function getRequestTeacher($id){
+        $data = FacultyParticipant::where('seminar_post_id', $id)
+        ->orderBy('faculty_participant_id', 'asc')
             ->get();
             return $data;
     }
