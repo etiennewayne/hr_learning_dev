@@ -4595,8 +4595,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.data = [];
       this.request_teacher = [];
-      axios.get("/get-request-teacher").then(function (res) {
-        console.log(res.data);
+      axios.get("/get-request-teacher/".concat(this.specialization.seminar_post_id)).then(function (res) {
         _this2.request_teacher = res.data;
 
         _this2.generateList();
