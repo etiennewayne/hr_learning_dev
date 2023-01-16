@@ -36479,7 +36479,7 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "column" }, [
                     _c("div", { staticClass: "has-text-weight-bold" }, [
-                      _vm._v("Skill: " + _vm._s(seminar.skill)),
+                      _vm._v("Skill: " + _vm._s(seminar.skills)),
                     ]),
                   ]),
                 ]),
@@ -37842,7 +37842,7 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "column" }, [
                     _c("div", { staticClass: "has-text-weight-bold" }, [
-                      _vm._v("Skill: " + _vm._s(seminar.skill)),
+                      _vm._v("Skill: " + _vm._s(seminar.skills)),
                     ]),
                   ]),
                 ]),
