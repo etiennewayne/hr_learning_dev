@@ -33,6 +33,7 @@ class HrldSeminarPostController extends Controller
 
     public function store(Request $req){
 
+
         $file = $req->file('file');
         $file_location = '';
         $dateSeminar = date('Y-m-d', strtotime($req->seminar_date));

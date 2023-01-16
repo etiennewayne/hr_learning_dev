@@ -128,7 +128,7 @@
                                 <div class="has-text-weight-bold">Title: {{ seminar.title }}</div>
                             </div>
                             <div class="column">
-                                <div class="has-text-weight-bold">Skill: {{ seminar.skill }}</div>
+                                <div class="has-text-weight-bold">Skills: {{ seminar.skills }}</div>
                             </div>
                         </div>
                         <div class="columns">
