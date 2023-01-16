@@ -23,8 +23,9 @@ class FacultyParticipant extends Model
         'mname',
         'sex',
         'specialization',
-        'title'
+        'title',
+        'remarks'
     ];
 
-    
+
 }

@@ -85,9 +85,9 @@
                         <td></td>
                         <td>Name</td>
                         <td>Sex</td>
-                        <td>Civil Status</td>
                         <td>Specialization/Skill</td>
                         <td>No of. Seminars</td>
+                        <td>Remarks</td>
                     </tr>
                     <tr v-for="(item, index) in data" :key="index">
                         <td>
@@ -97,9 +97,9 @@
                         </td>
                         <td>{{  item.lname }}, {{  item.fname }} {{ item.mname }} {{  item.suffix }}</td>
                         <td>{{ item.sex }}</td>
-                        <td>{{ item.civil_status }}</td>
                         <td>{{ item.specialization }}</td>
                         <td>{{ item.no_seminars }}</td>
+                        <td>{{ item.remarks }}</td>
                     </tr>
                 </table>
             </div>
@@ -146,17 +146,17 @@ export default{
     methods: {
 
         generateList(){
-           
+
             const params = [
                 `lname=${this.search.lname}`,
                 `specialization=${this.specialization.specialization}`,
             ].join('&')
 
-            
+
 
             axios.get(`/generate-list?${params}`).then(res=>{
                 //this.rawData = res.data
-                
+
                 res.data.forEach(el=>{
                     this.data.push({
                         civil_status: el.civil_status,
@@ -168,11 +168,12 @@ export default{
                         sex: el.sex,
                         specialization: el.specialization,
                         suffix: el.suffix,
-                        user_id: el.user_id
-                    }); 
+                        user_id: el.user_id,
+                        remarks: 'Generated'
+                    });
                 })
 
-             
+
                 this.request_teacher.forEach(el =>{
                     this.data.push({
                         civil_status: '',
@@ -184,16 +185,18 @@ export default{
                         sex: el.sex,
                         specialization: el.specialization,
                         suffix:'',
-                        user_id: el.teacher_id
-                    }); 
+                        user_id: el.teacher_id,
+                        remarks: 'Request'
+
+                    });
                 })
 
-                
+
             }).catch(err=>{
 
             })
         },
-      
+
 
         getTeacherList(){
             this.data = [];
@@ -206,12 +209,12 @@ export default{
 
             })
         },
-        
+
 
         loadSeminars(){
             axios.get('/cid/get-seminar-specialization-list').then(res=>{
                 this.seminars = res.data
-               
+
             })
         },
 
@@ -252,7 +255,7 @@ export default{
                 this.fields.seminar_post_id = 0;
                 this.fields.seminar_title = '';
                 this.fields.teachers = [];
-                
+
                 this.data = [];
                 this.request_teacher = [];
 

@@ -171,6 +171,17 @@ export default{
             let ndateFrom = new Date(this.fields.date_from);
             let ndateTo = new Date(this.fields.date_to);
 
+            let dateNow = new Date();
+            //2018 > 2017
+            if((dateNow.getFullYear() - 5) > (ndateTo.getFullYear())){
+                this.$buefy.dialog.alert({
+                    title: 'Training too old!',
+                    message: 'The training you inputted is too old.',
+                    type: 'is-danger',
+                });
+                return;
+            }
+
             let dateFrom = ndateFrom.getFullYear() + '-' + (ndateFrom.getMonth() + 1) + '-' + ndateFrom.getDate();
             let dateTo = ndateTo.getFullYear() + '-' + (ndateTo.getMonth() + 1) + '-' + ndateTo.getDate();
 

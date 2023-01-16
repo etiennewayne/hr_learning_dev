@@ -25,7 +25,7 @@ class FacultyHomeController extends Controller
     public function imIn(Request $req){
         //return $req;
         $user = Auth::user();
-        
+
         $arrData = [
             'seminar_post_id' => $req->seminar_post_id,
             'teacher_id' => $user->user_id,
@@ -35,6 +35,7 @@ class FacultyHomeController extends Controller
             'sex' => $user->sex,
             'specialization' => $req->specialization,
             'title' => $req->title,
+            'remarks' => 'REQUEST'
         ];
         FacultyParticipant::create($arrData);
 
