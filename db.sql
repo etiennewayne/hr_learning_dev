@@ -42080,7 +42080,7 @@ CREATE TABLE `certificates` (
   PRIMARY KEY (`certificate_id`),
   KEY `learning_dev_id` (`learning_dev_id`),
   CONSTRAINT `certificates_ibfk_1` FOREIGN KEY (`learning_dev_id`) REFERENCES `learning_developments` (`learning_dev_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `certificates` */
 
@@ -42091,7 +42091,9 @@ insert  into `certificates`(`certificate_id`,`learning_dev_id`,`certificate`,`cr
 (25,1,'IfqHQILrpW0fIzLICB465N2XwnNGUQSqZB8dlkV1.jpg','2023-01-06 10:17:05','2023-01-06 10:17:05'),
 (26,1,'z3G7TS8Ijmn8Q1aHkR2v5jddchG6QsZ7caeRDqj7.jpg','2023-01-06 10:17:12','2023-01-06 10:17:12'),
 (27,15,'UDp7QToxIUbG5rbPeUgtG7cTZGmmLyDHce4KUSCM.png','2023-01-13 04:00:47','2023-01-13 04:00:47'),
-(28,16,'Cwhy1VM2jCcZk3gSu2V3E5z8PWjSCtkPqg3tvzwv.jpg','2023-01-13 04:02:11','2023-01-13 04:02:11');
+(28,16,'Cwhy1VM2jCcZk3gSu2V3E5z8PWjSCtkPqg3tvzwv.jpg','2023-01-13 04:02:11','2023-01-13 04:02:11'),
+(29,12,'uHjFXGzxdeakLxQhauQvQxd7Z4E8uvpQL8krMSVC.png','2023-01-16 09:07:32','2023-01-16 09:07:32'),
+(31,17,'mMhHnCLVSN16lTc2ZEPiaAvqdhqltozRScM1eCaq.jpg','2023-01-16 09:20:24','2023-01-16 09:20:24');
 
 /*Table structure for table `children` */
 
@@ -43879,8 +43881,31 @@ CREATE TABLE `educational_backgrounds` (
 
 insert  into `educational_backgrounds`(`ed_bg_id`,`user_id`,`level`,`name_of_school`,`degree`,`period_att_from`,`period_att_to`,`highest_level_unit`,`year_graduated`,`scholarship`,`created_at`,`updated_at`) values 
 (2,2,'ELEMENTARY','BAROY CENTRAL ELEM SCHOOL','PRIMARY','1996','2002','','2002','','2022-11-30 16:22:18','2022-11-30 16:22:18'),
-(3,2,'SECONDARY','LANAO DEL NORTE NATL HIGHSCHOOL','SECONDARY','2002','2006','','2006','','2022-11-30 16:22:18','2022-11-30 16:22:18'),
 (4,22,'COLLEGE','UNIVERSITY OF THE PHILIPPINES DILIMAN','GRADUATE DEGREES','2020','2023','25','2023','DOST-SEI UNDERGRADUATE SCHOLARSHIP PROGRAM','2023-01-13 03:43:42','2023-01-13 03:43:42');
+
+/*Table structure for table `faculty_participants` */
+
+DROP TABLE IF EXISTS `faculty_participants`;
+
+CREATE TABLE `faculty_participants` (
+  `faculty_participant_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `seminar_post_id` bigint(20) unsigned NOT NULL,
+  `teacher_id` bigint(20) unsigned NOT NULL,
+  `lname` varchar(255) DEFAULT NULL,
+  `fname` varchar(255) DEFAULT NULL,
+  `mname` varchar(255) DEFAULT NULL,
+  `sex` varchar(255) DEFAULT NULL,
+  `specialization` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`faculty_participant_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `faculty_participants` */
+
+insert  into `faculty_participants`(`faculty_participant_id`,`seminar_post_id`,`teacher_id`,`lname`,`fname`,`mname`,`sex`,`specialization`,`title`,`created_at`,`updated_at`) values 
+(2,10,2,'VARGAS','CHARLES','P','MALE','ARALIN PANLIPUNAN','Introduction to SEL','2023-01-16 10:42:33','2023-01-16 10:42:33');
 
 /*Table structure for table `failed_jobs` */
 
@@ -43910,7 +43935,7 @@ CREATE TABLE `learning_development_types` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`ld_type_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `learning_development_types` */
 
@@ -43920,7 +43945,8 @@ insert  into `learning_development_types`(`ld_type_id`,`ld_type`,`created_at`,`u
 (3,'TRAININGS',NULL,NULL),
 (4,'SUPERVISORY',NULL,NULL),
 (5,'FOUNDATION',NULL,NULL),
-(6,'CURRICULUM',NULL,NULL);
+(6,'CURRICULUM',NULL,NULL),
+(9,'CHARLES','2023-01-16 09:08:58','2023-01-16 09:08:58');
 
 /*Table structure for table `learning_developments` */
 
@@ -43942,7 +43968,7 @@ CREATE TABLE `learning_developments` (
   PRIMARY KEY (`learning_dev_id`),
   KEY `learning_developments_user_id_foreign` (`user_id`),
   CONSTRAINT `learning_developments_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `learning_developments` */
 
@@ -43953,7 +43979,8 @@ insert  into `learning_developments`(`learning_dev_id`,`user_id`,`title_learning
 (13,2,'ADOBE PHOTOSHOP','2023-01-04','2023-01-17','60','MANEGERIAL','DICT',NULL,0,'2023-01-03 20:21:03','2023-01-12 22:56:22'),
 (14,2,'ASDADWAWD','2023-01-09','2023-01-13','50','SUPERVISORY','ASDAWDAWD',NULL,0,'2023-01-03 20:35:25','2023-01-12 22:56:22'),
 (15,22,'INFORMATION AND COMMUNICATIONS TECHNOLOGY SERVICE','2023-01-13','2023-01-13','4 hours','MANEGERIAL','ANONYMOUS PERSON',NULL,0,'2023-01-13 03:58:44','2023-01-13 03:58:44'),
-(16,22,'ICS PROGRAM','2023-01-18','2023-02-13','4 hours','TRAININGS','none',NULL,0,'2023-01-13 04:02:11','2023-01-13 04:02:11');
+(16,22,'ICS PROGRAM','2023-01-18','2023-02-13','4 hours','TRAININGS','none',NULL,0,'2023-01-13 04:02:11','2023-01-13 04:02:11'),
+(17,2,'ASDAWDWA','2023-01-11','2023-01-15','123','FOUNDATION','ASDAWD',NULL,0,'2023-01-16 09:20:24','2023-01-16 11:10:36');
 
 /*Table structure for table `migrations` */
 
@@ -43998,12 +44025,12 @@ CREATE TABLE `other_informations` (
   PRIMARY KEY (`other_info_id`),
   KEY `other_informations_user_id_foreign` (`user_id`),
   CONSTRAINT `other_informations_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `other_informations` */
 
 insert  into `other_informations`(`other_info_id`,`user_id`,`skill_hobbies`,`non_academic_distinction`,`member_association`,`created_at`,`updated_at`) values 
-(1,2,'MATH',NULL,NULL,'2022-11-30 19:02:17','2023-01-13 03:17:31'),
+(1,2,'MATH','','','2022-11-30 19:02:17','2023-01-16 07:28:26'),
 (3,2,'MATH','','','2023-01-05 15:55:37','2023-01-12 23:43:28'),
 (4,2,'FILIPINO','','','2023-01-06 10:58:02','2023-01-06 10:58:02'),
 (5,20,'ENGLISH',NULL,NULL,'2023-01-13 03:00:25','2023-01-13 03:05:38'),
@@ -44029,8 +44056,7 @@ insert  into `other_informations`(`other_info_id`,`user_id`,`skill_hobbies`,`non
 (27,7,'BIOLOGY',NULL,NULL,'2023-01-13 03:16:23','2023-01-13 03:16:23'),
 (28,4,'ENGLISH',NULL,NULL,'2023-01-13 03:16:52','2023-01-13 03:16:52'),
 (29,4,'FILIPINO',NULL,NULL,'2023-01-13 03:17:00','2023-01-13 03:17:00'),
-(30,2,NULL,NULL,NULL,'2023-01-13 03:17:08','2023-01-13 03:17:08'),
-(31,2,'ENGLISH',NULL,NULL,'2023-01-13 03:17:20','2023-01-13 03:17:20'),
+(31,2,'ENGLISH','','','2023-01-13 03:17:20','2023-01-16 07:28:26'),
 (32,16,NULL,NULL,NULL,'2023-01-13 03:17:40','2023-01-13 03:17:40'),
 (33,17,'DANCING',NULL,NULL,'2023-01-13 03:18:03','2023-01-13 03:18:03');
 
@@ -44174,29 +44200,13 @@ insert  into `provinces`(`id`,`psgcCode`,`provDesc`,`regCode`,`provCode`,`active
 (87,'166800000','SURIGAO DEL SUR','16','1668',0),
 (88,'168500000','DINAGAT ISLANDS','16','1685',0);
 
-/*Table structure for table `recommended_info` */
+/*Table structure for table `recommended_teacher_lists` */
 
-DROP TABLE IF EXISTS `recommended_info`;
+DROP TABLE IF EXISTS `recommended_teacher_lists`;
 
-CREATE TABLE `recommended_info` (
-  `recommended_info_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `seminar_post_id` bigint(20) unsigned NOT NULL,
-  `seminar_title` varchar(255) DEFAULT NULL,
-  `list_info` varchar(255) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`recommended_info_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-/*Data for the table `recommended_info` */
-
-/*Table structure for table `recommended_teachers` */
-
-DROP TABLE IF EXISTS `recommended_teachers`;
-
-CREATE TABLE `recommended_teachers` (
-  `recommended_teacher_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `recommended_info_id` bigint(20) unsigned NOT NULL,
+CREATE TABLE `recommended_teacher_lists` (
+  `recommended_teacher_list_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `recommended_teacher_id` bigint(20) unsigned NOT NULL,
   `teacher_id` bigint(20) unsigned NOT NULL,
   `lname` varchar(255) DEFAULT NULL,
   `fname` varchar(255) DEFAULT NULL,
@@ -44206,12 +44216,56 @@ CREATE TABLE `recommended_teachers` (
   `no_seminars` int(11) DEFAULT 0,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`recommended_teacher_id`),
-  KEY `recommended_info` (`recommended_info_id`),
-  CONSTRAINT `recommended_teachers_ibfk_1` FOREIGN KEY (`recommended_info_id`) REFERENCES `recommended_info` (`recommended_info_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`recommended_teacher_list_id`),
+  KEY `recommended_teacher_id` (`recommended_teacher_id`),
+  CONSTRAINT `recommended_teacher_lists_ibfk_1` FOREIGN KEY (`recommended_teacher_id`) REFERENCES `recommended_teachers` (`recommended_teacher_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `recommended_teacher_lists` */
+
+insert  into `recommended_teacher_lists`(`recommended_teacher_list_id`,`recommended_teacher_id`,`teacher_id`,`lname`,`fname`,`mname`,`sex`,`specialization`,`no_seminars`,`created_at`,`updated_at`) values 
+(76,17,12,'CAGADAS','JOHN MICHAEL','QUIMBO','MALE','ENGLISH, MATH',0,'2023-01-15 21:21:44','2023-01-15 21:21:44'),
+(77,17,13,'JUMAWID','IRISH','DANO','FEMALE','FILIPINO, ENGLISH',0,'2023-01-15 21:21:44','2023-01-15 21:21:44'),
+(78,17,20,'PULGO','ANGEL',NULL,'MALE','ENGLISH, FILIPINO, GUIDANCE, MATH',0,'2023-01-15 21:21:44','2023-01-15 21:21:44'),
+(79,17,21,'HAMMAD','CRISTIAN','MARIO','MALE','ENGLISH, FILIPINO',0,'2023-01-15 21:21:44','2023-01-15 21:21:44'),
+(80,18,4,'KOPIKO','THREE',NULL,'MALE','ENGLISH, FILIPINO',0,'2023-01-15 21:40:13','2023-01-15 21:40:13'),
+(81,18,10,'SAQUIN','CHERRY MAE','EGOS','FEMALE','ENGLISH',0,'2023-01-15 21:40:13','2023-01-15 21:40:13'),
+(82,18,13,'JUMAWID','IRISH','DANO','FEMALE','FILIPINO, ENGLISH',0,'2023-01-15 21:40:13','2023-01-15 21:40:13'),
+(83,18,20,'PULGO','ANGEL',NULL,'MALE','ENGLISH, FILIPINO, GUIDANCE, MATH',0,'2023-01-15 21:40:13','2023-01-15 21:40:13'),
+(84,18,21,'HAMMAD','CRISTIAN','MARIO','MALE','ENGLISH, FILIPINO',0,'2023-01-15 21:40:13','2023-01-15 21:40:13'),
+(85,19,11,'SEGONGAN','JANMARK','IGNO','MALE','ARALIN PANLIPUNAN',0,'2023-01-16 11:05:43','2023-01-16 11:05:43'),
+(86,19,2,'VARGAS','CHARLES','P','MALE','ARALIN PANLIPUNAN',NULL,'2023-01-16 11:05:43','2023-01-16 11:05:43'),
+(87,20,11,'SEGONGAN','JANMARK','IGNO','MALE','ARALIN PANLIPUNAN',0,'2023-01-16 11:07:34','2023-01-16 11:07:34'),
+(88,20,2,'VARGAS','CHARLES','P','MALE','ARALIN PANLIPUNAN',NULL,'2023-01-16 11:07:34','2023-01-16 11:07:34'),
+(89,21,2,'VARGAS','CHARLES','P','MALE','ARALIN PANLIPUNAN',NULL,'2023-01-16 11:08:14','2023-01-16 11:08:14'),
+(90,22,4,'KOPIKO','THREE',NULL,'MALE','ENGLISH, FILIPINO',0,'2023-01-16 11:08:40','2023-01-16 11:08:40'),
+(91,22,10,'SAQUIN','CHERRY MAE','EGOS','FEMALE','ENGLISH',0,'2023-01-16 11:08:40','2023-01-16 11:08:40'),
+(92,22,12,'CAGADAS','JOHN MICHAEL','QUIMBO','MALE','ENGLISH, MATH',0,'2023-01-16 11:08:40','2023-01-16 11:08:40'),
+(93,22,13,'JUMAWID','IRISH','DANO','FEMALE','FILIPINO, ENGLISH',0,'2023-01-16 11:08:40','2023-01-16 11:08:40');
+
+/*Table structure for table `recommended_teachers` */
+
+DROP TABLE IF EXISTS `recommended_teachers`;
+
+CREATE TABLE `recommended_teachers` (
+  `recommended_teacher_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `seminar_post_id` bigint(20) unsigned NOT NULL,
+  `seminar_title` varchar(255) DEFAULT NULL,
+  `remarks` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`recommended_teacher_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `recommended_teachers` */
+
+insert  into `recommended_teachers`(`recommended_teacher_id`,`seminar_post_id`,`seminar_title`,`remarks`,`created_at`,`updated_at`) values 
+(17,11,'Developing Authentic Assessments of Higher-Order Thinking Skills - Science','aaa','2023-01-15 21:21:44','2023-01-15 21:21:44'),
+(18,11,'Developing Authentic Assessments of Higher-Order Thinking Skills - Science','asdawasdaw','2023-01-15 21:40:13','2023-01-15 21:40:13'),
+(19,10,'Introduction to SEL','asadw','2023-01-16 11:05:43','2023-01-16 11:05:43'),
+(20,10,'Introduction to SEL','sample forward','2023-01-16 11:07:34','2023-01-16 11:07:34'),
+(21,10,'Introduction to SEL','sample forward','2023-01-16 11:08:14','2023-01-16 11:08:14'),
+(22,11,'Developing Authentic Assessments of Higher-Order Thinking Skills - Science','kopiko seminar','2023-01-16 11:08:40','2023-01-16 11:08:40');
 
 /*Table structure for table `seminar_posts` */
 
@@ -44238,7 +44292,7 @@ CREATE TABLE `seminar_posts` (
 /*Data for the table `seminar_posts` */
 
 insert  into `seminar_posts`(`seminar_post_id`,`img_path`,`title`,`description`,`skills`,`ld_type`,`conducted_by`,`cpd_units`,`no_hours`,`specialization`,`seminar_date`,`date_posted`,`created_at`,`updated_at`) values 
-(10,'ROYruGCmkqzDLsegjreULjW4rZ29vjEoTdB8onOF.png','Introduction to SEL','Building and Fostering Social and Emotional Skills of Children in School and at Home is a 3-hour webinar that aims to enhance your understanding of social and emotional skills and learn strategies for school administrators, teachers, guidance counselors, and parents on (a) Creating an environment that allows for purposeful social and emotional growth as in-person learning returns; (b) Using conversation in developing the foundational skills of Social Emotional Learning, and (c) Integrating Social Emotional Learning (SEL) practices in school and at home to create a Brave Space for our children.','undefined','TRAININGS','undefined','2','40','ARALIN PANLIPUNAN','2023-01-15','2023-01-13','2023-01-13 02:04:21','2023-01-13 10:47:44'),
+(10,'ROYruGCmkqzDLsegjreULjW4rZ29vjEoTdB8onOF.png','Introduction to SEL','Building and Fostering Social and Emotional Skills of Children in School and at Home is a 3-hour webinar that aims to enhance your understanding of social and emotional skills and learn strategies for school administrators, teachers, guidance counselors, and parents on (a) Creating an environment that allows for purposeful social and emotional growth as in-person learning returns; (b) Using conversation in developing the foundational skills of Social Emotional Learning, and (c) Integrating Social Emotional Learning (SEL) practices in school and at home to create a Brave Space for our children.','undefined','TRAININGS','undefined','2','40','ARALIN PANLIPUNAN','2023-01-16','2023-01-13','2023-01-13 02:04:21','2023-01-13 10:47:44'),
 (11,'Wk9Klc1iYp5Fjs2Yaterxt1K5gVkM1qVcMa8nDe8.webp','Developing Authentic Assessments of Higher-Order Thinking Skills - Science','This is an in-depth online training program that aims to empower educators to develop and prepare authentic learning and assessment programs aligned with the higher-order thinking skills that will motivate, engage, and capture the interest of the students through the use of digital tools and other modalities. This training program will enhance teachers’ competencies in science through the use of authentic assessment, digital tools, and other modalities that will help learners in developing higher order thinking skills through lectures, workshops, group discussions, and hands-on activities.','undefined','TRAININGS','CEM','2','40','ENGLISH','2023-01-24','2023-01-13','2023-01-13 02:32:01','2023-01-13 02:32:01'),
 (12,'EGBozaw3yv9g7jcUXOBvjbaAQOhgBDKxLHBoJZHp.jpg','Improving Career Guidance Program through CEM Test Data Utilization','Improving Career Guidance Program through CEM Test Data Utilization is an online training program designed to build competencies of guidance counselors in interpreting and analyzing career guidance test (CGT) results and using these as well as other sources of information to help students make decisions about their higher education options, future jobs, and careers. Participants will be guided on how to interpret and analyze standardized career guidance test results, discuss these with students, parents, and school administrators, and make recommendations to improve the school’s career guidance program. The learning modality is a combination of synchronous and asynchronous sessions that includes lectures, workshops, group, and individual tasks.','undefined','TRAININGS','CEM','undefined','20','ENGLISH','2023-02-14','2023-01-13','2023-01-13 02:34:20','2023-01-13 02:34:20');
 
@@ -44344,6 +44398,31 @@ CREATE TABLE `users` (
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_verified` tinyint(4) DEFAULT 0,
+  `related_with_third_degree` tinyint(4) DEFAULT NULL,
+  `related_with_fourth_degree` tinyint(4) DEFAULT NULL,
+  `related_with_fourth_degree_yes` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_guilty_administrative_offense` tinyint(4) DEFAULT NULL,
+  `is_guilty_administrative_offense_yes` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_criminally_charge` tinyint(4) DEFAULT NULL,
+  `is_criminally_charge_yes` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date_filed` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `case_status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_convicted` tinyint(4) DEFAULT NULL,
+  `is_convicted_yes` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_separated` tinyint(4) DEFAULT NULL,
+  `is_separated_yes_details` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_candidate_election` tinyint(4) DEFAULT NULL,
+  `is_candiadte_election_yes` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_resigned` tinyint(4) DEFAULT NULL,
+  `is_resigned_yes` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_immigrant` tinyint(4) DEFAULT NULL,
+  `is_immigrant_yes` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_indigenous` tinyint(4) DEFAULT NULL,
+  `is_indigenous_yes` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_disable` tinyint(4) DEFAULT NULL,
+  `is_disable_id_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_solo_parent` tinyint(4) DEFAULT NULL,
+  `is_solo_parent_yes` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`user_id`),
@@ -44353,26 +44432,26 @@ CREATE TABLE `users` (
 
 /*Data for the table `users` */
 
-insert  into `users`(`user_id`,`username`,`lname`,`fname`,`mname`,`suffix`,`date_birth`,`place_birth`,`sex`,`civil_status`,`civil_status_others`,`height`,`weight`,`blood_type`,`gsis`,`pagibig`,`philhealth`,`sss`,`tin`,`agency_idno`,`citizenship`,`res_province`,`res_city`,`res_barangay`,`res_street`,`res_houseno_blockno`,`res_zipcode`,`per_province`,`per_city`,`per_barangay`,`per_street`,`per_houseno_blockno`,`per_zipcode`,`tel_no`,`contact_no`,`email`,`email_verified_at`,`spouse_surname`,`spouse_fname`,`spouse_mname`,`spouse_suffix`,`spouse_occupation`,`business_name`,`business_address`,`business_contact_no`,`father_surname`,`father_fname`,`father_mname`,`father_suffix`,`mother_maiden_name`,`mother_fname`,`mother_mname`,`mother_suffix`,`role`,`password`,`remember_token`,`is_verified`,`created_at`,`updated_at`) values 
-(1,'admin','VARGAS','CHARLES','P',NULL,NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'MISAMIS OCCIDENTAL','TANGUB CITY','CANIANGAN','P-6',NULL,NULL,'MISAMIS OCCIDENTAL','TANGUB CITY','CANIANGAN','P-6',NULL,NULL,NULL,'09167789585','admin@dev.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'ADMINISTRATOR','$2y$10$7xTo9lOrooGB6jmzyDWP6uNSbBBM55M8/0dARdy0TG.sZgmjBvp2m',NULL,0,NULL,NULL),
-(2,'charles','VARGAS','CHARLES','P','','1988-08-08','MALORO, TANGUB CITY','MALE','SINGLE',NULL,NULL,NULL,'AB',NULL,NULL,NULL,NULL,NULL,'1324-aa547','FILIPINO','1411','141104','141104003','SDAWD','AAA','aaaa','0516','051606','051606018','BBBB','BBBB','bbb',NULL,'09683014598','et@dev.com',NULL,'','','','',NULL,'','',NULL,'','','','','','','','','FACULTY','$2y$10$cgwTCYl3oseXV5K0mnxm5uZRUNgCXS7EAeG1JxoXLb/UPi4zXbBbe',NULL,1,NULL,'2023-01-12 23:18:03'),
-(3,'lui','LUI','ALEXANDER','','','2023-01-04','MALORO, TANGUB CITY','MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0520','052005','052005003','SED RATIONE QUI SINT',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Ea praesentium quae','carawuda@mailinator.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'HRLD','$2y$10$7xTo9lOrooGB6jmzyDWP6uNSbBBM55M8/0dARdy0TG.sZgmjBvp2m',NULL,0,'2022-10-23 09:12:11','2023-01-05 14:23:27'),
-(4,'kopiko','KOPIKO','THREE','','',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1042','104215','104215025','SAMPLE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1234567879','kopiko@mail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$WZAF6wU8fLEEeg7MMNSusuSmtPNFoCqeTYSKoLxo2ybD7tmW11M0C',NULL,0,'2023-01-05 14:29:14','2023-01-05 14:29:14'),
-(5,'cid','PRADIA','LEDA','','',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1603','160301','160301028','ASDAS',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'321564546','cid@dev.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CID','$2y$10$bpBsTeizSVbHmhT.kMWprODtmJuZemcV7IBNjYUHFvF5kfoIW/tu.',NULL,0,'2023-01-05 14:30:46','2023-01-06 09:01:59'),
-(7,'HRLD01','AA','AA','',NULL,NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0517','051715','051715016','AAA',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'132','aa@mail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'HRLD','$2y$10$Ew6j75wiaUHhG0XNobLDseP0esV8nmRiblj9fF4oV8sxr7GQ7nH7C',NULL,0,'2023-01-06 08:17:37','2023-01-13 04:06:43'),
-(10,'Cherry','SAQUIN','CHERRY MAE','EGOS','N/A',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123456',NULL,'1042','104210','104210017','ALQUIZAR ST.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09683021376','cherry@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$suKVi3KIszpSJwlvIIHMBO5MmX3wz8Uc8T6gl2Lvc03BmFvpsYirC',NULL,0,'2023-01-13 01:20:50','2023-01-13 01:20:50'),
-(11,'Janmark','SEGONGAN','JANMARK','IGNO','N/A',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123455',NULL,'1042','104210','104210037','VANDA',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09685643246','janmark@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$Ep7KqTdcddXayWjtiKvHeevQosUXyaWYsGXnoYAnUzY5oLb/SZrbC',NULL,0,'2023-01-13 01:22:47','2023-01-13 01:22:47'),
-(12,'Michael','CAGADAS','JOHN MICHAEL','QUIMBO','N/A',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123454',NULL,'1042','104210','104210012','ROSAS',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09683021354','michael@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$MMR3Eq3213fzfBA1toAEHO3D5a6gxEqt.fgvDsGoztslLpylkeXmm',NULL,0,'2023-01-13 01:25:06','2023-01-13 01:25:06'),
-(13,'Irish','JUMAWID','IRISH','DANO','N/A',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123454',NULL,'1042','104211','104211013','DOVE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09683021387','irish@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$A/gyP7BIh4b7fn4NHklNJOu3sf6NxXw4DDp.6ngyin0JIQis3cOPO',NULL,0,'2023-01-13 01:27:35','2023-01-13 01:27:35'),
-(14,'John','MAGHANOY','JOHN','SANDOVAL','N/A',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123453',NULL,'1042','104210','104210011','KANYON',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09683021321','john@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$axb6VKYKp/ybJsVVClZfsetR1G/yTIW/JH6WWB9.6EWdymhyUMqve',NULL,0,'2023-01-13 01:29:28','2023-01-13 01:29:28'),
-(15,'Daniel','LAPINIG','DANIEL','MANDAWE','N/A',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123452',NULL,'1042','104213','104213012','SANTOL',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'095683021321','daniel@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$LhHDrSoNCmxWGf0C2ejlP.gbfADGwPGBWZDN8v/q59edVbRQnNWR2',NULL,0,'2023-01-13 01:31:03','2023-01-13 01:31:03'),
-(16,'Christian','ORNOPIA','CHRISTIAN','SINGCAY','N/A',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123473',NULL,'1042','104215','104215017','CACAO',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0968302133','christian@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$LPNM.9VZHLCAK/A.6qFU6uU/ikMnlrVP3eqLu/KhWwRe1eelTqw0q',NULL,0,'2023-01-13 01:32:57','2023-01-13 01:32:57'),
-(17,'Mayvel','SAQUIN','MAYVEL','EGOS','N/A',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123451',NULL,'1042','104216','104216021','MALOLOY-ON',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0968390213','mayvel@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$EDD2cHx1WgxSFXnoNyWv9ekiUdy3/SHKxas29.OI/Sc/v4alC2sHS',NULL,0,'2023-01-13 01:35:34','2023-01-13 01:35:34'),
-(18,'Cristy','SAMBOLOT','CRISTY','BUNSOCAN','N/A',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123458',NULL,'1042','104208','104208015','MAKUGIHON',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09683021354','cristy@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$3yPLvr7LmowVf.EgtalhH.biKWGhFWPbY0S/2qd8ijE9oGXxXUN0K',NULL,0,'2023-01-13 01:37:17','2023-01-13 01:37:17'),
-(19,'Hannah','PANA','HANNAH','PAN','N/A',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123475',NULL,'1042','104208','104208016','DANCING LADY',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09683021354','hannah@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$1FEK8ilvF2IkeqqaKF0SBu2cO8T2fzyoc0Xxbu6muhm2eB4MuYmna',NULL,0,'2023-01-13 01:46:39','2023-01-13 01:46:39'),
-(20,'angel','PULGO','ANGEL','','',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'TEACHER1122331',NULL,'0314','031414','031414004','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0916546752446','angel@dev.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$lVHUn1bSXrUAWLjAFIALA.N4dLkHdLUTCpXijgO.YS6dSbpPQsdgG',NULL,0,'2023-01-13 01:51:46','2023-01-13 01:51:46'),
-(21,'Cristian','HAMMAD','CRISTIAN','MARIO','JR.',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123451',NULL,'1042','104214','104214018','CACAO',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09876543211','cristian@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$4T391avB9pD9Ink/L4bC2.BACVP7t22G6v7bgxmbKtf/hKGMy1I2O',NULL,0,'2023-01-13 02:31:01','2023-01-13 02:31:01'),
-(22,'DepEd','DEP','ED01','DEPART','N/A','1970-01-01','CEBU CITY','MALE','SINGLE',NULL,'5\'5','63','A','Government Service Insurance System','Pag Ibig Plus Loyalty Card','PHILHEALTH INSURANCE CARD IS A VALID GOVERNMENT ID www.philhealth.gov.ph PHILHEALTH INSURANCE CARD','04-1413324-8','None','123452','FILIPINO','1042','104210','104210042','STREET ANTON','PUROK ROSES','4532','0215','021511','021511034','PUROK ROSES','335567','7834','021-345-6798','09876543212','DepEd@gmail.com',NULL,'','','','',NULL,'JOLLIBEE','CACAO','0986-123-5687','AGUSTINE','MARIANO','LUKAS','JR.','AGUSTINE','MARIANETTA','PUROLA','NONE','DEPED OFFICIAL','$2y$10$mATIDmv2FR7KkWbY624k3eNh6NPj2Djd9cnSl7q3jsknJlvRguef.',NULL,1,'2023-01-13 02:35:34','2023-01-13 04:48:21');
+insert  into `users`(`user_id`,`username`,`lname`,`fname`,`mname`,`suffix`,`date_birth`,`place_birth`,`sex`,`civil_status`,`civil_status_others`,`height`,`weight`,`blood_type`,`gsis`,`pagibig`,`philhealth`,`sss`,`tin`,`agency_idno`,`citizenship`,`res_province`,`res_city`,`res_barangay`,`res_street`,`res_houseno_blockno`,`res_zipcode`,`per_province`,`per_city`,`per_barangay`,`per_street`,`per_houseno_blockno`,`per_zipcode`,`tel_no`,`contact_no`,`email`,`email_verified_at`,`spouse_surname`,`spouse_fname`,`spouse_mname`,`spouse_suffix`,`spouse_occupation`,`business_name`,`business_address`,`business_contact_no`,`father_surname`,`father_fname`,`father_mname`,`father_suffix`,`mother_maiden_name`,`mother_fname`,`mother_mname`,`mother_suffix`,`role`,`password`,`remember_token`,`is_verified`,`related_with_third_degree`,`related_with_fourth_degree`,`related_with_fourth_degree_yes`,`is_guilty_administrative_offense`,`is_guilty_administrative_offense_yes`,`is_criminally_charge`,`is_criminally_charge_yes`,`date_filed`,`case_status`,`is_convicted`,`is_convicted_yes`,`is_separated`,`is_separated_yes_details`,`is_candidate_election`,`is_candiadte_election_yes`,`is_resigned`,`is_resigned_yes`,`is_immigrant`,`is_immigrant_yes`,`is_indigenous`,`is_indigenous_yes`,`is_disable`,`is_disable_id_no`,`is_solo_parent`,`is_solo_parent_yes`,`created_at`,`updated_at`) values 
+(1,'admin','VARGAS','CHARLES','P',NULL,NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'MISAMIS OCCIDENTAL','TANGUB CITY','CANIANGAN','P-6',NULL,NULL,'MISAMIS OCCIDENTAL','TANGUB CITY','CANIANGAN','P-6',NULL,NULL,NULL,'09167789585','admin@dev.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'ADMINISTRATOR','$2y$10$7xTo9lOrooGB6jmzyDWP6uNSbBBM55M8/0dARdy0TG.sZgmjBvp2m',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(2,'charles','VARGAS','CHARLES','P','','1988-08-08','MALORO, TANGUB CITY','MALE','SINGLE',NULL,NULL,NULL,'AB',NULL,NULL,NULL,NULL,NULL,'1324-aa547','FILIPINO','1411','141104','141104003','SDAWD','AAA','aaaa','0516','051606','051606018','BBBB','BBBB','bbb',NULL,'09683014598','et@dev.com',NULL,'','','','',NULL,'','',NULL,'','','','','','','','','FACULTY','$2y$10$WTIFrY4ld/J6XOpGmQAzMemIFxJ1e3ci0wAWFWoZuZVADKl.ELAwa',NULL,1,0,0,'adaw',0,NULL,0,NULL,NULL,NULL,0,NULL,0,NULL,0,NULL,0,NULL,NULL,NULL,0,NULL,0,NULL,0,NULL,NULL,'2023-01-16 09:43:49'),
+(3,'lui','LUI','ALEXANDER','','','2023-01-04','MALORO, TANGUB CITY','MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0520','052005','052005003','SED RATIONE QUI SINT',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Ea praesentium quae','carawuda@mailinator.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'HRLD','$2y$10$7xTo9lOrooGB6jmzyDWP6uNSbBBM55M8/0dARdy0TG.sZgmjBvp2m',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2022-10-23 09:12:11','2023-01-05 14:23:27'),
+(4,'kopiko','KOPIKO','THREE','','',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1042','104215','104215025','SAMPLE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1234567879','kopiko@mail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$WZAF6wU8fLEEeg7MMNSusuSmtPNFoCqeTYSKoLxo2ybD7tmW11M0C',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2023-01-05 14:29:14','2023-01-05 14:29:14'),
+(5,'cid','PRADIA','LEDA','','',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1603','160301','160301028','ASDAS',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'321564546','cid@dev.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CID','$2y$10$bpBsTeizSVbHmhT.kMWprODtmJuZemcV7IBNjYUHFvF5kfoIW/tu.',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2023-01-05 14:30:46','2023-01-06 09:01:59'),
+(7,'hrld','AA','AA','',NULL,NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0517','051715','051715016','AAA',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'132','aa@mail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'HRLD','$2y$10$7xTo9lOrooGB6jmzyDWP6uNSbBBM55M8/0dARdy0TG.sZgmjBvp2m',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2023-01-06 08:17:37','2023-01-13 04:06:43'),
+(10,'Cherry','SAQUIN','CHERRY MAE','EGOS','N/A',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123456',NULL,'1042','104210','104210017','ALQUIZAR ST.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09683021376','cherry@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$suKVi3KIszpSJwlvIIHMBO5MmX3wz8Uc8T6gl2Lvc03BmFvpsYirC',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2023-01-13 01:20:50','2023-01-13 01:20:50'),
+(11,'Janmark','SEGONGAN','JANMARK','IGNO','N/A',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123455',NULL,'1042','104210','104210037','VANDA',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09685643246','janmark@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$Ep7KqTdcddXayWjtiKvHeevQosUXyaWYsGXnoYAnUzY5oLb/SZrbC',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2023-01-13 01:22:47','2023-01-13 01:22:47'),
+(12,'Michael','CAGADAS','JOHN MICHAEL','QUIMBO','N/A',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123454',NULL,'1042','104210','104210012','ROSAS',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09683021354','michael@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$MMR3Eq3213fzfBA1toAEHO3D5a6gxEqt.fgvDsGoztslLpylkeXmm',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2023-01-13 01:25:06','2023-01-13 01:25:06'),
+(13,'Irish','JUMAWID','IRISH','DANO','N/A',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123454',NULL,'1042','104211','104211013','DOVE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09683021387','irish@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$A/gyP7BIh4b7fn4NHklNJOu3sf6NxXw4DDp.6ngyin0JIQis3cOPO',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2023-01-13 01:27:35','2023-01-13 01:27:35'),
+(14,'John','MAGHANOY','JOHN','SANDOVAL','N/A',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123453',NULL,'1042','104210','104210011','KANYON',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09683021321','john@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$axb6VKYKp/ybJsVVClZfsetR1G/yTIW/JH6WWB9.6EWdymhyUMqve',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2023-01-13 01:29:28','2023-01-13 01:29:28'),
+(15,'Daniel','LAPINIG','DANIEL','MANDAWE','N/A',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123452',NULL,'1042','104213','104213012','SANTOL',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'095683021321','daniel@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$LhHDrSoNCmxWGf0C2ejlP.gbfADGwPGBWZDN8v/q59edVbRQnNWR2',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2023-01-13 01:31:03','2023-01-13 01:31:03'),
+(16,'Christian','ORNOPIA','CHRISTIAN','SINGCAY','N/A',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123473',NULL,'1042','104215','104215017','CACAO',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0968302133','christian@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$LPNM.9VZHLCAK/A.6qFU6uU/ikMnlrVP3eqLu/KhWwRe1eelTqw0q',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2023-01-13 01:32:57','2023-01-13 01:32:57'),
+(17,'Mayvel','SAQUIN','MAYVEL','EGOS','N/A',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123451',NULL,'1042','104216','104216021','MALOLOY-ON',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0968390213','mayvel@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$EDD2cHx1WgxSFXnoNyWv9ekiUdy3/SHKxas29.OI/Sc/v4alC2sHS',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2023-01-13 01:35:34','2023-01-13 01:35:34'),
+(18,'Cristy','SAMBOLOT','CRISTY','BUNSOCAN','N/A',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123458',NULL,'1042','104208','104208015','MAKUGIHON',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09683021354','cristy@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$3yPLvr7LmowVf.EgtalhH.biKWGhFWPbY0S/2qd8ijE9oGXxXUN0K',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2023-01-13 01:37:17','2023-01-13 01:37:17'),
+(19,'Hannah','PANA','HANNAH','PAN','N/A',NULL,NULL,'FEMALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123475',NULL,'1042','104208','104208016','DANCING LADY',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09683021354','hannah@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$1FEK8ilvF2IkeqqaKF0SBu2cO8T2fzyoc0Xxbu6muhm2eB4MuYmna',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2023-01-13 01:46:39','2023-01-13 01:46:39'),
+(20,'angel','PULGO','ANGEL','','',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'TEACHER1122331',NULL,'0314','031414','031414004','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0916546752446','angel@dev.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$lVHUn1bSXrUAWLjAFIALA.N4dLkHdLUTCpXijgO.YS6dSbpPQsdgG',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2023-01-13 01:51:46','2023-01-13 01:51:46'),
+(21,'Cristian','HAMMAD','CRISTIAN','MARIO','JR.',NULL,NULL,'MALE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123451',NULL,'1042','104214','104214018','CACAO',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'09876543211','cristian@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'FACULTY','$2y$10$4T391avB9pD9Ink/L4bC2.BACVP7t22G6v7bgxmbKtf/hKGMy1I2O',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2023-01-13 02:31:01','2023-01-13 02:31:01'),
+(22,'DepEd','DEP','ED01','DEPART','N/A','1970-01-01','CEBU CITY','MALE','SINGLE',NULL,'5\'5','63','A','Government Service Insurance System','Pag Ibig Plus Loyalty Card','PHILHEALTH INSURANCE CARD IS A VALID GOVERNMENT ID www.philhealth.gov.ph PHILHEALTH INSURANCE CARD','04-1413324-8','None','123452','FILIPINO','1042','104210','104210042','STREET ANTON','PUROK ROSES','4532','0215','021511','021511034','PUROK ROSES','335567','7834','021-345-6798','09876543212','DepEd@gmail.com',NULL,'','','','',NULL,'JOLLIBEE','CACAO','0986-123-5687','AGUSTINE','MARIANO','LUKAS','JR.','AGUSTINE','MARIANETTA','PUROLA','NONE','DEPED OFFICIAL','$2y$10$UAkRLllY.RSWPXjpsZhMx.hxg8h7Mo7mpzMplu.bS/VR8rQpBfmzq',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2023-01-13 02:35:34','2023-01-16 11:13:49');
 
 /*Table structure for table `voluntary_works` */
 

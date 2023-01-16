@@ -25,7 +25,7 @@
                             :value="i">{{ i.title }}</option>
                     </b-select> -->
                     <p class="control">
-                        <b-button class="expanded" type="is-primary" label="..." @click="generateList"></b-button>
+                        <b-button class="expanded" type="is-primary" label="..." @click="getTeacherList"></b-button>
                     </p>
                 </b-field>
                 <b-field>
@@ -121,6 +121,7 @@
 export default{
     data(){
         return {
+            rawdata: [],
             data: [],
 
             specialization: null,
@@ -138,28 +139,80 @@ export default{
 
             modalTeacher: false,
             seminars: [],
+            request_teacher: [],
         }
     },
 
     methods: {
 
         generateList(){
+           
             const params = [
                 `lname=${this.search.lname}`,
                 `specialization=${this.specialization.specialization}`,
             ].join('&')
 
+            
+
             axios.get(`/generate-list?${params}`).then(res=>{
-                this.data = res.data
+                //this.rawData = res.data
+                
+                res.data.forEach(el=>{
+                    this.data.push({
+                        civil_status: el.civil_status,
+                        fname: el.fname,
+                        lname: el.lname,
+                        mname: el.mname,
+                        no_seminars: el.no_seminars,
+                        role: el.role,
+                        sex: el.sex,
+                        specialization: el.specialization,
+                        suffix: el.suffix,
+                        user_id: el.user_id
+                    }); 
+                })
+
+             
+                this.request_teacher.forEach(el =>{
+                    this.data.push({
+                        civil_status: '',
+                        fname: el.fname,
+                        lname: el.lname,
+                        mname: el.mname,
+                        no_seminars: '',
+                        role: '',
+                        sex: el.sex,
+                        specialization: el.specialization,
+                        suffix:'',
+                        user_id: el.teacher_id
+                    }); 
+                })
+
+                
             }).catch(err=>{
 
             })
         },
+      
+
+        getTeacherList(){
+            this.data = [];
+            this.request_teacher = [];
+            axios.get(`/get-request-teacher`).then(res=>{
+                console.log(res.data);
+                this.request_teacher = res.data
+                this.generateList()
+
+            }).catch(err=>{
+
+            })
+        },
+        
 
         loadSeminars(){
             axios.get('/cid/get-seminar-specialization-list').then(res=>{
                 this.seminars = res.data
-                console.log(this.seminars);
+               
             })
         },
 
@@ -200,6 +253,9 @@ export default{
                 this.fields.seminar_post_id = 0;
                 this.fields.seminar_title = '';
                 this.fields.teachers = [];
+                
+                this.data = [];
+                this.request_teacher = [];
 
                 this.generateList()
 

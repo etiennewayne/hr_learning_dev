@@ -1,8 +1,8 @@
 <template>
-    <b-navbar>
+    <b-navbar class="is-dark">
         <template #brand>
             <b-navbar-item>
-                <h1 class="title is-4">HR LEARNING & DEV</h1>
+                <h1 class="title is-4" style="color: white;">HR LEARNING & DEV</h1>
             </b-navbar-item>
         </template>
 

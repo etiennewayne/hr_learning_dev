@@ -110,10 +110,10 @@
                                     </b-field>
                                 </div>
                                 <div class="column">
-                                    <b-field label-position="on-border" label="Weight(m)"
+                                    <b-field label-position="on-border" label="Weight(kg)"
                                              :type="this.errors.weight ? 'is-danger':''"
                                              :message="this.errors.weight ? this.errors.weight[0] : ''">
-                                        <b-input icon="weight" v-model="fields.weight" placeholder="Weight(m)"></b-input>
+                                        <b-input icon="weight" v-model="fields.weight" placeholder="Weight(kg)"></b-input>
                                     </b-field>
                                 </div>
                                 <div class="column">
@@ -121,10 +121,14 @@
                                              :type="this.errors.blood_type ? 'is-danger':''"
                                              :message="this.errors.blood_type ? this.errors.blood_type[0] : ''">
                                         <b-select placeholder="Blood Type" v-model="fields.blood_type" icon="water" expanded>
-                                            <option value="O">O</option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="AB">AB</option>
+                                            <option value="O+">O+</option>
+                                            <option value="O-">O-</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A-">A-</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B-">B-</option>
+                                            <option value="AB+">AB+</option>
+                                            <option value="AB-">AB-</option>
                                         </b-select>
                                     </b-field>
                                 </div>
@@ -786,7 +790,7 @@
                             <div class="w-separator" v-for="(item, k) in fields.other_informations" :key="`info${k}`">
                                 <div class="columns">
                                     <div class="column">
-                                        <b-field label="Special Skill & Hobbies" label-position="on-border">
+                                        <b-field label="Specialization" label-position="on-border">
                                             <b-select v-model="item.skill_hobbies"
                                                       placeholder="Special Skill & Hobbies"
                                                       expanded>
@@ -834,27 +838,20 @@
                                 <div class="column">
                                     <div>
                                         Are you related by consanguinity or affinity to the appointing or recommending authority, or to the chief of bureau or office or to the person who has immediate supervision over you in the Office, Bureau or Department where you will be apppointed,
-
-                                        a. within the third degree?
-
-                                        b. within the fourth degree (for Local Government Unit - Career Employees
                                     </div>
                                 </div>
                                 <div class="column is-4">
-                                   
                                 </div>
-
                             </div>
 
                             <div class="columns">
                                 <div class="column">
-                                    a. Have you ever been found guilty of any administrative offense?
+                                    a. within the third degree?
                                 </div>
-
                                 <div class="column is-4">
                                     <b-field>
-                                        <b-checkbox>Yes</b-checkbox>
-                                        <b-checkbox>No</b-checkbox>
+                                        <b-radio native-value="1" name="related_with_third_degree" v-model="fields.related_with_third_degree">Yes</b-radio>
+                                        <b-radio native-value="0" name="related_with_third_degree" v-model="fields.related_with_third_degree">No</b-radio>
                                     </b-field>
                                 </div>
                             </div>
@@ -863,15 +860,234 @@
                                 <div class="column">
                                     b. within the fourth degree (for Local Government Unit - Career Employees
                                 </div>
-
                                 <div class="column is-4">
                                     <b-field>
-                                        <b-checkbox>Yes</b-checkbox>
-                                        <b-checkbox>No</b-checkbox>
+                                        <b-radio native-value="1" name="related_with_fourth_degree" v-model="fields.related_with_fourth_degree">Yes</b-radio>
+                                        <b-radio native-value="0" name="related_with_fourth_degree" v-model="fields.related_with_fourth_degree">No</b-radio>
+                                    </b-field>
+                                    <b-field label="If YES, details" label-position="on-border">
+                                        <b-input type="text" v-model="fields.related_with_fourth_degree_yes" placeholder="Details"></b-input>
                                     </b-field>
                                 </div>
                             </div>
 
+                            <div class="divider-gray"></div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    Have you ever been found guilty of any administrative offense?
+                                </div>
+
+                                <div class="column is-4">
+                                    <b-field>
+                                        <b-radio native-value="1" 
+                                            name="is_guilty_administrative_offense"
+                                            v-model="fields.is_guilty_administrative_offense">Yes</b-radio>
+                                        <b-radio native-value="0" 
+                                            name="is_guilty_administrative_offense"
+                                            v-model="fields.is_guilty_administrative_offense">No</b-radio>
+                                    </b-field>
+                                    <b-field label="If YES, details" label-position="on-border">
+                                        <b-input type="text" v-model="fields.is_guilty_administrative_offense_yes" placeholder="Details"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+                           
+                            <div class="columns">
+                                <div class="column">
+                                    Have you been criminally charged before any court?
+                                </div>
+
+                                <div class="column is-4">
+                                    <b-field>
+                                        <b-radio native-value="1" 
+                                            name="is_criminally_charge"
+                                            v-model="fields.is_criminally_charge">Yes</b-radio>
+                                        <b-radio native-value="0" 
+                                            name="is_criminally_charge"
+                                            v-model="fields.is_criminally_charge">No</b-radio>
+                                    </b-field>
+                                    <b-field label="If YES, details" label-position="on-border">
+                                        <b-input type="text" v-model="fields.is_criminally_charge_yes" placeholder="Details"></b-input>
+                                    </b-field>
+                                    <b-field label="Date Filed" label-position="on-border">
+                                        <b-input type="text" v-model="fields.date_filed" placeholder="Date FIled"></b-input>
+                                    </b-field>
+                                    <b-field label="Status of the case" label-position="on-border">
+                                        <b-input type="text" v-model="fields.case_status" placeholder="Status of the case"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="divider-gray"></div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    Have you ever been convicted of any crime or violation of any law, decree, ordinance or regulation by any court or tribunal?
+                                </div>
+                                <div class="column is-4">
+                                    <b-field>
+                                        <b-radio native-value="1" 
+                                            name="is_convicted"
+                                            v-model="fields.is_convicted">Yes</b-radio>
+                                        <b-radio native-value="0" 
+                                            name="is_convicted"
+                                            v-model="fields.is_convicted">No</b-radio>
+                                    </b-field>
+                                    <b-field label="If YES, details" label-position="on-border">
+                                        <b-input type="text" v-model="fields.is_convicted_yes" placeholder="Details"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="divider-gray"></div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    Have you ever been separated from the service in any of the following modes: resignation, retirement, dropped from the rolls, dismissal, termination, end of term, finished contract or phased out (abolition) in the public or private sector?
+                                </div>
+                                <div class="column is-4">
+                                    <b-field>
+                                        <b-radio native-value="1" 
+                                            name="is_separated"
+                                            v-model="fields.is_separated">Yes</b-radio>
+                                        <b-radio native-value="0" 
+                                            name="is_separated"
+                                            v-model="fields.is_separated">No</b-radio>
+                                    </b-field>
+                                    <b-field label="If YES, details" label-position="on-border">
+                                        <b-input type="text" v-model="fields.is_separated_yes_details" placeholder="Details"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="divider-gray"></div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    Have you ever been a candidate in a national or local election held within the last year (except Barangay election)?
+                                </div>
+
+                                <div class="column is-4">
+                                    <b-field>
+                                        <b-radio native-value="1"
+                                            name="is_candidate_election"
+                                            v-model="fields.is_candidate_election">Yes</b-radio>
+                                        <b-radio native-value="0" 
+                                            name="is_candidate_election"
+                                            v-model="fields.is_candidate_election">No</b-radio>
+                                    </b-field>
+                                    <b-field label="If YES, details" label-position="on-border">
+                                        <b-input type="text" v-model="fields.is_candiadte_election_yes" placeholder="Details"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    Have you resigned from the government service during the three (3)-month period before the last election to promote/actively campaign for a national or local candidate?
+                                </div>
+                                <div class="column is-4">
+                                    <b-field>
+                                        <b-radio native-value="1" 
+                                            name="is_resigned"
+                                            v-model="fields.is_resigned">Yes</b-radio>
+                                        <b-radio native-value="0" 
+                                            name="is_resigned"
+                                            v-model="fields.is_resigned">No</b-radio>
+                                    </b-field>
+                                    <b-field label="If YES, details" label-position="on-border">
+                                        <b-input type="text" v-model="fields.is_resigned_yes" placeholder="Details"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="divider-gray"></div>
+                            
+                            <div class="columns">
+                                <div class="column">
+                                    Have you acquired the status of an immigrant or permanent resident of another country?
+                                </div>
+                                <div class="column is-4">
+                                    <b-field>
+                                        <b-radio native-value="1"
+                                            name="is_immigrant"
+                                            v-model="fields.is_immigrant">Yes</b-radio>
+                                        <b-radio native-value="0" 
+                                            name="is_immigrant"
+                                            v-model="fields.is_immigrant">No</b-radio>
+                                    </b-field>
+                                    <b-field label="If YES, details(country)" label-position="on-border">
+                                        <b-input type="text" v-model="fields.is_immigrant_yes" placeholder="Details"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="divider-gray"></div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    Pursuant to: (a) Indigenous People's Act (RA 8371); (b) Magna Carta for Disabled Persons (RA 7277); and (c) Solo Parents Welfare Act of 2000 (RA 8972), please answer the following items:
+                                </div>
+                                <div class="column is-4"></div>
+                            </div>
+                            <div class="columns">
+                                <div class="column">
+                                    Are you a member of any indigenous group?
+                                </div>
+                                <div class="column is-4">
+                                    <b-field>
+                                        <b-radio native-value="1" 
+                                            name="is_indigenous"
+                                            v-model="fields.is_indigenous">Yes</b-radio>
+                                        <b-radio native-value="0" 
+                                            name="is_indigenous"
+                                            v-model="fields.is_indigenous">No</b-radio>
+                                    </b-field>
+                                    <b-field label="If YES, details" label-position="on-border">
+                                        <b-input type="text" v-model="fields.is_indigenous_yes" placeholder="Details"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <div class="column">
+                                    Are you a person with disability?
+                                </div>
+                                <div class="column is-4">
+                                    <b-field>
+                                        <b-radio native-value="1" 
+                                            name="is_disable"
+                                            v-model="fields.is_disable">Yes</b-radio>
+                                        <b-radio native-value="0" 
+                                            name="is_disable"
+                                            v-model="fields.is_disable">No</b-radio>
+                                    </b-field>
+                                    <b-field label="If YES, ID No." label-position="on-border">
+                                        <b-input type="text" v-model="fields.is_disable_id_no" placeholder="Details"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    Are you a solo parent?
+                                </div>
+                                <div class="column is-4">
+                                    <b-field>
+                                        <b-radio native-value="1" 
+                                            name="is_solo_parent" 
+                                            v-model="fields.is_solo_parent">Yes</b-radio>
+                                        <b-radio native-value="0" 
+                                            name="is_solo_parent"
+                                            v-model="fields.is_solo_parent">No</b-radio>
+                                    </b-field>
+                                    <b-field label="If YES, ID No." label-position="on-border">
+                                        <b-input type="text" v-model="fields.is_solo_parent_yes" placeholder="Details"></b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="divider-gray"></div>
                         </b-step-item>
 
 
@@ -1167,68 +1383,36 @@ export default {
                 });
             })
 
+            //page 4 PDS
+            this.fields.related_with_third_degree = this.user.related_with_third_degree;
+            this.fields.related_with_fourth_degree = this.user.related_with_fourth_degree;
+            this.fields.related_with_fourth_degree_yes = this.user.related_with_fourth_degree_yes;
+            this.fields.is_guilty_administrative_offense = this.user.is_guilty_administrative_offense;
+            this.fields.is_guilty_administrative_offense_yes = this.user.is_guilty_administrative_offense_yes;
+            this.fields.is_criminally_charge = this.user.is_criminally_charge;
+            this.fields.is_criminally_charge_yes = this.user.is_criminally_charge_yes;
+            this.fields.date_filed = this.user.date_filed;
+            this.fields.case_status = this.user.case_status;
+            this.fields.is_convicted = this.user.is_convicted;
+            this.fields.is_convicted_yes = this.user.is_convicted_yes;
+            this.fields.is_separated = this.user.is_separated;
+            this.fields.is_separated_yes_details = this.user.is_separated_yes_details;
+            this.fields.is_candidate_election = this.user.is_candidate_election;
+            this.fields.is_candiadte_election_yes = this.user.is_candiadte_election_yes;
+            this.fields.is_resigned = this.user.is_resigned;
+            this.fields.is_resigned = this.user.is_resigned;
+            this.fields.is_resigned_yes = this.user.is_resigned_yes;
+            this.fields.is_immigrant_yes = this.user.is_immigrant_yes;
+            this.fields.is_indigenous = this.user.is_indigenous;
+            this.fields.is_indigenous_yes = this.user.is_indigenous_yes;
+            this.fields.is_disable = this.user.is_disable;
+            this.fields.is_disable_id_no = this.user.is_disable_id_no;
+            this.fields.is_solo_parent = this.user.is_solo_parent;
+            this.fields.is_solo_parent_yes = this.user.is_solo_parent_yes;
 
         },
 
         submit(){
-
-           // console.log(this.fields.learning_developments[0])
-            let formData = new FormData();
-
-            formData.append('surname', this.fields.surname);
-            formData.append('fname', this.fields.fname);
-            formData.append('mname', this.fields.mname);
-            formData.append('suffix', this.fields.suffix);
-            formData.append('sex', this.fields.sex);
-            formData.append('date_birth', new Date(this.user.date_birth));
-            formData.append('place_birth', this.fields.place_birth);
-            formData.append('civil_status', this.fields.civil_status);
-            formData.append('height', this.fields.height);
-            formData.append('weight', this.fields.weight);
-            formData.append('blood_type', this.fields.blood_type);
-            formData.append('gsis', this.fields.gsis);
-            formData.append('pagibig', this.fields.pagibig);
-            formData.append('philhealth', this.fields.philhealth);
-            formData.append('sss', this.fields.sss);
-            formData.append('tin', this.fields.tin);
-            formData.append('agency_idno', this.fields.agency_idno);
-            formData.append('citizenship', this.fields.citizenship);
-
-            //spouse
-            formData.append('spouse_surname', this.fields.spouse_surname);
-            formData.append('spouse_fname', this.fields.spouse_fname);
-            formData.append('spouse_mname', this.fields.spouse_mname);
-            formData.append('spouse_suffix', this.fields.spouse_suffix);
-
-
-            //businees
-            formData.append('business_name', this.fields.business_name);
-            formData.append('business_address', this.fields.business_address);
-            formData.append('business_contact_no', this.fields.business_contact_no);
-
-            //father
-            formData.append('father_surname', this.fields.father_surname);
-            formData.append('father_fname', this.fields.father_fname);
-            formData.append('father_mname', this.fields.father_mname);
-            formData.append('father_suffix', this.fields.father_suffix);
-
-            //mother
-            formData.append('mother_maiden_name', this.fields.mother_maiden_name);
-            formData.append('mother_fname', this.fields.mother_fname);
-            formData.append('mother_mname', this.fields.mother_mname);
-            formData.append('mother_suffix', this.fields.mother_suffix);
-
-
-            this.fields.learning_developments.forEach(item => {
-                formData.append('learning_dev_id', item.learning_dev_id);
-                formData.append('learning_dev', item.learning_dev);
-                formData.append('date_from', new Date(item.date_from));
-                formData.append('date_to', new Date(item.date_to));
-                formData.append('no_hours', item.no_hours);
-                formData.append('type_ld', item.type_ld);
-                formData.append('sponsored_by', item.sponsored_by);
-            });
-
 
             //formData.append('fields', this.fields);
             axios.post('/faculty/personal-data-sheet-update/' + this.user.user_id, this.fields).then(res=>{

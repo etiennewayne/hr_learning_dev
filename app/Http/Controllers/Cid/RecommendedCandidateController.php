@@ -9,6 +9,8 @@ use App\Models\RecommendedTeacherList;
 use App\Models\SeminarPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\FacultyParticipant;
+
 
 class RecommendedCandidateController extends Controller
 {
@@ -44,6 +46,12 @@ class RecommendedCandidateController extends Controller
                 ->orderBy('no_seminars', 'asc')
                 ->get();
         return $data;
+    }
+
+    public function getRequestTeacher(){
+        $data = FacultyParticipant::orderBy('faculty_participant_id', 'asc')
+            ->get();
+            return $data;
     }
 
 

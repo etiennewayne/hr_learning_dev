@@ -47,6 +47,14 @@
                         <div class="post-img-container" v-if="seminar.img_path">
                             <img :src="`/storage/seminars/${seminar.img_path}`" class="post-img" />
                         </div>
+
+                        <div class="box-post-footer">
+                            <div class="buttons is-right">
+                                <b-button label="Request Participation"
+                                    @click="imIn(seminar)"
+                                    type="is-primary"></b-button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,7 +70,7 @@ export default{
     data(){
         return{
             serminars:[],
-
+            fields: {},
         }
     },
 
@@ -74,6 +82,25 @@ export default{
 
             })
         },
+
+        imIn(post){
+           
+            this.fields = post;
+
+            //console.log(postId);
+            axios.post('/seminar-im-in', this.fields).then(res=>{
+                if(res.data.status === 'saved'){
+                    this.$buefy.dialog.alert({
+                        title: "Saved!",
+                        message: 'Request recorded successfully.',
+                        type: 'is-success',
+                        onConfirm: ()=>  this.loadSeminars()
+                    });
+                }
+            }).catch(err=>{
+            
+            })
+        }
     },
 
     mounted(){
@@ -86,5 +113,9 @@ export default{
 <style scoped>
     .home-hero{
         height: 100vh;
+    }
+
+    .box-post-footer{
+        padding: 25px;
     }
 </style>

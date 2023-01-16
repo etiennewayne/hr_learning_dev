@@ -4535,6 +4535,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
+      rawdata: [],
       data: [],
       specialization: null,
       fields: {
@@ -4547,7 +4548,8 @@ __webpack_require__.r(__webpack_exports__);
         specialization: ''
       },
       modalTeacher: false,
-      seminars: []
+      seminars: [],
+      request_teacher: []
     };
   },
   methods: {
@@ -4556,22 +4558,62 @@ __webpack_require__.r(__webpack_exports__);
 
       var params = ["lname=".concat(this.search.lname), "specialization=".concat(this.specialization.specialization)].join('&');
       axios.get("/generate-list?".concat(params)).then(function (res) {
-        _this.data = res.data;
+        //this.rawData = res.data
+        res.data.forEach(function (el) {
+          _this.data.push({
+            civil_status: el.civil_status,
+            fname: el.fname,
+            lname: el.lname,
+            mname: el.mname,
+            no_seminars: el.no_seminars,
+            role: el.role,
+            sex: el.sex,
+            specialization: el.specialization,
+            suffix: el.suffix,
+            user_id: el.user_id
+          });
+        });
+
+        _this.request_teacher.forEach(function (el) {
+          _this.data.push({
+            civil_status: '',
+            fname: el.fname,
+            lname: el.lname,
+            mname: el.mname,
+            no_seminars: '',
+            role: '',
+            sex: el.sex,
+            specialization: el.specialization,
+            suffix: '',
+            user_id: el.teacher_id
+          });
+        });
+      })["catch"](function (err) {});
+    },
+    getTeacherList: function getTeacherList() {
+      var _this2 = this;
+
+      this.data = [];
+      this.request_teacher = [];
+      axios.get("/get-request-teacher").then(function (res) {
+        console.log(res.data);
+        _this2.request_teacher = res.data;
+
+        _this2.generateList();
       })["catch"](function (err) {});
     },
     loadSeminars: function loadSeminars() {
-      var _this2 = this;
+      var _this3 = this;
 
       axios.get('/cid/get-seminar-specialization-list').then(function (res) {
-        _this2.seminars = res.data;
-        console.log(_this2.seminars);
+        _this3.seminars = res.data;
       });
     },
     openModalSubmitList: function openModalSubmitList() {
       this.modalTeacher = true;
     },
     submit: function submit() {
-      var _this3 = this;
+      var _this4 = this;
 
       this.fields.teachers = [];
       this.fields.seminar_post_id = this.specialization.seminar_post_id;
@@ -4579,7 +4621,7 @@ __webpack_require__.r(__webpack_exports__);
       this.data.forEach(function (el) {
         if (el.select) {
           //if check, push to fields
-          _this3.fields.teachers.push({
+          _this4.fields.teachers.push({
             user_id: el.user_id,
             lname: el.lname,
             fname: el.fname,
@@ -4592,19 +4634,21 @@ __webpack_require__.r(__webpack_exports__);
       });
       axios.post('/cid/submit-teachers-list', this.fields).then(function (res) {
         if (res.data.status === 'saved') {
-          _this3.$buefy.dialog.alert({
+          _this4.$buefy.dialog.alert({
             title: 'Saved!',
             type: 'is-success',
             message: 'Successfully saved.'
           });
         }
 
-        _this3.modalTeacher = false;
-        _this3.fields.seminar_post_id = 0;
-        _this3.fields.seminar_title = '';
-        _this3.fields.teachers = [];
+        _this4.modalTeacher = false;
+        _this4.fields.seminar_post_id = 0;
+        _this4.fields.seminar_title = '';
+        _this4.fields.teachers = [];
+        _this4.data = [];
+        _this4.request_teacher = [];
 
-        _this3.generateList();
+        _this4.generateList();
       });
     },
     changeValue: function changeValue(i) {
@@ -4985,10 +5029,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      serminars: []
+      serminars: [],
+      fields: {}
     };
   },
   methods: {
@@ -4997,6 +5050,24 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get('/hrld/get-seminars').then(function (res) {
         _this.serminars = res.data;
+      })["catch"](function (err) {});
+    },
+    imIn: function imIn(post) {
+      var _this2 = this;
+
+      this.fields = post; //console.log(postId);
+
+      axios.post('/seminar-im-in', this.fields).then(function (res) {
+        if (res.data.status === 'saved') {
+          _this2.$buefy.dialog.alert({
+            title: "Saved!",
+            message: 'Request recorded successfully.',
+            type: 'is-success',
+            onConfirm: function onConfirm() {
+              return _this2.loadSeminars();
+            }
+          });
+        }
       })["catch"](function (err) {});
     }
   },
@@ -6156,6 +6227,222 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['propCivils', 'propCitizenships', 'propData'],
   data: function data() {
@@ -6387,60 +6674,38 @@ __webpack_require__.r(__webpack_exports__);
           non_academic_distinction: info.non_academic_distinction,
           member_association: info.member_association
         });
-      });
+      }); //page 4 PDS
+
+      this.fields.related_with_third_degree = this.user.related_with_third_degree;
+      this.fields.related_with_fourth_degree = this.user.related_with_fourth_degree;
+      this.fields.related_with_fourth_degree_yes = this.user.related_with_fourth_degree_yes;
+      this.fields.is_guilty_administrative_offense = this.user.is_guilty_administrative_offense;
+      this.fields.is_guilty_administrative_offense_yes = this.user.is_guilty_administrative_offense_yes;
+      this.fields.is_criminally_charge = this.user.is_criminally_charge;
+      this.fields.is_criminally_charge_yes = this.user.is_criminally_charge_yes;
+      this.fields.date_filed = this.user.date_filed;
+      this.fields.case_status = this.user.case_status;
+      this.fields.is_convicted = this.user.is_convicted;
+      this.fields.is_convicted_yes = this.user.is_convicted_yes;
+      this.fields.is_separated = this.user.is_separated;
+      this.fields.is_separated_yes_details = this.user.is_separated_yes_details;
+      this.fields.is_candidate_election = this.user.is_candidate_election;
+      this.fields.is_candiadte_election_yes = this.user.is_candiadte_election_yes;
+      this.fields.is_resigned = this.user.is_resigned;
+      this.fields.is_resigned = this.user.is_resigned;
+      this.fields.is_resigned_yes = this.user.is_resigned_yes;
+      this.fields.is_immigrant_yes = this.user.is_immigrant_yes;
+      this.fields.is_indigenous = this.user.is_indigenous;
+      this.fields.is_indigenous_yes = this.user.is_indigenous_yes;
+      this.fields.is_disable = this.user.is_disable;
+      this.fields.is_disable_id_no = this.user.is_disable_id_no;
+      this.fields.is_solo_parent = this.user.is_solo_parent;
+      this.fields.is_solo_parent_yes = this.user.is_solo_parent_yes;
     },
     submit: function submit() {
       var _this7 = this;
 
-      // console.log(this.fields.learning_developments[0])
-      var formData = new FormData();
-      formData.append('surname', this.fields.surname);
-      formData.append('fname', this.fields.fname);
-      formData.append('mname', this.fields.mname);
-      formData.append('suffix', this.fields.suffix);
-      formData.append('sex', this.fields.sex);
-      formData.append('date_birth', new Date(this.user.date_birth));
-      formData.append('place_birth', this.fields.place_birth);
-      formData.append('civil_status', this.fields.civil_status);
-      formData.append('height', this.fields.height);
-      formData.append('weight', this.fields.weight);
-      formData.append('blood_type', this.fields.blood_type);
-      formData.append('gsis', this.fields.gsis);
-      formData.append('pagibig', this.fields.pagibig);
-      formData.append('philhealth', this.fields.philhealth);
-      formData.append('sss', this.fields.sss);
-      formData.append('tin', this.fields.tin);
-      formData.append('agency_idno', this.fields.agency_idno);
-      formData.append('citizenship', this.fields.citizenship); //spouse
-
-      formData.append('spouse_surname', this.fields.spouse_surname);
-      formData.append('spouse_fname', this.fields.spouse_fname);
-      formData.append('spouse_mname', this.fields.spouse_mname);
-      formData.append('spouse_suffix', this.fields.spouse_suffix); //businees
-
-      formData.append('business_name', this.fields.business_name);
-      formData.append('business_address', this.fields.business_address);
-      formData.append('business_contact_no', this.fields.business_contact_no); //father
-
-      formData.append('father_surname', this.fields.father_surname);
-      formData.append('father_fname', this.fields.father_fname);
-      formData.append('father_mname', this.fields.father_mname);
-      formData.append('father_suffix', this.fields.father_suffix); //mother
-
-      formData.append('mother_maiden_name', this.fields.mother_maiden_name);
-      formData.append('mother_fname', this.fields.mother_fname);
-      formData.append('mother_mname', this.fields.mother_mname);
-      formData.append('mother_suffix', this.fields.mother_suffix);
-      this.fields.learning_developments.forEach(function (item) {
-        formData.append('learning_dev_id', item.learning_dev_id);
-        formData.append('learning_dev', item.learning_dev);
-        formData.append('date_from', new Date(item.date_from));
-        formData.append('date_to', new Date(item.date_to));
-        formData.append('no_hours', item.no_hours);
-        formData.append('type_ld', item.type_ld);
-        formData.append('sponsored_by', item.sponsored_by);
-      }); //formData.append('fields', this.fields);
-
+      //formData.append('fields', this.fields);
       axios.post('/faculty/personal-data-sheet-update/' + this.user.user_id, this.fields).then(function (res) {
         if (res.data.status === 'saved') {
           _this7.$buefy.dialog.alert({
@@ -28374,7 +28639,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.home-hero[data-v-5fe1ebfd]{\n    height: 100vh;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.home-hero[data-v-5fe1ebfd]{\n    height: 100vh;\n}\n.box-post-footer[data-v-5fe1ebfd]{\n    padding: 25px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28734,7 +28999,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.my-hero-container[data-v-a4d20914]{\n    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(\"/img/banner.png\");\n    /* background-image: url(\"/img/banner.jpg\"); */\n    height: 100vh;\n    background-position: center;\n    background-repeat: no-repeat;\n    background-size: cover;\n    position: relative;\n}\n.hero-text[data-v-a4d20914] {\n    text-align: center;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    color: white;\n}\n@media only screen and (max-width: 1024px) {\n}\n@media only screen and (max-width: 768px) {\n.main-text-container[data-v-a4d20914]{\n        top: 230px;\n        width: 100%;\n        margin: 0;\n}\n}\n@media only screen and (max-width: 480px) {\n.main-text-container[data-v-a4d20914]{\n        padding: 15px;\n}\n.main-title[data-v-a4d20914]{\n        font-size: 1.2em;\n}\n.main-subtitle[data-v-a4d20914]{\n        font-size: .8em;\n}\n}\n\n\n\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.my-hero-container[data-v-a4d20914]{\n    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(\"/img/banner.jpg\");\n    /* background-image: url(\"/img/banner.jpg\"); */\n    height: 100vh;\n    background-position: center;\n    background-repeat: no-repeat;\n    background-size: cover;\n    position: relative;\n}\n.hero-text[data-v-a4d20914] {\n    text-align: center;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    color: white;\n}\n@media only screen and (max-width: 1024px) {\n}\n@media only screen and (max-width: 768px) {\n.main-text-container[data-v-a4d20914]{\n        top: 230px;\n        width: 100%;\n        margin: 0;\n}\n}\n@media only screen and (max-width: 480px) {\n.main-text-container[data-v-a4d20914]{\n        padding: 15px;\n}\n.main-title[data-v-a4d20914]{\n        font-size: 1.2em;\n}\n.main-subtitle[data-v-a4d20914]{\n        font-size: .8em;\n}\n}\n\n\n\n\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -36891,7 +37156,7 @@ var render = function () {
                     _c("b-button", {
                       staticClass: "expanded",
                       attrs: { type: "is-primary", label: "..." },
-                      on: { click: _vm.generateList },
+                      on: { click: _vm.getTeacherList },
                     }),
                   ],
                   1
@@ -37638,6 +37903,27 @@ var render = function () {
                     }),
                   ])
                 : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "box-post-footer" }, [
+                _c(
+                  "div",
+                  { staticClass: "buttons is-right" },
+                  [
+                    _c("b-button", {
+                      attrs: {
+                        label: "Request Participation",
+                        type: "is-primary",
+                      },
+                      on: {
+                        click: function ($event) {
+                          return _vm.imIn(seminar)
+                        },
+                      },
+                    }),
+                  ],
+                  1
+                ),
+              ]),
             ])
           }),
           0
@@ -38529,7 +38815,7 @@ var render = function () {
                             {
                               attrs: {
                                 "label-position": "on-border",
-                                label: "Weight(m)",
+                                label: "Weight(kg)",
                                 type: this.errors.weight ? "is-danger" : "",
                                 message: this.errors.weight
                                   ? this.errors.weight[0]
@@ -38540,7 +38826,7 @@ var render = function () {
                               _c("b-input", {
                                 attrs: {
                                   icon: "weight",
-                                  placeholder: "Weight(m)",
+                                  placeholder: "Weight(kg)",
                                 },
                                 model: {
                                   value: _vm.fields.weight,
@@ -38592,20 +38878,36 @@ var render = function () {
                                   },
                                 },
                                 [
-                                  _c("option", { attrs: { value: "O" } }, [
-                                    _vm._v("O"),
+                                  _c("option", { attrs: { value: "O+" } }, [
+                                    _vm._v("O+"),
                                   ]),
                                   _vm._v(" "),
-                                  _c("option", { attrs: { value: "A" } }, [
-                                    _vm._v("A"),
+                                  _c("option", { attrs: { value: "O-" } }, [
+                                    _vm._v("O-"),
                                   ]),
                                   _vm._v(" "),
-                                  _c("option", { attrs: { value: "B" } }, [
-                                    _vm._v("B"),
+                                  _c("option", { attrs: { value: "A+" } }, [
+                                    _vm._v("A+"),
                                   ]),
                                   _vm._v(" "),
-                                  _c("option", { attrs: { value: "AB" } }, [
-                                    _vm._v("AB"),
+                                  _c("option", { attrs: { value: "A-" } }, [
+                                    _vm._v("A-"),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("option", { attrs: { value: "B+" } }, [
+                                    _vm._v("B+"),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("option", { attrs: { value: "B-" } }, [
+                                    _vm._v("B-"),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("option", { attrs: { value: "AB+" } }, [
+                                    _vm._v("AB+"),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("option", { attrs: { value: "AB-" } }, [
+                                    _vm._v("AB-"),
                                   ]),
                                 ]
                               ),
@@ -41974,7 +42276,7 @@ var render = function () {
                                   "b-field",
                                   {
                                     attrs: {
-                                      label: "Special Skill & Hobbies",
+                                      label: "Specialization",
                                       "label-position": "on-border",
                                     },
                                   },
@@ -42185,7 +42487,7 @@ var render = function () {
                       _c("div", { staticClass: "column" }, [
                         _c("div", [
                           _vm._v(
-                            "\n                                        Are you related by consanguinity or affinity to the appointing or recommending authority, or to the chief of bureau or office or to the person who has immediate supervision over you in the Office, Bureau or Department where you will be apppointed,\n\n                                        a. within the third degree?\n\n                                        b. within the fourth degree (for Local Government Unit - Career Employees\n                                    "
+                            "\n                                        Are you related by consanguinity or affinity to the appointing or recommending authority, or to the chief of bureau or office or to the person who has immediate supervision over you in the Office, Bureau or Department where you will be apppointed,\n                                    "
                           ),
                         ]),
                       ]),
@@ -42196,7 +42498,7 @@ var render = function () {
                     _c("div", { staticClass: "columns" }, [
                       _c("div", { staticClass: "column" }, [
                         _vm._v(
-                          "\n                                    a. Have you ever been found guilty of any administrative offense?\n                                "
+                          "\n                                    a. within the third degree?\n                                "
                         ),
                       ]),
                       _vm._v(" "),
@@ -42207,9 +42509,51 @@ var render = function () {
                           _c(
                             "b-field",
                             [
-                              _c("b-checkbox", [_vm._v("Yes")]),
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "1",
+                                    name: "related_with_third_degree",
+                                  },
+                                  model: {
+                                    value: _vm.fields.related_with_third_degree,
+                                    callback: function ($$v) {
+                                      _vm.$set(
+                                        _vm.fields,
+                                        "related_with_third_degree",
+                                        $$v
+                                      )
+                                    },
+                                    expression:
+                                      "fields.related_with_third_degree",
+                                  },
+                                },
+                                [_vm._v("Yes")]
+                              ),
                               _vm._v(" "),
-                              _c("b-checkbox", [_vm._v("No")]),
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "0",
+                                    name: "related_with_third_degree",
+                                  },
+                                  model: {
+                                    value: _vm.fields.related_with_third_degree,
+                                    callback: function ($$v) {
+                                      _vm.$set(
+                                        _vm.fields,
+                                        "related_with_third_degree",
+                                        $$v
+                                      )
+                                    },
+                                    expression:
+                                      "fields.related_with_third_degree",
+                                  },
+                                },
+                                [_vm._v("No")]
+                              ),
                             ],
                             1
                           ),
@@ -42232,9 +42576,82 @@ var render = function () {
                           _c(
                             "b-field",
                             [
-                              _c("b-checkbox", [_vm._v("Yes")]),
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "1",
+                                    name: "related_with_fourth_degree",
+                                  },
+                                  model: {
+                                    value:
+                                      _vm.fields.related_with_fourth_degree,
+                                    callback: function ($$v) {
+                                      _vm.$set(
+                                        _vm.fields,
+                                        "related_with_fourth_degree",
+                                        $$v
+                                      )
+                                    },
+                                    expression:
+                                      "fields.related_with_fourth_degree",
+                                  },
+                                },
+                                [_vm._v("Yes")]
+                              ),
                               _vm._v(" "),
-                              _c("b-checkbox", [_vm._v("No")]),
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "0",
+                                    name: "related_with_fourth_degree",
+                                  },
+                                  model: {
+                                    value:
+                                      _vm.fields.related_with_fourth_degree,
+                                    callback: function ($$v) {
+                                      _vm.$set(
+                                        _vm.fields,
+                                        "related_with_fourth_degree",
+                                        $$v
+                                      )
+                                    },
+                                    expression:
+                                      "fields.related_with_fourth_degree",
+                                  },
+                                },
+                                [_vm._v("No")]
+                              ),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-field",
+                            {
+                              attrs: {
+                                label: "If YES, details",
+                                "label-position": "on-border",
+                              },
+                            },
+                            [
+                              _c("b-input", {
+                                attrs: { type: "text", placeholder: "Details" },
+                                model: {
+                                  value:
+                                    _vm.fields.related_with_fourth_degree_yes,
+                                  callback: function ($$v) {
+                                    _vm.$set(
+                                      _vm.fields,
+                                      "related_with_fourth_degree_yes",
+                                      $$v
+                                    )
+                                  },
+                                  expression:
+                                    "fields.related_with_fourth_degree_yes",
+                                },
+                              }),
                             ],
                             1
                           ),
@@ -42242,6 +42659,960 @@ var render = function () {
                         1
                       ),
                     ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "divider-gray" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "columns" }, [
+                      _c("div", { staticClass: "column" }, [
+                        _vm._v(
+                          "\n                                    Have you ever been found guilty of any administrative offense?\n                                "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "column is-4" },
+                        [
+                          _c(
+                            "b-field",
+                            [
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "1",
+                                    name: "is_guilty_administrative_offense",
+                                  },
+                                  model: {
+                                    value:
+                                      _vm.fields
+                                        .is_guilty_administrative_offense,
+                                    callback: function ($$v) {
+                                      _vm.$set(
+                                        _vm.fields,
+                                        "is_guilty_administrative_offense",
+                                        $$v
+                                      )
+                                    },
+                                    expression:
+                                      "fields.is_guilty_administrative_offense",
+                                  },
+                                },
+                                [_vm._v("Yes")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "0",
+                                    name: "is_guilty_administrative_offense",
+                                  },
+                                  model: {
+                                    value:
+                                      _vm.fields
+                                        .is_guilty_administrative_offense,
+                                    callback: function ($$v) {
+                                      _vm.$set(
+                                        _vm.fields,
+                                        "is_guilty_administrative_offense",
+                                        $$v
+                                      )
+                                    },
+                                    expression:
+                                      "fields.is_guilty_administrative_offense",
+                                  },
+                                },
+                                [_vm._v("No")]
+                              ),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-field",
+                            {
+                              attrs: {
+                                label: "If YES, details",
+                                "label-position": "on-border",
+                              },
+                            },
+                            [
+                              _c("b-input", {
+                                attrs: { type: "text", placeholder: "Details" },
+                                model: {
+                                  value:
+                                    _vm.fields
+                                      .is_guilty_administrative_offense_yes,
+                                  callback: function ($$v) {
+                                    _vm.$set(
+                                      _vm.fields,
+                                      "is_guilty_administrative_offense_yes",
+                                      $$v
+                                    )
+                                  },
+                                  expression:
+                                    "fields.is_guilty_administrative_offense_yes",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "columns" }, [
+                      _c("div", { staticClass: "column" }, [
+                        _vm._v(
+                          "\n                                    Have you been criminally charged before any court?\n                                "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "column is-4" },
+                        [
+                          _c(
+                            "b-field",
+                            [
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "1",
+                                    name: "is_criminally_charge",
+                                  },
+                                  model: {
+                                    value: _vm.fields.is_criminally_charge,
+                                    callback: function ($$v) {
+                                      _vm.$set(
+                                        _vm.fields,
+                                        "is_criminally_charge",
+                                        $$v
+                                      )
+                                    },
+                                    expression: "fields.is_criminally_charge",
+                                  },
+                                },
+                                [_vm._v("Yes")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "0",
+                                    name: "is_criminally_charge",
+                                  },
+                                  model: {
+                                    value: _vm.fields.is_criminally_charge,
+                                    callback: function ($$v) {
+                                      _vm.$set(
+                                        _vm.fields,
+                                        "is_criminally_charge",
+                                        $$v
+                                      )
+                                    },
+                                    expression: "fields.is_criminally_charge",
+                                  },
+                                },
+                                [_vm._v("No")]
+                              ),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-field",
+                            {
+                              attrs: {
+                                label: "If YES, details",
+                                "label-position": "on-border",
+                              },
+                            },
+                            [
+                              _c("b-input", {
+                                attrs: { type: "text", placeholder: "Details" },
+                                model: {
+                                  value: _vm.fields.is_criminally_charge_yes,
+                                  callback: function ($$v) {
+                                    _vm.$set(
+                                      _vm.fields,
+                                      "is_criminally_charge_yes",
+                                      $$v
+                                    )
+                                  },
+                                  expression: "fields.is_criminally_charge_yes",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-field",
+                            {
+                              attrs: {
+                                label: "Date Filed",
+                                "label-position": "on-border",
+                              },
+                            },
+                            [
+                              _c("b-input", {
+                                attrs: {
+                                  type: "text",
+                                  placeholder: "Date FIled",
+                                },
+                                model: {
+                                  value: _vm.fields.date_filed,
+                                  callback: function ($$v) {
+                                    _vm.$set(_vm.fields, "date_filed", $$v)
+                                  },
+                                  expression: "fields.date_filed",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-field",
+                            {
+                              attrs: {
+                                label: "Status of the case",
+                                "label-position": "on-border",
+                              },
+                            },
+                            [
+                              _c("b-input", {
+                                attrs: {
+                                  type: "text",
+                                  placeholder: "Status of the case",
+                                },
+                                model: {
+                                  value: _vm.fields.case_status,
+                                  callback: function ($$v) {
+                                    _vm.$set(_vm.fields, "case_status", $$v)
+                                  },
+                                  expression: "fields.case_status",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "divider-gray" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "columns" }, [
+                      _c("div", { staticClass: "column" }, [
+                        _vm._v(
+                          "\n                                    Have you ever been convicted of any crime or violation of any law, decree, ordinance or regulation by any court or tribunal?\n                                "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "column is-4" },
+                        [
+                          _c(
+                            "b-field",
+                            [
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "1",
+                                    name: "is_convicted",
+                                  },
+                                  model: {
+                                    value: _vm.fields.is_convicted,
+                                    callback: function ($$v) {
+                                      _vm.$set(_vm.fields, "is_convicted", $$v)
+                                    },
+                                    expression: "fields.is_convicted",
+                                  },
+                                },
+                                [_vm._v("Yes")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "0",
+                                    name: "is_convicted",
+                                  },
+                                  model: {
+                                    value: _vm.fields.is_convicted,
+                                    callback: function ($$v) {
+                                      _vm.$set(_vm.fields, "is_convicted", $$v)
+                                    },
+                                    expression: "fields.is_convicted",
+                                  },
+                                },
+                                [_vm._v("No")]
+                              ),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-field",
+                            {
+                              attrs: {
+                                label: "If YES, details",
+                                "label-position": "on-border",
+                              },
+                            },
+                            [
+                              _c("b-input", {
+                                attrs: { type: "text", placeholder: "Details" },
+                                model: {
+                                  value: _vm.fields.is_convicted_yes,
+                                  callback: function ($$v) {
+                                    _vm.$set(
+                                      _vm.fields,
+                                      "is_convicted_yes",
+                                      $$v
+                                    )
+                                  },
+                                  expression: "fields.is_convicted_yes",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "divider-gray" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "columns" }, [
+                      _c("div", { staticClass: "column" }, [
+                        _vm._v(
+                          "\n                                    Have you ever been separated from the service in any of the following modes: resignation, retirement, dropped from the rolls, dismissal, termination, end of term, finished contract or phased out (abolition) in the public or private sector?\n                                "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "column is-4" },
+                        [
+                          _c(
+                            "b-field",
+                            [
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "1",
+                                    name: "is_separated",
+                                  },
+                                  model: {
+                                    value: _vm.fields.is_separated,
+                                    callback: function ($$v) {
+                                      _vm.$set(_vm.fields, "is_separated", $$v)
+                                    },
+                                    expression: "fields.is_separated",
+                                  },
+                                },
+                                [_vm._v("Yes")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "0",
+                                    name: "is_separated",
+                                  },
+                                  model: {
+                                    value: _vm.fields.is_separated,
+                                    callback: function ($$v) {
+                                      _vm.$set(_vm.fields, "is_separated", $$v)
+                                    },
+                                    expression: "fields.is_separated",
+                                  },
+                                },
+                                [_vm._v("No")]
+                              ),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-field",
+                            {
+                              attrs: {
+                                label: "If YES, details",
+                                "label-position": "on-border",
+                              },
+                            },
+                            [
+                              _c("b-input", {
+                                attrs: { type: "text", placeholder: "Details" },
+                                model: {
+                                  value: _vm.fields.is_separated_yes_details,
+                                  callback: function ($$v) {
+                                    _vm.$set(
+                                      _vm.fields,
+                                      "is_separated_yes_details",
+                                      $$v
+                                    )
+                                  },
+                                  expression: "fields.is_separated_yes_details",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "divider-gray" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "columns" }, [
+                      _c("div", { staticClass: "column" }, [
+                        _vm._v(
+                          "\n                                    Have you ever been a candidate in a national or local election held within the last year (except Barangay election)?\n                                "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "column is-4" },
+                        [
+                          _c(
+                            "b-field",
+                            [
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "1",
+                                    name: "is_candidate_election",
+                                  },
+                                  model: {
+                                    value: _vm.fields.is_candidate_election,
+                                    callback: function ($$v) {
+                                      _vm.$set(
+                                        _vm.fields,
+                                        "is_candidate_election",
+                                        $$v
+                                      )
+                                    },
+                                    expression: "fields.is_candidate_election",
+                                  },
+                                },
+                                [_vm._v("Yes")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "0",
+                                    name: "is_candidate_election",
+                                  },
+                                  model: {
+                                    value: _vm.fields.is_candidate_election,
+                                    callback: function ($$v) {
+                                      _vm.$set(
+                                        _vm.fields,
+                                        "is_candidate_election",
+                                        $$v
+                                      )
+                                    },
+                                    expression: "fields.is_candidate_election",
+                                  },
+                                },
+                                [_vm._v("No")]
+                              ),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-field",
+                            {
+                              attrs: {
+                                label: "If YES, details",
+                                "label-position": "on-border",
+                              },
+                            },
+                            [
+                              _c("b-input", {
+                                attrs: { type: "text", placeholder: "Details" },
+                                model: {
+                                  value: _vm.fields.is_candiadte_election_yes,
+                                  callback: function ($$v) {
+                                    _vm.$set(
+                                      _vm.fields,
+                                      "is_candiadte_election_yes",
+                                      $$v
+                                    )
+                                  },
+                                  expression:
+                                    "fields.is_candiadte_election_yes",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "columns" }, [
+                      _c("div", { staticClass: "column" }, [
+                        _vm._v(
+                          "\n                                    Have you resigned from the government service during the three (3)-month period before the last election to promote/actively campaign for a national or local candidate?\n                                "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "column is-4" },
+                        [
+                          _c(
+                            "b-field",
+                            [
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "1",
+                                    name: "is_resigned",
+                                  },
+                                  model: {
+                                    value: _vm.fields.is_resigned,
+                                    callback: function ($$v) {
+                                      _vm.$set(_vm.fields, "is_resigned", $$v)
+                                    },
+                                    expression: "fields.is_resigned",
+                                  },
+                                },
+                                [_vm._v("Yes")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "0",
+                                    name: "is_resigned",
+                                  },
+                                  model: {
+                                    value: _vm.fields.is_resigned,
+                                    callback: function ($$v) {
+                                      _vm.$set(_vm.fields, "is_resigned", $$v)
+                                    },
+                                    expression: "fields.is_resigned",
+                                  },
+                                },
+                                [_vm._v("No")]
+                              ),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-field",
+                            {
+                              attrs: {
+                                label: "If YES, details",
+                                "label-position": "on-border",
+                              },
+                            },
+                            [
+                              _c("b-input", {
+                                attrs: { type: "text", placeholder: "Details" },
+                                model: {
+                                  value: _vm.fields.is_resigned_yes,
+                                  callback: function ($$v) {
+                                    _vm.$set(_vm.fields, "is_resigned_yes", $$v)
+                                  },
+                                  expression: "fields.is_resigned_yes",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "divider-gray" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "columns" }, [
+                      _c("div", { staticClass: "column" }, [
+                        _vm._v(
+                          "\n                                    Have you acquired the status of an immigrant or permanent resident of another country?\n                                "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "column is-4" },
+                        [
+                          _c(
+                            "b-field",
+                            [
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "1",
+                                    name: "is_immigrant",
+                                  },
+                                  model: {
+                                    value: _vm.fields.is_immigrant,
+                                    callback: function ($$v) {
+                                      _vm.$set(_vm.fields, "is_immigrant", $$v)
+                                    },
+                                    expression: "fields.is_immigrant",
+                                  },
+                                },
+                                [_vm._v("Yes")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "0",
+                                    name: "is_immigrant",
+                                  },
+                                  model: {
+                                    value: _vm.fields.is_immigrant,
+                                    callback: function ($$v) {
+                                      _vm.$set(_vm.fields, "is_immigrant", $$v)
+                                    },
+                                    expression: "fields.is_immigrant",
+                                  },
+                                },
+                                [_vm._v("No")]
+                              ),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-field",
+                            {
+                              attrs: {
+                                label: "If YES, details(country)",
+                                "label-position": "on-border",
+                              },
+                            },
+                            [
+                              _c("b-input", {
+                                attrs: { type: "text", placeholder: "Details" },
+                                model: {
+                                  value: _vm.fields.is_immigrant_yes,
+                                  callback: function ($$v) {
+                                    _vm.$set(
+                                      _vm.fields,
+                                      "is_immigrant_yes",
+                                      $$v
+                                    )
+                                  },
+                                  expression: "fields.is_immigrant_yes",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "divider-gray" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "columns" }, [
+                      _c("div", { staticClass: "column" }, [
+                        _vm._v(
+                          "\n                                    Pursuant to: (a) Indigenous People's Act (RA 8371); (b) Magna Carta for Disabled Persons (RA 7277); and (c) Solo Parents Welfare Act of 2000 (RA 8972), please answer the following items:\n                                "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "column is-4" }),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "columns" }, [
+                      _c("div", { staticClass: "column" }, [
+                        _vm._v(
+                          "\n                                    Are you a member of any indigenous group?\n                                "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "column is-4" },
+                        [
+                          _c(
+                            "b-field",
+                            [
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "1",
+                                    name: "is_indigenous",
+                                  },
+                                  model: {
+                                    value: _vm.fields.is_indigenous,
+                                    callback: function ($$v) {
+                                      _vm.$set(_vm.fields, "is_indigenous", $$v)
+                                    },
+                                    expression: "fields.is_indigenous",
+                                  },
+                                },
+                                [_vm._v("Yes")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "0",
+                                    name: "is_indigenous",
+                                  },
+                                  model: {
+                                    value: _vm.fields.is_indigenous,
+                                    callback: function ($$v) {
+                                      _vm.$set(_vm.fields, "is_indigenous", $$v)
+                                    },
+                                    expression: "fields.is_indigenous",
+                                  },
+                                },
+                                [_vm._v("No")]
+                              ),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-field",
+                            {
+                              attrs: {
+                                label: "If YES, details",
+                                "label-position": "on-border",
+                              },
+                            },
+                            [
+                              _c("b-input", {
+                                attrs: { type: "text", placeholder: "Details" },
+                                model: {
+                                  value: _vm.fields.is_indigenous_yes,
+                                  callback: function ($$v) {
+                                    _vm.$set(
+                                      _vm.fields,
+                                      "is_indigenous_yes",
+                                      $$v
+                                    )
+                                  },
+                                  expression: "fields.is_indigenous_yes",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "columns" }, [
+                      _c("div", { staticClass: "column" }, [
+                        _vm._v(
+                          "\n                                    Are you a person with disability?\n                                "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "column is-4" },
+                        [
+                          _c(
+                            "b-field",
+                            [
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "1",
+                                    name: "is_disable",
+                                  },
+                                  model: {
+                                    value: _vm.fields.is_disable,
+                                    callback: function ($$v) {
+                                      _vm.$set(_vm.fields, "is_disable", $$v)
+                                    },
+                                    expression: "fields.is_disable",
+                                  },
+                                },
+                                [_vm._v("Yes")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "0",
+                                    name: "is_disable",
+                                  },
+                                  model: {
+                                    value: _vm.fields.is_disable,
+                                    callback: function ($$v) {
+                                      _vm.$set(_vm.fields, "is_disable", $$v)
+                                    },
+                                    expression: "fields.is_disable",
+                                  },
+                                },
+                                [_vm._v("No")]
+                              ),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-field",
+                            {
+                              attrs: {
+                                label: "If YES, ID No.",
+                                "label-position": "on-border",
+                              },
+                            },
+                            [
+                              _c("b-input", {
+                                attrs: { type: "text", placeholder: "Details" },
+                                model: {
+                                  value: _vm.fields.is_disable_id_no,
+                                  callback: function ($$v) {
+                                    _vm.$set(
+                                      _vm.fields,
+                                      "is_disable_id_no",
+                                      $$v
+                                    )
+                                  },
+                                  expression: "fields.is_disable_id_no",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "columns" }, [
+                      _c("div", { staticClass: "column" }, [
+                        _vm._v(
+                          "\n                                    Are you a solo parent?\n                                "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "column is-4" },
+                        [
+                          _c(
+                            "b-field",
+                            [
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "1",
+                                    name: "is_solo_parent",
+                                  },
+                                  model: {
+                                    value: _vm.fields.is_solo_parent,
+                                    callback: function ($$v) {
+                                      _vm.$set(
+                                        _vm.fields,
+                                        "is_solo_parent",
+                                        $$v
+                                      )
+                                    },
+                                    expression: "fields.is_solo_parent",
+                                  },
+                                },
+                                [_vm._v("Yes")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-radio",
+                                {
+                                  attrs: {
+                                    "native-value": "0",
+                                    name: "is_solo_parent",
+                                  },
+                                  model: {
+                                    value: _vm.fields.is_solo_parent,
+                                    callback: function ($$v) {
+                                      _vm.$set(
+                                        _vm.fields,
+                                        "is_solo_parent",
+                                        $$v
+                                      )
+                                    },
+                                    expression: "fields.is_solo_parent",
+                                  },
+                                },
+                                [_vm._v("No")]
+                              ),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-field",
+                            {
+                              attrs: {
+                                label: "If YES, ID No.",
+                                "label-position": "on-border",
+                              },
+                            },
+                            [
+                              _c("b-input", {
+                                attrs: { type: "text", placeholder: "Details" },
+                                model: {
+                                  value: _vm.fields.is_solo_parent_yes,
+                                  callback: function ($$v) {
+                                    _vm.$set(
+                                      _vm.fields,
+                                      "is_solo_parent_yes",
+                                      $$v
+                                    )
+                                  },
+                                  expression: "fields.is_solo_parent_yes",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "divider-gray" }),
                   ]
                 ),
               ],
@@ -45005,7 +46376,11 @@ var render = function () {
                   },
                   [
                     _c("b-table-column", {
-                      attrs: { field: "user_id", label: "ID", sortable: "" },
+                      attrs: {
+                        field: "agency_idno",
+                        label: "Agency No.",
+                        sortable: "",
+                      },
                       scopedSlots: _vm._u([
                         {
                           key: "default",
@@ -45013,7 +46388,7 @@ var render = function () {
                             return [
                               _vm._v(
                                 "\n                            " +
-                                  _vm._s(props.row.user_id) +
+                                  _vm._s(props.row.agency_idno) +
                                   "\n                        "
                               ),
                             ]
@@ -46693,15 +48068,18 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("b-navbar", {
+    staticClass: "is-dark",
     scopedSlots: _vm._u([
       {
         key: "brand",
         fn: function () {
           return [
             _c("b-navbar-item", [
-              _c("h1", { staticClass: "title is-4" }, [
-                _vm._v("HR LEARNING & DEV"),
-              ]),
+              _c(
+                "h1",
+                { staticClass: "title is-4", staticStyle: { color: "white" } },
+                [_vm._v("HR LEARNING & DEV")]
+              ),
             ]),
           ]
         },

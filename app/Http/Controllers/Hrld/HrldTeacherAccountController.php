@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Hrld;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Auth;
+
 
 class HrldTeacherAccountController extends Controller
 {
@@ -41,7 +43,10 @@ class HrldTeacherAccountController extends Controller
 
 
     public function store(Request $req){
-        
+
+        $data = Auth::user();
+
+        return $req;
     }
 
 }

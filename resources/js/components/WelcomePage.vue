@@ -37,7 +37,7 @@ export default {
 <style scoped>
 
     .my-hero-container{
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/banner.png");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/banner.jpg");
         /* background-image: url("/img/banner.jpg"); */
         height: 100vh;
         background-position: center;

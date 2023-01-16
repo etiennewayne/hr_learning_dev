@@ -232,6 +232,33 @@ class FacultyPDSController extends Controller
             );
         }
 
+        $data->related_with_third_degree = $req->related_with_third_degree;
+        $data->related_with_fourth_degree = $req->related_with_fourth_degree;
+        $data->related_with_fourth_degree_yes = $req->related_with_fourth_degree_yes;
+        $data->is_guilty_administrative_offense = $req->is_guilty_administrative_offense;
+        $data->is_guilty_administrative_offense_yes = $req->is_guilty_administrative_offense_yes;
+        $data->is_criminally_charge = $req->is_criminally_charge;
+        $data->is_criminally_charge_yes = $req->is_criminally_charge_yes;
+        $data->date_filed = $req->date_filed;
+        $data->case_status = $req->case_status;
+        $data->is_convicted = $req->is_convicted;
+        $data->is_convicted_yes = $req->is_convicted_yes;
+        $data->is_separated = $req->is_separated;
+        $data->is_separated_yes_details = $req->is_separated_yes_details;
+        $data->is_candidate_election = $req->is_candidate_election;
+        $data->is_candiadte_election_yes = $req->is_candiadte_election_yes;
+        $data->is_resigned = $req->is_resigned;
+        $data->is_resigned_yes = $req->is_resigned_yes;
+        $data->is_immigrant = $req->is_immigrant;
+        $data->is_immigrant_yes = $req->is_immigrant_yes;
+
+        $data->is_indigenous = $req->is_indigenous;
+        $data->is_indigenous_yes = $req->is_indigenous_yes;
+        $data->is_disable = $req->is_disable;
+        $data->is_disable_id_no = $req->is_disable_id_no;
+        $data->is_solo_parent = $req->is_solo_parent;
+        $data->is_solo_parent_yes = $req->is_solo_parent_yes;
+
         $data->save();
 
         return response()->json([
