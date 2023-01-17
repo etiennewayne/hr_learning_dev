@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Hrld;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\SeminarPost;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -25,7 +26,24 @@ class HrldSeminarPostController extends Controller
     }
 
     public function getSeminars(){
+
+//        $queryBuilder = DB::table('users as a')
+//            ->where('role', 'FACULTY')
+//            ->select('a.user_id', 'a.lname', 'a.fname', 'a.mname',
+//                DB::raw('(select count(*) from learning_developments where user_id = a.user_id) as no_seminars'),
+//                DB::raw('IFNULL((SELECT GROUP_CONCAT(skill_hobbies SEPARATOR ", ") FROM other_informations WHERE user_id = a.user_id),"") as specialization'),
+//
+//                'a.role', 'a.suffix', 'a.sex', 'a.civil_status');
+//
+//        $ndata = DB::table($queryBuilder)
+//            ->where('specialization', 'like', '%' .$req->specialization . '%')
+//            ->orderBy('no_seminars', 'asc')
+//            ->get();
+
         $data = SeminarPost::whereDate('seminar_date', '>=', date('Y-m-d'))
+//            ->with(['recommended_teachers' => function($q){
+//                $q->DB::tab
+//            }])
             ->orderBy('seminar_post_id', 'desc')->get();
         return $data;
     }

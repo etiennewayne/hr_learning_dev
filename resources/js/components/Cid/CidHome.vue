@@ -47,7 +47,17 @@
                         <div class="post-img-container" v-if="seminar.img_path">
                             <img :src="`/storage/seminars/${seminar.img_path}`" class="post-img" />
                         </div>
-                    </div>
+
+<!--                        <div class="divider"></div>-->
+
+<!--                        <div class="recommended-teacher-container">-->
+<!--                            <div>Recommended Teacher</div>-->
+<!--                            <div v-for="(teacher, ix) in data" :key="ix">-->
+<!--                                <div>{{ (ix+1) }}. {{ teacher.lname }}, {{ teacher.fname }} {{ teacher.mname }}</div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+                    </div> <!-- loop-->
                 </div>
             </div>
 
@@ -62,6 +72,7 @@ export default{
     data(){
         return{
             serminars:[],
+            data:[],
 
         }
     },
@@ -74,17 +85,61 @@ export default{
 
             })
         },
+
+        // generateList(){
+        //     const params = [
+        //         `lname=${this.search.lname}`,
+        //         `specialization=${this.specialization.specialization}`,
+        //     ].join('&')
+        //
+        //     axios.get(`/generate-list?${params}`).then(res=>{
+        //         //this.recommended_list = res.data
+        //
+        //         res.data.forEach(el=>{
+        //             this.data.push({
+        //                 civil_status: el.civil_status,
+        //                 fname: el.fname,
+        //                 lname: el.lname,
+        //                 mname: el.mname,
+        //                 no_seminars: el.no_seminars,
+        //                 role: el.role,
+        //                 sex: el.sex,
+        //                 specialization: el.specialization,
+        //                 suffix: el.suffix,
+        //                 user_id: el.user_id,
+        //                 remarks: 'Generated'
+        //             });
+        //         })
+        //
+        //     }).catch(err=>{
+        //
+        //     })
+        // },
+
+
     },
 
     mounted(){
         this.loadSeminars()
+        //this.generateList()
     }
 }
 
 </script>
 
 <style scoped>
-.home-hero{
-    height: 100vh;
-}
+    .home-hero{
+        height: 100vh;
+    }
+
+
+    .divider{
+        margin: 20px;
+        height: 2px;
+        background-color: blue;
+    }
+
+    .recommended-teacher-container{
+        margin: 20px;
+    }
 </style>

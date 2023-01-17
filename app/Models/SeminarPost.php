@@ -18,6 +18,10 @@ class SeminarPost extends Model
         'ld_type', 'skills', 'conducted_by',
         'cpd_units', 'no_hours',
         'specialization',
-        'img_path', 'description', 'date_posted'];
+        'img_path', 'description', 'date_posted'
+    ];
+
+
+
 
 }

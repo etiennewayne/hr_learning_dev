@@ -4020,10 +4020,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      serminars: []
+      serminars: [],
+      data: []
     };
   },
   methods: {
@@ -4033,10 +4044,39 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/hrld/get-seminars').then(function (res) {
         _this.serminars = res.data;
       })["catch"](function (err) {});
-    }
+    } // generateList(){
+    //     const params = [
+    //         `lname=${this.search.lname}`,
+    //         `specialization=${this.specialization.specialization}`,
+    //     ].join('&')
+    //
+    //     axios.get(`/generate-list?${params}`).then(res=>{
+    //         //this.recommended_list = res.data
+    //
+    //         res.data.forEach(el=>{
+    //             this.data.push({
+    //                 civil_status: el.civil_status,
+    //                 fname: el.fname,
+    //                 lname: el.lname,
+    //                 mname: el.mname,
+    //                 no_seminars: el.no_seminars,
+    //                 role: el.role,
+    //                 sex: el.sex,
+    //                 specialization: el.specialization,
+    //                 suffix: el.suffix,
+    //                 user_id: el.user_id,
+    //                 remarks: 'Generated'
+    //             });
+    //         })
+    //
+    //     }).catch(err=>{
+    //
+    //     })
+    // },
+
   },
   mounted: function mounted() {
-    this.loadSeminars();
+    this.loadSeminars(); //this.generateList()
   }
 });
 
@@ -4141,66 +4181,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Modals_ModalBrowseTeacherList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Modals/ModalBrowseTeacherList */ "./resources/js/components/Modals/ModalBrowseTeacherList.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -7898,6 +7878,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -7967,6 +7961,127 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/PostedSeminars.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/PostedSeminars.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      seminars: []
+    };
+  },
+  methods: {
+    loadSeminars: function loadSeminars() {
+      var _this = this;
+
+      axios.get('/hrld/get-seminars').then(function (res) {
+        _this.seminars = res.data;
+      });
+    },
+    deletePost: function deletePost(seminarPostId) {
+      var _this2 = this;
+
+      axios["delete"]('/hrld/seminar-posts/' + seminarPostId).then(function (res) {
+        if (res.data.status === 'deleted') {
+          _this2.$buefy.toast.open({
+            message: 'Post deleted successfully.',
+            type: 'is-success'
+          });
+
+          _this2.loadSeminars();
+        }
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.loadSeminars();
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/PrintTeacher.vue?vue&type=script&lang=js&":
 /*!************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/PrintTeacher.vue?vue&type=script&lang=js& ***!
@@ -7978,6 +8093,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -8449,65 +8603,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -8526,30 +8621,23 @@ __webpack_require__.r(__webpack_exports__);
       this.fil = null;
       this.desc = '';
     },
-    loadSeminars: function loadSeminars() {
+    loadLearningDevelopmentTypes: function loadLearningDevelopmentTypes() {
       var _this = this;
 
-      axios.get('/hrld/get-seminars').then(function (res) {
-        _this.seminars = res.data;
-      });
-    },
-    loadLearningDevelopmentTypes: function loadLearningDevelopmentTypes() {
-      var _this2 = this;
-
       axios.get('/get-open-learning-dev-types').then(function (res) {
-        _this2.ld_types = res.data;
-        console.log(_this2.ld_types);
+        _this.ld_types = res.data;
+        console.log(_this.ld_types);
       });
     },
     loadSpecializations: function loadSpecializations() {
-      var _this3 = this;
+      var _this2 = this;
 
       axios.get('/get-open-specializations').then(function (res) {
-        _this3.specializations = res.data;
+        _this2.specializations = res.data;
       });
     },
     submit: function submit() {
-      var _this4 = this;
+      var _this3 = this;
 
       var ndate = new Date(this.fields.seminar_date);
       var newDate = ndate.getFullYear() + '-' + (ndate.getMonth() + 1) + '-' + ndate.getDate();
@@ -8568,14 +8656,13 @@ __webpack_require__.r(__webpack_exports__);
       if (this.seminar_id > 0) {
         axios.post('/hrld/seminar-posts-update/' + this.seminar_id, formData).then(function (res) {
           if (res.data.status === 'updated') {
-            _this4.$buefy.dialog.alert({
+            _this3.$buefy.dialog.alert({
               title: "Updated!",
               message: 'Seminar post successfully update.',
               type: 'is-success',
               onConfirm: function onConfirm() {
-                _this4.loadSeminars();
-
-                _this4.clearFields();
+                //this.loadSeminars()
+                _this3.clearFields();
               }
             });
           }
@@ -8583,14 +8670,13 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         axios.post('/hrld/seminar-posts-store', formData).then(function (res) {
           if (res.data.status === 'saved') {
-            _this4.$buefy.dialog.alert({
+            _this3.$buefy.dialog.alert({
               title: "Posted!",
               message: 'Seminar successfully posted.',
               type: 'is-success',
               onConfirm: function onConfirm() {
-                _this4.loadSeminars();
-
-                _this4.clearFields();
+                //this.loadSeminars()
+                _this3.clearFields();
               }
             });
           }
@@ -8601,43 +8687,28 @@ __webpack_require__.r(__webpack_exports__);
       this.seminar_id = 0;
       this.fields = {};
       this.file = null;
-    },
-    deletePost: function deletePost(seminarPostId) {
-      var _this5 = this;
+    } // updatePost(seminarPostId){
+    //     this.seminar_id = seminarPostId
+    //     this.fields = {};
+    //
+    //     axios.get('/hrld/get-seminar-posts/' + seminarPostId).then(res=>{
+    //         this.fields = {
+    //             title: res.data.title,
+    //             skills: res.data.skills,
+    //             seminar_date: new Date(res.data.seminar_date),
+    //             ld_type: res.data.ld_type,
+    //             conducted_by: res.data.conducted_by,
+    //             cpd_units: res.data.cpd_units,
+    //             no_hours: parseInt(res.data.no_hours),
+    //             specialization: res.data.specialization,
+    //             description: res.data.description
+    //         }
+    //     })
+    // }
 
-      axios["delete"]('/hrld/seminar-posts/' + seminarPostId).then(function (res) {
-        if (res.data.status === 'deleted') {
-          _this5.$buefy.toast.open({
-            message: 'Post deleted successfully.',
-            type: 'is-success'
-          });
-
-          _this5.loadSeminars();
-        }
-      });
-    },
-    updatePost: function updatePost(seminarPostId) {
-      var _this6 = this;
-
-      this.seminar_id = seminarPostId;
-      this.fields = {};
-      axios.get('/hrld/get-seminar-posts/' + seminarPostId).then(function (res) {
-        _this6.fields = {
-          title: res.data.title,
-          skills: res.data.skills,
-          seminar_date: new Date(res.data.seminar_date),
-          ld_type: res.data.ld_type,
-          conducted_by: res.data.conducted_by,
-          cpd_units: res.data.cpd_units,
-          no_hours: parseInt(res.data.no_hours),
-          specialization: res.data.specialization,
-          description: res.data.description
-        };
-      });
-    }
   },
   mounted: function mounted() {
-    this.loadSeminars();
+    //this.loadSeminars()
     this.loadLearningDevelopmentTypes();
     this.loadSpecializations();
   }
@@ -28574,7 +28645,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.home-hero[data-v-4263f19e]{\n    height: 100vh;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.home-hero[data-v-4263f19e]{\n    height: 100vh;\n}\n.divider[data-v-4263f19e]{\n    margin: 20px;\n    height: 2px;\n    background-color: blue;\n}\n.recommended-teacher-container[data-v-4263f19e]{\n    margin: 20px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28845,6 +28916,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\n.navbar-notif[data-v-f1e0c8ae]{\n   
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/PostedSeminars.vue?vue&type=style&index=0&id=322f66b3&scoped=true&lang=css&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/PostedSeminars.vue?vue&type=style&index=0&id=322f66b3&scoped=true&lang=css& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.box-post[data-v-322f66b3]{\n    margin: 10px 0;\n    border-top: 0px;\n}\n.post-img-container[data-v-322f66b3]{\n    height: 300px;\n    overflow: hidden;\n    display: flex;\n    justify-content: center;\n}\n.posted-text[data-v-322f66b3]{\n    font-weight: bold;\n    font-style: 0.8em;\n    color: gray;\n}\n.post-img[data-v-322f66b3]{\n    height: 400px;\n}\n.box-post-heading[data-v-322f66b3]{\n    display: flex;\n    padding: 10px;\n}\n.post-action[data-v-322f66b3]{\n    margin-left: auto;\n}\n.post-desc[data-v-322f66b3]{\n    border-top: 1px solid gray;\n    margin: 10px;\n    padding: 10px 0\n}\n\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/PrintTeacher.vue?vue&type=style&index=0&id=682c19a7&scoped=true&lang=css&":
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/PrintTeacher.vue?vue&type=style&index=0&id=682c19a7&scoped=true&lang=css& ***!
@@ -28862,7 +28957,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\ntable[data-v-682c19a7]{\n    margin: auto;\n}\n.table-title[data-v-682c19a7]{\n    font-weight: bold;\n    margin: 15px auto;\n    text-align: center;\n    font-size: 1.2em;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\ntable[data-v-682c19a7]{\n    margin-left: 20px;\n}\n.w-table tr th[data-v-682c19a7]{\n    padding: 5px 10px;\n}\n.w-table tr td[data-v-682c19a7]{\n    padding: 5px 10px;\n}\n.table-title[data-v-682c19a7]{\n    font-weight: bold;\n    font-size: 1.2em;\n}\n.report-header[data-v-682c19a7]{\n    display:flex;\n    justify-content: center;\n}\n.img-logo-deped > img[data-v-682c19a7]{\n    height: 60px;\n}\n.img-logo-oz > img[data-v-682c19a7] {\n    height: 80px;\n}\n.header-text[data-v-682c19a7]{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n    margin: 5px 15px;\n    font-weight: bold;\n}\n.w-line[data-v-682c19a7]{\n    height: 1px;\n    background: gray;\n}\n.signature[data-v-682c19a7]{\n    margin: 100px 0 0 0;\n}\n.prepared-by[data-v-682c19a7]{\n    width: 200px;\n}\n.approved-by[data-v-682c19a7]{\n    width: 200px;\n}\n.w-prepared[data-v-682c19a7]{\n    font-weight: bold;\n    margin-bottom: 100px;\n}\n.designation[data-v-682c19a7]{\n    text-align:center;\n    font-weight: bold;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29941,6 +30036,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_NavbarHrldComponent_vue_vue_type_style_index_0_id_f1e0c8ae_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/PostedSeminars.vue?vue&type=style&index=0&id=322f66b3&scoped=true&lang=css&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/PostedSeminars.vue?vue&type=style&index=0&id=322f66b3&scoped=true&lang=css& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PostedSeminars_vue_vue_type_style_index_0_id_322f66b3_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./PostedSeminars.vue?vue&type=style&index=0&id=322f66b3&scoped=true&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/PostedSeminars.vue?vue&type=style&index=0&id=322f66b3&scoped=true&lang=css&");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PostedSeminars_vue_vue_type_style_index_0_id_322f66b3_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PostedSeminars_vue_vue_type_style_index_0_id_322f66b3_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -31537,6 +31662,47 @@ component.options.__file = "resources/js/components/Hrld/NavbarHrldComponent.vue
 
 /***/ }),
 
+/***/ "./resources/js/components/Hrld/PostedSeminars.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/Hrld/PostedSeminars.vue ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _PostedSeminars_vue_vue_type_template_id_322f66b3_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PostedSeminars.vue?vue&type=template&id=322f66b3&scoped=true& */ "./resources/js/components/Hrld/PostedSeminars.vue?vue&type=template&id=322f66b3&scoped=true&");
+/* harmony import */ var _PostedSeminars_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PostedSeminars.vue?vue&type=script&lang=js& */ "./resources/js/components/Hrld/PostedSeminars.vue?vue&type=script&lang=js&");
+/* harmony import */ var _PostedSeminars_vue_vue_type_style_index_0_id_322f66b3_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PostedSeminars.vue?vue&type=style&index=0&id=322f66b3&scoped=true&lang=css& */ "./resources/js/components/Hrld/PostedSeminars.vue?vue&type=style&index=0&id=322f66b3&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+;
+
+
+/* normalize component */
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _PostedSeminars_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PostedSeminars_vue_vue_type_template_id_322f66b3_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
+  _PostedSeminars_vue_vue_type_template_id_322f66b3_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  "322f66b3",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Hrld/PostedSeminars.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/Hrld/PrintTeacher.vue":
 /*!*******************************************************!*\
   !*** ./resources/js/components/Hrld/PrintTeacher.vue ***!
@@ -32402,6 +32568,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Hrld/PostedSeminars.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/Hrld/PostedSeminars.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PostedSeminars_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./PostedSeminars.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/PostedSeminars.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PostedSeminars_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/Hrld/PrintTeacher.vue?vue&type=script&lang=js&":
 /*!********************************************************************************!*\
   !*** ./resources/js/components/Hrld/PrintTeacher.vue?vue&type=script&lang=js& ***!
@@ -32853,6 +33035,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_NavbarHrldComponent_vue_vue_type_style_index_0_id_f1e0c8ae_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./NavbarHrldComponent.vue?vue&type=style&index=0&id=f1e0c8ae&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/NavbarHrldComponent.vue?vue&type=style&index=0&id=f1e0c8ae&scoped=true&lang=css&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Hrld/PostedSeminars.vue?vue&type=style&index=0&id=322f66b3&scoped=true&lang=css&":
+/*!******************************************************************************************************************!*\
+  !*** ./resources/js/components/Hrld/PostedSeminars.vue?vue&type=style&index=0&id=322f66b3&scoped=true&lang=css& ***!
+  \******************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PostedSeminars_vue_vue_type_style_index_0_id_322f66b3_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./PostedSeminars.vue?vue&type=style&index=0&id=322f66b3&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/PostedSeminars.vue?vue&type=style&index=0&id=322f66b3&scoped=true&lang=css&");
 
 
 /***/ }),
@@ -33370,6 +33565,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NavbarHrldComponent_vue_vue_type_template_id_f1e0c8ae_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NavbarHrldComponent_vue_vue_type_template_id_f1e0c8ae_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./NavbarHrldComponent.vue?vue&type=template&id=f1e0c8ae&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/NavbarHrldComponent.vue?vue&type=template&id=f1e0c8ae&scoped=true&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Hrld/PostedSeminars.vue?vue&type=template&id=322f66b3&scoped=true&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/components/Hrld/PostedSeminars.vue?vue&type=template&id=322f66b3&scoped=true& ***!
+  \****************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PostedSeminars_vue_vue_type_template_id_322f66b3_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PostedSeminars_vue_vue_type_template_id_322f66b3_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PostedSeminars_vue_vue_type_template_id_322f66b3_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./PostedSeminars.vue?vue&type=template&id=322f66b3&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/PostedSeminars.vue?vue&type=template&id=322f66b3&scoped=true&");
 
 
 /***/ }),
@@ -36800,63 +37012,134 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("div", { staticClass: "section" }, [
-        _c("div", { staticClass: "columns is-centered" }, [
-          _c("div", { staticClass: "column is-10-desktop is-12-tablet" }, [
-            _c(
-              "div",
-              { staticClass: "box" },
-              [
+  return _c("div", [
+    _c("div", { staticClass: "section" }, [
+      _c("div", { staticClass: "columns is-centered" }, [
+        _c("div", { staticClass: "column is-10-desktop is-12-tablet" }, [
+          _c(
+            "div",
+            { staticClass: "box" },
+            [
+              _c(
+                "div",
+                {
+                  staticClass: "is-flex mb-2",
+                  staticStyle: { "font-size": "20px", "font-weight": "bold" },
+                },
+                [_vm._v("LIST OF POSTED SEMINARS")]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "level" }, [
                 _c(
                   "div",
-                  {
-                    staticClass: "is-flex mb-2",
-                    staticStyle: { "font-size": "20px", "font-weight": "bold" },
-                  },
-                  [_vm._v("LIST OF POSTED SEMINARS")]
+                  { staticClass: "level-left" },
+                  [
+                    _c(
+                      "b-field",
+                      { attrs: { label: "Page" } },
+                      [
+                        _c(
+                          "b-select",
+                          {
+                            on: { input: _vm.setPerPage },
+                            model: {
+                              value: _vm.perPage,
+                              callback: function ($$v) {
+                                _vm.perPage = $$v
+                              },
+                              expression: "perPage",
+                            },
+                          },
+                          [
+                            _c("option", { attrs: { value: "5" } }, [
+                              _vm._v("5 per page"),
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "10" } }, [
+                              _vm._v("10 per page"),
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "15" } }, [
+                              _vm._v("15 per page"),
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "20" } }, [
+                              _vm._v("20 per page"),
+                            ]),
+                          ]
+                        ),
+                      ],
+                      1
+                    ),
+                  ],
+                  1
                 ),
                 _vm._v(" "),
-                _c("div", { staticClass: "level" }, [
+                _c("div", { staticClass: "level-right" }, [
                   _c(
                     "div",
-                    { staticClass: "level-left" },
+                    { staticClass: "level-item" },
                     [
                       _c(
                         "b-field",
-                        { attrs: { label: "Page" } },
+                        { attrs: { label: "Search" } },
                         [
-                          _c(
-                            "b-select",
-                            {
-                              on: { input: _vm.setPerPage },
-                              model: {
-                                value: _vm.perPage,
-                                callback: function ($$v) {
-                                  _vm.perPage = $$v
-                                },
-                                expression: "perPage",
+                          _c("b-input", {
+                            attrs: {
+                              type: "text",
+                              placeholder: "Search Title",
+                            },
+                            nativeOn: {
+                              keyup: function ($event) {
+                                if (
+                                  !$event.type.indexOf("key") &&
+                                  _vm._k(
+                                    $event.keyCode,
+                                    "enter",
+                                    13,
+                                    $event.key,
+                                    "Enter"
+                                  )
+                                ) {
+                                  return null
+                                }
+                                return _vm.loadAsyncData.apply(null, arguments)
                               },
                             },
+                            model: {
+                              value: _vm.search.title,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.search, "title", $$v)
+                              },
+                              expression: "search.title",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "p",
+                            { staticClass: "control" },
                             [
-                              _c("option", { attrs: { value: "5" } }, [
-                                _vm._v("5 per page"),
-                              ]),
-                              _vm._v(" "),
-                              _c("option", { attrs: { value: "10" } }, [
-                                _vm._v("10 per page"),
-                              ]),
-                              _vm._v(" "),
-                              _c("option", { attrs: { value: "15" } }, [
-                                _vm._v("15 per page"),
-                              ]),
-                              _vm._v(" "),
-                              _c("option", { attrs: { value: "20" } }, [
-                                _vm._v("20 per page"),
-                              ]),
-                            ]
+                              _c(
+                                "b-tooltip",
+                                {
+                                  attrs: {
+                                    label: "Search",
+                                    type: "is-success",
+                                  },
+                                },
+                                [
+                                  _c("b-button", {
+                                    attrs: {
+                                      type: "is-primary",
+                                      "icon-right": "magnify",
+                                    },
+                                    on: { click: _vm.loadAsyncData },
+                                  }),
+                                ],
+                                1
+                              ),
+                            ],
+                            1
                           ),
                         ],
                         1
@@ -36864,367 +37147,173 @@ var render = function () {
                     ],
                     1
                   ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "level-right" }, [
-                    _c(
-                      "div",
-                      { staticClass: "level-item" },
-                      [
-                        _c(
-                          "b-field",
-                          { attrs: { label: "Search" } },
-                          [
-                            _c("b-input", {
-                              attrs: {
-                                type: "text",
-                                placeholder: "Search Title",
-                              },
-                              nativeOn: {
-                                keyup: function ($event) {
-                                  if (
-                                    !$event.type.indexOf("key") &&
-                                    _vm._k(
-                                      $event.keyCode,
-                                      "enter",
-                                      13,
-                                      $event.key,
-                                      "Enter"
-                                    )
-                                  ) {
-                                    return null
-                                  }
-                                  return _vm.loadAsyncData.apply(
-                                    null,
-                                    arguments
-                                  )
-                                },
-                              },
-                              model: {
-                                value: _vm.search.title,
-                                callback: function ($$v) {
-                                  _vm.$set(_vm.search, "title", $$v)
-                                },
-                                expression: "search.title",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "p",
-                              { staticClass: "control" },
-                              [
-                                _c(
-                                  "b-tooltip",
-                                  {
-                                    attrs: {
-                                      label: "Search",
-                                      type: "is-success",
-                                    },
-                                  },
-                                  [
-                                    _c("b-button", {
-                                      attrs: {
-                                        type: "is-primary",
-                                        "icon-right": "magnify",
-                                      },
-                                      on: { click: _vm.loadAsyncData },
-                                    }),
-                                  ],
-                                  1
-                                ),
-                              ],
-                              1
-                            ),
-                          ],
-                          1
-                        ),
-                      ],
-                      1
-                    ),
-                  ]),
                 ]),
-                _vm._v(" "),
-                _c(
-                  "b-table",
-                  {
-                    attrs: {
-                      data: _vm.data,
-                      loading: _vm.loading,
-                      paginated: "",
-                      "backend-pagination": "",
-                      total: _vm.total,
-                      "pagination-rounded": true,
-                      "per-page": _vm.perPage,
-                      "aria-next-label": "Next page",
-                      "aria-previous-label": "Previous page",
-                      "aria-page-label": "Page",
-                      "aria-current-label": "Current page",
-                      "backend-sorting": "",
-                      "default-sort-direction": _vm.defaultSortDirection,
-                    },
-                    on: { "page-change": _vm.onPageChange, sort: _vm.onSort },
+              ]),
+              _vm._v(" "),
+              _c(
+                "b-table",
+                {
+                  attrs: {
+                    data: _vm.data,
+                    loading: _vm.loading,
+                    paginated: "",
+                    "backend-pagination": "",
+                    total: _vm.total,
+                    "pagination-rounded": true,
+                    "per-page": _vm.perPage,
+                    "aria-next-label": "Next page",
+                    "aria-previous-label": "Previous page",
+                    "aria-page-label": "Page",
+                    "aria-current-label": "Current page",
+                    "backend-sorting": "",
+                    "default-sort-direction": _vm.defaultSortDirection,
                   },
-                  [
-                    _c("b-table-column", {
-                      attrs: {
-                        field: "seminar_post_id",
-                        label: "ID",
-                        sortable: "",
+                  on: { "page-change": _vm.onPageChange, sort: _vm.onSort },
+                },
+                [
+                  _c("b-table-column", {
+                    attrs: {
+                      field: "seminar_post_id",
+                      label: "ID",
+                      sortable: "",
+                    },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function (props) {
+                          return [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(props.row.seminar_post_id) +
+                                "\n                        "
+                            ),
+                          ]
+                        },
                       },
-                      scopedSlots: _vm._u([
-                        {
-                          key: "default",
-                          fn: function (props) {
-                            return [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(props.row.seminar_post_id) +
-                                  "\n                            "
-                              ),
-                            ]
-                          },
+                    ]),
+                  }),
+                  _vm._v(" "),
+                  _c("b-table-column", {
+                    attrs: { field: "title", label: "Title", sortable: "" },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function (props) {
+                          return [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(props.row.title) +
+                                "\n                        "
+                            ),
+                          ]
                         },
-                      ]),
-                    }),
-                    _vm._v(" "),
-                    _c("b-table-column", {
-                      attrs: { field: "title", label: "Title", sortable: "" },
-                      scopedSlots: _vm._u([
-                        {
-                          key: "default",
-                          fn: function (props) {
-                            return [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(props.row.title) +
-                                  "\n                            "
-                              ),
-                            ]
-                          },
-                        },
-                      ]),
-                    }),
-                    _vm._v(" "),
-                    _c("b-table-column", {
-                      attrs: {
-                        field: "ld_type",
-                        label: "Learning Development Type",
-                        sortable: "",
                       },
-                      scopedSlots: _vm._u([
-                        {
-                          key: "default",
-                          fn: function (props) {
-                            return [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(props.row.ld_type) +
-                                  "\n                            "
-                              ),
-                            ]
-                          },
+                    ]),
+                  }),
+                  _vm._v(" "),
+                  _c("b-table-column", {
+                    attrs: {
+                      field: "ld_type",
+                      label: "Learning Development Type",
+                      sortable: "",
+                    },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function (props) {
+                          return [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(props.row.ld_type) +
+                                "\n                        "
+                            ),
+                          ]
                         },
-                      ]),
-                    }),
-                    _vm._v(" "),
-                    _c("b-table-column", {
-                      attrs: { field: "conducted_by", label: "Conducted By" },
-                      scopedSlots: _vm._u([
-                        {
-                          key: "default",
-                          fn: function (props) {
-                            return [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(props.row.conducted_by) +
-                                  "\n                            "
-                              ),
-                            ]
-                          },
-                        },
-                      ]),
-                    }),
-                    _vm._v(" "),
-                    _c("b-table-column", {
-                      attrs: { field: "no_hours", label: "No. Hours" },
-                      scopedSlots: _vm._u([
-                        {
-                          key: "default",
-                          fn: function (props) {
-                            return [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(props.row.no_hours) +
-                                  "\n                            "
-                              ),
-                            ]
-                          },
-                        },
-                      ]),
-                    }),
-                    _vm._v(" "),
-                    _c("b-table-column", {
-                      attrs: {
-                        field: "specialization",
-                        label: "Specialization",
                       },
-                      scopedSlots: _vm._u([
-                        {
-                          key: "default",
-                          fn: function (props) {
-                            return [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(props.row.specialization) +
-                                  "\n                            "
-                              ),
-                            ]
-                          },
+                    ]),
+                  }),
+                  _vm._v(" "),
+                  _c("b-table-column", {
+                    attrs: { field: "conducted_by", label: "Conducted By" },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function (props) {
+                          return [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(props.row.conducted_by) +
+                                "\n                        "
+                            ),
+                          ]
                         },
-                      ]),
-                    }),
-                    _vm._v(" "),
-                    _c("b-table-column", {
-                      attrs: { field: "seminar_date", label: "Seminar Date" },
-                      scopedSlots: _vm._u([
-                        {
-                          key: "default",
-                          fn: function (props) {
-                            return [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(props.row.seminar_date) +
-                                  "\n                            "
-                              ),
-                            ]
-                          },
+                      },
+                    ]),
+                  }),
+                  _vm._v(" "),
+                  _c("b-table-column", {
+                    attrs: { field: "no_hours", label: "No. Hours" },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function (props) {
+                          return [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(props.row.no_hours) +
+                                "\n                        "
+                            ),
+                          ]
                         },
-                      ]),
-                    }),
-                    _vm._v(" "),
-                    _c("b-table-column", {
-                      attrs: { label: "Action" },
-                      scopedSlots: _vm._u([
-                        {
-                          key: "default",
-                          fn: function (props) {
-                            return [
-                              _c(
-                                "div",
-                                { staticClass: "is-flex" },
-                                [
-                                  _c("modal-browse-teacher-list", {
-                                    attrs: {
-                                      "prop-specialization":
-                                        props.row.specialization,
-                                      "prop-seminar": props.row,
-                                    },
-                                  }),
-                                ],
-                                1
-                              ),
-                            ]
-                          },
+                      },
+                    ]),
+                  }),
+                  _vm._v(" "),
+                  _c("b-table-column", {
+                    attrs: { field: "specialization", label: "Specialization" },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function (props) {
+                          return [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(props.row.specialization) +
+                                "\n                        "
+                            ),
+                          ]
                         },
-                      ]),
-                    }),
-                  ],
-                  1
-                ),
-              ],
-              1
-            ),
-          ]),
+                      },
+                    ]),
+                  }),
+                  _vm._v(" "),
+                  _c("b-table-column", {
+                    attrs: { field: "seminar_date", label: "Seminar Date" },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function (props) {
+                          return [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(props.row.seminar_date) +
+                                "\n                        "
+                            ),
+                          ]
+                        },
+                      },
+                    ]),
+                  }),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
         ]),
       ]),
-      _vm._v(" "),
-      _c(
-        "b-modal",
-        {
-          attrs: {
-            "has-modal-card": "",
-            "trap-focus": "",
-            width: 640,
-            "aria-role": "dialog",
-            "aria-label": "Modal",
-            "aria-modal": "",
-          },
-          model: {
-            value: _vm.modalRate,
-            callback: function ($$v) {
-              _vm.modalRate = $$v
-            },
-            expression: "modalRate",
-          },
-        },
-        [
-          _c("div", { staticClass: "modal-card" }, [
-            _c("header", { staticClass: "modal-card-head" }, [
-              _c("p", { staticClass: "modal-card-title" }, [_vm._v("Rating")]),
-              _vm._v(" "),
-              _c("button", {
-                staticClass: "delete",
-                attrs: { type: "button" },
-                on: {
-                  click: function ($event) {
-                    _vm.modalRate = false
-                  },
-                },
-              }),
-            ]),
-            _vm._v(" "),
-            _c(
-              "form",
-              {
-                on: {
-                  submit: function ($event) {
-                    $event.preventDefault()
-                    return _vm.submitRating.apply(null, arguments)
-                  },
-                },
-              },
-              [
-                _c("section", { staticClass: "modal-card-body" }, [
-                  _c("div", {}, [
-                    _c(
-                      "div",
-                      { staticClass: "column" },
-                      [
-                        _c(
-                          "b-field",
-                          { attrs: { label: "Rating" } },
-                          [
-                            _c("b-numberinput", {
-                              attrs: { controls: false, min: "1" },
-                              model: {
-                                value: _vm.fields.rating,
-                                callback: function ($$v) {
-                                  _vm.$set(_vm.fields, "rating", $$v)
-                                },
-                                expression: "fields.rating",
-                              },
-                            }),
-                          ],
-                          1
-                        ),
-                      ],
-                      1
-                    ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("footer", { staticClass: "modal-card-foot" }, [
-                  _c("button", { staticClass: "button is-success" }, [
-                    _vm._v("Submit Rating"),
-                  ]),
-                ]),
-              ]
-            ),
-          ]),
-        ]
-      ),
-    ],
-    1
-  )
+    ]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -44924,21 +45013,46 @@ var render = function () {
                 ]),
                 _vm._v(" "),
                 _c(
-                  "b-navbar-item",
-                  { attrs: { href: "/hrld/seminar-posts" } },
-                  [_vm._v("\n                Seminars\n            ")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "b-navbar-item",
-                  { attrs: { href: "/hrld/recommended-teachers" } },
-                  [_vm._v("\n                Teacher List\n            ")]
+                  "b-navbar-dropdown",
+                  { attrs: { label: "Seminars" } },
+                  [
+                    _c(
+                      "b-navbar-item",
+                      { attrs: { href: "/hrld/seminar-posts" } },
+                      [
+                        _vm._v(
+                          "\n                    Add New Seminar\n                "
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-navbar-item",
+                      { attrs: { href: "/hrld/posted-seminars" } },
+                      [
+                        _vm._v(
+                          "\n                    Posted Seminar\n                "
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-navbar-item",
+                      { attrs: { href: "/hrld/recommended-teachers" } },
+                      [
+                        _vm._v(
+                          "\n                    List of Seminar w/ Selected Candidates\n                "
+                        ),
+                      ]
+                    ),
+                  ],
+                  1
                 ),
                 _vm._v(" "),
                 _c(
                   "b-navbar-item",
                   { attrs: { href: "/hrld/teacher-accounts" } },
-                  [_vm._v("\n                Account\n            ")]
+                  [_vm._v("\n                Teachers\n            ")]
                 ),
               ]
             },
@@ -45187,6 +45301,179 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/PostedSeminars.vue?vue&type=template&id=322f66b3&scoped=true&":
+/*!*******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/PostedSeminars.vue?vue&type=template&id=322f66b3&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "columns is-centered" }, [
+      _c(
+        "div",
+        { staticClass: "column is-6-desktop" },
+        _vm._l(_vm.seminars, function (seminar, index) {
+          return _c("div", { key: index, staticClass: "box box-post" }, [
+            _c("div", { staticClass: "box-post-heading" }, [
+              _c("div", { staticClass: "posted-text" }, [
+                _vm._v("Posted: " + _vm._s(seminar.date_posted)),
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "post-action" },
+                [
+                  _c(
+                    "b-dropdown",
+                    {
+                      attrs: { "aria-role": "list" },
+                      scopedSlots: _vm._u(
+                        [
+                          {
+                            key: "trigger",
+                            fn: function (ref) {
+                              var active = ref.active
+                              return [
+                                _c("b-button", {
+                                  staticClass: "is-small",
+                                  attrs: {
+                                    label: "...",
+                                    type: "is-light",
+                                    "icon-right": active
+                                      ? "menu-up"
+                                      : "menu-down",
+                                  },
+                                }),
+                              ]
+                            },
+                          },
+                        ],
+                        null,
+                        true
+                      ),
+                    },
+                    [
+                      _vm._v(" "),
+                      _c(
+                        "b-dropdown-item",
+                        {
+                          attrs: { "aria-role": "listitem" },
+                          on: {
+                            click: function ($event) {
+                              return _vm.deletePost(seminar.seminar_post_id)
+                            },
+                          },
+                        },
+                        [_vm._v("Delete")]
+                      ),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "post-desc" }, [
+              _c("div", { staticClass: "columns" }, [
+                _c("div", { staticClass: "column" }, [
+                  _c("div", { staticClass: "has-text-weight-bold" }, [
+                    _vm._v("Title: " + _vm._s(seminar.title)),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "column" }, [
+                  _c("div", { staticClass: "has-text-weight-bold" }, [
+                    _vm._v("Skills: " + _vm._s(seminar.skills)),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "columns" }, [
+                _c("div", { staticClass: "column" }, [
+                  _c("div", { staticClass: "has-text-weight-bold" }, [
+                    _vm._v("Seminar Date: " + _vm._s(seminar.seminar_date)),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "column" }, [
+                  _c("div", { staticClass: "has-text-weight-bold" }, [
+                    _vm._v("Learning Development: " + _vm._s(seminar.ld_type)),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "columns" }, [
+                _c("div", { staticClass: "column" }, [
+                  _c("div", { staticClass: "has-text-weight-bold" }, [
+                    _vm._v("Conducted: " + _vm._s(seminar.conducted_by)),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "column" }, [
+                  _c("div", { staticClass: "has-text-weight-bold" }, [
+                    _vm._v("CPD Units: " + _vm._s(seminar.cpd_units)),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "columns" }, [
+                _c("div", { staticClass: "column" }, [
+                  _c("div", { staticClass: "has-text-weight-bold" }, [
+                    _vm._v("Specialization: " + _vm._s(seminar.specialization)),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "column" }, [
+                  _c("div", { staticClass: "has-text-weight-bold" }, [
+                    _vm._v("No of Hours: " + _vm._s(seminar.no_hours)),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "columns" }, [
+                _c("div", { staticClass: "column" }, [
+                  _vm._v(
+                    "\n                                " +
+                      _vm._s(seminar.description) +
+                      "\n                            "
+                  ),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            seminar.img_path
+              ? _c("div", { staticClass: "post-img-container" }, [
+                  _c("img", {
+                    staticClass: "post-img",
+                    attrs: { src: "/storage/seminars/" + seminar.img_path },
+                  }),
+                ])
+              : _vm._e(),
+          ])
+        }),
+        0
+      ),
+    ]),
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/PrintTeacher.vue?vue&type=template&id=682c19a7&scoped=true&":
 /*!*****************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Hrld/PrintTeacher.vue?vue&type=template&id=682c19a7&scoped=true& ***!
@@ -45222,46 +45509,87 @@ var render = function () {
         1
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "print-body" }, [
-        _c("div", { staticClass: "table-title" }, [
-          _vm._v(_vm._s(_vm.data.seminar_title)),
-        ]),
-        _vm._v(" "),
-        _c(
-          "table",
-          { staticClass: "table" },
-          [
+      _vm.data.seminar
+        ? _c("div", { staticClass: "print-body" }, [
             _vm._m(0),
             _vm._v(" "),
-            _vm._l(_vm.data.recommended_teacher_lists, function (item, index) {
-              return _c("tr", { key: index }, [
-                _c("td", [
-                  _vm._v(
-                    _vm._s(item.lname) +
-                      ", " +
-                      _vm._s(item.fname) +
-                      " " +
-                      _vm._s(item.mname)
-                  ),
-                ]),
+            _c("div", { staticClass: "table-title" }, [
+              _vm._v("Seminar Title: " + _vm._s(_vm.data.seminar_title)),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "table-title" }, [
+              _vm._v(
+                "Date of Seminar: " + _vm._s(_vm.data.seminar.seminar_date)
+              ),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "table-title" }, [
+              _vm._v(
+                "Approved List of Candidates: " + _vm._s(_vm.data.seminar_date)
+              ),
+            ]),
+            _vm._v(" "),
+            _c(
+              "table",
+              { staticClass: "w-table" },
+              [
+                _vm._m(1),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(item.sex))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(item.specialization))]),
-                _vm._v(" "),
-                _c("td", { staticStyle: { "text-align": "center" } }, [
-                  _vm._v(_vm._s(item.no_seminars)),
-                ]),
-              ])
-            }),
-          ],
-          2
-        ),
-      ]),
+                _vm._l(
+                  _vm.data.recommended_teacher_lists,
+                  function (item, index) {
+                    return _c("tr", { key: index }, [
+                      _c("td", [
+                        _vm._v(
+                          _vm._s(item.lname) +
+                            ", " +
+                            _vm._s(item.fname) +
+                            " " +
+                            _vm._s(item.mname)
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(item.sex))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(item.specialization))]),
+                      _vm._v(" "),
+                      _c("td", { staticStyle: { "text-align": "center" } }, [
+                        _vm._v(_vm._s(item.no_seminars)),
+                      ]),
+                    ])
+                  }
+                ),
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _vm._m(2),
+          ])
+        : _vm._e(),
     ]),
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "report-header" }, [
+      _c("div", { staticClass: "img-logo-deped" }, [
+        _c("img", { attrs: { src: "/img/deped-logo.png" } }),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "header-text" }, [
+        _c("div", [_vm._v("Republic of the Philippines")]),
+        _vm._v(" "),
+        _c("div", [_vm._v("Department of Education")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "img-logo-oz" }, [
+        _c("img", { attrs: { src: "/img/oszamis_logo.png" } }),
+      ]),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -45274,6 +45602,38 @@ var staticRenderFns = [
       _c("th", [_vm._v("Specialization")]),
       _vm._v(" "),
       _c("th", [_vm._v("No of Seminars")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "signature" }, [
+      _c("div", { staticClass: "columns" }, [
+        _c("div", { staticClass: "column" }, [
+          _c("div", { staticClass: "prepared-by" }, [
+            _c("div", { staticClass: "w-prepared" }, [_vm._v("Prepared By")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "w-line" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "designation" }, [
+              _vm._v("HRLD Personnel"),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "column" }, [
+          _c("div", { staticClass: "approved-by" }, [
+            _c("div", { staticClass: "w-prepared" }, [_vm._v("Approved By")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "w-line" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "designation" }, [
+              _vm._v("School Division Superintendent"),
+            ]),
+          ]),
+        ]),
+      ]),
     ])
   },
 ]
@@ -45773,385 +46133,73 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "columns is-centered mt-5" }, [
-      _c(
-        "div",
-        { staticClass: "column is-6" },
-        [
-          _c("div", { staticClass: "box" }, [
-            _c("div", { staticClass: "box-text mb-5" }, [
-              _vm._v("New Seminar / Trainings"),
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              [
-                _c("div", { staticClass: "columns" }, [
-                  _c(
-                    "div",
-                    { staticClass: "column" },
-                    [
-                      _c(
-                        "b-field",
-                        {
-                          attrs: {
-                            label: "Title",
-                            "label-position": "on-border",
-                          },
-                        },
-                        [
-                          _c("b-input", {
-                            attrs: { type: "input", placeholder: "Title" },
-                            model: {
-                              value: _vm.fields.title,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.fields, "title", $$v)
-                              },
-                              expression: "fields.title",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "columns" }, [
-                  _c(
-                    "div",
-                    { staticClass: "column" },
-                    [
-                      _c(
-                        "b-field",
-                        {
-                          attrs: {
-                            label: "Skills",
-                            "label-position": "on-border",
-                          },
-                        },
-                        [
-                          _c("b-input", {
-                            attrs: { type: "input", placeholder: "Skills" },
-                            model: {
-                              value: _vm.fields.skills,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.fields, "skills", $$v)
-                              },
-                              expression: "fields.skills",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "column" },
-                    [
-                      _c(
-                        "b-field",
-                        {
-                          attrs: {
-                            label: "Seminar Date",
-                            "label-position": "on-border",
-                          },
-                        },
-                        [
-                          _c("b-datepicker", {
-                            attrs: { placeholder: "Seminar Date" },
-                            model: {
-                              value: _vm.fields.seminar_date,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.fields, "seminar_date", $$v)
-                              },
-                              expression: "fields.seminar_date",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "columns" }, [
-                  _c(
-                    "div",
-                    { staticClass: "column" },
-                    [
-                      _c(
-                        "b-field",
-                        {
-                          attrs: {
-                            label: "Learning Development",
-                            "label-position": "on-border",
-                            expanded: "",
-                          },
-                        },
-                        [
-                          _c(
-                            "b-select",
-                            {
-                              attrs: { expanded: "" },
-                              model: {
-                                value: _vm.fields.ld_type,
-                                callback: function ($$v) {
-                                  _vm.$set(_vm.fields, "ld_type", $$v)
-                                },
-                                expression: "fields.ld_type",
-                              },
-                            },
-                            _vm._l(_vm.ld_types, function (item, index) {
-                              return _c(
-                                "option",
-                                {
-                                  key: index,
-                                  domProps: { value: item.ld_type },
-                                },
-                                [_vm._v(_vm._s(item.ld_type))]
-                              )
-                            }),
-                            0
-                          ),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "column" },
-                    [
-                      _c(
-                        "b-field",
-                        {
-                          attrs: {
-                            label: "Conducted/Sponsored By",
-                            "label-position": "on-border",
-                          },
-                        },
-                        [
-                          _c("b-input", {
-                            attrs: {
-                              type: "input",
-                              placeholder: "Conducted/Sponsored By",
-                            },
-                            model: {
-                              value: _vm.fields.conducted_by,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.fields, "conducted_by", $$v)
-                              },
-                              expression: "fields.conducted_by",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "columns" }, [
-                  _c(
-                    "div",
-                    { staticClass: "column" },
-                    [
-                      _c(
-                        "b-field",
-                        {
-                          attrs: {
-                            label: "CPD Units",
-                            "label-position": "on-border",
-                          },
-                        },
-                        [
-                          _c("b-input", {
-                            attrs: { type: "input", placeholder: "CPD Units" },
-                            model: {
-                              value: _vm.fields.cpd_units,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.fields, "cpd_units", $$v)
-                              },
-                              expression: "fields.cpd_units",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "column" },
-                    [
-                      _c(
-                        "b-field",
-                        {
-                          attrs: {
-                            label: "No. of hours",
-                            "label-position": "on-border",
-                          },
-                        },
-                        [
-                          _c("b-numberinput", {
-                            attrs: {
-                              type: "number",
-                              placeholder: "No. of hours",
-                              controls: false,
-                            },
-                            model: {
-                              value: _vm.fields.no_hours,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.fields, "no_hours", $$v)
-                              },
-                              expression: "fields.no_hours",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "columns" }, [
-                  _c(
-                    "div",
-                    { staticClass: "column" },
-                    [
-                      _c(
-                        "b-field",
-                        {
-                          attrs: {
-                            label: "Specialization",
-                            "label-position": "on-border",
-                          },
-                        },
-                        [
-                          _c(
-                            "b-select",
-                            {
-                              attrs: { placeholder: "Specialization" },
-                              model: {
-                                value: _vm.fields.specialization,
-                                callback: function ($$v) {
-                                  _vm.$set(_vm.fields, "specialization", $$v)
-                                },
-                                expression: "fields.specialization",
-                              },
-                            },
-                            _vm._l(_vm.specializations, function (item, index) {
-                              return _c(
-                                "option",
-                                {
-                                  key: index,
-                                  domProps: { value: item.specialization },
-                                },
-                                [_vm._v(_vm._s(item.specialization))]
-                              )
-                            }),
-                            0
-                          ),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "columns" }, [
-                  _c(
-                    "div",
-                    { staticClass: "column" },
-                    [
-                      _c(
-                        "b-field",
-                        {
-                          attrs: {
-                            label: "Description",
-                            "label-position": "on-border",
-                          },
-                        },
-                        [
-                          _c("b-input", {
-                            attrs: {
-                              type: "textarea",
-                              placeholder: "Description",
-                            },
-                            model: {
-                              value: _vm.fields.description,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.fields, "description", $$v)
-                              },
-                              expression: "fields.description",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                ]),
-                _vm._v(" "),
+      _c("div", { staticClass: "column is-6" }, [
+        _c("div", { staticClass: "box" }, [
+          _c("div", { staticClass: "box-text mb-5" }, [
+            _vm._v("New Seminar / Trainings"),
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            [
+              _c("div", { staticClass: "columns" }, [
                 _c(
-                  "b-field",
-                  {
-                    staticClass: "file is-primary",
-                    class: { "has-name": !!_vm.file },
-                  },
+                  "div",
+                  { staticClass: "column" },
                   [
                     _c(
-                      "b-upload",
+                      "b-field",
                       {
-                        staticClass: "file-label",
-                        model: {
-                          value: _vm.file,
-                          callback: function ($$v) {
-                            _vm.file = $$v
-                          },
-                          expression: "file",
+                        attrs: {
+                          label: "Title",
+                          "label-position": "on-border",
                         },
                       },
                       [
-                        _c(
-                          "span",
-                          { staticClass: "file-cta" },
-                          [
-                            _c("b-icon", {
-                              staticClass: "file-icon",
-                              attrs: { icon: "upload" },
-                            }),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "file-label" }, [
-                              _vm._v("Click to upload"),
-                            ]),
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _vm.file
-                          ? _c("span", { staticClass: "file-name" }, [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(_vm.file.name) +
-                                  "\n                            "
-                              ),
-                            ])
-                          : _vm._e(),
-                      ]
+                        _c("b-input", {
+                          attrs: { type: "input", placeholder: "Title" },
+                          model: {
+                            value: _vm.fields.title,
+                            callback: function ($$v) {
+                              _vm.$set(_vm.fields, "title", $$v)
+                            },
+                            expression: "fields.title",
+                          },
+                        }),
+                      ],
+                      1
+                    ),
+                  ],
+                  1
+                ),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "columns" }, [
+                _c(
+                  "div",
+                  { staticClass: "column" },
+                  [
+                    _c(
+                      "b-field",
+                      {
+                        attrs: {
+                          label: "Skills",
+                          "label-position": "on-border",
+                        },
+                      },
+                      [
+                        _c("b-input", {
+                          attrs: { type: "input", placeholder: "Skills" },
+                          model: {
+                            value: _vm.fields.skills,
+                            callback: function ($$v) {
+                              _vm.$set(_vm.fields, "skills", $$v)
+                            },
+                            expression: "fields.skills",
+                          },
+                        }),
+                      ],
+                      1
                     ),
                   ],
                   1
@@ -46159,89 +46207,215 @@ var render = function () {
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "buttons is-right" },
+                  { staticClass: "column" },
                   [
-                    _c("b-button", {
-                      attrs: {
-                        type: "is-primary is-outlined",
-                        label: "Post Training",
+                    _c(
+                      "b-field",
+                      {
+                        attrs: {
+                          label: "Seminar Date",
+                          "label-position": "on-border",
+                        },
                       },
-                      on: { click: _vm.submit },
-                    }),
+                      [
+                        _c("b-datepicker", {
+                          attrs: { placeholder: "Seminar Date" },
+                          model: {
+                            value: _vm.fields.seminar_date,
+                            callback: function ($$v) {
+                              _vm.$set(_vm.fields, "seminar_date", $$v)
+                            },
+                            expression: "fields.seminar_date",
+                          },
+                        }),
+                      ],
+                      1
+                    ),
                   ],
                   1
                 ),
-              ],
-              1
-            ),
-          ]),
-          _vm._v(" "),
-          _vm._l(_vm.seminars, function (seminar, index) {
-            return _c("div", { key: index, staticClass: "box box-post" }, [
-              _c("div", { staticClass: "box-post-heading" }, [
-                _c("div", { staticClass: "posted-text" }, [
-                  _vm._v("Posted: " + _vm._s(seminar.date_posted)),
-                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "columns" }, [
+                _c(
+                  "div",
+                  { staticClass: "column" },
+                  [
+                    _c(
+                      "b-field",
+                      {
+                        attrs: {
+                          label: "Learning Development",
+                          "label-position": "on-border",
+                          expanded: "",
+                        },
+                      },
+                      [
+                        _c(
+                          "b-select",
+                          {
+                            attrs: { expanded: "" },
+                            model: {
+                              value: _vm.fields.ld_type,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.fields, "ld_type", $$v)
+                              },
+                              expression: "fields.ld_type",
+                            },
+                          },
+                          _vm._l(_vm.ld_types, function (item, index) {
+                            return _c(
+                              "option",
+                              { key: index, domProps: { value: item.ld_type } },
+                              [_vm._v(_vm._s(item.ld_type))]
+                            )
+                          }),
+                          0
+                        ),
+                      ],
+                      1
+                    ),
+                  ],
+                  1
+                ),
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "post-action" },
+                  { staticClass: "column" },
                   [
                     _c(
-                      "b-dropdown",
+                      "b-field",
                       {
-                        attrs: { "aria-role": "list" },
-                        scopedSlots: _vm._u(
-                          [
-                            {
-                              key: "trigger",
-                              fn: function (ref) {
-                                var active = ref.active
-                                return [
-                                  _c("b-button", {
-                                    staticClass: "is-small",
-                                    attrs: {
-                                      label: "...",
-                                      type: "is-light",
-                                      "icon-right": active
-                                        ? "menu-up"
-                                        : "menu-down",
-                                    },
-                                  }),
-                                ]
-                              },
-                            },
-                          ],
-                          null,
-                          true
-                        ),
+                        attrs: {
+                          label: "Conducted/Sponsored By",
+                          "label-position": "on-border",
+                        },
                       },
                       [
-                        _vm._v(" "),
+                        _c("b-input", {
+                          attrs: {
+                            type: "input",
+                            placeholder: "Conducted/Sponsored By",
+                          },
+                          model: {
+                            value: _vm.fields.conducted_by,
+                            callback: function ($$v) {
+                              _vm.$set(_vm.fields, "conducted_by", $$v)
+                            },
+                            expression: "fields.conducted_by",
+                          },
+                        }),
+                      ],
+                      1
+                    ),
+                  ],
+                  1
+                ),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "columns" }, [
+                _c(
+                  "div",
+                  { staticClass: "column" },
+                  [
+                    _c(
+                      "b-field",
+                      {
+                        attrs: {
+                          label: "CPD Units",
+                          "label-position": "on-border",
+                        },
+                      },
+                      [
+                        _c("b-input", {
+                          attrs: { type: "input", placeholder: "CPD Units" },
+                          model: {
+                            value: _vm.fields.cpd_units,
+                            callback: function ($$v) {
+                              _vm.$set(_vm.fields, "cpd_units", $$v)
+                            },
+                            expression: "fields.cpd_units",
+                          },
+                        }),
+                      ],
+                      1
+                    ),
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "column" },
+                  [
+                    _c(
+                      "b-field",
+                      {
+                        attrs: {
+                          label: "No. of hours",
+                          "label-position": "on-border",
+                        },
+                      },
+                      [
+                        _c("b-numberinput", {
+                          attrs: {
+                            type: "number",
+                            placeholder: "No. of hours",
+                            controls: false,
+                          },
+                          model: {
+                            value: _vm.fields.no_hours,
+                            callback: function ($$v) {
+                              _vm.$set(_vm.fields, "no_hours", $$v)
+                            },
+                            expression: "fields.no_hours",
+                          },
+                        }),
+                      ],
+                      1
+                    ),
+                  ],
+                  1
+                ),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "columns" }, [
+                _c(
+                  "div",
+                  { staticClass: "column" },
+                  [
+                    _c(
+                      "b-field",
+                      {
+                        attrs: {
+                          label: "Specialization",
+                          "label-position": "on-border",
+                        },
+                      },
+                      [
                         _c(
-                          "b-dropdown-item",
+                          "b-select",
                           {
-                            attrs: { "aria-role": "listitem" },
-                            on: {
-                              click: function ($event) {
-                                return _vm.updatePost(seminar.seminar_post_id)
+                            attrs: { placeholder: "Specialization" },
+                            model: {
+                              value: _vm.fields.specialization,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.fields, "specialization", $$v)
                               },
+                              expression: "fields.specialization",
                             },
                           },
-                          [_vm._v("Update")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "b-dropdown-item",
-                          {
-                            attrs: { "aria-role": "listitem" },
-                            on: {
-                              click: function ($event) {
-                                return _vm.deletePost(seminar.seminar_post_id)
+                          _vm._l(_vm.specializations, function (item, index) {
+                            return _c(
+                              "option",
+                              {
+                                key: index,
+                                domProps: { value: item.specialization },
                               },
-                            },
-                          },
-                          [_vm._v("Delete")]
+                              [_vm._v(_vm._s(item.specialization))]
+                            )
+                          }),
+                          0
                         ),
                       ],
                       1
@@ -46251,91 +46425,111 @@ var render = function () {
                 ),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "post-desc" }, [
-                _c("div", { staticClass: "columns" }, [
-                  _c("div", { staticClass: "column" }, [
-                    _c("div", { staticClass: "has-text-weight-bold" }, [
-                      _vm._v("Title: " + _vm._s(seminar.title)),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "column" }, [
-                    _c("div", { staticClass: "has-text-weight-bold" }, [
-                      _vm._v("Skills: " + _vm._s(seminar.skills)),
-                    ]),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "columns" }, [
-                  _c("div", { staticClass: "column" }, [
-                    _c("div", { staticClass: "has-text-weight-bold" }, [
-                      _vm._v("Seminar Date: " + _vm._s(seminar.seminar_date)),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "column" }, [
-                    _c("div", { staticClass: "has-text-weight-bold" }, [
-                      _vm._v(
-                        "Learning Development: " + _vm._s(seminar.ld_type)
-                      ),
-                    ]),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "columns" }, [
-                  _c("div", { staticClass: "column" }, [
-                    _c("div", { staticClass: "has-text-weight-bold" }, [
-                      _vm._v("Conducted: " + _vm._s(seminar.conducted_by)),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "column" }, [
-                    _c("div", { staticClass: "has-text-weight-bold" }, [
-                      _vm._v("CPD Units: " + _vm._s(seminar.cpd_units)),
-                    ]),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "columns" }, [
-                  _c("div", { staticClass: "column" }, [
-                    _c("div", { staticClass: "has-text-weight-bold" }, [
-                      _vm._v(
-                        "Specialization: " + _vm._s(seminar.specialization)
-                      ),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "column" }, [
-                    _c("div", { staticClass: "has-text-weight-bold" }, [
-                      _vm._v("No of Hours: " + _vm._s(seminar.no_hours)),
-                    ]),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "columns" }, [
-                  _c("div", { staticClass: "column" }, [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(seminar.description) +
-                        "\n                        "
+              _c("div", { staticClass: "columns" }, [
+                _c(
+                  "div",
+                  { staticClass: "column" },
+                  [
+                    _c(
+                      "b-field",
+                      {
+                        attrs: {
+                          label: "Description",
+                          "label-position": "on-border",
+                        },
+                      },
+                      [
+                        _c("b-input", {
+                          attrs: {
+                            type: "textarea",
+                            placeholder: "Description",
+                          },
+                          model: {
+                            value: _vm.fields.description,
+                            callback: function ($$v) {
+                              _vm.$set(_vm.fields, "description", $$v)
+                            },
+                            expression: "fields.description",
+                          },
+                        }),
+                      ],
+                      1
                     ),
-                  ]),
-                ]),
+                  ],
+                  1
+                ),
               ]),
               _vm._v(" "),
-              seminar.img_path
-                ? _c("div", { staticClass: "post-img-container" }, [
-                    _c("img", {
-                      staticClass: "post-img",
-                      attrs: { src: "/storage/seminars/" + seminar.img_path },
-                    }),
-                  ])
-                : _vm._e(),
-            ])
-          }),
-        ],
-        2
-      ),
+              _c(
+                "b-field",
+                {
+                  staticClass: "file is-primary",
+                  class: { "has-name": !!_vm.file },
+                },
+                [
+                  _c(
+                    "b-upload",
+                    {
+                      staticClass: "file-label",
+                      model: {
+                        value: _vm.file,
+                        callback: function ($$v) {
+                          _vm.file = $$v
+                        },
+                        expression: "file",
+                      },
+                    },
+                    [
+                      _c(
+                        "span",
+                        { staticClass: "file-cta" },
+                        [
+                          _c("b-icon", {
+                            staticClass: "file-icon",
+                            attrs: { icon: "upload" },
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "file-label" }, [
+                            _vm._v("Click to upload"),
+                          ]),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _vm.file
+                        ? _c("span", { staticClass: "file-name" }, [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(_vm.file.name) +
+                                "\n                            "
+                            ),
+                          ])
+                        : _vm._e(),
+                    ]
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "buttons is-right" },
+                [
+                  _c("b-button", {
+                    attrs: {
+                      type: "is-primary is-outlined",
+                      label: "Post Training",
+                    },
+                    on: { click: _vm.submit },
+                  }),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
+        ]),
+      ]),
     ]),
   ])
 }
@@ -61197,6 +61391,7 @@ var map = {
 	"./components/FooterPage.vue": "./resources/js/components/FooterPage.vue",
 	"./components/Hrld/HrldHome.vue": "./resources/js/components/Hrld/HrldHome.vue",
 	"./components/Hrld/NavbarHrldComponent.vue": "./resources/js/components/Hrld/NavbarHrldComponent.vue",
+	"./components/Hrld/PostedSeminars.vue": "./resources/js/components/Hrld/PostedSeminars.vue",
 	"./components/Hrld/PrintTeacher.vue": "./resources/js/components/Hrld/PrintTeacher.vue",
 	"./components/Hrld/RecommendedTeacher.vue": "./resources/js/components/Hrld/RecommendedTeacher.vue",
 	"./components/Hrld/SeminarPosts.vue": "./resources/js/components/Hrld/SeminarPosts.vue",

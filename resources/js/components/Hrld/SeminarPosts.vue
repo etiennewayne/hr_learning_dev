@@ -105,66 +105,7 @@
                     </div>
                 </div>
 
-                <div class="box box-post" v-for="(seminar, index) in seminars" :key="index">
-                    <div class="box-post-heading">
-                        <div class="posted-text">Posted: {{ seminar.date_posted }}</div>
-                        <div class="post-action">
-                            <b-dropdown aria-role="list">
-                                <template #trigger="{ active }">
-                                    <b-button
-                                        label="..."
-                                        class="is-small"
-                                        type="is-light"
-                                        :icon-right="active ? 'menu-up' : 'menu-down'" />
-                                </template>
-                                <b-dropdown-item aria-role="listitem" @click="updatePost(seminar.seminar_post_id)">Update</b-dropdown-item>
-                                <b-dropdown-item aria-role="listitem" @click="deletePost(seminar.seminar_post_id)">Delete</b-dropdown-item>
-                            </b-dropdown>
-                        </div>
-                    </div>
-                    <div class="post-desc">
-                        <div class="columns">
-                            <div class="column">
-                                <div class="has-text-weight-bold">Title: {{ seminar.title }}</div>
-                            </div>
-                            <div class="column">
-                                <div class="has-text-weight-bold">Skills: {{ seminar.skills }}</div>
-                            </div>
-                        </div>
-                        <div class="columns">
-                            <div class="column">
-                                <div class="has-text-weight-bold">Seminar Date: {{ seminar.seminar_date  }}</div>
-                            </div>
-                            <div class="column">
-                                <div class="has-text-weight-bold">Learning Development: {{ seminar.ld_type }}</div>
-                            </div>
-                        </div>
-                        <div class="columns">
-                            <div class="column">
-                                <div class="has-text-weight-bold">Conducted: {{ seminar.conducted_by  }}</div>
-                            </div>
-                            <div class="column">
-                                <div class="has-text-weight-bold">CPD Units: {{ seminar.cpd_units }}</div>
-                            </div>
-                        </div>
-                        <div class="columns">
-                            <div class="column">
-                                <div class="has-text-weight-bold">Specialization: {{ seminar.specialization  }}</div>
-                            </div>
-                            <div class="column">
-                                <div class="has-text-weight-bold">No of Hours: {{ seminar.no_hours }}</div>
-                            </div>
-                        </div>
-                        <div class="columns">
-                            <div class="column">
-                                {{ seminar.description }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="post-img-container" v-if="seminar.img_path">
-                        <img :src="`/storage/seminars/${seminar.img_path}`" class="post-img" />
-                    </div>
-                </div>
+
 
 
             </div> <!-- col -->
@@ -201,11 +142,7 @@ export default{
             this.desc = '';
         },
 
-        loadSeminars(){
-            axios.get('/hrld/get-seminars').then(res=>{
-                this.seminars = res.data
-            })
-        },
+
         loadLearningDevelopmentTypes(){
             axios.get('/get-open-learning-dev-types').then(res=>{
                 this.ld_types = res.data
@@ -246,7 +183,7 @@ export default{
                             message: 'Seminar post successfully update.',
                             type: 'is-success',
                             onConfirm: ()=>  {
-                                this.loadSeminars()
+                                //this.loadSeminars()
                                 this.clearFields()
 
                             }
@@ -263,7 +200,7 @@ export default{
                             message: 'Seminar successfully posted.',
                             type: 'is-success',
                             onConfirm: ()=>  {
-                                this.loadSeminars()
+                                //this.loadSeminars()
                                 this.clearFields()
                             }
                         });
@@ -281,40 +218,30 @@ export default{
             this.file = null
         },
 
-        deletePost(seminarPostId){
-            axios.delete('/hrld/seminar-posts/' + seminarPostId).then(res=>{
-                if(res.data.status === 'deleted'){
-                    this.$buefy.toast.open({
-                        message: 'Post deleted successfully.',
-                        type: 'is-success'
-                    })
-                    this.loadSeminars()
-                }
-            })
-        },
 
-        updatePost(seminarPostId){
-            this.seminar_id = seminarPostId
-            this.fields = {};
 
-            axios.get('/hrld/get-seminar-posts/' + seminarPostId).then(res=>{
-                this.fields = {
-                    title: res.data.title,
-                    skills: res.data.skills,
-                    seminar_date: new Date(res.data.seminar_date),
-                    ld_type: res.data.ld_type,
-                    conducted_by: res.data.conducted_by,
-                    cpd_units: res.data.cpd_units,
-                    no_hours: parseInt(res.data.no_hours),
-                    specialization: res.data.specialization,
-                    description: res.data.description
-                }
-            })
-        }
+        // updatePost(seminarPostId){
+        //     this.seminar_id = seminarPostId
+        //     this.fields = {};
+        //
+        //     axios.get('/hrld/get-seminar-posts/' + seminarPostId).then(res=>{
+        //         this.fields = {
+        //             title: res.data.title,
+        //             skills: res.data.skills,
+        //             seminar_date: new Date(res.data.seminar_date),
+        //             ld_type: res.data.ld_type,
+        //             conducted_by: res.data.conducted_by,
+        //             cpd_units: res.data.cpd_units,
+        //             no_hours: parseInt(res.data.no_hours),
+        //             specialization: res.data.specialization,
+        //             description: res.data.description
+        //         }
+        //     })
+        // }
     },
 
     mounted(){
-        this.loadSeminars()
+        //this.loadSeminars()
         this.loadLearningDevelopmentTypes()
         this.loadSpecializations()
     }

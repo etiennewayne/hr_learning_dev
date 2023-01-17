@@ -13,18 +13,32 @@
                 <b-navbar-item href="/hrld/home">
                     Home
                 </b-navbar-item>
-                <b-navbar-item href="/hrld/seminar-posts">
+                <!-- <b-navbar-item href="/hrld/seminar-posts">
                     Seminars
-                </b-navbar-item>
+                </b-navbar-item> -->
 
 
-                <b-navbar-item href="/hrld/recommended-teachers">
+
+                <b-navbar-dropdown label="Seminars">
+                    <b-navbar-item href="/hrld/seminar-posts">
+                        Add New Seminar
+                    </b-navbar-item>
+                    <b-navbar-item href="/hrld/posted-seminars">
+                        Posted Seminar
+                    </b-navbar-item>
+                    <b-navbar-item href="/hrld/recommended-teachers">
+                        List of Seminar w/ Selected Candidates
+                    </b-navbar-item>
+                </b-navbar-dropdown>
+
+
+                <!-- <b-navbar-item href="/hrld/recommended-teachers">
                     Teacher List
-                </b-navbar-item>
+                </b-navbar-item> -->
 
 
                 <b-navbar-item href="/hrld/teacher-accounts">
-                    Account
+                    Teachers
                 </b-navbar-item>
 
 

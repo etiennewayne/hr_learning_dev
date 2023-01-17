@@ -29,7 +29,7 @@ class RecommendedTeacherController extends Controller
 
     public function printTeacher($id){
 
-        $data = RecommendedTeacher::with('recommended_teacher_lists')
+        $data = RecommendedTeacher::with('recommended_teacher_lists', 'seminar')
             ->where('recommended_teacher_id', $id)
             ->first();
         return view('hrld.print-teacher')

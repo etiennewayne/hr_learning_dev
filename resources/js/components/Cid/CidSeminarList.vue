@@ -81,22 +81,7 @@
                                 {{ props.row.seminar_date }}
                             </b-table-column>
 
-                            <!-- <b-table-column field="ratings" label="Rating" centered v-slot="props">
-                                {{ props.row.ratings }}
-                            </b-table-column> -->
 
-                            <b-table-column label="Action" v-slot="props">
-                                <div class="is-flex">
-<!--                                    <b-tooltip label="Teacher List" type="is-primary">-->
-<!--                                        <b-button class="button is-small mr-1" tag="a"-->
-<!--                                            icon-right="format-list-bulleted"-->
-<!--                                            @click="teacherList(props.row.seminar_post_id)"></b-button>-->
-<!--                                    </b-tooltip>-->
-                                    <modal-browse-teacher-list
-                                        :prop-specialization="props.row.specialization"
-                                        :prop-seminar="props.row"></modal-browse-teacher-list>
-                                </div>
-                            </b-table-column>
                         </b-table>
 
                     </div>
@@ -105,51 +90,6 @@
         </div><!--section div-->
 
 
-
-        <!--modal create-->
-        <b-modal v-model="modalRate" has-modal-card
-            trap-focus
-            :width="640"
-            aria-role="dialog"
-            aria-label="Modal"
-            aria-modal>
-
-
-            <div class="modal-card">
-                <header class="modal-card-head">
-                    <p class="modal-card-title">Rating</p>
-                    <button
-                        type="button"
-                        class="delete"
-                        @click="modalRate = false"/>
-                </header>
-                <form @submit.prevent="submitRating">
-                    <section class="modal-card-body">
-
-
-
-                        <div class="">
-                            <div class="column">
-
-                                <b-field label="Rating">
-                                    <b-numberinput
-                                        v-model="fields.rating"
-                                        :controls="false"
-                                        min="1">
-                                    </b-numberinput>
-                                </b-field>
-                            </div>
-
-                        </div> <!-- div class-->
-                    </section>
-                    <footer class="modal-card-foot">
-                        <button
-                            class="button is-success">Submit Rating</button>
-                    </footer>
-                </form>
-            </div>
-        </b-modal>
-        <!--close modal-->
 
 
     </div> <!-- root div -->

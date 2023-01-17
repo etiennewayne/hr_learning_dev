@@ -35,16 +35,12 @@ class RecommendedCandidateController extends Controller
 
                 'a.role', 'a.suffix', 'a.sex', 'a.civil_status')
             ->where('a.lname', 'like', $req->lname . '%');
-        //return $queryBuilder->toSql();
-
-        //$data = DB::raw('select * from ('.$queryBuilder.') as tbl1')->get();
 
         $data = DB::table($queryBuilder)
                 ->where('specialization', 'like', '%' .$req->specialization . '%')
-//                ->where('lname', 'like', '%' .$req->lname . '%')
-//                ->where('fname', 'like', '%' .$req->fname . '%')
                 ->orderBy('no_seminars', 'asc')
                 ->get();
+
         return $data;
     }
 

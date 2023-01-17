@@ -134,6 +134,9 @@ Route::delete('/hrld/seminar-posts/{id}', [App\Http\Controllers\Hrld\HrldSeminar
 Route::post('/hrld/seminar-posts-store', [App\Http\Controllers\Hrld\HrldSeminarPostController::class, 'store']);
 Route::get('/hrld/get-seminar-posts/{id}', [App\Http\Controllers\Hrld\HrldSeminarPostController::class, 'show']);
 Route::post('/hrld/seminar-posts-update/{id}', [App\Http\Controllers\Hrld\HrldSeminarPostController::class, 'update']);
+Route::get('/hrld/posted-seminars', [App\Http\Controllers\Hrld\PostedSeminarController::class, 'index']);
+
+
 
 Route::resource('/hrld/recommended-teachers', App\Http\Controllers\Hrld\RecommendedTeacherController::class);
 Route::get('/hrld/get-recommended-teachers', [App\Http\Controllers\Hrld\RecommendedTeacherController::class, 'getRecommendedTeachers']);
