@@ -36966,7 +36966,7 @@ var render = function () {
             _c(
               "b-navbar-item",
               { attrs: { href: "/cid/recommended-candidates" } },
-              [_vm._v("\n            List of Teachers\n        ")]
+              [_vm._v("\n            List of Recommend\n        ")]
             ),
             _vm._v(" "),
             _c("b-navbar-item", { attrs: { tag: "div" } }, [
