@@ -24,7 +24,7 @@
                             </div>
                             <div class="column">
                                 <b-field label="Seminar Date" label-position="on-border">
-                                    <b-datepicker placeholder="Seminar Date" v-model="fields.seminar_date">
+                                    <b-datepicker placeholder="Seminar Date" :min-date="minDate" v-model="fields.seminar_date">
                                     </b-datepicker>
                                 </b-field>
                             </div>
@@ -128,6 +128,8 @@ export default{
             seminars: [],
             specializations: [],
             ld_types: [],
+
+            minDate: new Date()
         }
     },
 

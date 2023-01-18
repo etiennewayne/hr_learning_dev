@@ -27,7 +27,7 @@
                 </div>
 
 
-                <div class="table-title">Seminar Title: {{ data.seminar_title }}</div>
+                <div class="table-title mt-5">Seminar Title: {{ data.seminar_title }}</div>
                 <div class="table-title">Date of Seminar: {{ data.seminar.seminar_date }}</div>
                 <div class="table-title">Approved List of Candidates: {{ data.seminar_date }}</div>
 

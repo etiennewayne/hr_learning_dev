@@ -8612,7 +8612,8 @@ __webpack_require__.r(__webpack_exports__);
       seminar_id: 0,
       seminars: [],
       specializations: [],
-      ld_types: []
+      ld_types: [],
+      minDate: new Date()
     };
   },
   methods: {
@@ -36966,7 +36967,7 @@ var render = function () {
             _c(
               "b-navbar-item",
               { attrs: { href: "/cid/recommended-candidates" } },
-              [_vm._v("\n            List of Recommend\n        ")]
+              [_vm._v("\n            Recommended Candidate\n        ")]
             ),
             _vm._v(" "),
             _c("b-navbar-item", { attrs: { tag: "div" } }, [
@@ -45513,7 +45514,7 @@ var render = function () {
         ? _c("div", { staticClass: "print-body" }, [
             _vm._m(0),
             _vm._v(" "),
-            _c("div", { staticClass: "table-title" }, [
+            _c("div", { staticClass: "table-title mt-5" }, [
               _vm._v("Seminar Title: " + _vm._s(_vm.data.seminar_title)),
             ]),
             _vm._v(" "),
@@ -46219,7 +46220,10 @@ var render = function () {
                       },
                       [
                         _c("b-datepicker", {
-                          attrs: { placeholder: "Seminar Date" },
+                          attrs: {
+                            placeholder: "Seminar Date",
+                            "min-date": _vm.minDate,
+                          },
                           model: {
                             value: _vm.fields.seminar_date,
                             callback: function ($$v) {
