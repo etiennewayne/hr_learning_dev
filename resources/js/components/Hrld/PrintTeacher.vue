@@ -143,7 +143,7 @@ export default{
 
     .w-line{
         height: 1px;
-        background: gray;
+       border: 1px solid black;
     }
 
     .signature{
@@ -159,7 +159,7 @@ export default{
 
     .w-prepared{
         font-weight: bold;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
     }
     .designation{
         text-align:center;
