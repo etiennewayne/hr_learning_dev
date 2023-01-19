@@ -59,16 +59,16 @@
                                 {{ props.row.agency_idno }}
                             </b-table-column>
 
-                            <b-table-column field="username" label="Username" sortable v-slot="props">
-                                {{ props.row.username }}
-                            </b-table-column>
-
                             <b-table-column field="lname" label="Name" sortable v-slot="props">
                                 {{ props.row.lname }}, {{ props.row.fname }} {{ props.row.mname }}
                             </b-table-column>
 
                             <b-table-column field="sex" label="Sex" v-slot="props">
                                 {{ props.row.sex }}
+                            </b-table-column>
+
+                            <b-table-column field="school_assigned" label="School Assigned" v-slot="props">
+                                {{ props.row.school_assigned }}
                             </b-table-column>
 
                             <b-table-column field="email" label="Email" v-slot="props">
@@ -107,7 +107,7 @@
                                 <tr v-for="(item, index) in props.row.learning_developments" :key="index">
                                     <td>{{ item.title_learning_dev }}</td>
                                     <td class="has-text-centered">
-                                        <div class="m-1" v-for="(img, ix) in item.certificates" 
+                                        <div class="m-1" v-for="(img, ix) in item.certificates"
                                             :key="ix">
                                             <b-button
                                                 :label="`Image[${ix + 1}]`"
@@ -123,7 +123,7 @@
                                 </tr>
                             </template>
 
-                            
+
                         </b-table>
 
 
@@ -142,7 +142,7 @@
             aria-label="Modal"
             aria-modal>
 
-        
+
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Rating</p>
@@ -153,7 +153,7 @@
                 </header>
                 <section class="modal-card-body">
                     <div class="">
-                        
+
                         <div class="column">
 
                             <img :src="`/storage/certificates/${filePath}`" />
@@ -186,13 +186,13 @@ export default{
             page: 1,
             perPage: 10,
             defaultSortDirection: 'asc',
-          
+
             search: {
                 lname: '',
             },
 
             modalAttachment: false,
-            
+
             filePath: '',
 
             errors: {},
@@ -288,7 +288,7 @@ export default{
             this.modalAttachment = true;
         }
 
-       
+
 
     },
 

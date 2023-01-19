@@ -103,6 +103,20 @@
 
                             <div class="columns">
                                 <div class="column">
+                                    <b-field label="School Assigned" expanded label-position="on-border"
+                                             :type="this.errors.school_assigned ? 'is-danger':''"
+                                             :message="this.errors.school_assigned ? this.errors.school_assigned[0] : ''">
+                                        <b-input placeholder="School Assigned"
+                                                 typeof="text"
+                                                 v-model="fields.school_assigned"
+                                                 icon="account" expanded>
+                                        </b-input>
+                                    </b-field>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column">
                                     <b-field label-position="on-border" label="Height(m)"
                                              :type="this.errors.height ? 'is-danger':''"
                                              :message="this.errors.height ? this.errors.height[0] : ''">
@@ -880,10 +894,10 @@
 
                                 <div class="column is-4">
                                     <b-field>
-                                        <b-radio native-value="1" 
+                                        <b-radio native-value="1"
                                             name="is_guilty_administrative_offense"
                                             v-model="fields.is_guilty_administrative_offense">Yes</b-radio>
-                                        <b-radio native-value="0" 
+                                        <b-radio native-value="0"
                                             name="is_guilty_administrative_offense"
                                             v-model="fields.is_guilty_administrative_offense">No</b-radio>
                                     </b-field>
@@ -892,7 +906,7 @@
                                     </b-field>
                                 </div>
                             </div>
-                           
+
                             <div class="columns">
                                 <div class="column">
                                     Have you been criminally charged before any court?
@@ -900,10 +914,10 @@
 
                                 <div class="column is-4">
                                     <b-field>
-                                        <b-radio native-value="1" 
+                                        <b-radio native-value="1"
                                             name="is_criminally_charge"
                                             v-model="fields.is_criminally_charge">Yes</b-radio>
-                                        <b-radio native-value="0" 
+                                        <b-radio native-value="0"
                                             name="is_criminally_charge"
                                             v-model="fields.is_criminally_charge">No</b-radio>
                                     </b-field>
@@ -927,10 +941,10 @@
                                 </div>
                                 <div class="column is-4">
                                     <b-field>
-                                        <b-radio native-value="1" 
+                                        <b-radio native-value="1"
                                             name="is_convicted"
                                             v-model="fields.is_convicted">Yes</b-radio>
-                                        <b-radio native-value="0" 
+                                        <b-radio native-value="0"
                                             name="is_convicted"
                                             v-model="fields.is_convicted">No</b-radio>
                                     </b-field>
@@ -948,10 +962,10 @@
                                 </div>
                                 <div class="column is-4">
                                     <b-field>
-                                        <b-radio native-value="1" 
+                                        <b-radio native-value="1"
                                             name="is_separated"
                                             v-model="fields.is_separated">Yes</b-radio>
-                                        <b-radio native-value="0" 
+                                        <b-radio native-value="0"
                                             name="is_separated"
                                             v-model="fields.is_separated">No</b-radio>
                                     </b-field>
@@ -973,7 +987,7 @@
                                         <b-radio native-value="1"
                                             name="is_candidate_election"
                                             v-model="fields.is_candidate_election">Yes</b-radio>
-                                        <b-radio native-value="0" 
+                                        <b-radio native-value="0"
                                             name="is_candidate_election"
                                             v-model="fields.is_candidate_election">No</b-radio>
                                     </b-field>
@@ -989,10 +1003,10 @@
                                 </div>
                                 <div class="column is-4">
                                     <b-field>
-                                        <b-radio native-value="1" 
+                                        <b-radio native-value="1"
                                             name="is_resigned"
                                             v-model="fields.is_resigned">Yes</b-radio>
-                                        <b-radio native-value="0" 
+                                        <b-radio native-value="0"
                                             name="is_resigned"
                                             v-model="fields.is_resigned">No</b-radio>
                                     </b-field>
@@ -1003,7 +1017,7 @@
                             </div>
 
                             <div class="divider-gray"></div>
-                            
+
                             <div class="columns">
                                 <div class="column">
                                     Have you acquired the status of an immigrant or permanent resident of another country?
@@ -1013,7 +1027,7 @@
                                         <b-radio native-value="1"
                                             name="is_immigrant"
                                             v-model="fields.is_immigrant">Yes</b-radio>
-                                        <b-radio native-value="0" 
+                                        <b-radio native-value="0"
                                             name="is_immigrant"
                                             v-model="fields.is_immigrant">No</b-radio>
                                     </b-field>
@@ -1037,10 +1051,10 @@
                                 </div>
                                 <div class="column is-4">
                                     <b-field>
-                                        <b-radio native-value="1" 
+                                        <b-radio native-value="1"
                                             name="is_indigenous"
                                             v-model="fields.is_indigenous">Yes</b-radio>
-                                        <b-radio native-value="0" 
+                                        <b-radio native-value="0"
                                             name="is_indigenous"
                                             v-model="fields.is_indigenous">No</b-radio>
                                     </b-field>
@@ -1055,10 +1069,10 @@
                                 </div>
                                 <div class="column is-4">
                                     <b-field>
-                                        <b-radio native-value="1" 
+                                        <b-radio native-value="1"
                                             name="is_disable"
                                             v-model="fields.is_disable">Yes</b-radio>
-                                        <b-radio native-value="0" 
+                                        <b-radio native-value="0"
                                             name="is_disable"
                                             v-model="fields.is_disable">No</b-radio>
                                     </b-field>
@@ -1074,10 +1088,10 @@
                                 </div>
                                 <div class="column is-4">
                                     <b-field>
-                                        <b-radio native-value="1" 
-                                            name="is_solo_parent" 
+                                        <b-radio native-value="1"
+                                            name="is_solo_parent"
                                             v-model="fields.is_solo_parent">Yes</b-radio>
-                                        <b-radio native-value="0" 
+                                        <b-radio native-value="0"
                                             name="is_solo_parent"
                                             v-model="fields.is_solo_parent">No</b-radio>
                                     </b-field>
@@ -1229,6 +1243,7 @@ export default {
             this.fields.mname = this.user.mname;
             this.fields.suffix = this.user.suffix;
             this.fields.sex = this.user.sex;
+            this.fields.school_assigned = this.user.school_assigned;
             this.fields.date_birth = new Date(this.user.date_birth);
             this.fields.place_birth = this.user.place_birth;
             this.fields.civil_status = this.user.civil_status;

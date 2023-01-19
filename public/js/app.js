@@ -6424,6 +6424,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['propCivils', 'propCitizenships', 'propData'],
   data: function data() {
@@ -6516,6 +6530,7 @@ __webpack_require__.r(__webpack_exports__);
       this.fields.mname = this.user.mname;
       this.fields.suffix = this.user.suffix;
       this.fields.sex = this.user.sex;
+      this.fields.school_assigned = this.user.school_assigned;
       this.fields.date_birth = new Date(this.user.date_birth);
       this.fields.place_birth = this.user.place_birth;
       this.fields.civil_status = this.user.civil_status;
@@ -9507,6 +9522,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -29030,7 +29058,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-0b613526]{\r\n        padding: 5px;\r\n        color: white;\r\n        background-color: green;\r\n        font-weight: bold;\r\n        font-size: .8em;\n}\n.unverified[data-v-0b613526]{\r\n        padding: 5px;\r\n        color: white;\r\n        background-color: red;\r\n        font-weight: bold;\r\n        font-size: .8em;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-0b613526]{\n        padding: 5px;\n        color: white;\n        background-color: green;\n        font-weight: bold;\n        font-size: .8em;\n}\n.unverified[data-v-0b613526]{\n        padding: 5px;\n        color: white;\n        background-color: red;\n        font-weight: bold;\n        font-size: .8em;\n}\n\n\n\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -39015,6 +39043,50 @@ var render = function () {
                             "b-field",
                             {
                               attrs: {
+                                label: "School Assigned",
+                                expanded: "",
+                                "label-position": "on-border",
+                                type: this.errors.school_assigned
+                                  ? "is-danger"
+                                  : "",
+                                message: this.errors.school_assigned
+                                  ? this.errors.school_assigned[0]
+                                  : "",
+                              },
+                            },
+                            [
+                              _c("b-input", {
+                                attrs: {
+                                  placeholder: "School Assigned",
+                                  typeof: "text",
+                                  icon: "account",
+                                  expanded: "",
+                                },
+                                model: {
+                                  value: _vm.fields.school_assigned,
+                                  callback: function ($$v) {
+                                    _vm.$set(_vm.fields, "school_assigned", $$v)
+                                  },
+                                  expression: "fields.school_assigned",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "columns" }, [
+                      _c(
+                        "div",
+                        { staticClass: "column" },
+                        [
+                          _c(
+                            "b-field",
+                            {
+                              attrs: {
                                 "label-position": "on-border",
                                 label: "Height(m)",
                                 type: this.errors.height ? "is-danger" : "",
@@ -46836,28 +46908,6 @@ var render = function () {
                     }),
                     _vm._v(" "),
                     _c("b-table-column", {
-                      attrs: {
-                        field: "username",
-                        label: "Username",
-                        sortable: "",
-                      },
-                      scopedSlots: _vm._u([
-                        {
-                          key: "default",
-                          fn: function (props) {
-                            return [
-                              _vm._v(
-                                "\n                            " +
-                                  _vm._s(props.row.username) +
-                                  "\n                        "
-                              ),
-                            ]
-                          },
-                        },
-                      ]),
-                    }),
-                    _vm._v(" "),
-                    _c("b-table-column", {
                       attrs: { field: "lname", label: "Name", sortable: "" },
                       scopedSlots: _vm._u([
                         {
@@ -46889,6 +46939,27 @@ var render = function () {
                               _vm._v(
                                 "\n                            " +
                                   _vm._s(props.row.sex) +
+                                  "\n                        "
+                              ),
+                            ]
+                          },
+                        },
+                      ]),
+                    }),
+                    _vm._v(" "),
+                    _c("b-table-column", {
+                      attrs: {
+                        field: "school_assigned",
+                        label: "School Assigned",
+                      },
+                      scopedSlots: _vm._u([
+                        {
+                          key: "default",
+                          fn: function (props) {
+                            return [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(props.row.school_assigned) +
                                   "\n                        "
                               ),
                             ]
@@ -48266,6 +48337,46 @@ var render = function () {
                             ]),
                           ]
                         ),
+                      ],
+                      1
+                    ),
+                  ],
+                  1
+                ),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "columns" }, [
+                _c(
+                  "div",
+                  { staticClass: "column" },
+                  [
+                    _c(
+                      "b-field",
+                      {
+                        attrs: {
+                          label: "School Assigned",
+                          "label-position": "on-border",
+                          type: this.errors.school_assigned ? "is-danger" : "",
+                          message: this.errors.school_assigned
+                            ? this.errors.school_assigned[0]
+                            : "",
+                        },
+                      },
+                      [
+                        _c("b-input", {
+                          attrs: {
+                            type: "text",
+                            required: "",
+                            placeholder: "School Assigned",
+                          },
+                          model: {
+                            value: _vm.fields.school_assigned,
+                            callback: function ($$v) {
+                              _vm.$set(_vm.fields, "school_assigned", $$v)
+                            },
+                            expression: "fields.school_assigned",
+                          },
+                        }),
                       ],
                       1
                     ),

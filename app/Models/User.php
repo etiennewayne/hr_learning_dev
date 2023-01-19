@@ -20,7 +20,9 @@ class User extends Authenticatable
 
     protected $primaryKey = 'user_id';
     protected $fillable = [
-        'username', 'lname', 'fname', 'mname', 'suffix', 'date_birth', 'sex', 'civil_status',
+        'username', 'lname', 'fname', 'mname',
+        'suffix', 'date_birth', 'sex', 'school_assigned',
+        'civil_status',
         'civil_status_others', 'height', 'weight', 'blood_type', 'gsis',
         'pagibig', 'philhealth', 'sss', 'tin', 'agency_idno', 'citizenship',
         'res_province', 'res_city', 'res_barangay', 'res_street', 'res_houseno_blockno', 'res_zipcode',
@@ -120,8 +122,8 @@ class User extends Authenticatable
     }
 
 
-    
-    
-    
+
+
+
 
 }

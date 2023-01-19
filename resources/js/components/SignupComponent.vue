@@ -102,6 +102,19 @@
                             </div>
                         </div>
 
+                        <div class="columns">
+                            <div class="column">
+                                <b-field label="School Assigned" label-position="on-border"
+                                         :type="this.errors.school_assigned ? 'is-danger':''"
+                                         :message="this.errors.school_assigned ? this.errors.school_assigned[0] : ''">
+                                    <b-input type="text"
+                                             required
+                                             v-model="fields.school_assigned"
+                                             placeholder="School Assigned"></b-input>
+                                </b-field>
+                            </div>
+                        </div>
+
 <!--                        <div class="columns">-->
 <!--                            <div class="column">-->
 <!--                                <b-field label="Special Skill & Hobbies" label-position="on-border">-->
