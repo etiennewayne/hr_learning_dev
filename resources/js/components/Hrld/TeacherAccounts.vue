@@ -71,6 +71,10 @@
                                 {{ props.row.school_assigned }}
                             </b-table-column>
 
+                            <b-table-column field="contact_no" label="Contact No." v-slot="props">
+                                {{ props.row.contact_no }}
+                            </b-table-column>
+
                             <b-table-column field="email" label="Email" v-slot="props">
                                 {{ props.row.email }}
                             </b-table-column>
