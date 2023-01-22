@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div class="section">
+        <div class="section no-print">
             <div class="columns is-centered">
-                <div class="column is-10-desktop is-12-tablet">
+                <div class="column is-12-desktop is-12-tablet">
                     <div class="box">
 
                         <div class="is-flex mb-2" style="font-size: 20px; font-weight: bold;">LIST OF TEACHERS</div>
@@ -93,9 +93,10 @@
                                     <b-tooltip label="Approve Account" type="is-primary" v-if="props.row.is_verified === 0">
                                         <b-button class="button is-small mr-1" tag="a" icon-right="thumb-up-outline" @click="confirmApprove(props.row.user_id)"></b-button>
                                     </b-tooltip>
-                                    <!-- <b-tooltip label="Reset Password" type="is-info">
-                                        <b-button class="button is-small mr-1" icon-right="lock" @click="openModalResetPassword(props.row.user_id)"></b-button>
-                                    </b-tooltip> -->
+                                    <b-tooltip label="PDS" type="is-info">
+                                        <b-button class="button is-small mr-1" 
+                                            icon-right="printer" @click="printMe(props.row)"></b-button>
+                                    </b-tooltip>
                                 </div>
                             </b-table-column>
 
@@ -174,6 +175,33 @@
         </b-modal>
         <!--close modal-->
 
+
+        <div class="pds">
+            <div class="text-title">
+                Personal Data Sheet
+            </div>
+
+            <div class="w-row">
+                <div class="col">
+                    <div>
+                        Surname: {{ pds.lname }}
+                    </div>
+                    <div class="w-row w-space-evenly    ">
+                        First Name: {{ pds.fname }}
+                        <div>
+                            Suffix: {{ pds.suffix }}
+                        </div>
+                    </div>
+                    <div>
+                        Middle Name: {{ pds.mname }}
+                    </div>
+                </div> <!-- col -->
+                <div class="col w-space-evenly">
+                    
+                </div> <!-- col -->
+            </div>
+        </div>
+
     </div>
 </template>
 
@@ -198,6 +226,9 @@ export default{
             modalAttachment: false,
 
             filePath: '',
+
+            pds: {},
+
 
             errors: {},
             btnClass: {
@@ -290,6 +321,18 @@ export default{
         openCertificate(cert){
             this.filePath = cert;
             this.modalAttachment = true;
+        },
+
+        printMe(data){
+            this.pds = data
+            let delayInMilliseconds = 1000; //1 second
+
+            setTimeout(function() {
+            //your code to be executed after 1 second
+                window.print()
+            }, delayInMilliseconds);
+           
+           
         }
 
 
@@ -306,7 +349,7 @@ export default{
 
 
 <style scoped>
-.verified{
+    .verified{
         padding: 5px;
         color: white;
         background-color: green;
@@ -320,6 +363,8 @@ export default{
         font-weight: bold;
         font-size: .8em;
     }
+
+   
 
 
 

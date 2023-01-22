@@ -8922,6 +8922,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -8938,6 +8966,7 @@ __webpack_require__.r(__webpack_exports__);
       },
       modalAttachment: false,
       filePath: '',
+      pds: {},
       errors: {},
       btnClass: {
         'is-success': true,
@@ -9023,6 +9052,15 @@ __webpack_require__.r(__webpack_exports__);
     openCertificate: function openCertificate(cert) {
       this.filePath = cert;
       this.modalAttachment = true;
+    },
+    printMe: function printMe(data) {
+      this.pds = data;
+      var delayInMilliseconds = 1000; //1 second
+
+      setTimeout(function () {
+        //your code to be executed after 1 second
+        window.print();
+      }, delayInMilliseconds);
     }
   },
   mounted: function mounted() {
@@ -29062,7 +29100,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-0b613526]{\n        padding: 5px;\n        color: white;\n        background-color: green;\n        font-weight: bold;\n        font-size: .8em;\n}\n.unverified[data-v-0b613526]{\n        padding: 5px;\n        color: white;\n        background-color: red;\n        font-weight: bold;\n        font-size: .8em;\n}\n\n\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-0b613526]{\n    padding: 5px;\n    color: white;\n    background-color: green;\n    font-weight: bold;\n    font-size: .8em;\n}\n.unverified[data-v-0b613526]{\n    padding: 5px;\n    color: white;\n    background-color: red;\n    font-weight: bold;\n    font-size: .8em;\n}\n\n\n\n\n\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -46639,9 +46677,9 @@ var render = function () {
   return _c(
     "div",
     [
-      _c("div", { staticClass: "section" }, [
+      _c("div", { staticClass: "section no-print" }, [
         _c("div", { staticClass: "columns is-centered" }, [
-          _c("div", { staticClass: "column is-10-desktop is-12-tablet" }, [
+          _c("div", { staticClass: "column is-12-desktop is-12-tablet" }, [
             _c(
               "div",
               { staticClass: "box" },
@@ -47095,6 +47133,25 @@ var render = function () {
                                         1
                                       )
                                     : _vm._e(),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-tooltip",
+                                    {
+                                      attrs: { label: "PDS", type: "is-info" },
+                                    },
+                                    [
+                                      _c("b-button", {
+                                        staticClass: "button is-small mr-1",
+                                        attrs: { "icon-right": "printer" },
+                                        on: {
+                                          click: function ($event) {
+                                            return _vm.printMe(props.row)
+                                          },
+                                        },
+                                      }),
+                                    ],
+                                    1
+                                  ),
                                 ],
                                 1
                               ),
@@ -47175,6 +47232,49 @@ var render = function () {
           ]),
         ]
       ),
+      _vm._v(" "),
+      _c("div", { staticClass: "pds" }, [
+        _c("div", { staticClass: "text-title" }, [
+          _vm._v("\n            Personal Data Sheet\n        "),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "w-row" }, [
+          _c("div", { staticClass: "col" }, [
+            _c("div", [
+              _vm._v(
+                "\n                    Surname: " +
+                  _vm._s(_vm.pds.lname) +
+                  "\n                "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "w-row w-space-evenly    " }, [
+              _vm._v(
+                "\n                    First Name: " +
+                  _vm._s(_vm.pds.fname) +
+                  "\n                    "
+              ),
+              _c("div", [
+                _vm._v(
+                  "\n                        Suffix: " +
+                    _vm._s(_vm.pds.suffix) +
+                    "\n                    "
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _vm._v(
+                "\n                    Middle Name: " +
+                  _vm._s(_vm.pds.mname) +
+                  "\n                "
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col w-space-evenly" }),
+        ]),
+      ]),
     ],
     1
   )

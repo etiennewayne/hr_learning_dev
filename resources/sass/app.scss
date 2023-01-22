@@ -275,9 +275,13 @@ h2 span {
     background-color: gray;
     margin: 5px 0 10px 0;
 }
+
+.pds{
+    display: none;
+}
 @media print {
 
-    header, footer, aside, nav, form, iframe, .menu, .hero, .adslot {
+    header, footer, aside, nav, form, iframe, .menu, .hero, .adslot, .no-print {
         display: none;
     }
 
@@ -294,6 +298,21 @@ h2 span {
 
     .footer-container{
         display: none;
+    }
+
+    .pds{
+        display: block;
+    }
+
+    .w-row{
+        display: flex;
+    }
+    .col{
+        display: flex;
+        flex-direction: column;
+    }
+    .w-space-evenly{
+        justify-content: space-evenly;
     }
 }
 
