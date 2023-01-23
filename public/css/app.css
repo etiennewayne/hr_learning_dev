@@ -26631,7 +26631,8 @@
   }
 }
 @charset "UTF-8";
-html, body {
+html,
+body {
   background: #f0f0f0;
   min-height: 100vh;
 }
@@ -37273,7 +37274,16 @@ h2 span {
 }
 
 @media print {
-  header, footer, aside, nav, form, iframe, .menu, .hero, .adslot, .no-print {
+  header,
+footer,
+aside,
+nav,
+form,
+iframe,
+.menu,
+.hero,
+.adslot,
+.no-print {
     display: none;
   }
 
@@ -37294,18 +37304,31 @@ h2 span {
     display: block;
   }
 
-  .w-row {
-    display: flex;
+  .text-title {
+    background-color: gray;
+    font-weight: bold;
+    color: white;
+    padding: 5px;
+    font-style: italic;
   }
 
-  .col {
-    display: flex;
-    flex-direction: column;
+  .w-table {
+    margin: auto;
+    width: 800px;
   }
 
-  .w-space-evenly {
-    justify-content: space-evenly;
+  .w-table > table > tr > td {
+    width: 300px;
+    border: 1px solid #b3b3b3;
+    padding: 5px 5px 5px 3px;
   }
+
+  .w-td-150 {
+    width: 200px !important;
+  }
+}
+@page {
+  size: 8.5in 13in;
 }
 .is-noscroll {
   position: fixed;

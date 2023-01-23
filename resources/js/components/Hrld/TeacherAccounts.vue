@@ -178,27 +178,242 @@
 
         <div class="pds">
             <div class="text-title">
-                Personal Data Sheet
+                I. PERSONAL INFORMATION
             </div>
 
-            <div class="w-row">
-                <div class="col">
-                    <div>
-                        Surname: {{ pds.lname }}
-                    </div>
-                    <div class="w-row w-space-evenly    ">
-                        First Name: {{ pds.fname }}
-                        <div>
-                            Suffix: {{ pds.suffix }}
-                        </div>
-                    </div>
-                    <div>
-                        Middle Name: {{ pds.mname }}
-                    </div>
-                </div> <!-- col -->
-                <div class="col w-space-evenly">
+            <div class="w-table">
+                <table>
+                    <tr>
+                        <td colspan="3">Surname:
+                            {{ pds.lname }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            Given Name:
+                            {{  pds.fname }}
+                        </td>
+                        <td>
+                            Extension(Suffix): 
+                            {{  pds.suffix }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            Middle Name:
+                            {{  pds.mname }}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            Date of birth:
+                            {{  pds.date_birth }}
+                        </td>
+                        <td>
+                            Citizenship:
+                            {{  pds.citizenship }}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3">
+                            Place of birth:
+                            {{  pds.place_birth }}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3">
+                            Sex:
+                            {{  pds.sex }}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Civil Status:
+                            {{  pds.civil_status }}
+                        </td>
+                        <td style="text-align: center;" colspan="2">
+                            <b>Residential Address:</b>
+                            {{  pds.civil_status }}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Height:
+                            {{  pds.height }}
+                        </td>
+                        <td>
+                            House/Block No:
+                            {{  pds.res_houseno_blockno }}
+                        </td>
+                        <td>
+                            Street:
+                            {{  pds.res_street }}
+                        </td>
+                    </tr>
+
+                    <!-- residential address -->
+                    <tr v-if="pds.residential_barangay">
+                        <td>
+                            Weight:
+                            {{  pds.weight }}
+                        </td>
+                        <td>
+                           Barangay:
+                            {{  pds.residential_barangay.brgyDesc }}
+                        </td>
+                        <td>
+                           City:
+                            {{  pds.residential_city.citymunDesc }}
+                        </td>
+                    </tr>
+
+                    <tr v-if="pds.residential_province">
+                        <td>
+                            Blood Type:
+                            {{  pds.blood_type }}
+                        </td>
+                        <td>
+                            Province:
+                            {{ pds.residential_province.provDesc }}
+                        </td>
+                        <td>
+                            Zipcode:
+                            {{ pds.res_zipcode }}
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            GSIS ID No.:
+                            {{  pds.gsis }}
+                        </td>
+                        <td style="text-align: center;" colspan="2">
+                            <b>Permanent Address:</b>
+                            {{  pds.civil_status }}
+                        </td>
+                    </tr>
+                    <!-- permanent address -->
+                    <tr v-if="pds.permanent_barangay">
+                        <td>
+                            PAGIBIG ID No.:
+                            {{  pds.pagibig }}
+                        </td>
+                        <td>
+                           Barangay:
+                            {{  pds.permanent_barangay.brgyDesc }}
+                        </td>
+                        <td>
+                           City:
+                            {{  pds.permanent_city.citymunDesc }}
+                        </td>
+                    </tr>
+
+                    <tr v-if="pds.permanent_province">
+                        <td>
+                            Philhealth No.:
+                            {{  pds.philhealth }}
+                        </td>
+                        <td>
+                            Province:
+                            {{ pds.permanent_province.provDesc }}
+                        </td>
+                        <td>
+                            Zipcode:
+                            {{ pds.per_zipcode }}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            SSS No.:
+                            {{ pds.sss }}
+                        </td>
+                        <td>
+                            Telephone No.:
+                            {{ pds.tel_no }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            TIN:
+                            {{ pds.tin }}
+                        </td>
+                        <td>
+                            Mobile No.:
+                            {{ pds.contact_no }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            Agency Employee No.:
+                            {{ pds.agency_idno }}
+                        </td>
+                        <td>
+                            Email Address:
+                            {{ pds.email }}
+                        </td>
+                    </tr>
+
+                </table>
+                <div class="text-title">
+                    II. FAMILY BACKGROUND
+                </div>
+                <table class="w-table">
+                    <tr>
+                        <td colspan="2">
+                            Spouse's Surname:
+                            {{ pds.spouse_surname }}
+                        </td>
+
+                        <td>
+                            <b>Name of Children</b>
+                        </td>
+                        <td>
+                            <b>Date of Birth</b>
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <td>
+                            First Name:
+                            {{ pds.spoue_fname }}
+                        </td>
+                        <td>
+                            Extension:
+                            {{ pds.spouse_suffix }}
+                        </td>
+
+                        <!--name of children-->
+                        <td>
+                            <span v-if="pds.children[0]">
+                                {{ pds.pds.children[0].fullname }}
+                            </span>
+                        </td>
+                        <!-- <td>
+                            <span v-if="pds.children.length > 0">
+                                {{ pds.pds.children[0].child_bdate }}
+                            </span>
+                        </td> -->
+                       
+                    </tr>
+                    <tr>
+                        <td>
+                            Middle Name:
+                            {{ pds.spoue_fname }}
+                        </td>
+                       
+                    </tr>
                     
-                </div> <!-- col -->
+
+                </table>
+                    
+           
             </div>
         </div>
 

@@ -111,6 +111,9 @@ class User extends Authenticatable
     }
 
 
+
+
+    //residential
     public function residential_province(){
         return $this->hasOne(Province::class, 'provCode', 'res_province');
     }
@@ -119,6 +122,18 @@ class User extends Authenticatable
     }
     public function residential_barangay(){
         return $this->hasOne(Barangay::class, 'brgyCode', 'res_barangay');
+    }
+    
+
+    //permanent
+    public function permanent_province(){
+        return $this->hasOne(Province::class, 'provCode', 'per_province');
+    }
+    public function permanent_city(){
+        return $this->hasOne(City::class, 'citymunCode', 'per_city');
+    }
+    public function permanent_barangay(){
+        return $this->hasOne(Barangay::class, 'brgyCode', 'per_barangay');
     }
 
 

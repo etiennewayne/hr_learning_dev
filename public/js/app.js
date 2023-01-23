@@ -8950,6 +8950,221 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -28668,7 +28883,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-cec5257c]{\n    padding: 5px;\n    color: white;\n    background-color: green;\n    font-weight: bold;\n    font-size: .8em;\n}\n.unverified[data-v-cec5257c]{\n    padding: 5px;\n    color: white;\n    background-color: red;\n    font-weight: bold;\n    font-size: .8em;\n}\n\n\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-cec5257c]{\r\n    padding: 5px;\r\n    color: white;\r\n    background-color: green;\r\n    font-weight: bold;\r\n    font-size: .8em;\n}\n.unverified[data-v-cec5257c]{\r\n    padding: 5px;\r\n    color: white;\r\n    background-color: red;\r\n    font-weight: bold;\r\n    font-size: .8em;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28692,7 +28907,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-a232e19c]{\n    padding: 5px;\n    color: white;\n    background-color: green;\n    font-weight: bold;\n    font-size: .8em;\n}\n.unverified[data-v-a232e19c]{\n    padding: 5px;\n    color: white;\n    background-color: red;\n    font-weight: bold;\n    font-size: .8em;\n}\n\n\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-a232e19c]{\r\n    padding: 5px;\r\n    color: white;\r\n    background-color: green;\r\n    font-weight: bold;\r\n    font-size: .8em;\n}\n.unverified[data-v-a232e19c]{\r\n    padding: 5px;\r\n    color: white;\r\n    background-color: red;\r\n    font-weight: bold;\r\n    font-size: .8em;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28764,7 +28979,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-7ad0a5cd]{\n        padding: 5px;\n        color: white;\n        background-color: green;\n        font-weight: bold;\n        font-size: .8em;\n}\n.unverified[data-v-7ad0a5cd]{\n        padding: 5px;\n        color: white;\n        background-color: red;\n        font-weight: bold;\n        font-size: .8em;\n}\n\n\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-7ad0a5cd]{\r\n        padding: 5px;\r\n        color: white;\r\n        background-color: green;\r\n        font-weight: bold;\r\n        font-size: .8em;\n}\n.unverified[data-v-7ad0a5cd]{\r\n        padding: 5px;\r\n        color: white;\r\n        background-color: red;\r\n        font-weight: bold;\r\n        font-size: .8em;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28812,7 +29027,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.home-hero[data-v-28629d51]{\n    height: 100vh;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.home-hero[data-v-28629d51]{\r\n    height: 100vh;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28836,7 +29051,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.navbar-notif[data-v-965e856a]{\n    position: relative;\n}\n.notif-counter[data-v-965e856a]{\n    background: red;\n    padding: 5px;\n    font-weight: bold;\n    color:white;\n    border-radius: 20px;\n    font-size: .6em;\n    position: absolute;\n    top: 10px;\n    left: 20px;\n}\n@media screen and (max-width: 1024px) {\n.notif-counter[data-v-965e856a]{\n        position: absolute;\n        top: 10px;\n        left: 30px;\n}\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.navbar-notif[data-v-965e856a]{\r\n    position: relative;\n}\n.notif-counter[data-v-965e856a]{\r\n    background: red;\r\n    padding: 5px;\r\n    font-weight: bold;\r\n    color:white;\r\n    border-radius: 20px;\r\n    font-size: .6em;\r\n    position: absolute;\r\n    top: 10px;\r\n    left: 20px;\n}\n@media screen and (max-width: 1024px) {\n.notif-counter[data-v-965e856a]{\r\n        position: absolute;\r\n        top: 10px;\r\n        left: 30px;\n}\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28956,7 +29171,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.home-hero[data-v-6e47e433]{\n    height: 100vh;\n}\n.box-post-footer[data-v-6e47e433]{\n    padding: 25px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.home-hero[data-v-6e47e433]{\r\n    height: 100vh;\n}\n.box-post-footer[data-v-6e47e433]{\r\n    padding: 25px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29052,7 +29267,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-609eb9b9]{\n    padding: 5px;\n    color: white;\n    background-color: green;\n    font-weight: bold;\n    font-size: .8em;\n}\n.unverified[data-v-609eb9b9]{\n    padding: 5px;\n    color: white;\n    background-color: red;\n    font-weight: bold;\n    font-size: .8em;\n}\n\n\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-609eb9b9]{\r\n    padding: 5px;\r\n    color: white;\r\n    background-color: green;\r\n    font-weight: bold;\r\n    font-size: .8em;\n}\n.unverified[data-v-609eb9b9]{\r\n    padding: 5px;\r\n    color: white;\r\n    background-color: red;\r\n    font-weight: bold;\r\n    font-size: .8em;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29196,7 +29411,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.box-heading[data-v-e902aeac]{\n    font-weight: bold;\n    font-size: 1.4em;\n    margin: 15px auto;\n    text-align: center;\n}\n\n\n\n\n/*    dere lang kubia ang panel color*/\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.box-heading[data-v-e902aeac]{\r\n    font-weight: bold;\r\n    font-size: 1.4em;\r\n    margin: 15px auto;\r\n    text-align: center;\n}\r\n\r\n\r\n\r\n\r\n/*    dere lang kubia ang panel color*/\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -47235,51 +47450,411 @@ var render = function () {
       _vm._v(" "),
       _c("div", { staticClass: "pds" }, [
         _c("div", { staticClass: "text-title" }, [
-          _vm._v("\n            Personal Data Sheet\n        "),
+          _vm._v("\n            I. PERSONAL INFORMATION\n        "),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "w-row" }, [
-          _c("div", { staticClass: "col" }, [
-            _c("div", [
-              _vm._v(
-                "\n                    Surname: " +
-                  _vm._s(_vm.pds.lname) +
-                  "\n                "
-              ),
+        _c("div", { staticClass: "w-table" }, [
+          _c("table", [
+            _c("tr", [
+              _c("td", { attrs: { colspan: "3" } }, [
+                _vm._v(
+                  "Surname:\n                        " +
+                    _vm._s(_vm.pds.lname) +
+                    "\n                    "
+                ),
+              ]),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "w-row w-space-evenly    " }, [
-              _vm._v(
-                "\n                    First Name: " +
-                  _vm._s(_vm.pds.fname) +
-                  "\n                    "
-              ),
-              _c("div", [
+            _c("tr", [
+              _c("td", { attrs: { colspan: "2" } }, [
                 _vm._v(
-                  "\n                        Suffix: " +
+                  "\n                        Given Name:\n                        " +
+                    _vm._s(_vm.pds.fname) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(
+                  "\n                        Extension(Suffix): \n                        " +
                     _vm._s(_vm.pds.suffix) +
                     "\n                    "
                 ),
               ]),
             ]),
             _vm._v(" "),
-            _c("div", [
-              _vm._v(
-                "\n                    Middle Name: " +
-                  _vm._s(_vm.pds.mname) +
-                  "\n                "
+            _c("tr", [
+              _c("td", { attrs: { colspan: "3" } }, [
+                _vm._v(
+                  "\n                        Middle Name:\n                        " +
+                    _vm._s(_vm.pds.mname) +
+                    "\n                    "
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { attrs: { colspan: "2" } }, [
+                _vm._v(
+                  "\n                        Date of birth:\n                        " +
+                    _vm._s(_vm.pds.date_birth) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(
+                  "\n                        Citizenship:\n                        " +
+                    _vm._s(_vm.pds.citizenship) +
+                    "\n                    "
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { attrs: { colspan: "3" } }, [
+                _vm._v(
+                  "\n                        Place of birth:\n                        " +
+                    _vm._s(_vm.pds.place_birth) +
+                    "\n                    "
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { attrs: { colspan: "3" } }, [
+                _vm._v(
+                  "\n                        Sex:\n                        " +
+                    _vm._s(_vm.pds.sex) +
+                    "\n                    "
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [
+                _vm._v(
+                  "\n                        Civil Status:\n                        " +
+                    _vm._s(_vm.pds.civil_status) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  staticStyle: { "text-align": "center" },
+                  attrs: { colspan: "2" },
+                },
+                [
+                  _c("b", [_vm._v("Residential Address:")]),
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.pds.civil_status) +
+                      "\n                    "
+                  ),
+                ]
               ),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [
+                _vm._v(
+                  "\n                        Height:\n                        " +
+                    _vm._s(_vm.pds.height) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(
+                  "\n                        House/Block No:\n                        " +
+                    _vm._s(_vm.pds.res_houseno_blockno) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(
+                  "\n                        Street:\n                        " +
+                    _vm._s(_vm.pds.res_street) +
+                    "\n                    "
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _vm.pds.residential_barangay
+              ? _c("tr", [
+                  _c("td", [
+                    _vm._v(
+                      "\n                        Weight:\n                        " +
+                        _vm._s(_vm.pds.weight) +
+                        "\n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                       Barangay:\n                        " +
+                        _vm._s(_vm.pds.residential_barangay.brgyDesc) +
+                        "\n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                       City:\n                        " +
+                        _vm._s(_vm.pds.residential_city.citymunDesc) +
+                        "\n                    "
+                    ),
+                  ]),
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.pds.residential_province
+              ? _c("tr", [
+                  _c("td", [
+                    _vm._v(
+                      "\n                        Blood Type:\n                        " +
+                        _vm._s(_vm.pds.blood_type) +
+                        "\n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                        Province:\n                        " +
+                        _vm._s(_vm.pds.residential_province.provDesc) +
+                        "\n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                        Zipcode:\n                        " +
+                        _vm._s(_vm.pds.res_zipcode) +
+                        "\n                    "
+                    ),
+                  ]),
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [
+                _vm._v(
+                  "\n                        GSIS ID No.:\n                        " +
+                    _vm._s(_vm.pds.gsis) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  staticStyle: { "text-align": "center" },
+                  attrs: { colspan: "2" },
+                },
+                [
+                  _c("b", [_vm._v("Permanent Address:")]),
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.pds.civil_status) +
+                      "\n                    "
+                  ),
+                ]
+              ),
+            ]),
+            _vm._v(" "),
+            _vm.pds.permanent_barangay
+              ? _c("tr", [
+                  _c("td", [
+                    _vm._v(
+                      "\n                        PAGIBIG ID No.:\n                        " +
+                        _vm._s(_vm.pds.pagibig) +
+                        "\n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                       Barangay:\n                        " +
+                        _vm._s(_vm.pds.permanent_barangay.brgyDesc) +
+                        "\n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                       City:\n                        " +
+                        _vm._s(_vm.pds.permanent_city.citymunDesc) +
+                        "\n                    "
+                    ),
+                  ]),
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.pds.permanent_province
+              ? _c("tr", [
+                  _c("td", [
+                    _vm._v(
+                      "\n                        Philhealth No.:\n                        " +
+                        _vm._s(_vm.pds.philhealth) +
+                        "\n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                        Province:\n                        " +
+                        _vm._s(_vm.pds.permanent_province.provDesc) +
+                        "\n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                        Zipcode:\n                        " +
+                        _vm._s(_vm.pds.per_zipcode) +
+                        "\n                    "
+                    ),
+                  ]),
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { attrs: { colspan: "2" } }, [
+                _vm._v(
+                  "\n                        SSS No.:\n                        " +
+                    _vm._s(_vm.pds.sss) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(
+                  "\n                        Telephone No.:\n                        " +
+                    _vm._s(_vm.pds.tel_no) +
+                    "\n                    "
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { attrs: { colspan: "2" } }, [
+                _vm._v(
+                  "\n                        TIN:\n                        " +
+                    _vm._s(_vm.pds.tin) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(
+                  "\n                        Mobile No.:\n                        " +
+                    _vm._s(_vm.pds.contact_no) +
+                    "\n                    "
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { attrs: { colspan: "2" } }, [
+                _vm._v(
+                  "\n                        Agency Employee No.:\n                        " +
+                    _vm._s(_vm.pds.agency_idno) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(
+                  "\n                        Email Address:\n                        " +
+                    _vm._s(_vm.pds.email) +
+                    "\n                    "
+                ),
+              ]),
             ]),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col w-space-evenly" }),
+          _c("div", { staticClass: "text-title" }, [
+            _vm._v("\n                II. FAMILY BACKGROUND\n            "),
+          ]),
+          _vm._v(" "),
+          _c("table", { staticClass: "w-table" }, [
+            _c("tr", [
+              _c("td", { attrs: { colspan: "2" } }, [
+                _vm._v(
+                  "\n                        Spouse's Surname:\n                        " +
+                    _vm._s(_vm.pds.spouse_surname) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
+              _vm._m(1),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [
+                _vm._v(
+                  "\n                        First Name:\n                        " +
+                    _vm._s(_vm.pds.spoue_fname) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(
+                  "\n                        Extension:\n                        " +
+                    _vm._s(_vm.pds.spouse_suffix) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td", [
+                _vm.pds.children[0]
+                  ? _c("span", [
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(_vm.pds.pds.children[0].fullname) +
+                          "\n                        "
+                      ),
+                    ])
+                  : _vm._e(),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [
+                _vm._v(
+                  "\n                        Middle Name:\n                        " +
+                    _vm._s(_vm.pds.spoue_fname) +
+                    "\n                    "
+                ),
+              ]),
+            ]),
+          ]),
         ]),
       ]),
     ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Name of Children")])])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Date of Birth")])])
+  },
+]
 render._withStripped = true
 
 
