@@ -391,9 +391,11 @@
 
                         <!--name of children-->
                         <td>
-                            <span v-if="pds.children[0]">
-                                {{ pds.pds.children[0].fullname }}
-                            </span>
+                            
+                        </td>
+
+                        <td>
+                            
                         </td>
                         <!-- <td>
                             <span v-if="pds.children.length > 0">
@@ -403,14 +405,140 @@
                        
                     </tr>
                     <tr>
-                        <td>
+                        <td colspan="2">
                             Middle Name:
                             {{ pds.spoue_fname }}
                         </td>
                        
+                        <td></td>
+                        <td></td>
                     </tr>
-                    
 
+                    <tr>
+                        <td colspan="2">
+                            Occupation:
+                            {{ pds.spouse_occupation }}
+                        </td>
+                        <td></td>
+                        <td></td>
+                   
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            Employer Business Name:
+                            {{ pds.business_name }}
+                        </td>
+                        <td></td>
+                        <td></td>
+                    
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            Business Address:
+                            {{ pds.business_address }}
+                        </td>
+                        <td></td>
+                        <td></td>
+                        
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            Telephone No.:
+                            {{ pds.business_contact_no }}
+                        </td>
+                        <td></td>
+                        <td></td>
+                       
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="2">
+                            Father Surname:
+                            {{ pds.father_surname }}
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            First Name:
+                            {{ pds.father_fname }}
+                        </td>
+                        <td>
+                            Extension:
+                            {{ pds.spouse_suffix }}
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            Middle Name:
+                            {{ pds.father_mname }}
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            Mother Maiden Surname:
+                            {{ pds.mother_maiden_name }}
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            First Name:
+                            {{ pds.mother_fname }}
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            Middle Name:
+                            {{ pds.mother_mname }}
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+
+                <div class="text-title">
+                    III. EDUCATIONAL BACKGROUND
+                </div>
+                <table class="w-table">
+                    <tr>
+                        <td>LEVEL</td>
+                        <td style="font-size: .8em;">NAME OF SCHOOL</td>
+                        <td style="font-size: .8em;">BASIC EDUCATION/DEGREE/COURSE</td>
+                        <td style="font-size: .8em;" colspan="2">PERIOD OF ATTENDANCE</td>
+                        <td style="font-size: .8em;">HEIGHEST LEVEL EARNED</td>
+                        <td style="font-size: .8em;">YEAR GRADUATED</td>
+                        <td style="font-size: .8em;">SCHOLARSHIP/ACADEMIC HONORS</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>From</td>
+                        <td>To</td>
+
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
                 </table>
                     
            

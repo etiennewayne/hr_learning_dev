@@ -9165,6 +9165,134 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -28883,7 +29011,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-cec5257c]{\r\n    padding: 5px;\r\n    color: white;\r\n    background-color: green;\r\n    font-weight: bold;\r\n    font-size: .8em;\n}\n.unverified[data-v-cec5257c]{\r\n    padding: 5px;\r\n    color: white;\r\n    background-color: red;\r\n    font-weight: bold;\r\n    font-size: .8em;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-cec5257c]{\n    padding: 5px;\n    color: white;\n    background-color: green;\n    font-weight: bold;\n    font-size: .8em;\n}\n.unverified[data-v-cec5257c]{\n    padding: 5px;\n    color: white;\n    background-color: red;\n    font-weight: bold;\n    font-size: .8em;\n}\n\n\n\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28907,7 +29035,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-a232e19c]{\r\n    padding: 5px;\r\n    color: white;\r\n    background-color: green;\r\n    font-weight: bold;\r\n    font-size: .8em;\n}\n.unverified[data-v-a232e19c]{\r\n    padding: 5px;\r\n    color: white;\r\n    background-color: red;\r\n    font-weight: bold;\r\n    font-size: .8em;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-a232e19c]{\n    padding: 5px;\n    color: white;\n    background-color: green;\n    font-weight: bold;\n    font-size: .8em;\n}\n.unverified[data-v-a232e19c]{\n    padding: 5px;\n    color: white;\n    background-color: red;\n    font-weight: bold;\n    font-size: .8em;\n}\n\n\n\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28979,7 +29107,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-7ad0a5cd]{\r\n        padding: 5px;\r\n        color: white;\r\n        background-color: green;\r\n        font-weight: bold;\r\n        font-size: .8em;\n}\n.unverified[data-v-7ad0a5cd]{\r\n        padding: 5px;\r\n        color: white;\r\n        background-color: red;\r\n        font-weight: bold;\r\n        font-size: .8em;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-7ad0a5cd]{\n        padding: 5px;\n        color: white;\n        background-color: green;\n        font-weight: bold;\n        font-size: .8em;\n}\n.unverified[data-v-7ad0a5cd]{\n        padding: 5px;\n        color: white;\n        background-color: red;\n        font-weight: bold;\n        font-size: .8em;\n}\n\n\n\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29027,7 +29155,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.home-hero[data-v-28629d51]{\r\n    height: 100vh;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.home-hero[data-v-28629d51]{\n    height: 100vh;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29051,7 +29179,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.navbar-notif[data-v-965e856a]{\r\n    position: relative;\n}\n.notif-counter[data-v-965e856a]{\r\n    background: red;\r\n    padding: 5px;\r\n    font-weight: bold;\r\n    color:white;\r\n    border-radius: 20px;\r\n    font-size: .6em;\r\n    position: absolute;\r\n    top: 10px;\r\n    left: 20px;\n}\n@media screen and (max-width: 1024px) {\n.notif-counter[data-v-965e856a]{\r\n        position: absolute;\r\n        top: 10px;\r\n        left: 30px;\n}\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.navbar-notif[data-v-965e856a]{\n    position: relative;\n}\n.notif-counter[data-v-965e856a]{\n    background: red;\n    padding: 5px;\n    font-weight: bold;\n    color:white;\n    border-radius: 20px;\n    font-size: .6em;\n    position: absolute;\n    top: 10px;\n    left: 20px;\n}\n@media screen and (max-width: 1024px) {\n.notif-counter[data-v-965e856a]{\n        position: absolute;\n        top: 10px;\n        left: 30px;\n}\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29171,7 +29299,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.home-hero[data-v-6e47e433]{\r\n    height: 100vh;\n}\n.box-post-footer[data-v-6e47e433]{\r\n    padding: 25px;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.home-hero[data-v-6e47e433]{\n    height: 100vh;\n}\n.box-post-footer[data-v-6e47e433]{\n    padding: 25px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29267,7 +29395,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-609eb9b9]{\r\n    padding: 5px;\r\n    color: white;\r\n    background-color: green;\r\n    font-weight: bold;\r\n    font-size: .8em;\n}\n.unverified[data-v-609eb9b9]{\r\n    padding: 5px;\r\n    color: white;\r\n    background-color: red;\r\n    font-weight: bold;\r\n    font-size: .8em;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-609eb9b9]{\n    padding: 5px;\n    color: white;\n    background-color: green;\n    font-weight: bold;\n    font-size: .8em;\n}\n.unverified[data-v-609eb9b9]{\n    padding: 5px;\n    color: white;\n    background-color: red;\n    font-weight: bold;\n    font-size: .8em;\n}\n\n\n\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29411,7 +29539,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.box-heading[data-v-e902aeac]{\r\n    font-weight: bold;\r\n    font-size: 1.4em;\r\n    margin: 15px auto;\r\n    text-align: center;\n}\r\n\r\n\r\n\r\n\r\n/*    dere lang kubia ang panel color*/\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.box-heading[data-v-e902aeac]{\n    font-weight: bold;\n    font-size: 1.4em;\n    margin: 15px auto;\n    text-align: center;\n}\n\n\n\n\n/*    dere lang kubia ang panel color*/\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -47812,29 +47940,181 @@ var render = function () {
                 ),
               ]),
               _vm._v(" "),
-              _c("td", [
-                _vm.pds.children[0]
-                  ? _c("span", [
-                      _vm._v(
-                        "\n                            " +
-                          _vm._s(_vm.pds.pds.children[0].fullname) +
-                          "\n                        "
-                      ),
-                    ])
-                  : _vm._e(),
-              ]),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
             ]),
             _vm._v(" "),
             _c("tr", [
-              _c("td", [
+              _c("td", { attrs: { colspan: "2" } }, [
                 _vm._v(
                   "\n                        Middle Name:\n                        " +
                     _vm._s(_vm.pds.spoue_fname) +
                     "\n                    "
                 ),
               ]),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { attrs: { colspan: "2" } }, [
+                _vm._v(
+                  "\n                        Occupation:\n                        " +
+                    _vm._s(_vm.pds.spouse_occupation) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { attrs: { colspan: "2" } }, [
+                _vm._v(
+                  "\n                        Employer Business Name:\n                        " +
+                    _vm._s(_vm.pds.business_name) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { attrs: { colspan: "2" } }, [
+                _vm._v(
+                  "\n                        Business Address:\n                        " +
+                    _vm._s(_vm.pds.business_address) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { attrs: { colspan: "2" } }, [
+                _vm._v(
+                  "\n                        Telephone No.:\n                        " +
+                    _vm._s(_vm.pds.business_contact_no) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { attrs: { colspan: "2" } }, [
+                _vm._v(
+                  "\n                        Father Surname:\n                        " +
+                    _vm._s(_vm.pds.father_surname) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [
+                _vm._v(
+                  "\n                        First Name:\n                        " +
+                    _vm._s(_vm.pds.father_fname) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(
+                  "\n                        Extension:\n                        " +
+                    _vm._s(_vm.pds.spouse_suffix) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { attrs: { colspan: "2" } }, [
+                _vm._v(
+                  "\n                        Middle Name:\n                        " +
+                    _vm._s(_vm.pds.father_mname) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { attrs: { colspan: "2" } }, [
+                _vm._v(
+                  "\n                        Mother Maiden Surname:\n                        " +
+                    _vm._s(_vm.pds.mother_maiden_name) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { attrs: { colspan: "2" } }, [
+                _vm._v(
+                  "\n                        First Name:\n                        " +
+                    _vm._s(_vm.pds.mother_fname) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { attrs: { colspan: "2" } }, [
+                _vm._v(
+                  "\n                        Middle Name:\n                        " +
+                    _vm._s(_vm.pds.mother_mname) +
+                    "\n                    "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
             ]),
           ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-title" }, [
+            _vm._v(
+              "\n                III. EDUCATIONAL BACKGROUND\n            "
+            ),
+          ]),
+          _vm._v(" "),
+          _vm._m(2),
         ]),
       ]),
     ],
@@ -47853,6 +48133,60 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("td", [_c("b", [_vm._v("Date of Birth")])])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("table", { staticClass: "w-table" }, [
+      _c("tr", [
+        _c("td", [_vm._v("LEVEL")]),
+        _vm._v(" "),
+        _c("td", { staticStyle: { "font-size": ".8em" } }, [
+          _vm._v("NAME OF SCHOOL"),
+        ]),
+        _vm._v(" "),
+        _c("td", { staticStyle: { "font-size": ".8em" } }, [
+          _vm._v("BASIC EDUCATION/DEGREE/COURSE"),
+        ]),
+        _vm._v(" "),
+        _c(
+          "td",
+          { staticStyle: { "font-size": ".8em" }, attrs: { colspan: "2" } },
+          [_vm._v("PERIOD OF ATTENDANCE")]
+        ),
+        _vm._v(" "),
+        _c("td", { staticStyle: { "font-size": ".8em" } }, [
+          _vm._v("HEIGHEST LEVEL EARNED"),
+        ]),
+        _vm._v(" "),
+        _c("td", { staticStyle: { "font-size": ".8em" } }, [
+          _vm._v("YEAR GRADUATED"),
+        ]),
+        _vm._v(" "),
+        _c("td", { staticStyle: { "font-size": ".8em" } }, [
+          _vm._v("SCHOLARSHIP/ACADEMIC HONORS"),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("tr", [
+        _c("td"),
+        _vm._v(" "),
+        _c("td"),
+        _vm._v(" "),
+        _c("td"),
+        _vm._v(" "),
+        _c("td", [_vm._v("From")]),
+        _vm._v(" "),
+        _c("td", [_vm._v("To")]),
+        _vm._v(" "),
+        _c("td"),
+        _vm._v(" "),
+        _c("td"),
+        _vm._v(" "),
+        _c("td"),
+      ]),
+    ])
   },
 ]
 render._withStripped = true

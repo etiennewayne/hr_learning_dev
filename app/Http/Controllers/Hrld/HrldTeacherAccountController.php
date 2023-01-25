@@ -26,7 +26,7 @@ class HrldTeacherAccountController extends Controller
 
         return User::with(['residential_province', 'residential_city', 'residential_barangay', 'learning_developments',
             'permanent_province', 'permanent_city', 'permanent_barangay',
-            'children'
+            'children', 'educational_backgrounds'
         ])
             ->where('role', '=', 'FACULTY')
             ->orderBy($sort[0], $sort[1])
