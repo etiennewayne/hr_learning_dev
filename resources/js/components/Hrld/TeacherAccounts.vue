@@ -519,28 +519,159 @@
                 </div>
                 <table class="w-table">
                     <tr>
-                        <td>LEVEL</td>
-                        <td style="font-size: .8em;">NAME OF SCHOOL</td>
-                        <td style="font-size: .8em;">BASIC EDUCATION/DEGREE/COURSE</td>
+                        <td rowspan="2">LEVEL</td>
+                        <td rowspan="2" style="font-size: .8em;">NAME OF SCHOOL</td>
+                        <td rowspan="2" style="font-size: .8em;">BASIC EDUCATION/DEGREE/COURSE</td>
                         <td style="font-size: .8em;" colspan="2">PERIOD OF ATTENDANCE</td>
-                        <td style="font-size: .8em;">HEIGHEST LEVEL EARNED</td>
-                        <td style="font-size: .8em;">YEAR GRADUATED</td>
-                        <td style="font-size: .8em;">SCHOLARSHIP/ACADEMIC HONORS</td>
+                        <td rowspan="2" style="font-size: .8em;">HEIGHEST LEVEL EARNED</td>
+                        <td rowspan="2" style="font-size: .8em;">YEAR GRADUATED</td>
+                        <td rowspan="2" style="font-size: .8em;">SCHOLARSHIP/ACADEMIC HONORS</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
                         <td>From</td>
                         <td>To</td>
-
-                        <td></td>
-                        <td></td>
-                        <td></td>
-
+                    </tr>
+                    <tr v-for="(ed, ix1) in pds.educational_backgrounds" :key="ix1">
+                        <td>{{ ed.level }}</td>
+                        <td>{{ ed.name_of_school }}</td>
+                        <td>{{ ed.degree }}</td>
+                        <td>{{ ed.period_att_from }}</td>
+                        <td>{{ ed.period_att_to }}</td>
+                        <td>{{ ed.highest_level_unit }}</td>
+                        <td>{{ ed.year_graduated }}</td>
+                        <td>{{ ed.scholarship }}</td>
                     </tr>
                 </table>
                     
+                <div class="text-title">
+                    IV. CIVIL SERVICE ELIGIBILITY
+                </div>
+                <table>
+                    <tr>
+                        <td rowspan="2" style="font-size: .8em;">CAREER SERVICE/ RA 1080 (BOARD/ BAR) UNDER SPECIAL LAWS/ CES/ CSEE</td>
+                        <td rowspan="2" style="font-size: .8em;">RATING</td>
+                        <td rowspan="2" style="font-size: .8em;">DATE OF EXAMINATION</td>
+                        <td rowspan="2" style="font-size: .8em;">PLACE OF EXAMINATION</td>
+                        <td style="font-size: .8em;" colspan="2">LICENSE</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: .8em;">NUMBER</td>
+                        <td style="font-size: .8em;">Date of Validity</td>
+                    </tr>
+                    <tr v-for="(el, ix2) in pds.eligibilities" :key="ix2">
+                        <td>{{ el.career_exam }}</td>
+                        <td>{{ el.rating }}</td>
+                        <td>{{ el.date_exam }}</td>
+                        <td>{{ el.place_exam }}</td>
+                        <td>{{ el.license_no }}</td>
+                        <td>{{ el.license_validity }}</td>
+                    </tr>
+                </table>
+
+
+                <div class="text-title">
+                    V. WORK EXPERIENCE
+                </div>
+                <table>
+                    <tr>
+                        <td colspan="2" style="font-size: .8em;">INCLUSIVE DATES</td>
+                        <td rowspan="2" style="font-size: .8em;">POSITION TITLE</td>
+                        <td rowspan="2" style="font-size: .8em;">DEPARTMENT / AGENCY / OFFICE / COMPANY</td>
+                        <td rowspan="2" style="font-size: .8em;">MONTHLY SALARY</td>
+                        <td rowspan="2" style="font-size: .8em;">SALARY JOB/PAY GRADE</td>
+                        <td rowspan="2" style="font-size: .8em;">STATUS OF APPOINTMENT</td>
+                        <td rowspan="2" style="font-size: .8em;">GOV'T SERVICE (Y/N)</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: .8em;">From</td>
+                        <td style="font-size: .8em;">To of Validity</td>
+                    </tr>
+                    <tr v-for="(work, ix3) in pds.work_experiences" :key="ix3">
+                        <td>{{ work.work_ex_from }}</td>
+                        <td>{{ work.work_ex_to }}</td>
+                        <td>{{ work.position_title }}</td>
+                        <td>{{ work.department_agency }}</td>
+                        <td>{{ work.salary }}</td>
+                        <td>{{ work.pay_grade }}</td>
+                        <td>{{ work.status_appointment }}</td>
+                        <td>
+                            <span v-if="work.is_govt === 1">Y</span>
+                            <span v-else>Y</span>
+                        </td>
+
+                    </tr>
+                </table>
+
+
+                <div class="text-title">
+                    VI. VOLUNTARY WORK OR INVOLVEMENT IN CIVIC/NON-GOVERNMENT/PEOPLE?VOLUNTARY ORGANIZATIONS
+                </div>
+                <table>
+                    <tr>
+                        <td rowspan="2" style="font-size: .8em;">NAME ADDRESS OF ORGANIZATION</td>
+                        <td colspan="2" style="font-size: .8em;">INCLUSIVE DATES</td>
+                        <td rowspan="2" style="font-size: .8em;">NUMBER OF HOURS</td>
+                        <td rowspan="2" style="font-size: .8em;">POSITION/NATURE OF WORK</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: .8em;">From</td>
+                        <td style="font-size: .8em;">To</td>
+                    </tr>
+                    <tr v-for="(vol, ix4) in pds.voluntary_works" :key="ix4">
+                        <td>{{ vol.name_address_org }}</td>
+                        <td>{{ vol.work_from }}</td>
+                        <td>{{ vol.work_to }}</td>
+                        <td>{{ vol.no_hours }}</td>
+                        <td>{{ vol.nature_work }}</td>
+                    </tr>
+                </table>
+
+
+                <div class="text-title">
+                    VII. LEARNING AND DEVELOPMENT (L&D) INTERVENTIONS/TRAINING PROGRAMS ATTENDED
+                </div>
+                <table>
+                    <tr>
+                        <td rowspan="2" style="font-size: .8em;">TITLE OF LEARNING AND DEVELOPMENT INTERVENTIONS/TRAINING PROGRAMS</td>
+                        <td colspan="2" style="font-size: .8em;">INCLUSIVE DATES</td>
+                        <td rowspan="2" style="font-size: .8em;">NUMBER OF HOURS</td>
+                        <td rowspan="2" style="font-size: .8em;">TYPE OF LD</td>
+                        <td rowspan="2" style="font-size: .8em;">CONDUCTED/SPONSORED BY</td>
+
+                    </tr>
+                    <tr>
+                        <td style="font-size: .8em;">From</td>
+                        <td style="font-size: .8em;">To</td>
+                    </tr>
+
+                    <tr v-for="(ld, ix5) in pds.learning_developments" :key="ix5">
+                        <td>{{ ld.title_learning_dev }}</td>
+                        <td>{{ ld.date_from }}</td>
+                        <td>{{ ld.date_to }}</td>
+                        <td>{{ ld.no_hours }}</td>
+                        <td>{{ ld.type_ld }}</td>
+                        <td>{{ ld.sponsored_by }}</td>
+                    </tr>
+                </table>
+
+
+                <div class="text-title">
+                    VIII. OTHER INFORAMTION
+                </div>
+                <table>
+                    <tr>
+                        <td style="font-size: .8em;">SPECIAL SKILLS AND HOBBIES</td>
+                        <td style="font-size: .8em;">NON-ACADEMIC DISTINCTIONS / RECOGNITION </td>
+                        <td style="font-size: .8em;">MEMBERSHIP IN ASSOCIATION/ORGANIZATION </td>
+                    </tr>
+
+                    <tr v-for="(other, ix6) in pds.other_informations" :key="ix6">
+                        <td>{{ other.skill_hobbies }}</td>
+                        <td>{{ other.non_academic_distinction }}</td>
+                        <td>{{ other.member_association }}</td>
+                    </tr>
+                </table>
+
            
             </div>
         </div>

@@ -37317,6 +37317,10 @@ iframe,
     width: 800px;
   }
 
+  .pagebreak-before {
+    page-break-before: always;
+  }
+
   .w-table > table > tr > td {
     width: 300px;
     border: 1px solid #b3b3b3;

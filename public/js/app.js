@@ -9293,6 +9293,137 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -29011,7 +29142,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-cec5257c]{\n    padding: 5px;\n    color: white;\n    background-color: green;\n    font-weight: bold;\n    font-size: .8em;\n}\n.unverified[data-v-cec5257c]{\n    padding: 5px;\n    color: white;\n    background-color: red;\n    font-weight: bold;\n    font-size: .8em;\n}\n\n\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-cec5257c]{\r\n    padding: 5px;\r\n    color: white;\r\n    background-color: green;\r\n    font-weight: bold;\r\n    font-size: .8em;\n}\n.unverified[data-v-cec5257c]{\r\n    padding: 5px;\r\n    color: white;\r\n    background-color: red;\r\n    font-weight: bold;\r\n    font-size: .8em;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29035,7 +29166,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-a232e19c]{\n    padding: 5px;\n    color: white;\n    background-color: green;\n    font-weight: bold;\n    font-size: .8em;\n}\n.unverified[data-v-a232e19c]{\n    padding: 5px;\n    color: white;\n    background-color: red;\n    font-weight: bold;\n    font-size: .8em;\n}\n\n\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-a232e19c]{\r\n    padding: 5px;\r\n    color: white;\r\n    background-color: green;\r\n    font-weight: bold;\r\n    font-size: .8em;\n}\n.unverified[data-v-a232e19c]{\r\n    padding: 5px;\r\n    color: white;\r\n    background-color: red;\r\n    font-weight: bold;\r\n    font-size: .8em;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29107,7 +29238,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-7ad0a5cd]{\n        padding: 5px;\n        color: white;\n        background-color: green;\n        font-weight: bold;\n        font-size: .8em;\n}\n.unverified[data-v-7ad0a5cd]{\n        padding: 5px;\n        color: white;\n        background-color: red;\n        font-weight: bold;\n        font-size: .8em;\n}\n\n\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-7ad0a5cd]{\r\n        padding: 5px;\r\n        color: white;\r\n        background-color: green;\r\n        font-weight: bold;\r\n        font-size: .8em;\n}\n.unverified[data-v-7ad0a5cd]{\r\n        padding: 5px;\r\n        color: white;\r\n        background-color: red;\r\n        font-weight: bold;\r\n        font-size: .8em;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29155,7 +29286,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.home-hero[data-v-28629d51]{\n    height: 100vh;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.home-hero[data-v-28629d51]{\r\n    height: 100vh;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29179,7 +29310,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.navbar-notif[data-v-965e856a]{\n    position: relative;\n}\n.notif-counter[data-v-965e856a]{\n    background: red;\n    padding: 5px;\n    font-weight: bold;\n    color:white;\n    border-radius: 20px;\n    font-size: .6em;\n    position: absolute;\n    top: 10px;\n    left: 20px;\n}\n@media screen and (max-width: 1024px) {\n.notif-counter[data-v-965e856a]{\n        position: absolute;\n        top: 10px;\n        left: 30px;\n}\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.navbar-notif[data-v-965e856a]{\r\n    position: relative;\n}\n.notif-counter[data-v-965e856a]{\r\n    background: red;\r\n    padding: 5px;\r\n    font-weight: bold;\r\n    color:white;\r\n    border-radius: 20px;\r\n    font-size: .6em;\r\n    position: absolute;\r\n    top: 10px;\r\n    left: 20px;\n}\n@media screen and (max-width: 1024px) {\n.notif-counter[data-v-965e856a]{\r\n        position: absolute;\r\n        top: 10px;\r\n        left: 30px;\n}\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29299,7 +29430,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.home-hero[data-v-6e47e433]{\n    height: 100vh;\n}\n.box-post-footer[data-v-6e47e433]{\n    padding: 25px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.home-hero[data-v-6e47e433]{\r\n    height: 100vh;\n}\n.box-post-footer[data-v-6e47e433]{\r\n    padding: 25px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29395,7 +29526,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-609eb9b9]{\n    padding: 5px;\n    color: white;\n    background-color: green;\n    font-weight: bold;\n    font-size: .8em;\n}\n.unverified[data-v-609eb9b9]{\n    padding: 5px;\n    color: white;\n    background-color: red;\n    font-weight: bold;\n    font-size: .8em;\n}\n\n\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.verified[data-v-609eb9b9]{\r\n    padding: 5px;\r\n    color: white;\r\n    background-color: green;\r\n    font-weight: bold;\r\n    font-size: .8em;\n}\n.unverified[data-v-609eb9b9]{\r\n    padding: 5px;\r\n    color: white;\r\n    background-color: red;\r\n    font-weight: bold;\r\n    font-size: .8em;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29539,7 +29670,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.box-heading[data-v-e902aeac]{\n    font-weight: bold;\n    font-size: 1.4em;\n    margin: 15px auto;\n    text-align: center;\n}\n\n\n\n\n/*    dere lang kubia ang panel color*/\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.box-heading[data-v-e902aeac]{\r\n    font-weight: bold;\r\n    font-size: 1.4em;\r\n    margin: 15px auto;\r\n    text-align: center;\n}\r\n\r\n\r\n\r\n\r\n/*    dere lang kubia ang panel color*/\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -48114,7 +48245,190 @@ var render = function () {
             ),
           ]),
           _vm._v(" "),
-          _vm._m(2),
+          _c(
+            "table",
+            { staticClass: "w-table" },
+            [
+              _vm._m(2),
+              _vm._v(" "),
+              _vm._m(3),
+              _vm._v(" "),
+              _vm._l(_vm.pds.educational_backgrounds, function (ed, ix1) {
+                return _c("tr", { key: ix1 }, [
+                  _c("td", [_vm._v(_vm._s(ed.level))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(ed.name_of_school))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(ed.degree))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(ed.period_att_from))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(ed.period_att_to))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(ed.highest_level_unit))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(ed.year_graduated))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(ed.scholarship))]),
+                ])
+              }),
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-title" }, [
+            _vm._v(
+              "\n                IV. CIVIL SERVICE ELIGIBILITY\n            "
+            ),
+          ]),
+          _vm._v(" "),
+          _c(
+            "table",
+            [
+              _vm._m(4),
+              _vm._v(" "),
+              _vm._m(5),
+              _vm._v(" "),
+              _vm._l(_vm.pds.eligibilities, function (el, ix2) {
+                return _c("tr", { key: ix2 }, [
+                  _c("td", [_vm._v(_vm._s(el.career_exam))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(el.rating))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(el.date_exam))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(el.place_exam))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(el.license_no))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(el.license_validity))]),
+                ])
+              }),
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-title" }, [
+            _vm._v("\n                V. WORK EXPERIENCE\n            "),
+          ]),
+          _vm._v(" "),
+          _c(
+            "table",
+            [
+              _vm._m(6),
+              _vm._v(" "),
+              _vm._m(7),
+              _vm._v(" "),
+              _vm._l(_vm.pds.work_experiences, function (work, ix3) {
+                return _c("tr", { key: ix3 }, [
+                  _c("td", [_vm._v(_vm._s(work.work_ex_from))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(work.work_ex_to))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(work.position_title))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(work.department_agency))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(work.salary))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(work.pay_grade))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(work.status_appointment))]),
+                  _vm._v(" "),
+                  _c("td", [
+                    work.is_govt === 1
+                      ? _c("span", [_vm._v("Y")])
+                      : _c("span", [_vm._v("Y")]),
+                  ]),
+                ])
+              }),
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-title" }, [
+            _vm._v(
+              "\n                VI. VOLUNTARY WORK OR INVOLVEMENT IN CIVIC/NON-GOVERNMENT/PEOPLE?VOLUNTARY ORGANIZATIONS\n            "
+            ),
+          ]),
+          _vm._v(" "),
+          _c(
+            "table",
+            [
+              _vm._m(8),
+              _vm._v(" "),
+              _vm._m(9),
+              _vm._v(" "),
+              _vm._l(_vm.pds.voluntary_works, function (vol, ix4) {
+                return _c("tr", { key: ix4 }, [
+                  _c("td", [_vm._v(_vm._s(vol.name_address_org))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(vol.work_from))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(vol.work_to))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(vol.no_hours))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(vol.nature_work))]),
+                ])
+              }),
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-title" }, [
+            _vm._v(
+              "\n                VII. LEARNING AND DEVELOPMENT (L&D) INTERVENTIONS/TRAINING PROGRAMS ATTENDED\n            "
+            ),
+          ]),
+          _vm._v(" "),
+          _c(
+            "table",
+            [
+              _vm._m(10),
+              _vm._v(" "),
+              _vm._m(11),
+              _vm._v(" "),
+              _vm._l(_vm.pds.learning_developments, function (ld, ix5) {
+                return _c("tr", { key: ix5 }, [
+                  _c("td", [_vm._v(_vm._s(ld.title_learning_dev))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(ld.date_from))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(ld.date_to))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(ld.no_hours))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(ld.type_ld))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(ld.sponsored_by))]),
+                ])
+              }),
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-title" }, [
+            _vm._v("\n                VIII. OTHER INFORAMTION\n            "),
+          ]),
+          _vm._v(" "),
+          _c(
+            "table",
+            [
+              _vm._m(12),
+              _vm._v(" "),
+              _vm._l(_vm.pds.other_informations, function (other, ix6) {
+                return _c("tr", { key: ix6 }, [
+                  _c("td", [_vm._v(_vm._s(other.skill_hobbies))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(other.non_academic_distinction))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(other.member_association))]),
+                ])
+              }),
+            ],
+            2
+          ),
         ]),
       ]),
     ],
@@ -48138,53 +48452,273 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("table", { staticClass: "w-table" }, [
-      _c("tr", [
-        _c("td", [_vm._v("LEVEL")]),
-        _vm._v(" "),
-        _c("td", { staticStyle: { "font-size": ".8em" } }, [
-          _vm._v("NAME OF SCHOOL"),
-        ]),
-        _vm._v(" "),
-        _c("td", { staticStyle: { "font-size": ".8em" } }, [
-          _vm._v("BASIC EDUCATION/DEGREE/COURSE"),
-        ]),
-        _vm._v(" "),
-        _c(
-          "td",
-          { staticStyle: { "font-size": ".8em" }, attrs: { colspan: "2" } },
-          [_vm._v("PERIOD OF ATTENDANCE")]
-        ),
-        _vm._v(" "),
-        _c("td", { staticStyle: { "font-size": ".8em" } }, [
-          _vm._v("HEIGHEST LEVEL EARNED"),
-        ]),
-        _vm._v(" "),
-        _c("td", { staticStyle: { "font-size": ".8em" } }, [
-          _vm._v("YEAR GRADUATED"),
-        ]),
-        _vm._v(" "),
-        _c("td", { staticStyle: { "font-size": ".8em" } }, [
-          _vm._v("SCHOLARSHIP/ACADEMIC HONORS"),
-        ]),
+    return _c("tr", [
+      _c("td", { attrs: { rowspan: "2" } }, [_vm._v("LEVEL")]),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("NAME OF SCHOOL")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("BASIC EDUCATION/DEGREE/COURSE")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { colspan: "2" } },
+        [_vm._v("PERIOD OF ATTENDANCE")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("HEIGHEST LEVEL EARNED")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("YEAR GRADUATED")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("SCHOLARSHIP/ACADEMIC HONORS")]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", [_vm._v("From")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("To")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [
+          _vm._v(
+            "CAREER SERVICE/ RA 1080 (BOARD/ BAR) UNDER SPECIAL LAWS/ CES/ CSEE"
+          ),
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("RATING")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("DATE OF EXAMINATION")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("PLACE OF EXAMINATION")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { colspan: "2" } },
+        [_vm._v("LICENSE")]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", { staticStyle: { "font-size": ".8em" } }, [_vm._v("NUMBER")]),
+      _vm._v(" "),
+      _c("td", { staticStyle: { "font-size": ".8em" } }, [
+        _vm._v("Date of Validity"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { colspan: "2" } },
+        [_vm._v("INCLUSIVE DATES")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("POSITION TITLE")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("DEPARTMENT / AGENCY / OFFICE / COMPANY")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("MONTHLY SALARY")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("SALARY JOB/PAY GRADE")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("STATUS OF APPOINTMENT")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("GOV'T SERVICE (Y/N)")]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", { staticStyle: { "font-size": ".8em" } }, [_vm._v("From")]),
+      _vm._v(" "),
+      _c("td", { staticStyle: { "font-size": ".8em" } }, [
+        _vm._v("To of Validity"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("NAME ADDRESS OF ORGANIZATION")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { colspan: "2" } },
+        [_vm._v("INCLUSIVE DATES")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("NUMBER OF HOURS")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("POSITION/NATURE OF WORK")]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", { staticStyle: { "font-size": ".8em" } }, [_vm._v("From")]),
+      _vm._v(" "),
+      _c("td", { staticStyle: { "font-size": ".8em" } }, [_vm._v("To")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [
+          _vm._v(
+            "TITLE OF LEARNING AND DEVELOPMENT INTERVENTIONS/TRAINING PROGRAMS"
+          ),
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { colspan: "2" } },
+        [_vm._v("INCLUSIVE DATES")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("NUMBER OF HOURS")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("TYPE OF LD")]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        { staticStyle: { "font-size": ".8em" }, attrs: { rowspan: "2" } },
+        [_vm._v("CONDUCTED/SPONSORED BY")]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", { staticStyle: { "font-size": ".8em" } }, [_vm._v("From")]),
+      _vm._v(" "),
+      _c("td", { staticStyle: { "font-size": ".8em" } }, [_vm._v("To")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", { staticStyle: { "font-size": ".8em" } }, [
+        _vm._v("SPECIAL SKILLS AND HOBBIES"),
       ]),
       _vm._v(" "),
-      _c("tr", [
-        _c("td"),
-        _vm._v(" "),
-        _c("td"),
-        _vm._v(" "),
-        _c("td"),
-        _vm._v(" "),
-        _c("td", [_vm._v("From")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("To")]),
-        _vm._v(" "),
-        _c("td"),
-        _vm._v(" "),
-        _c("td"),
-        _vm._v(" "),
-        _c("td"),
+      _c("td", { staticStyle: { "font-size": ".8em" } }, [
+        _vm._v("NON-ACADEMIC DISTINCTIONS / RECOGNITION "),
+      ]),
+      _vm._v(" "),
+      _c("td", { staticStyle: { "font-size": ".8em" } }, [
+        _vm._v("MEMBERSHIP IN ASSOCIATION/ORGANIZATION "),
       ]),
     ])
   },
