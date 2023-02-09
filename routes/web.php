@@ -32,6 +32,7 @@ Route::get('/', function () {
 //open for combo box
 Route::get('/get-open-learning-dev-types', [App\Http\Controllers\OpenController::class, 'loadLearningDevTypes']);
 Route::get('/get-open-specializations', [App\Http\Controllers\OpenController::class, 'loadSpecializations']);
+Route::get('/get-open-cid-sub-roles', [App\Http\Controllers\OpenController::class, 'loadSubRoles']);
 
 
 
@@ -70,21 +71,27 @@ Route::get('/load-barangays', [App\Http\Controllers\AddressController::class, 'l
 
 
 /*     ADMINSITRATOR          */
-Route::resource('/admin-home', App\Http\Controllers\Administrator\AdminHomeController::class);
-
-Route::resource('/users', App\Http\Controllers\Administrator\UserController::class);
-Route::get('/get-users', [App\Http\Controllers\Administrator\UserController::class, 'getUsers']);
-Route::get('/get-user-offices', [App\Http\Controllers\Administrator\UserController::class, 'getOffices']);
-Route::post('/user-reset-password/{id}', [App\Http\Controllers\Administrator\UserController::class, 'resetPassword']);
-Route::post('/other-info-store/{userid}', [App\Http\Controllers\Administrator\UserController::class, 'storeOtherInfo']);
 
 
+Route::middleware(['auth'])->group(function () {
+    Route::resource('/admin-home', App\Http\Controllers\Administrator\AdminHomeController::class);
 
-Route::resource('/learning-dev', App\Http\Controllers\LearningDevelopmentTypeController::class);
-Route::get('/get-learning-dev', [App\Http\Controllers\LearningDevelopmentTypeController::class, 'getLearningDevelopmentTypes']);
+    Route::resource('/users', App\Http\Controllers\Administrator\UserController::class);
+    Route::get('/get-users', [App\Http\Controllers\Administrator\UserController::class, 'getUsers']);
+    Route::get('/get-user-offices', [App\Http\Controllers\Administrator\UserController::class, 'getOffices']);
+    Route::post('/user-reset-password/{id}', [App\Http\Controllers\Administrator\UserController::class, 'resetPassword']);
+    Route::post('/other-info-store/{userid}', [App\Http\Controllers\Administrator\UserController::class, 'storeOtherInfo']);
 
-Route::resource('/specialization', App\Http\Controllers\Administrator\SpecializationController::class);
-Route::get('/get-specialization', [App\Http\Controllers\Administrator\SpecializationController::class, 'getSpecialization']);
+
+    Route::resource('/learning-dev', App\Http\Controllers\LearningDevelopmentTypeController::class);
+    Route::get('/get-learning-dev', [App\Http\Controllers\LearningDevelopmentTypeController::class, 'getLearningDevelopmentTypes']);
+
+    Route::resource('/specialization', App\Http\Controllers\Administrator\SpecializationController::class);
+    Route::get('/get-specialization', [App\Http\Controllers\Administrator\SpecializationController::class, 'getSpecialization']);
+
+    Route::resource('/cid-sub-role', App\Http\Controllers\Administrator\CidSubRoleController::class);
+    Route::get('/get-cid-sub-roles', [App\Http\Controllers\Administrator\CidSubRoleController::class, 'getCidSubRoles']);
+});
 
 
 /*     ADMINSITRATOR          */

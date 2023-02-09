@@ -21,6 +21,10 @@
                     <b-navbar-item href="/specialization">
                         Specialization
                     </b-navbar-item>
+
+                    <b-navbar-item href="/cid-sub-role">
+                        CID Sub Role
+                    </b-navbar-item>
                 </b-navbar-dropdown>
             </template>
 

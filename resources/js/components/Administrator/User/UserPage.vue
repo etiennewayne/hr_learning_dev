@@ -82,6 +82,10 @@
                                 {{ props.row.role }}
                             </b-table-column>
 
+                            <b-table-column field="cid_sub_role" label="Sub Role" v-slot="props">
+                                {{ props.row.cid_sub_role }}
+                            </b-table-column>
+
                             <b-table-column label="Action" v-slot="props">
                                 <div class="is-flex">
                                     <b-tooltip label="Edit" type="is-warning">
@@ -242,6 +246,20 @@
                                     </b-field>
                                 </div>
 
+                            </div>
+
+
+                            <div class="columns" v-if="this.fields.role === 'CID'">
+                                <div class="column">
+                                    <b-field label="CID Sub Role" label-position="on-border" expanded
+                                             :type="this.errors.cid_sub_role ? 'is-danger':''"
+                                             :message="this.errors.cid_sub_role ? this.errors.cid_sub_role[0] : ''">
+                                        <b-select v-model="fields.cid_sub_role" expanded>
+                                            <option v-for="(i, ix) in cid_sub_roles" :key="ix" 
+                                                :value="i.cid_sub_role">{{ i.cid_sub_role }}</option>
+                                        </b-select>
+                                    </b-field>
+                                </div>
                             </div>
 
 
@@ -455,7 +473,7 @@ export default{
             sortField: 'user_id',
             sortOrder: 'desc',
             page: 1,
-            perPage: 5,
+            perPage: 20,
             defaultSortDirection: 'asc',
 
 
@@ -473,9 +491,11 @@ export default{
                 username: '',
                 lname: '', fname: '', mname: '',
                 password: '', password_confirmation : '',
-                sex : '', role: '',  email : '', contact_no : '',
+                sex : '', role: '',  cid_sub_role: '', 
+                email : '', contact_no : '',
                 province: '', city: '', barangay: '', street: ''
             },
+
             fieldsOther: {},
             errors: {},
             errorOthers: {},
@@ -493,6 +513,7 @@ export default{
             barangays: [],
 
             specializations: [],
+            cid_sub_roles: [],
 
 
         }
@@ -576,8 +597,12 @@ export default{
             })
         },
 
-
         submit: function(){
+            if(this.fields.role != 'CID'){
+                this.fields.cid_sub_role = '';
+            }
+
+
             if(this.global_id > 0){
                 //update
                 axios.put('/users/'+this.global_id, this.fields).then(res=>{
@@ -750,6 +775,10 @@ export default{
         loadSpecializations(){
             axios.get('/get-open-specializations').then(res=>{
                 this.specializations = res.data
+            })
+
+            axios.get('/get-open-cid-sub-roles').then(res=>{
+                this.cid_sub_roles = res.data
             })
         },
 

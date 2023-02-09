@@ -44,6 +44,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="post-img-container" v-if="seminar.img_path">
                             <img :src="`/storage/seminars/${seminar.img_path}`" class="post-img" />
                         </div>
