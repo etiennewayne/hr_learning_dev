@@ -15,6 +15,7 @@ class WorkExperience extends Model
     protected $fillable = ['user_id', 
         'work_ex_from', 
         'work_ex_to', 
+        'is_present',
         'position_title', 
         'department_agency', 
         'salary', 

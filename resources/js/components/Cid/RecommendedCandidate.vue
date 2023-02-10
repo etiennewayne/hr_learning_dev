@@ -168,6 +168,7 @@ export default{
                         no_seminars: el.no_seminars,
                         role: el.role,
                         sex: el.sex,
+                        designation: el.designation,
                         specialization: el.specialization,
                         suffix: el.suffix,
                         user_id: el.user_id,

@@ -628,9 +628,13 @@
                                             <div class="column">
                                                 <b-field label="Experience From/To" label-position="on-border">
                                                     <b-datepicker editable v-model="item.work_ex_from"
-                                                                  placeholder="From" required> </b-datepicker>
-                                                    <b-datepicker editable v-model="item.work_ex_to"
-                                                                  placeholder="To" required> </b-datepicker>
+                                                        placeholder="From"> </b-datepicker>
+                                                    <b-datepicker editable :disabled="item.is_present == 1" v-model="item.work_ex_to"
+                                                        placeholder="To"> </b-datepicker>
+                                                    <b-checkbox class="ml-5" 
+                                                        true-value=1
+                                                        false-value=0
+                                                        v-model="item.is_present">Present</b-checkbox>
                                                 </b-field>
                                             </div>
                                             <div class="column">
@@ -1179,6 +1183,7 @@ export default {
             },
 
 
+
             errors: {},
 
             civilStatuses: [],
@@ -1358,7 +1363,8 @@ export default {
                 this.fields.work_experiences.push({
                     work_ex_id: work.work_ex_id,
                     work_ex_from: new Date(work.work_ex_from),
-                    work_ex_to: new Date(work.work_ex_to),
+                    work_ex_to: work.is_present == 1 ? '' : new Date(work.work_ex_to),
+                    is_present: work.is_present,
                     position_title: work.position_title,
                     department_agency: work.department_agency,
                     salary: work.salary,
@@ -1725,6 +1731,12 @@ export default {
         this.loadProvince();
         this.loadLearningDevelopments()
         this.loadSpecializations()
+    },
+
+    computed: {
+        dateToDisable(){
+            
+        }
     }
 }
 </script>
