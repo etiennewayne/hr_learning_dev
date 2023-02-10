@@ -4853,6 +4853,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -10757,225 +10759,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {},
   mounted: function mounted() {}
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/User/MyAppointmentxxx.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/User/MyAppointmentxxx.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "AppointmentType",
-  data: function data() {
-    return {
-      data: [],
-      total: 0,
-      loading: false,
-      sortField: 'appointment_id',
-      sortOrder: 'desc',
-      page: 1,
-      perPage: 5,
-      defaultSortDirection: 'asc',
-      search: {
-        appointment_type: '',
-        appointment_date: new Date()
-      },
-      btnClass: {
-        'is-success': true,
-        'button': true,
-        'is-loading': false
-      }
-    };
-  },
-  methods: {
-    /*
-    * Load async data
-    */
-    loadAsyncData: function loadAsyncData() {
-      var _this = this;
-
-      this.search.ndate = new Date(this.search.appointment_date).toLocaleDateString();
-      var params = ["sort_by=".concat(this.sortField, ".").concat(this.sortOrder), "appdate=".concat(this.search.ndate), "perpage=".concat(this.perPage), "page=".concat(this.page)].join('&');
-      this.loading = true;
-      axios.get("/get-my-appointments?".concat(params)).then(function (_ref) {
-        var data = _ref.data;
-        _this.data = [];
-        var currentTotal = data.total;
-
-        if (data.total / _this.perPage > 1000) {
-          currentTotal = _this.perPage * 1000;
-        }
-
-        _this.total = currentTotal;
-        data.data.forEach(function (item) {
-          //item.release_date = item.release_date ? item.release_date.replace(/-/g, '/') : null
-          _this.data.push(item);
-        });
-        _this.loading = false;
-      })["catch"](function (error) {
-        _this.data = [];
-        _this.total = 0;
-        _this.loading = false;
-        throw error;
-      });
-    },
-
-    /*
-    * Handle page-change event
-    */
-    onPageChange: function onPageChange(page) {
-      this.page = page;
-      this.loadAsyncData();
-    },
-    onSort: function onSort(field, order) {
-      this.sortField = field;
-      this.sortOrder = order;
-      this.loadAsyncData();
-    },
-    setPerPage: function setPerPage() {
-      this.loadAsyncData();
-    },
-    //alert box ask for deletion
-    cancelAppointment: function cancelAppointment(row) {
-      var _this2 = this;
-
-      this.$buefy.dialog.confirm({
-        title: 'CANCEL?',
-        type: 'is-danger',
-        message: 'Are you sure you want to cancel this data?',
-        cancelText: 'Close',
-        confirmText: 'Cancel',
-        onConfirm: function onConfirm() {
-          return _this2.cancelSubmit(row.appointment_id);
-        }
-      });
-    },
-    //execute delete after confirming
-    cancelSubmit: function cancelSubmit(dataId) {
-      var _this3 = this;
-
-      axios.post('/cancel-my-appointment/' + dataId).then(function (res) {
-        _this3.loadAsyncData();
-      })["catch"](function (err) {
-        if (err.response.status === 422) {
-          _this3.errors = err.response.data.errors;
-        }
-      });
-    }
-  },
-  mounted: function mounted() {
-    this.search.appointment_date = null;
-    this.loadAsyncData();
-  }
 });
 
 /***/ }),
@@ -33093,45 +32876,6 @@ component.options.__file = "resources/js/components/User/DashboardUser.vue"
 
 /***/ }),
 
-/***/ "./resources/js/components/User/MyAppointmentxxx.vue":
-/*!***********************************************************!*\
-  !*** ./resources/js/components/User/MyAppointmentxxx.vue ***!
-  \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _MyAppointmentxxx_vue_vue_type_template_id_3f2ba64e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MyAppointmentxxx.vue?vue&type=template&id=3f2ba64e&scoped=true& */ "./resources/js/components/User/MyAppointmentxxx.vue?vue&type=template&id=3f2ba64e&scoped=true&");
-/* harmony import */ var _MyAppointmentxxx_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MyAppointmentxxx.vue?vue&type=script&lang=js& */ "./resources/js/components/User/MyAppointmentxxx.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _MyAppointmentxxx_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _MyAppointmentxxx_vue_vue_type_template_id_3f2ba64e_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
-  _MyAppointmentxxx_vue_vue_type_template_id_3f2ba64e_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
-  false,
-  null,
-  "3f2ba64e",
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/User/MyAppointmentxxx.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
-
-/***/ }),
-
 /***/ "./resources/js/components/User/NavbarUser.vue":
 /*!*****************************************************!*\
   !*** ./resources/js/components/User/NavbarUser.vue ***!
@@ -33739,22 +33483,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardUser_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./DashboardUser.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/User/DashboardUser.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardUser_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/User/MyAppointmentxxx.vue?vue&type=script&lang=js&":
-/*!************************************************************************************!*\
-  !*** ./resources/js/components/User/MyAppointmentxxx.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MyAppointmentxxx_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./MyAppointmentxxx.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/User/MyAppointmentxxx.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MyAppointmentxxx_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -34784,23 +34512,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/User/MyAppointmentxxx.vue?vue&type=template&id=3f2ba64e&scoped=true&":
-/*!******************************************************************************************************!*\
-  !*** ./resources/js/components/User/MyAppointmentxxx.vue?vue&type=template&id=3f2ba64e&scoped=true& ***!
-  \******************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MyAppointmentxxx_vue_vue_type_template_id_3f2ba64e_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MyAppointmentxxx_vue_vue_type_template_id_3f2ba64e_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MyAppointmentxxx_vue_vue_type_template_id_3f2ba64e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./MyAppointmentxxx.vue?vue&type=template&id=3f2ba64e&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/User/MyAppointmentxxx.vue?vue&type=template&id=3f2ba64e&scoped=true&");
-
-
-/***/ }),
-
 /***/ "./resources/js/components/User/NavbarUser.vue?vue&type=template&id=080a7dc4&scoped=true&":
 /*!************************************************************************************************!*\
   !*** ./resources/js/components/User/NavbarUser.vue?vue&type=template&id=080a7dc4&scoped=true& ***!
@@ -35010,7 +34721,7 @@ var render = function () {
     [
       _c("div", { staticClass: "section" }, [
         _c("div", { staticClass: "columns is-centered" }, [
-          _c("div", { staticClass: "column is-8-desktop is-10-tablet" }, [
+          _c("div", { staticClass: "column is-6-desktop is-10-tablet" }, [
             _c(
               "div",
               { staticClass: "box" },
@@ -39023,7 +38734,9 @@ var render = function () {
       _vm._v(" "),
       _c("div", { staticClass: "print-area" }, [
         _c("div", [
-          _c("div", [_vm._v("List of Teachers")]),
+          _c("div", { staticClass: "has-text-weight-bold" }, [
+            _vm._v("List of Teachers"),
+          ]),
           _vm._v(" "),
           _c(
             "table",
@@ -39064,6 +38777,8 @@ var render = function () {
                   _c("td", [_vm._v(_vm._s(item.sex))]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(item.specialization))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.designation))]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(item.no_seminars))]),
                   _vm._v(" "),
@@ -39106,6 +38821,8 @@ var staticRenderFns = [
       _c("td", [_vm._v("Sex")]),
       _vm._v(" "),
       _c("td", [_vm._v("Specialization/Skill")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Designation")]),
       _vm._v(" "),
       _c("td", [_vm._v("No of. Seminars")]),
       _vm._v(" "),
@@ -51279,383 +50996,6 @@ var staticRenderFns = [
     ])
   },
 ]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/User/MyAppointmentxxx.vue?vue&type=template&id=3f2ba64e&scoped=true&":
-/*!*********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/User/MyAppointmentxxx.vue?vue&type=template&id=3f2ba64e&scoped=true& ***!
-  \*********************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function () {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "section" }, [
-      _c("div", { staticClass: "columns is-centered" }, [
-        _c("div", { staticClass: "column is-10" }, [
-          _c(
-            "div",
-            { staticClass: "box" },
-            [
-              _c(
-                "div",
-                {
-                  staticClass: "is-flex is-justify-content-center mb-2",
-                  staticStyle: { "font-size": "20px", "font-weight": "bold" },
-                },
-                [_vm._v("MY APPOINTMENT")]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "level" }, [
-                _c(
-                  "div",
-                  { staticClass: "level-left" },
-                  [
-                    _c(
-                      "b-field",
-                      { attrs: { label: "Page" } },
-                      [
-                        _c(
-                          "b-select",
-                          {
-                            on: { input: _vm.setPerPage },
-                            model: {
-                              value: _vm.perPage,
-                              callback: function ($$v) {
-                                _vm.perPage = $$v
-                              },
-                              expression: "perPage",
-                            },
-                          },
-                          [
-                            _c("option", { attrs: { value: "5" } }, [
-                              _vm._v("5 per page"),
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "10" } }, [
-                              _vm._v("10 per page"),
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "15" } }, [
-                              _vm._v("15 per page"),
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "20" } }, [
-                              _vm._v("20 per page"),
-                            ]),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "b-select",
-                          {
-                            on: { input: _vm.loadAsyncData },
-                            model: {
-                              value: _vm.sortOrder,
-                              callback: function ($$v) {
-                                _vm.sortOrder = $$v
-                              },
-                              expression: "sortOrder",
-                            },
-                          },
-                          [
-                            _c("option", { attrs: { value: "asc" } }, [
-                              _vm._v("ASC"),
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "desc" } }, [
-                              _vm._v("DESC"),
-                            ]),
-                          ]
-                        ),
-                      ],
-                      1
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "level-right" }, [
-                  _c(
-                    "div",
-                    { staticClass: "level-item" },
-                    [
-                      _c(
-                        "b-field",
-                        { attrs: { label: "Search" } },
-                        [
-                          _c("b-datepicker", {
-                            attrs: {
-                              editable: "",
-                              placeholder: "Search Appointment Date",
-                            },
-                            nativeOn: {
-                              keyup: function ($event) {
-                                if (
-                                  !$event.type.indexOf("key") &&
-                                  _vm._k(
-                                    $event.keyCode,
-                                    "enter",
-                                    13,
-                                    $event.key,
-                                    "Enter"
-                                  )
-                                ) {
-                                  return null
-                                }
-                                return _vm.loadAsyncData.apply(null, arguments)
-                              },
-                            },
-                            model: {
-                              value: _vm.search.appointment_date,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.search, "appointment_date", $$v)
-                              },
-                              expression: "search.appointment_date",
-                            },
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "p",
-                            { staticClass: "control" },
-                            [
-                              _c(
-                                "b-tooltip",
-                                {
-                                  attrs: {
-                                    label: "Search",
-                                    type: "is-success",
-                                  },
-                                },
-                                [
-                                  _c("b-button", {
-                                    attrs: {
-                                      type: "is-primary",
-                                      "icon-right": "account-filter",
-                                    },
-                                    on: { click: _vm.loadAsyncData },
-                                  }),
-                                ],
-                                1
-                              ),
-                            ],
-                            1
-                          ),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c(
-                "b-table",
-                {
-                  attrs: {
-                    data: _vm.data,
-                    loading: _vm.loading,
-                    paginated: "",
-                    "backend-pagination": "",
-                    total: _vm.total,
-                    "per-page": _vm.perPage,
-                    "aria-next-label": "Next page",
-                    "aria-previous-label": "Previous page",
-                    "aria-page-label": "Page",
-                    "aria-current-label": "Current page",
-                    "backend-sorting": "",
-                    "default-sort-direction": _vm.defaultSortDirection,
-                  },
-                  on: { "page-change": _vm.onPageChange, sort: _vm.onSort },
-                },
-                [
-                  _c("b-table-column", {
-                    attrs: { field: "appointment_type_id", label: "ID" },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "default",
-                        fn: function (props) {
-                          return [
-                            _vm._v(
-                              "\n                            " +
-                                _vm._s(props.row.appointment_id) +
-                                "\n                        "
-                            ),
-                          ]
-                        },
-                      },
-                    ]),
-                  }),
-                  _vm._v(" "),
-                  _c("b-table-column", {
-                    attrs: { field: "appointment_type", label: "Appointment" },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "default",
-                        fn: function (props) {
-                          return [
-                            _vm._v(
-                              "\n                            " +
-                                _vm._s(props.row.appointment_type) +
-                                "\n                        "
-                            ),
-                          ]
-                        },
-                      },
-                    ]),
-                  }),
-                  _vm._v(" "),
-                  _c("b-table-column", {
-                    attrs: { field: "app_date", label: "Appointment Date" },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "default",
-                        fn: function (props) {
-                          return [
-                            _vm._v(
-                              "\n                            " +
-                                _vm._s(props.row.app_date) +
-                                "\n                        "
-                            ),
-                          ]
-                        },
-                      },
-                    ]),
-                  }),
-                  _vm._v(" "),
-                  _c("b-table-column", {
-                    attrs: { field: "from_to", label: "From/To" },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "default",
-                        fn: function (props) {
-                          return [
-                            _vm._v(
-                              "\n                            " +
-                                _vm._s(props.row.app_time_from) +
-                                " -   " +
-                                _vm._s(props.row.app_time_to) +
-                                "\n                        "
-                            ),
-                          ]
-                        },
-                      },
-                    ]),
-                  }),
-                  _vm._v(" "),
-                  _c("b-table-column", {
-                    attrs: { field: "is_approved", label: "Is Approved" },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "default",
-                        fn: function (props) {
-                          return [
-                            props.row.is_approved === 1
-                              ? _c(
-                                  "span",
-                                  {
-                                    staticStyle: {
-                                      "font-weight": "bold",
-                                      color: "green",
-                                    },
-                                  },
-                                  [_vm._v("APPROVED")]
-                                )
-                              : props.row.is_approved === 2
-                              ? _c(
-                                  "span",
-                                  {
-                                    staticStyle: {
-                                      "font-weight": "bold",
-                                      color: "red",
-                                    },
-                                  },
-                                  [_vm._v("CANCELLED")]
-                                )
-                              : _c(
-                                  "span",
-                                  {
-                                    staticStyle: {
-                                      "font-weight": "bold",
-                                      color: "blue",
-                                    },
-                                  },
-                                  [_vm._v("PENDING")]
-                                ),
-                          ]
-                        },
-                      },
-                    ]),
-                  }),
-                  _vm._v(" "),
-                  _c("b-table-column", {
-                    attrs: { label: "Action" },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "default",
-                        fn: function (props) {
-                          return [
-                            _c(
-                              "div",
-                              { staticClass: "is-flex" },
-                              [
-                                _c(
-                                  "b-tooltip",
-                                  {
-                                    attrs: {
-                                      label: "Cancel appointment",
-                                      type: "is-danger",
-                                    },
-                                  },
-                                  [
-                                    _c("b-button", {
-                                      staticClass:
-                                        "button is-small is-danger mr-1",
-                                      attrs: { "icon-right": "minus-circle" },
-                                      on: {
-                                        click: function ($event) {
-                                          return _vm.cancelAppointment(
-                                            props.row
-                                          )
-                                        },
-                                      },
-                                    }),
-                                  ],
-                                  1
-                                ),
-                              ],
-                              1
-                            ),
-                          ]
-                        },
-                      },
-                    ]),
-                  }),
-                ],
-                1
-              ),
-            ],
-            1
-          ),
-        ]),
-      ]),
-    ]),
-  ])
-}
-var staticRenderFns = []
 render._withStripped = true
 
 
@@ -64064,7 +63404,6 @@ var map = {
 	"./components/Modals/ModalItem.vue": "./resources/js/components/Modals/ModalItem.vue",
 	"./components/SignupComponent.vue": "./resources/js/components/SignupComponent.vue",
 	"./components/User/DashboardUser.vue": "./resources/js/components/User/DashboardUser.vue",
-	"./components/User/MyAppointmentxxx.vue": "./resources/js/components/User/MyAppointmentxxx.vue",
 	"./components/User/NavbarUser.vue": "./resources/js/components/User/NavbarUser.vue",
 	"./components/UserNavbar.vue": "./resources/js/components/UserNavbar.vue",
 	"./components/WelcomePage.vue": "./resources/js/components/WelcomePage.vue"

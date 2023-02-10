@@ -79,13 +79,14 @@
 
         <div class="print-area">
             <div>
-                <div>List of Teachers</div>
+                <div class="has-text-weight-bold">List of Teachers</div>
                 <table class="table is-fullwidth is-narrow">
                     <tr>
                         <td></td>
                         <td>Name</td>
                         <td>Sex</td>
                         <td>Specialization/Skill</td>
+                        <td>Designation</td>
                         <td>No of. Seminars</td>
                         <td>Remarks</td>
                     </tr>
@@ -98,6 +99,7 @@
                         <td>{{  item.lname }}, {{  item.fname }} {{ item.mname }} {{  item.suffix }}</td>
                         <td>{{ item.sex }}</td>
                         <td>{{ item.specialization }}</td>
+                        <td>{{ item.designation }}</td>
                         <td>{{ item.no_seminars }}</td>
                         <td>{{ item.remarks }}</td>
                     </tr>

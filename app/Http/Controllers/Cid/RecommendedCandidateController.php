@@ -30,6 +30,7 @@ class RecommendedCandidateController extends Controller
         $queryBuilder = DB::table('users as a')
             ->where('role', 'FACULTY')
             ->select('a.user_id', 'a.lname', 'a.fname', 'a.mname',
+                DB::raw('(select position_title from work_experiences where user_id = a.user_id order by work_ex_id desc limit 1) as designation'),
                 DB::raw('(select count(*) from learning_developments where user_id = a.user_id) as no_seminars'),
                 DB::raw('IFNULL((SELECT GROUP_CONCAT(skill_hobbies SEPARATOR ", ") FROM other_informations WHERE user_id = a.user_id),"") as specialization'),
 
